@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap');
+
+:root {
+    --primary-red: #8c1515;
+    --text-dark: #2c2c2c;
+    --text-light: #555555;
+    --bg-cream: #fcfaf5;
+    --bg-white: #ffffff;
+    --accent-red: #b31b1b;
+    --border-color: #e0d9cc;
+    --max-width: 1000px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--primary-red);
+}
+
+a {
+    color: var(--primary-red);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--accent-red);
+    text-decoration: underline;
+}
+
+/* Header & Top Navigation */
+header {
+    background: var(--bg-white);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.site-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-red);
+}
+
+.top-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.top-nav a {
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.top-nav a:hover {
+    color: var(--primary-red);
+    text-decoration: none;
+}
+
+/* Main Content */
+.main-content {
+    max-width: var(--max-width);
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+section {
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+/* Profile Area (for Home) */
+.profile-box {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+}
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 4px;
+    object-fit: cover;
+    border: 1px solid var(--border-color);
+}
+
+/* Experience List */
+.exp-list {
+    list-style: none;
+}
+
+.exp-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dotted var(--border-color);
+}
+
+.exp-item:last-child {
+    border-bottom: none;
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+}
+
+.exp-org {
+    color: var(--text-light);
+    font-weight: 400;
+}
+
+/* Tables (for Courses) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    background: var(--bg-white);
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--primary-red);
+    background-color: rgba(140, 21, 21, 0.03);
+}
+
+tr:hover {
+    background-color: rgba(140, 21, 21, 0.01);
+}
+
+/* Publications */
+.pub-item {
+    margin-bottom: 2rem;
+}
+
+.pub-title {
+    font-weight: 600;
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+}
+
+.pub-meta {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* Footer */
+footer {
+    max-width: var(--max-width);
+    margin: 4rem auto;
+    padding: 2rem;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .profile-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .top-nav ul {
+        gap: 1rem;
+    }
+}
