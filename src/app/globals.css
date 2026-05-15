@@ -69,12 +69,15 @@ h1, h2, h3, h4, h5, h6 {
   @apply bg-stone-200 rounded-full;
 }
 
-/* Force MathJax Inline */
-.prose mjx-container[display="true"] {
+/* Force MathJax/KaTeX Overflow for Mobile */
+.prose mjx-container[display="true"],
+.katex-display {
   display: block !important;
   margin: 2rem 0 !important;
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  padding-bottom: 0.5rem;
+  -webkit-overflow-scrolling: touch;
 }
 
 .prose mjx-container {

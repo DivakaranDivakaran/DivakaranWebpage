@@ -5,6 +5,7 @@ import hashlib
 import subprocess
 import tempfile
 import shutil
+from datetime import datetime
 from pathlib import Path
 from dotenv import load_dotenv
 from supabase import create_client, Client
@@ -277,5 +278,28 @@ def main():
             supabase.table('lecture_notes').insert(notes_to_sync).execute()
 
     print(f"\nDone. Processed {len(notes_to_sync)} chapter(s).")
+    
+    # 4. Auto-push to GitHub
+    push_to_github()
+
+def push_to_github():
+    print("\n--- Syncing with GitHub ---")
+    try:
+        # 1. Add all relevant directories
+        subprocess.run(['git', 'add', 'src/content/notes/', 'public/images/tikz/', '.github/workflows/', 'src/app/', 'scripts/'], check=True)
+        
+        # 2. Check if there are actually any STAGED changes
+        staged = subprocess.run(['git', 'diff', '--cached', '--quiet'], capture_output=False).returncode
+        if staged == 0:
+            print("No changes to push.")
+            return
+
+        print("Changes detected. Committing and pushing...")
+        commit_msg = f"Auto-sync lecture notes: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+        subprocess.run(['git', 'commit', '-m', commit_msg], check=True)
+        subprocess.run(['git', 'push', 'origin', 'main'], check=True)
+        print("Successfully pushed to GitHub! Deployment should start shortly.")
+    except Exception as e:
+        print(f"Error pushing to GitHub: {e}")
 
 if __name__ == "__main__": main()

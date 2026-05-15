@@ -12,9 +12,10 @@ export default async function Home() {
   if (!profile) return <div>Loading profile...</div>;
 
   return (
-    <div className="flex flex-col md:flex-row gap-12 items-start">
-      <div className="w-full md:w-64 shrink-0">
-        <div className="relative aspect-square rounded-lg overflow-hidden border border-stone-200">
+    <div className="block">
+      {/* Profile Image & Socials - Floating on Desktop */}
+      <div className="w-full md:w-72 md:float-right md:ml-12 md:mb-8 mb-12">
+        <div className="relative aspect-square rounded-2xl overflow-hidden border border-stone-200 shadow-sm">
           <Image 
             src="/avatar.jpg" 
             alt={profile.full_name} 
@@ -30,7 +31,8 @@ export default async function Home() {
         </div>
       </div>
       
-      <div className="flex-1">
+      {/* Text Content */}
+      <div className="content-text">
         <h1 className="text-5xl font-bold text-[#8c1515] mb-2">{profile.full_name}</h1>
         <p className="text-xl text-stone-600 mb-8">{profile.title}</p>
         
@@ -41,7 +43,7 @@ export default async function Home() {
           </p>
         </div>
 
-        <div>
+        <div className="clear-none">
           <h2 className="text-2xl font-bold mb-8 text-stone-800 border-b border-stone-200 pb-2">Professional Experience</h2>
           <div className="space-y-8">
             {experience?.map((item) => (
