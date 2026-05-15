@@ -294,7 +294,10 @@ $$a_n = \frac{1}{\sqrt{5}}\left(\frac{1+\sqrt5}{2}\right)^n - \frac{1}{\sqrt{5}}
 <summary class="list-none cursor-pointer text-2xl font-bold text-primary-red border-b-2 border-primary-red/20 pb-1 mb-4 hover:border-primary-red/50 transition-colors">9.3 Recurrence with distinct eigenvalues</summary>
 
 
-Pretty much everything we did to find a closed form expression can be used to solve any degree two homogeneos recurrence relation whose characteristic polynomial has to distinct roots.  Notice that given a degree two homogeneos recurrence relation. $a_n = ba_{n-1} + ca_{n-2}$, the characteristic polynomial of the associated matrix $\begin{bmatrix} b & c\\ 1 & 0 \end{bmatrix}$ is $\lambda^2 - b\lambda - c$ and the eigenvalues are $\lambda = \frac{b\pm\sqrt{b^2+4c}}{2}$.  Thus, there will be two distinct eigenvalues iff $b^2 + 4c > 0$.  Let us assume this is the case and let the two eigenvalues be $\lambda_1$ and $\lambda_2$.  You can check that the corresponding eigenvectors are $(\lambda_1,1)$ and $(\lambda_2,1)$ through the following computation.
+Pretty much everything we did to find a closed form expression can be used to solve any degree two homogeneos recurrence relation whose characteristic polynomial has to distinct roots.  Notice that given a degree two homogeneos recurrence relation. $a_n = ba_{n-1} + ca_{n-2}$, the characteristic polynomial of the associated matrix $\begin{bmatrix}
+b & c\\
+1 & 0
+\end{bmatrix}$ is $\lambda^2 - b\lambda - c$ and the eigenvalues are $\lambda = \frac{b\pm\sqrt{b^2+4c}}{2}$. Thus, there will be two distinct eigenvalues iff $b^2 + 4c > 0$. Let us assume this is the case and let the two eigenvalues be $\lambda_1$ and $\lambda_2$. You can check that the corresponding eigenvectors are $(\lambda_1,1)$ and $(\lambda_2,1)$ through the following computation.
 $$\begin{bmatrix}
 b & c\\
 1 & 0

@@ -1008,7 +1008,14 @@ Find the $Ker(F)$ and $Im(F)$ for the following functions:
 <div class="academic-env env-definition">
 <span class="env-label">Definition 2.9</span>
 
-Let $M_m^n(\mathbb{R}) = \left\{\begin{bmatrix} a_{11} & a_{12} \dots & a_{1n}\\ a_{21} & a_{22} \dots & a_{2n}\\ . & . & . \\ . & . & . \\ . & . & . \\ a_{m1} & \dots & a_{mn} \end{bmatrix} \ : \ a_{ij}\in \mathbb{R} \forall i\in{1,\dots m} \text{ and } j\in \{1,\dots,n\} \right\}$ be the set of $m\times n$ matrices.
+Let $M_m^n(\mathbb{R}) = \left\{\begin{bmatrix}
+a_{11} & a_{12} \dots & a_{1n}\\
+a_{21} & a_{22} \dots & a_{2n}\\
+. & . & . \\
+. & . & . \\
+. & . & . \\
+a_{m1} & \dots & a_{mn} 
+\end{bmatrix} \ : \ a_{ij}\in \mathbb{R} \forall i\in{1,\dots m} \text{ and } j\in \{1,\dots,n\} \right\}$ be the set of $m\times n$ matrices.
 
 </div>
 
@@ -1028,7 +1035,14 @@ As there is a canonical bijection between $\mathbb{R}^n$ and $M_n^1(\mathbb{R})$
 
 As before, this identification between $\mathbb{R}^n$ and $M_n^1(\mathbb{R})$ (and similarly $\mathbb{R}^m$ and $M_m^1(\mathbb{R})$) allows us to think of $F$ as a function from $M_n^1(\mathbb{R})$ to $M_m^1(\mathbb{R})$.  More precisely, given $F:\mathbb{R}^n \to \mathbb{R}^m$, we can define $\overline{F}:= \Phi_m \circ F \circ \Phi_n^{-1}: M_n^1(\mathbb{R}) \to M_m^1(\mathbb{R})$.  As we saw before, matrix multiplication is defined to ensure that 
 
-- $\overline{F}\left(\begin{bmatrix}x_1\\ x_2 \\ . \\ . \\ . \\x_n\end{bmatrix}\right) = \begin{bmatrix} a_{11} & a_{12} \dots & a_{1n}\\ a_{21} & a_{22} \dots & a_{2n}\\ . & . & . \\ . & . & . \\ . & . & . \\ a_{m1} & \dots & a_{mn} \end{bmatrix}\begin{bmatrix}x_1\\ x_2 \\ . \\ . \\ . \\x_n\end{bmatrix}$ 
+- $\overline{F}\left(\begin{bmatrix}x_1\\ x_2 \\ . \\ . \\ . \\x_n\end{bmatrix}\right) = \begin{bmatrix}
+a_{11} & a_{12} \dots & a_{1n}\\
+a_{21} & a_{22} \dots & a_{2n}\\
+. & . & . \\
+. & . & . \\
+. & . & . \\
+a_{m1} & \dots & a_{mn} 
+\end{bmatrix}\begin{bmatrix}x_1\\ x_2 \\ . \\ . \\ . \\x_n\end{bmatrix}$ 
 - If $F:\mathbb{R}^n \to \mathbb{R}^m$ and $G:\mathbb{R}^m \to \mathbb{R}^k$ are such that 
 $$\overline{F}\left(\begin{bmatrix}x_1\\ x_2 \\ . \\ . \\ . \\x_n\end{bmatrix}\right) = \begin{bmatrix}
 a_{11} & a_{12} \dots & a_{1n}\\
@@ -1081,8 +1095,28 @@ these two conditions would force the usual definition of matrix multiplication
 <div class="academic-env env-definition">
 <span class="env-label">Definition 2.10</span>
 
-Let $A = \begin{bmatrix} a_{11} & a_{12} \dots & a_{1n}\\ a_{21} & a_{22} \dots & a_{2n}\\ . & . & . \\ . & . & . \\ . & . & . \\ a_{m1} & \dots & a_{mn} \end{bmatrix}$ and $B = \begin{bmatrix} b_{11} & b_{12} \dots & b_{1m}\\ b_{21} & b_{22} \dots & b_{2m}\\ . & . & . \\ . & . & . \\ . & . & . \\ b_{k1} & \dots & b_{km} \end{bmatrix}$.  Then, we define the product $BA$ as the matrix whose $il$-th entry is equal to $\sum\limits_{i=1}^n b_{ij}a_{jl}$.    If $B_1\dots B_k$ are the rows of $B$ and $A^1,\dots,A^n$ are the columns of $A$, then 
-$BA = \begin{bmatrix} \langle B_1, A^1\rangle \dots & \langle B_1,A^n\rangle\\ . & .\\ . & . \\ . & . \\ \langle B_k,A^1\rangle \dots & \langle B_k,A^n\rangle \end{bmatrix}$<span class="footnote-trigger" title="This notation is inspired from Introduction to Linear Algebra, Serge Lang"><sup>[*]</sup></span>.
+Let $A = \begin{bmatrix}
+a_{11} & a_{12} \dots & a_{1n}\\
+a_{21} & a_{22} \dots & a_{2n}\\
+. & . & . \\
+. & . & . \\
+. & . & . \\
+a_{m1} & \dots & a_{mn} 
+\end{bmatrix}$ and $B = \begin{bmatrix}
+b_{11} & b_{12} \dots & b_{1m}\\
+b_{21} & b_{22} \dots & b_{2m}\\
+. & . & . \\
+. & . & . \\
+. & . & . \\
+b_{k1} & \dots & b_{km} 
+\end{bmatrix}$. Then, we define the product $BA$ as the matrix whose $il$-th entry is equal to $\sum\limits_{i=1}^n b_{ij}a_{jl}$. If $B_1\dots B_k$ are the rows of $B$ and $A^1,\dots,A^n$ are the columns of $A$, then 
+$BA = \begin{bmatrix}
+\langle B_1, A^1\rangle \dots & \langle B_1,A^n\rangle\\
+. & .\\
+. & . \\
+. & . \\
+\langle B_k,A^1\rangle \dots & \langle B_k,A^n\rangle
+\end{bmatrix}$<span class="footnote-trigger" title="This notation is inspired from Introduction to Linear Algebra, Serge Lang"><sup>[*]</sup></span>.
 
 </div>
 

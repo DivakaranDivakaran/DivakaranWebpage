@@ -528,7 +528,13 @@ is called the matrix of the linear transformation $L$ with respect to the basis 
 </div>
 
 
-To avoid the cumbersome notation, $\begin{bmatrix} a_{11} & a_{12} & \dots & a_{1m}\\ a_{21} & a_{22} & \dots & a_{2m}\\ . & . & \dots & .\\ . & . & \dots & .\\ a_{n1} & a_{n_2} & \dots & a_{nm}\\ \end{bmatrix}$,
+To avoid the cumbersome notation, $\begin{bmatrix}
+a_{11} & a_{12} & \dots & a_{1m}\\
+a_{21} & a_{22} & \dots & a_{2m}\\
+. & . & \dots & .\\
+. & . & \dots & .\\
+a_{n1} & a_{n_2} & \dots & a_{nm}\\
+\end{bmatrix}$,
 we would often represent an $n\times m$ matrix whose $ij$-th entry is $a_{ij}$ as $(a_{ij})_{n\times m}$.  This allows us to express the product of two matrices also in a convenient form.  Let $A$ be an $m\times n$ matrix $(a_{ij})$ and $B$ be an $n\times p$ matrix, then $AB = C$ is a $m\times p$ matrix whose $ik$-th entry is $c_{ik} = \sum_{j=1}^n a_{ij}b_{jk}$.  As we saw earlier, the matrix multiplication is so defined to ensure the following theorem is true.    
 
 

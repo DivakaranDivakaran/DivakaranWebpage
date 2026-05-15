@@ -60,10 +60,13 @@ class LatexConverter:
 
     def protect_math(self, text):
         self.math_blocks = []
+        # Protect complex environments first
         text = re.sub(r'\\begin\{(?:align|equation|gather|multline)\*?\}[\s\S]*?\\end\{(?:align|equation|gather|multline)\*?\}', self.add_wrapped_block, text)
+        # Protect display math
         text = re.sub(r'\$\$[\s\S]*?\$\$', self.add_block, text)
         text = re.sub(r'\\\[[\s\S]*?\\\]', self.add_block, text)
-        text = re.sub(r'\$([\s\S]+?)\$', self.add_block, text)
+        # Protect inline math - more restrictive to avoid swallowing large chunks
+        text = re.sub(r'\$([^$\n]+?)\$', self.add_block, text)
         return text
 
     def restore_math(self, text):
@@ -166,13 +169,12 @@ class LatexConverter:
             text = pattern.sub(repl_env, text)
 
         # 3. Sections (Collapsible)
+        # This regex handles one level of nested braces (common in math titles)
+        section_pattern = r'\\section\{((?:[^{}]|\{[^{}]*\})*)\}'
         def handle_section(m):
             title = m.group(1)
             self.counters['section'] += 1
             num = f"{self.current_chapter_prefix}{self.counters['section']}"
-            # Convert common math in section titles to Unicode so they render
-            # inside <summary> without needing remark-math processing.
-            # Blank lines inside <summary> break the HTML block structure.
             title_display = title
             unicode_map = {
                 r'\C': 'ℂ', r'\mathbb{C}': 'ℂ', r'$\C$': 'ℂ', r'$\mathbb{C}$': 'ℂ',
@@ -184,14 +186,13 @@ class LatexConverter:
             }
             for latex, uni in unicode_map.items():
                 title_display = title_display.replace(latex, uni)
-            # Strip any remaining $ delimiters from simple math in titles
             title_display = re.sub(r'\$([^$]+)\$', r'\1', title_display)
             return f'\n\n</details>\n<details class="section-details mt-8">\n<summary class="list-none cursor-pointer text-2xl font-bold text-primary-red border-b-2 border-primary-red/20 pb-1 mb-4 hover:border-primary-red/50 transition-colors">{num} {title_display}</summary>\n\n'
 
-        text = re.sub(r'\\section\{([^}]*)\}', handle_section, text)
+        text = re.sub(section_pattern, handle_section, text)
         # Handle Chapter as main title
-        text = re.sub(r'\\chapter\{([^}]*)\}', r'# \1', text)
-        text = re.sub(r'\\subsection\{([^}]*)\}', r'### \1', text)
+        text = re.sub(r'\\chapter\{((?:[^{}]|\{[^{}]*\})*)\}', r'# \1', text)
+        text = re.sub(r'\\subsection\{((?:[^{}]|\{[^{}]*\})*)\}', r'### \1', text)
 
         # 4. References & Footnotes
         text = re.sub(r'\\ref\{([^}]*)\}', lambda m: f"**{self.labels.get(m.group(1), '??')}**", text)

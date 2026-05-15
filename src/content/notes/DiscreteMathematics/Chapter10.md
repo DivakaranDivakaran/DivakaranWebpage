@@ -27,7 +27,10 @@ a_{n-1}
 a_{n-1}\\
 a_{n-2}
 \end{bmatrix}.$$
-It is easy to see that the characteristic polynomial of the matrix $\begin{bmatrix} 2 & -1\\ 1 & 0 \end{bmatrix}$ is $\lambda^2 - 2\lambda + 1 = (\lambda - 1)^2$.  Thus, $1$ is a repeated eigenvalue.  We can check that 
+It is easy to see that the characteristic polynomial of the matrix $\begin{bmatrix}
+2 & -1\\
+1 & 0
+\end{bmatrix}$ is $\lambda^2 - 2\lambda + 1 = (\lambda - 1)^2$. Thus, $1$ is a repeated eigenvalue.  We can check that 
 $$\begin{bmatrix}
 2 & -1\\
 1 & 0

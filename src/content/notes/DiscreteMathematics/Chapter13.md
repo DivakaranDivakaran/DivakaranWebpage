@@ -227,9 +227,23 @@ $A_4 = \{x\in \mathbb{R} | -1 < x < 1\}, A_5 = \{x\in \mathbb{R} | x > -1\}, A_6
 \vspace{0.5cm}
 \begin{multicols}{3}
 
-- $\begin{bmatrix} 0 & 1 & 0\\ 1 & 0 & 1\\ 0 & 1 & 0\\ \end{bmatrix}$
-- $\begin{bmatrix} 0 & 0 & 1 & 1\\ 0 & 0 & 1 & 1\\ 1 & 1 & 0 & 1\\ 1 & 1 & 1 & 0 \end{bmatrix}$
-- $\begin{bmatrix} 1 & 1 & 1 & 0\\ 0 & 0 & 1 & 0\\ 1 & 0 & 1 & 0\\ 1 & 1 & 1 & 0 \end{bmatrix}$
+- $\begin{bmatrix}
+0 & 1 & 0\\
+1 & 0 & 1\\
+0 & 1 & 0\\
+\end{bmatrix}$
+- $\begin{bmatrix}
+0 & 0 & 1 & 1\\
+0 & 0 & 1 & 1\\
+1 & 1 & 0 & 1\\
+1 & 1 & 1 & 0
+\end{bmatrix}$
+- $\begin{bmatrix}
+1 & 1 & 1 & 0\\
+0 & 0 & 1 & 0\\
+1 & 0 & 1 & 0\\
+1 & 1 & 1 & 0
+\end{bmatrix}$
 
 \end{multicols} 
 - What is the sum of the entries in a row of the adjacency matrix for an undirected graph? What is the sum of the entries in a column of the adjacency matrix for an undirected graph?
