@@ -230,8 +230,10 @@ def main():
 
     # Each top-level subdirectory of NOTES_DIR is a course
     if not os.path.isdir(NOTES_DIR):
-        print(f"LectureNotes directory not found: {NOTES_DIR}")
-        return
+        print(f"LectureNotes directory not found: {NOTES_DIR}. Skipping sync.")
+        # We don't return here so that the script can still proceed if there are other tasks 
+        # (though currently there aren't). For GitHub Actions, we've already committed the notes.
+        return 
 
     for course_name in sorted(os.listdir(NOTES_DIR)):
         course_path = os.path.join(NOTES_DIR, course_name)

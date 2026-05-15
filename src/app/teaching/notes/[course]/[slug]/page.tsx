@@ -47,7 +47,8 @@ export async function generateStaticParams() {
 }
 
 export default async function NotePage({ params }: PageProps) {
-  const { course, slug } = await params;
+  const { course: encodedCourse, slug } = await params;
+  const course = decodeURIComponent(encodedCourse);
   
   // Fetch all notes for the sidebar and prev/next
   const { data: allNotes } = await supabase

@@ -25,7 +25,8 @@ export async function generateStaticParams() {
 }
 
 export default async function CourseNotesPage({ params }: PageProps) {
-  const { course } = await params;
+  const { course: encodedCourse } = await params;
+  const course = decodeURIComponent(encodedCourse);
   
   const { data: notes } = await supabase
     .from('lecture_notes')
