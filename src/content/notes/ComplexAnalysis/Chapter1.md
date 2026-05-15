@@ -1220,13 +1220,7 @@ Show that $\Psi$ is injective.
 
 
 Further notice that the matrix 
-$$\Psi(a+ib) = \begin{bmatrix}
-a & -b\\
-b & a
-\end{bmatrix} = (a^2+b^2)\begin{bmatrix}
-\frac{a}{a^2+b^2} & \frac{-b}{a^2+b^2}\\
-\frac{b}{a^2 + b^2} & \frac{a}{a^2+b^2}
-\end{bmatrix}.$$
+$$\Psi(a+ib) = \begin{bmatrix} a & -b\\ b & a \end{bmatrix} = (a^2+b^2)\begin{bmatrix} \frac{a}{a^2+b^2} & \frac{-b}{a^2+b^2}\\ \frac{b}{a^2 + b^2} & \frac{a}{a^2+b^2} \end{bmatrix}.$$
 
 
 <div class="academic-env env-xca">
