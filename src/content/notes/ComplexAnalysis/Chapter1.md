@@ -1270,7 +1270,7 @@ Given a complex number $a + i b$, define the modulus of $a + i b$, denoted as $\
 $$ arg(a+i b) = \begin{cases} 
         \tan^{-1}(\frac{y}{x}) & \text{ if } y \geq 0 \text{ and } x\neq 0\\
         \pi + \tan^{-1}(\frac{y}{x}) & \text{ if } y < 0 \text{ and } x\neq 0\\
-        \frac{\pi}{2} & \text{ if y > 0 \text{ and } x = 0\\
+        \frac{\pi}{2} & \text{ if } y > 0 \text{ and } x = 0\\
         \frac{-\pi}{2} & \text{ if } y < 0 \text{ and } x = 0
     \end{cases}.$$
 
