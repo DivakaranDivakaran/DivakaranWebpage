@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "katex/dist/katex.min.css";
 
 @theme {
   --color-primary-red: #8c1515;
@@ -23,4 +24,129 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-link {
   @apply text-[#8c1515] hover:text-[#b31b1b] transition-colors font-medium;
+}
+
+/* Academic Environments */
+.academic-env {
+  @apply my-8 p-6 rounded-lg border-l-4 relative overflow-hidden;
+}
+
+.env-label {
+  @apply block font-bold uppercase text-xs tracking-widest mb-3;
+}
+
+.env-theorem { @apply border-stone-800 bg-stone-50; }
+.env-theorem .env-label { @apply text-stone-800; }
+
+.env-lemma { @apply border-stone-500 bg-stone-50; }
+.env-lemma .env-label { @apply text-stone-500; }
+
+.env-definition { @apply border-[#8c1515] bg-[#8c1515]/5; }
+.env-definition .env-label { @apply text-[#8c1515]; }
+
+.env-example { @apply border-blue-600 bg-blue-50; }
+.env-example .env-label { @apply text-blue-600; }
+
+.env-xca { @apply border-l-4 border-blue-500 bg-blue-50; }
+.env-xca .env-label { @apply text-blue-800; }
+
+.env-remark { @apply border-amber-600 bg-amber-50; }
+.env-remark .env-label { @apply text-amber-600; }
+
+.env-proof { @apply border-stone-300 bg-transparent italic; }
+.env-proof .env-label { @apply text-stone-400; }
+
+/* Sticky Sidebars */
+.sticky-sidebar {
+  @apply sticky top-24 self-start max-h-[calc(100vh-8rem)] overflow-y-auto pr-4;
+}
+
+.sticky-sidebar::-webkit-scrollbar {
+  @apply w-1;
+}
+
+.sticky-sidebar::-webkit-scrollbar-thumb {
+  @apply bg-stone-200 rounded-full;
+}
+
+/* Force MathJax Inline */
+.prose mjx-container[display="true"] {
+  display: block !important;
+  margin: 2rem 0 !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.prose mjx-container {
+  display: inline-block !important;
+  vertical-align: middle;
+}
+
+.prose p mjx-container, 
+.prose li mjx-container,
+.prose div mjx-container {
+  display: inline-block !important;
+}
+
+.prose div.academic-env mjx-container[display="true"] {
+  display: block !important;
+  margin: 1rem 0 !important;
+}
+
+/* Footnotes */
+.footnote-trigger {
+  @apply cursor-help text-primary-red font-bold transition-opacity hover:opacity-70;
+  vertical-align: super;
+  font-size: 0.75rem;
+}
+
+/* hfill and Flex Support */
+.flex-grow {
+  flex-grow: 1;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+/* Collapsible Sections & Summary Cleanup */
+details.section-details summary::-webkit-details-marker,
+details.section-details summary::marker {
+  display: none;
+  content: "";
+}
+
+details.section-details summary {
+  @apply outline-none;
+}
+
+details.section-details[open] summary h2 {
+  @apply mb-6;
+}
+
+/* Proof Styling */
+.env-proof details summary {
+  @apply text-stone-500 font-medium hover:text-stone-800 transition-colors list-none;
+}
+
+.env-proof details summary::-webkit-details-marker,
+.env-proof details summary::marker {
+  display: none;
+  content: "";
+}
+
+.env-proof details[open] {
+  @apply mt-2 pb-2;
+}
+
+.env-proof details summary:before {
+  content: '▶';
+  display: inline-block;
+  margin-right: 0.5rem;
+  font-size: 0.7rem;
+  transition: transform 0.2s;
+}
+
+.env-proof details[open] summary:before {
+  transform: rotate(90deg);
 }

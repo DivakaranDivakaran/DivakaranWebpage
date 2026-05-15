@@ -4,6 +4,10 @@ import { FaEnvelope, FaTwitter, FaGraduationCap, FaLinkedin } from 'react-icons/
 
 export default async function Home() {
   const { data: profile } = await supabase.from('profiles').select('*').single();
+  const { data: experience } = await supabase
+    .from('experience')
+    .select('*')
+    .order('sort_order', { ascending: true });
 
   if (!profile) return <div>Loading profile...</div>;
 
@@ -30,11 +34,29 @@ export default async function Home() {
         <h1 className="text-5xl font-bold text-[#8c1515] mb-2">{profile.full_name}</h1>
         <p className="text-xl text-stone-600 mb-8">{profile.title}</p>
         
-        <div className="prose prose-stone max-w-none">
+        <div className="prose prose-stone max-w-none mb-16">
           <h2 className="text-2xl font-bold mb-4">Biography</h2>
           <p className="text-lg leading-relaxed text-stone-700 whitespace-pre-wrap">
             {profile.bio}
           </p>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-bold mb-8 text-stone-800 border-b border-stone-200 pb-2">Professional Experience</h2>
+          <div className="space-y-8">
+            {experience?.map((item) => (
+              <div key={item.id} className="flex flex-col sm:flex-row sm:justify-between items-start border-b border-stone-100 pb-6 last:border-0">
+                <div className="mb-2 sm:mb-0">
+                  <h3 className="text-xl font-bold text-stone-800">{item.role}</h3>
+                  <p className="text-lg text-stone-600">{item.organization}</p>
+                  <p className="text-sm text-stone-500 mt-1">{item.location}</p>
+                </div>
+                <div className="text-stone-500 font-medium whitespace-nowrap">
+                  {item.start_date} — {item.end_date}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
