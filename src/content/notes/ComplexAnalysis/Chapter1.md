@@ -517,16 +517,10 @@ Show that the usual dot product on $\mathbb{R}^2$ is an inner product.
 <span class="env-label">Exercise 1.15</span>
 
 Show that $\langle , \rangle:\mathbb{R}^2\times \mathbb{R}^2 \to \mathbb{R}$ defined as
-$$\langle (x_1,y_1),(x_2,y_2) \rangle = \begin{bmatrix}
-x_1 & y_1
-\end{bmatrix}\begin{bmatrix}
-a & b\\
-c & d
-\end{bmatrix}\begin{bmatrix}
-x_2\\
-y_2
-\end{bmatrix}$$
+$$\langle (x_1,y_1),(x_2,y_2) \rangle = \begin{bmatrix} x_1 & y_1 \end{bmatrix}\begin{bmatrix} a & b\\ c & d \end{bmatrix} \begin{bmatrix} x_2\\ y_2 \end{bmatrix}$$
+
 is an inner product iff 
+
 
 - $b=c$, that is the matrix is symmetric.
 - the determinant $ad - bc > 0$. 
