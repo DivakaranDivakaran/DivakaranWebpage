@@ -534,19 +534,8 @@ is an inner product iff
 <div class="academic-env env-xca">
 <span class="env-label">Exercise 1.16</span>
 
-Show that if $\langle , \rangle:\mathbb{R}^2\times \mathbb{R}^2 \to \mathbb{R}$ is an inner product, then there exists a symmetric matrix a $\begin{bmatrix}
-a & b\\
-b & d
-\end{bmatrix}$ with $ad - b^2 > 0$ and $a+d > 0$ such that 
-$$\langle (x_1,y_1),(x_2,y_2) \rangle = \begin{bmatrix}
-x_1 & y_1
-\end{bmatrix}\begin{bmatrix}
-a & b\\
-c & d
-\end{bmatrix}\begin{bmatrix}
-x_2\\
-y_2
-\end{bmatrix}$$
+Show that if $\langle , \rangle:\mathbb{R}^2\times \mathbb{R}^2 \to \mathbb{R}$ is an inner product, then there exists a symmetric matrix a $\begin{bmatrix} a & b\\ b & d \end{bmatrix}$ with $ad - b^2 > 0$ and $a+d > 0$ such that 
+$$\langle (x_1,y_1),(x_2,y_2) \rangle = \begin{bmatrix} x_1 & y_1 \end{bmatrix} \begin{bmatrix} a & b\\ c & d \end{bmatrix} \begin{bmatrix} x_2\\ y_2\end{bmatrix}$$
 
 </div>
 
