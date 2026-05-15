@@ -9,6 +9,8 @@ interface Note {
   description: string;
 }
 
+export const revalidate = 0; // Force fresh data on every build
+
 export default async function Teaching() {
   const { data: courses } = await supabase
     .from('courses')
@@ -17,17 +19,22 @@ export default async function Teaching() {
 
   const { data: lectureNotes } = await supabase
     .from('lecture_notes')
-    .select('*');
+    .select('title');
 
   const { data: honoursProjects } = await supabase
     .from('honours_projects')
     .select('*')
     .order('year', { ascending: false });
 
-  // Get unique courses from notes
-  const noteCourses = Array.from(new Set((lectureNotes as Note[])?.map(note => note.title.split(':')[0])));
+  // Get unique courses from notes with robust parsing
+  const noteCourses = Array.from(new Set(
+    (lectureNotes || [])
+      .map(note => note.title.split(':')[0].trim())
+      .filter(name => name.length > 0)
+  )).sort();
 
   const formatCourseName = (name: string) => {
+    // Add space before capital letters, but collapse existing spaces
     return name.replace(/([A-Z])/g, ' $1').replace(/\s+/g, ' ').trim();
   };
 
@@ -38,6 +45,13 @@ export default async function Teaching() {
       {/* Section 1: Lecture Notes */}
       <section>
         <h2 className="text-3xl font-bold text-stone-800 mb-8 border-b border-stone-200 pb-2">Lecture Notes</h2>
+        
+        {/* Debug Info (Temporary) */}
+        <div className="bg-stone-100 p-4 mb-8 rounded-lg text-xs font-mono text-stone-500">
+          Total Notes Found: {lectureNotes?.length || 0} | 
+          Raw Courses: {noteCourses.join(', ')}
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {noteCourses.length > 0 ? (
             noteCourses.map((courseName) => (
