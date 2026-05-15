@@ -93,7 +93,7 @@ export default async function NotePage({ params }: PageProps) {
   const content = fs.readFileSync(filePath, 'utf-8');
 
   return (
-    <div className="w-full px-6 py-12">
+    <div className="w-full">
       {/* Course Navigation Hamburger (Floating/Sticky) */}
       <NoteMenu 
         courseName={formatCourseName(course)}

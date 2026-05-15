@@ -44,7 +44,7 @@ export default async function CourseNotesPage({ params }: PageProps) {
   });
 
   return (
-    <div className="max-w-4xl mx-auto py-12">
+    <div>
       <div className="mb-8 flex items-center gap-2 text-stone-500 text-sm uppercase tracking-wider font-bold">
         <Link href="/teaching" className="hover:text-[#8c1515] transition-colors">Teaching</Link>
         <HiChevronRight />
