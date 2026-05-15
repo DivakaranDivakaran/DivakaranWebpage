@@ -1199,10 +1199,7 @@ Show that $\Phi$ is injective.
 
 ### Multiplication as Amplitwist
 Consider the map $\overline{\Psi}: \mathbb{C} \to \mathcal{A}$ that takes the complex number $a+ i b$ to the map $L_{a+i b}(x,y) = (ax-by,bx+ay)$.  I am not doing anything magical, I am just taking the product $(a,b).(x,y)$ defined earlier.  Notice that $L_{a+i b}$ is a linear map.  If you prefer thinking of linear maps as matrices, you could also consider the map $\Psi:\mathbb{C} \to GL_2(\mathbb{R})$ defined as 
-$$\Psi(a+ib) = \begin{bmatrix}
-a & -b\\
-b & a
-\end{bmatrix}.$$
+$$\Psi(a+ib) = \begin{bmatrix} a & -b\\ b & a \end{bmatrix}.$$
 
 
 <div class="academic-env env-xca">
@@ -1236,16 +1233,7 @@ b & a
 <span class="env-label">Exercise 1.25</span>
 
 Show that 
-$$\begin{bmatrix}
-\frac{a}{a^2+b^2} & \frac{-b}{a^2+b^2}\\
-\frac{b}{a^2 + b^2} & \frac{a}{a^2+b^2}
-\end{bmatrix}\begin{bmatrix}
-\frac{a}{a^2+b^2} & \frac{-b}{a^2+b^2}\\
-\frac{b}{a^2 + b^2} & \frac{a}{a^2+b^2}
-\end{bmatrix}^{T} = \begin{bmatrix}
-1 & 0\\
-0 & 1
-\end{bmatrix}$$
+$$\begin{bmatrix} \frac{a}{a^2+b^2} & \frac{-b}{a^2+b^2}\\ \frac{b}{a^2 + b^2} & \frac{a}{a^2+b^2} \end{bmatrix} \begin{bmatrix} \frac{a}{a^2+b^2} & \frac{-b}{a^2+b^2}\\ \frac{b}{a^2 + b^2} & \frac{a}{a^2+b^2} \end{bmatrix}^{T} = \begin{bmatrix} 1 & 0\\ 0 & 1 \end{bmatrix}$$
 
 </div>
 
@@ -1273,10 +1261,7 @@ Given $a+i b\in \mathbb{C}$ verify that $\Psi(z)\in SO(2)$ iff $a^2 + b^2 = 1$.
 <span class="env-label">Exercise 1.27</span>
 
 Show that $A\in SO(2)$ iff there exits some $\theta \in [0,2\pi]$ such that 
-$$A =  \begin{bmatrix}
-\cos(\theta) & -\sin(\theta)\\
-\sin(\theta) & \cos(\theta)
-\end{bmatrix}$$
+$$A =  \begin{bmatrix} \cos(\theta) & -\sin(\theta)\\ \sin(\theta) & \cos(\theta) \end{bmatrix}$$
 
 </div>
 
@@ -1313,16 +1298,7 @@ Geometrically, $|a+i b|$ is the length of the vector and $\arg(a+i b)$ is the an
 Let $z = a+i b$, let $r = |a + i b|$, and $\theta = \arg(a+i b)$.  Then, 
 $$
 \begin{align*}
-\Psi(z) &= r\begin{bmatrix}
-\cos(\theta) & -\sin(\theta)\\
-\sin(\theta) & \cos(\theta)
-\end{bmatrix} = \begin{bmatrix}
-r & 0\\
-0 & r
-\end{bmatrix}\begin{bmatrix}
-\cos(\theta) & -\sin(\theta)\\
-\sin(\theta) & \cos(\theta)
-\end{bmatrix}.
+\Psi(z) &= r\begin{bmatrix} \cos(\theta) & -\sin(\theta)\\ \sin(\theta) & \cos(\theta) \end{bmatrix} = \begin{bmatrix} r & 0\\ 0 & r \end{bmatrix}\begin{bmatrix} \cos(\theta) & -\sin(\theta)\\ \sin(\theta) & \cos(\theta) \end{bmatrix}.
 \end{align*}
 $$
 
@@ -1331,13 +1307,7 @@ Thus, $\Psi(z)$ should be thought of as scaling (or amplification) by its modulu
 Further notice that we can write
 $$
 \begin{align*}
-\Psi(z) &= \begin{bmatrix}
-r & 0\\
-0 & r
-\end{bmatrix}\begin{bmatrix}
-\cos(\theta) & -\sin(\theta)\\
-\sin(\theta) & \cos(\theta)
-\end{bmatrix}\\
+\Psi(z) &= \begin{bmatrix} r & 0\\ 0 & r \end{bmatrix}\begin{bmatrix} \cos(\theta) & -\sin(\theta)\\ \sin(\theta) & \cos(\theta) \end{bmatrix}\\
 &= \Psi(r)\Psi(\cos(\theta)+i \sin(\theta))\\
 &= \Psi(r(\cos(\theta)+i \sin(\theta))).
 \end{align*}
@@ -1347,22 +1317,10 @@ As $\Psi$ is injective, this implies that $z = r(\cos(\theta)+i \sin(\theta))$.
 
 
 Let $z_1 = a_1 + i b_1$ and $z_2 = a_2 +i b_2$.  Further let $|z_i| = r_i$ and $arg(z_i) = \theta_i$  Then $\Psi(z_1)\circ \Psi(z_2)$ is the linear map that scales by the product $r_1 r_2$ and be rotates by $\theta_1+\theta_2$.  More precisely, 
-$$\Psi(z_1 z_2) = \Psi(z_1)\Psi(z_2) = r_1 r_2 \begin{bmatrix}
-\cos(\theta_1 + \theta_2) & -\sin(\theta_1 + \theta_2)\\
-\sin(\theta_1 + \theta_2) & \cos(\theta_1 + \theta_2)
-\end{bmatrix}.$$
+$$\Psi(z_1 z_2) = \Psi(z_1)\Psi(z_2) = r_1 r_2 \begin{bmatrix} \cos(\theta_1 + \theta_2) & -\sin(\theta_1 + \theta_2)\\ \sin(\theta_1 + \theta_2) & \cos(\theta_1 + \theta_2) \end{bmatrix}.$$
 
 If you know the formula for $\cos(\theta_1 + \theta_2)$ and $\sin(\theta_1 + \theta_2)$, then you can also verify this algebraically by explicitly verifying
-$$\begin{bmatrix}
-\cos(\theta_1) & -\sin(\theta_1)\\
-\sin(\theta_1) & \cos(\theta_1)
-\end{bmatrix}\begin{bmatrix}
-\cos(\theta_2) & -\sin(\theta_2)\\
-\sin(\theta_2) & \cos(\theta_2)
-\end{bmatrix}= \begin{bmatrix}
-\cos(\theta_1 + \theta_2) & -\sin(\theta_1 + \theta_2)\\
-\sin(\theta_1 + \theta_2) & \cos(\theta_1 + \theta_2)
-\end{bmatrix}.$$
+$$\begin{bmatrix} \cos(\theta_1) & -\sin(\theta_1)\\ \sin(\theta_1) & \cos(\theta_1) \end{bmatrix}\begin{bmatrix} \cos(\theta_2) & -\sin(\theta_2)\\ \sin(\theta_2) & \cos(\theta_2) \end{bmatrix}= \begin{bmatrix} \cos(\theta_1 + \theta_2) & -\sin(\theta_1 + \theta_2)\\ \sin(\theta_1 + \theta_2) & \cos(\theta_1 + \theta_2) \end{bmatrix}.$$
 On the other hand, if the geometric reasoning makes sense to you, the above equation can be used to find the formula for $\cos(\theta_1 + \theta_2)$ and $\sin(\theta_1 + \theta_2)$.  In fact, pretty much all trigonometric formulae can be proved using complex numbers.  Check out Page 14 in Visual complex analysis by Tristan Needham for more details. 
 
 More importantly, the injectivity of $\Psi$ tells us that $z_1 z_2 = r_1 r_2 (\cos(\theta_1 + \theta_2) + i \sin(\theta_1 + \theta_2))$.  That is, the product of two complex numbers is the complex number whose modulus is the product of the modulus of those two complex numbers and its argument is the sum of the arguments of the two complex numbers.  We will see more implications of this observation in the next class.   
@@ -1465,13 +1423,7 @@ Show that $(\mathbb{C}\setminus \{0\},\times)$ is a group.
 Let us now revisit what we learnt towards the end of last class.  We defined a map $\Psi: \mathbb{C} \to \mathcal{A}$ and saw that 
 $$
 \begin{align*}
-\Psi(z) &= \begin{bmatrix}
-r & 0\\
-0 & r
-\end{bmatrix}\begin{bmatrix}
-\cos(\theta) & -\sin(\theta)\\
-\sin(\theta) & \cos(\theta)
-\end{bmatrix}\\
+\Psi(z) &= \begin{bmatrix} r & 0\\ 0 & r \end{bmatrix}\begin{bmatrix} \cos(\theta) & -\sin(\theta)\\ \sin(\theta) & \cos(\theta) \end{bmatrix}\\
 &= \Psi(r)\Psi(\cos(\theta)+i \sin(\theta))\\
 &= \Psi(r(\cos(\theta)+i \sin(\theta))).
 \end{align*}
