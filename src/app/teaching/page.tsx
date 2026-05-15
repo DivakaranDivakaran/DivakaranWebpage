@@ -9,7 +9,6 @@ interface Note {
   description: string;
 }
 
-export const revalidate = 0; // Force fresh data on every build
 
 export default async function Teaching() {
   const { data: courses } = await supabase
