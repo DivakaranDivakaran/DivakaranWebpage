@@ -1,5 +1,13 @@
 # Complex plane
 
+
+
+<details class="section-details mt-8">
+<summary class="list-none cursor-pointer text-2xl font-bold text-primary-red border-b-2 border-primary-red/20 pb-1 mb-4 hover:border-primary-red/50 transition-colors">1.1 Introduction</summary>
+
+
+
+
 Most of you are already familiar with complex numbers defined as numbers of the form $a + ib$, where $a$ and $b$ are real numbers.  Sums like this are called formal sums - we do not know how to add $a$ and $i b$ so we just call the symbol $a + i b$ the sum of these two numbers.  The same idea is used while defining polynomials.  The comparison with polynomials also suggests how we can add or multiply two complex numbers. 
 $$(a+i b) + (c + i d) = (a+c) + i (b+d)$$
 and
@@ -262,8 +270,9 @@ The relation with complex numbers and polynomials is actually a lot deeper - it 
 
 
 
+</details>
 <details class="section-details mt-8">
-<summary class="list-none cursor-pointer text-2xl font-bold text-primary-red border-b-2 border-primary-red/20 pb-1 mb-4 hover:border-primary-red/50 transition-colors">1.1 Complex numbers as a field of fractions</summary>
+<summary class="list-none cursor-pointer text-2xl font-bold text-primary-red border-b-2 border-primary-red/20 pb-1 mb-4 hover:border-primary-red/50 transition-colors">1.2 Complex numbers as a field of fractions</summary>
 
 
 Let $\mathbb{R}[x]$ be the set of all polynomials with real coefficients.  Then one can check (as above) that addition and multiplication of polynomials satisfy all properties except the existence of multiplicative inverse.  Such a triple is called a commutative \href{https://en.wikipedia.org/wiki/Ring_(mathematics)}{ring}.  The adjective commutative specifies that multiplication is also commutative.  Thus, $(\mathbb{R}[x]+,.)$ forms a commutative ring usually called the ring of polynomials.  Moreover, This ring behaves pretty much similarly to the ring of integers.  More precisely, there are special polynomials called irreducible polynomials and every polynomial can be represented uniquely as a product of these irreducible polynomials - up to reordering and multiplication by real numbers.  A polynomial is said to be irreducible if it cannot be written as the product of two lower-degree polynomials.  
@@ -407,7 +416,7 @@ Show that the map $\varphi: \mathbb{R}[x]/\langle x^2 + 1 \rangle \to \mathbb{C}
 
 </details>
 <details class="section-details mt-8">
-<summary class="list-none cursor-pointer text-2xl font-bold text-primary-red border-b-2 border-primary-red/20 pb-1 mb-4 hover:border-primary-red/50 transition-colors">1.2 $\mathbb{C}$ as a vector space</summary>
+<summary class="list-none cursor-pointer text-2xl font-bold text-primary-red border-b-2 border-primary-red/20 pb-1 mb-4 hover:border-primary-red/50 transition-colors">1.3 Complex plane as a vector space</summary>
 
 
 Every field is a \href{https://en.wikipedia.org/wiki/Vector_space}{vector space} over itself.  Thus, $\mathbb{C}$ is certainly a vector space over itself.  Thus, the more interesting observation is that it forms a vector space over $\mathbb{R}$.  Given any real number $\alpha$, you can define the scalar multiplication of a complex number $a+i b$ by the scalar $\alpha$ as $(\alpha a) + i(\alpha b)$.  $(\mathbb{C} ,+)$ along with the above scalar multiplication turns $\mathbb{C}$ to  a vector space over $\mathbb{R}$.  It can further be noticed that $1$ and $i$ span this vector space.  As every element $a+i b$ can be expressed as the linear combination $a.1 + bi$.  These two vectors are also linearly independent - $a.1 + i b = 0$ means $a+i b$.  Once again, using our analogy with polynomials this is possible iff $a = 0 = b$.
@@ -839,7 +848,7 @@ Show that $\Vert \ \Vert_p$ satisfies parallelogram law iff $p=2$.
 
 </details>
 <details class="section-details mt-8">
-<summary class="list-none cursor-pointer text-2xl font-bold text-primary-red border-b-2 border-primary-red/20 pb-1 mb-4 hover:border-primary-red/50 transition-colors">1.3 Topology of $\mathbb{C}$</summary>
+<summary class="list-none cursor-pointer text-2xl font-bold text-primary-red border-b-2 border-primary-red/20 pb-1 mb-4 hover:border-primary-red/50 transition-colors">1.4 Topology of the complex plane</summary>
 
 
 
@@ -1162,7 +1171,7 @@ Assume that: given any sequence $x_n$ such that $x_n\in K$ and $x_n$ converges t
 
 </details>
 <details class="section-details mt-8">
-<summary class="list-none cursor-pointer text-2xl font-bold text-primary-red border-b-2 border-primary-red/20 pb-1 mb-4 hover:border-primary-red/50 transition-colors">1.4 More geometry: Complex numbers as funcitons</summary>
+<summary class="list-none cursor-pointer text-2xl font-bold text-primary-red border-b-2 border-primary-red/20 pb-1 mb-4 hover:border-primary-red/50 transition-colors">1.5 More geometry: Complex numbers as funcitons</summary>
 
 
 
