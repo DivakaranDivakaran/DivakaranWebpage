@@ -28,7 +28,7 @@ export default async function Teaching() {
   const noteCourses = Array.from(new Set((lectureNotes as Note[])?.map(note => note.title.split(':')[0])));
 
   const formatCourseName = (name: string) => {
-    return name.replace(/([A-Z])/g, ' $1').trim();
+    return name.replace(/([A-Z])/g, ' $1').replace(/\s+/g, ' ').trim();
   };
 
   return (

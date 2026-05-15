@@ -108,7 +108,7 @@ export default async function NotePage({ params }: PageProps) {
       </div>
       
       <main>
-        <article className="bg-white p-8 md:p-12 lg:p-16 rounded-3xl shadow-sm border border-stone-100 min-h-[60vh] w-full">
+        <article className="min-h-[60vh] w-full">
           <LatexContent content={content} />
         </article>
 

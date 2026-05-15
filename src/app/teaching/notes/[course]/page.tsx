@@ -34,7 +34,7 @@ export default async function CourseNotesPage({ params }: PageProps) {
     .ilike('title', `${course}:%`);
 
   const formatCourseName = (name: string) => {
-    return name.replace(/([A-Z])/g, ' $1').trim();
+    return name.replace(/([A-Z])/g, ' $1').replace(/\s+/g, ' ').trim();
   };
 
   const sortedNotes = (notes as Note[])?.sort((a, b) => {
