@@ -1220,7 +1220,7 @@ Show that $\Psi$ is injective.
 
 
 Further notice that the matrix 
-$$\Psi(a+ib) = \begin{bmatrix} a & -b\\ b & a \end{bmatrix} = (a^2+b^2)\begin{bmatrix} \frac{a}{a^2+b^2} & \frac{-b}{a^2+b^2}\\ \frac{b}{a^2 + b^2} & \frac{a}{a^2+b^2} \end{bmatrix}.$$
+$$\Psi(a+ib) = \begin{bmatrix} a & -b\\ b & a \end{bmatrix} = (a^2+b^2) \begin{bmatrix} \frac{a}{a^2+b^2} & \frac{-b}{a^2+b^2}\\ \frac{b}{a^2 + b^2} & \frac{a}{a^2+b^2} \end{bmatrix}.$$
 
 
 <div class="academic-env env-xca">
@@ -1266,11 +1266,8 @@ By comparison, we see $\cos(\theta) = \frac{a}{a^2+b^2}$ and $\sin(\theta) = \fr
 <span class="env-label">Definition 1.10</span>
 
 Given a complex number $a + i b$, define the modulus of $a + i b$, denoted as $\vert a+i b\vert$, to the the number $a^2+b^2$.  Given a non-zero complex number $a+i b$, define the argument of $a+i b$, denoted as $arg(a+i b)$, using the formula
-$$arg(a+i b) = \begin{cases}
-\tan^{-1}(\frac{y}{x}) \text{ if } y \geq 0 \text{ and } x\neq 0\\
-\pi + \tan^{-1}(\frac{y}{x}) \text{ if } y < 0 \text{ and } x\neq 0\\
-\frac{\pi}{2} \text{ if } y > 0 \text{ and } x = 0\\
-\frac{-\pi}{2} \text{ if } y < 0 \text{ and } x = 0
+$$arg(a+i b) = \begin{cases} \tan^{-1}(\frac{y}{x}) \text{ if } y \geq 0 \text{ and } x\neq 0\\
+\pi + \tan^{-1}(\frac{y}{x}) \text{ if } y < 0 \text{ and } x\neq 0\\ \frac{\pi}{2} \text{ if y > 0 \text{ and } x = 0\\ \frac{-\pi}{2} \text{ if } y < 0 \text{ and } x = 0
 \end{cases}$$
 Geometrically, $|a+i b|$ is the length of the vector and $\arg(a+i b)$ is the angle it makes with $x$-axis.
 
