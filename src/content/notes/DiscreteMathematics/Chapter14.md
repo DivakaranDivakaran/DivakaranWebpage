@@ -89,14 +89,14 @@ Let $V = \{1,2,3,4,5,6\}$ and $E = \{\{1,2\},\{1,3\}, \{2,3\}, \{2,4\}, \{4,5\},
 Let $G = (V,E)$ be a graph and $e\in E$.  We can contract $e$ to obtain a new graph $H$.  Let $e = \{u,v\}$.  We obtain the vertex set of this new graph by removing $u$ and $v$ from the vertex set of $G$ and adding a new vertex $[u]$<span class="footnote-trigger" title="This notation is reminiscent of the notation for the equivalence class in other quotient constructions like $\mathbb{Z}/n\mathbb{Z}$.  Another option would be to denote this new vertex as $uv$."><sup>[*]</sup></span>.  That is, 
 $$
 \begin{align*}
-V_e &:= (V \setminus \{u,v\})\cup \{[u]\}
-\end{align*}
+        V_e &:= (V \setminus \{u,v\})\cup \{[u]\}
+    \end{align*}
 $$
 The edge set of the new graph will not contain any edge incident on $u$ or $v$.  But for each edge $\{u,w\}$ and $\{v,w\}$ in $E$, we will add an edge $\{[u],w\}$.
 $$
 \begin{align*}
-E_e &:= (E \setminus \{e\in E : u \text{ or $v$ is an endpoint of $e$}\}) \cup \{\{[u],w\} : \{u,w\}\in E \text{ or } \{v,w\} \in E\}).
-\end{align*}
+        E_e &:= (E \setminus \{e\in E : u \text{ or $v$ is an endpoint of $e$}\}) \cup \{\{[u],w\} : \{u,w\}\in E \text{ or } \{v,w\} \in E\}).
+    \end{align*}
 $$
 And, $G \sim e = (V_e,E_e)$.
 

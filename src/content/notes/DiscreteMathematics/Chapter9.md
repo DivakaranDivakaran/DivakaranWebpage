@@ -46,14 +46,14 @@ As degree one turned out to be really easy, let us try a degree $2$ linear homog
 
 Let $<a_n>$ be a recurrence relation satisfying the recurrence relation $a_n = ba_{n-1} + ca_{n-2}$.  The most important observation we would like to make is that this recurrence relation can be expressed as 
 $$\begin{bmatrix}
-a_{n}\\
-a_{n-1}
+    a_{n}\\
+    a_{n-1}
 \end{bmatrix} = \begin{bmatrix}
-b & c\\
-1 & 0
+    b & c\\
+    1 & 0
 \end{bmatrix}\begin{bmatrix}
-a_{n-1}\\
-a_{n-2}
+    a_{n-1}\\
+    a_{n-2}
 \end{bmatrix} $$
 One of the important lessons from Linear Algebra is that, matrix multiplication correspond to linear maps - the natural generalization of functions of the form $f(x) = bx$.  Thus, we should guess that 
 
@@ -63,14 +63,14 @@ One of the important lessons from Linear Algebra is that, matrix multiplication 
 
 Let $<a_n>$ be a recurrence relation satisfying the recurrence relation $a_n = ba_{n-1} + ca_{n-2}$.  Then,
 $$\begin{bmatrix}
-a_{n}\\
-a_{n-1}
+    a_{n}\\
+    a_{n-1}
 \end{bmatrix} = \begin{bmatrix}
-b & c\\
-1 & 0
+    b & c\\
+    1 & 0
 \end{bmatrix}^{n-1}\begin{bmatrix}
-a_{1}\\
-a_{0}
+    a_{1}\\
+    a_{0}
 \end{bmatrix} $$
 
 </div>
@@ -83,51 +83,51 @@ a_{0}
 
 We define $P(n)$ to be the statement
 $$\begin{bmatrix}
-a_{n}\\
-a_{n-1}
+    a_{n}\\
+    a_{n-1}
 \end{bmatrix} = \begin{bmatrix}
-b & c\\
-1 & 0
+    b & c\\
+    1 & 0
 \end{bmatrix}^{n-1}\begin{bmatrix}
-a_{1}\\
-a_{0}
+    a_{1}\\
+    a_{0}
 \end{bmatrix} $$
 Then, the base case $P(1)$ is easy to see.  Assume $P(k)$, that is, 
 $$\begin{bmatrix}
-a_{k}\\
-a_{k-1}
+    a_{k}\\
+    a_{k-1}
 \end{bmatrix} = \begin{bmatrix}
-b & c\\
-1 & 0
+    b & c\\
+    1 & 0
 \end{bmatrix}^{k-1}\begin{bmatrix}
-a_{1}\\
-a_{0}
+    a_{1}\\
+    a_{0}
 \end{bmatrix} $$
 Then, 
 $$\begin{bmatrix}
-a_{k+1}\\
-a_{k}
+    a_{k+1}\\
+    a_{k}
 \end{bmatrix} = \begin{bmatrix}
-b & c\\
-1 & 0
+    b & c\\
+    1 & 0
 \end{bmatrix}\begin{bmatrix}
-a_{k}\\
-a_{k-1}
+    a_{k}\\
+    a_{k-1}
 \end{bmatrix} = \begin{bmatrix}
-b & c\\
-1 & 0
+    b & c\\
+    1 & 0
 \end{bmatrix}\begin{bmatrix}
-b & c\\
-1 & 0
+    b & c\\
+    1 & 0
 \end{bmatrix}^{k-1}\begin{bmatrix}
-a_{1}\\
-a_{0}
+    a_{1}\\
+    a_{0}
 \end{bmatrix} = \begin{bmatrix}
-b & c\\
-1 & 0
+    b & c\\
+    1 & 0
 \end{bmatrix}^{(k+1)-1}\begin{bmatrix}
-a_{1}\\
-a_{0}
+    a_{1}\\
+    a_{0}
 \end{bmatrix} $$
 
 </details>
@@ -169,119 +169,119 @@ Keeping this idea in mind, let us solve one of the most popular degree two linea
 The Fibonacci sequence is a big part of popular culture and is defined using the recurrencre relation $a_n = a_{n-2} + a_{n-1}$ and initial condition $a_0 = 0$ an $a_1=1$.  To solve this recurrence relation, as seen earlier, we note
 $$
 \begin{align*}
-\begin{bmatrix}
-a_{n}\\
-a_{n-1}
+    \begin{bmatrix}
+    a_{n}\\
+    a_{n-1}
 \end{bmatrix} = \begin{bmatrix}
-1 & 1\\
-1 & 0
+    1 & 1\\
+    1 & 0
 \end{bmatrix}^{n-1} \begin{bmatrix}
-a_{1}\\
-a_{0}
+    a_{1}\\
+    a_{0}
 \end{bmatrix} \end{align*}
 $$
 
 To solve this problem, we need to diagonalise the matrix.  To this end, we first find the eigenvalues of this matrix.  The eigenvalues of a matrix can be found by finding the roots of the equation $\det(A-\lambda I) = 0$.  That is,
 $$\det\left(\begin{bmatrix}
-1 & 1\\
-1 & 0
+    1 & 1\\
+    1 & 0
 \end{bmatrix} - \begin{bmatrix}
-\lambda & 0\\
-0 & \lambda
+    \lambda & 0\\
+    0 & \lambda
 \end{bmatrix}\right) = \begin{bmatrix}
-1-\lambda & 1\\
-1 & -\lambda
+    1-\lambda & 1\\
+    1 & -\lambda
 \end{bmatrix} = \lambda^2 - \lambda - 1.$$
 The roots of this polynomial are 
 $$\lambda = \frac{1 \pm \sqrt{5}}{2}.$$
 You should recall that $\frac{1 + \sqrt{5}}{2}$ is the famous golden ratio - a beautiful connection between Fibonacci sequence and the golden ratio.  We will now find the eigenvectors corresponding to these eigenvalues.
 $$
-\begin{bmatrix}
-1 & 1\\
-1 & 0
+    \begin{bmatrix}
+    1 & 1\\
+    1 & 0
 \end{bmatrix}\begin{bmatrix}
-x\\
-y
+    x\\
+    y
 \end{bmatrix} = \begin{bmatrix}
-\frac{1+\sqrt{5}}{2}x \\
-\frac{1+\sqrt{5}}{2}y
+    \frac{1+\sqrt{5}}{2}x \\
+    \frac{1+\sqrt{5}}{2}y
 \end{bmatrix}
 $$
 That is $x = \frac{1+\sqrt{5}}{2}y$.  Thus, an eigenvector corresponding to $\frac{1+\sqrt{5}}{2}$ is $(\frac{1+\sqrt{5}}{2},1)$.  Similarly, you can show that an eigenvector corresponding to $\frac{1-\sqrt{5}}{2}$ is $(\frac{1-\sqrt{5}}{2},1)$.  Thus, (you should verify by computing),
 $$\begin{bmatrix}
-1 & 1\\
-1 & 0
+    1 & 1\\
+    1 & 0
 \end{bmatrix} = \begin{bmatrix}
-\frac{1+\sqrt{5}}{2} & \frac{1-\sqrt{5}}{2}\\
-1 & 1
+    \frac{1+\sqrt{5}}{2} & \frac{1-\sqrt{5}}{2}\\
+    1 & 1
 \end{bmatrix}\begin{bmatrix}
-\frac{1+\sqrt{5}}{2} & 0\\
-0 & \frac{1-\sqrt{5}}{2}
+    \frac{1+\sqrt{5}}{2} & 0\\
+    0 & \frac{1-\sqrt{5}}{2}
 \end{bmatrix}\begin{bmatrix}
-\frac{1+\sqrt{5}}{2} & \frac{1-\sqrt{5}}{2}\\
-1 & 1
+    \frac{1+\sqrt{5}}{2} & \frac{1-\sqrt{5}}{2}\\
+    1 & 1
 \end{bmatrix}^{-1}$$
 Hence, 
 $$
 \begin{align*}
-\begin{bmatrix}
-1 & 1\\
-1 & 0
+    \begin{bmatrix}
+    1 & 1\\
+    1 & 0
 \end{bmatrix}^{n-1} &= \begin{bmatrix}
-\frac{1+\sqrt{5}}{2} & \frac{1-\sqrt{5}}{2}\\
-1 & 1
+    \frac{1+\sqrt{5}}{2} & \frac{1-\sqrt{5}}{2}\\
+    1 & 1
 \end{bmatrix}\begin{bmatrix}
-\frac{1+\sqrt{5}}{2} & 0\\
-0 & \frac{1-\sqrt{5}}{2}
+    \frac{1+\sqrt{5}}{2} & 0\\
+    0 & \frac{1-\sqrt{5}}{2}
 \end{bmatrix}^{n-1}\begin{bmatrix}
-\frac{1+\sqrt{5}}{2} & \frac{1-\sqrt{5}}{2}\\
-1 & 1
+    \frac{1+\sqrt{5}}{2} & \frac{1-\sqrt{5}}{2}\\
+    1 & 1
 \end{bmatrix}^{-1}\\
-&= \begin{bmatrix}
-\frac{1+\sqrt{5}}{2} & \frac{1-\sqrt{5}}{2}\\
-1 & 1
+    &= \begin{bmatrix}
+    \frac{1+\sqrt{5}}{2} & \frac{1-\sqrt{5}}{2}\\
+    1 & 1
 \end{bmatrix}\begin{bmatrix}
-\left(\frac{1+\sqrt{5}}{2}\right)^{n-1} & 0\\
-0 & \left(\frac{1-\sqrt{5}}{2}\right)^{n-1}
+    \left(\frac{1+\sqrt{5}}{2}\right)^{n-1} & 0\\
+    0 & \left(\frac{1-\sqrt{5}}{2}\right)^{n-1}
 \end{bmatrix}\begin{bmatrix}
-\frac{1}{\sqrt{5}} & \frac{\sqrt{5}-1}{2\sqrt{5}}\\
-\frac{-1}{\sqrt{5}} & \frac{1+\sqrt{5}}{2\sqrt{5}}
+    \frac{1}{\sqrt{5}} & \frac{\sqrt{5}-1}{2\sqrt{5}}\\
+    \frac{-1}{\sqrt{5}} & \frac{1+\sqrt{5}}{2\sqrt{5}}
 \end{bmatrix}\\
 &= \begin{bmatrix}
-\frac{1+\sqrt{5}}{2} & \frac{1-\sqrt{5}}{2}\\
-1 & 1
+    \frac{1+\sqrt{5}}{2} & \frac{1-\sqrt{5}}{2}\\
+    1 & 1
 \end{bmatrix}\begin{bmatrix}
-\frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^{n-1} & \left(\frac{1+\sqrt{5}}{2}\right)^{n-2}\left[\frac{(\sqrt{5} + 1)(\sqrt{5}-1)}{2}\right]\\
-\frac{-1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n-1} & \left(\frac{1-\sqrt{5}}{2}\right)^{n-2}\left[\frac{(\sqrt{5} + 1)(1-\sqrt{5})}{2}\right]
+    \frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^{n-1} & \left(\frac{1+\sqrt{5}}{2}\right)^{n-2}\left[\frac{(\sqrt{5} + 1)(\sqrt{5}-1)}{2}\right]\\
+    \frac{-1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n-1} & \left(\frac{1-\sqrt{5}}{2}\right)^{n-2}\left[\frac{(\sqrt{5} + 1)(1-\sqrt{5})}{2}\right]
 \end{bmatrix}\\
 &= \begin{bmatrix}
-\frac{1+\sqrt{5}}{2} & \frac{1-\sqrt{5}}{2}\\
-1 & 1
+    \frac{1+\sqrt{5}}{2} & \frac{1-\sqrt{5}}{2}\\
+    1 & 1
 \end{bmatrix}\begin{bmatrix}
-\frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^{n-1} & 2\left(\frac{1+\sqrt{5}}{2}\right)^{n-2}\\
-\frac{-1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n-1} & -2\left(\frac{1-\sqrt{5}}{2}\right)^{n-2}
+    \frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^{n-1} & 2\left(\frac{1+\sqrt{5}}{2}\right)^{n-2}\\
+    \frac{-1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n-1} & -2\left(\frac{1-\sqrt{5}}{2}\right)^{n-2}
 \end{bmatrix}\\
 &= \begin{bmatrix}
-\frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^{n} - \frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n} & 2\left(\frac{1+\sqrt{5}}{2}\right)^{n-1} - 2 \left(\frac{1-\sqrt{5}}{2}\right)^{n-1}\\
-\frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^{n-1} - \frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n-1} & 2\left(\frac{1+\sqrt{5}}{2}\right)^{n-2} - 2 \left(\frac{1-\sqrt{5}}{2}\right)^{n-2}
+    \frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^{n} - \frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n} & 2\left(\frac{1+\sqrt{5}}{2}\right)^{n-1} - 2 \left(\frac{1-\sqrt{5}}{2}\right)^{n-1}\\
+    \frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^{n-1} - \frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n-1} & 2\left(\frac{1+\sqrt{5}}{2}\right)^{n-2} - 2 \left(\frac{1-\sqrt{5}}{2}\right)^{n-2}
 \end{bmatrix}
 \end{align*}
 $$ 
 Substituting this value in the earlier matrix equation, we have 
 $$
 \begin{align*}
-\begin{bmatrix}
-a_{n}\\
-a_{n-1}
+    \begin{bmatrix}
+    a_{n}\\
+    a_{n-1}
 \end{bmatrix} &= \begin{bmatrix}
-\frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^{n} - \frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n} & 2\left(\frac{1+\sqrt{5}}{2}\right)^{n-1} - 2 \left(\frac{1-\sqrt{5}}{2}\right)^{n-1}\\
-\frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^{n-1} - \frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n-1} & 2\left(\frac{1+\sqrt{5}}{2}\right)^{n-2} - 2 \left(\frac{1-\sqrt{5}}{2}\right)^{n-2}
+    \frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^{n} - \frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n} & 2\left(\frac{1+\sqrt{5}}{2}\right)^{n-1} - 2 \left(\frac{1-\sqrt{5}}{2}\right)^{n-1}\\
+    \frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^{n-1} - \frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n-1} & 2\left(\frac{1+\sqrt{5}}{2}\right)^{n-2} - 2 \left(\frac{1-\sqrt{5}}{2}\right)^{n-2}
 \end{bmatrix} \begin{bmatrix}
-1\\
-0
+    1\\
+    0
 \end{bmatrix}\\ &= \begin{bmatrix}
-\frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^{n} - \frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n}\\
-\frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^{n-1} - \frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n-1}
+    \frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^{n} - \frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n}\\
+    \frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^{n-1} - \frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n-1}
 \end{bmatrix} \end{align*}
 $$
 Therefore, 
@@ -299,62 +299,62 @@ b & c\\
 1 & 0
 \end{bmatrix}$ is $\lambda^2 - b\lambda - c$ and the eigenvalues are $\lambda = \frac{b\pm\sqrt{b^2+4c}}{2}$. Thus, there will be two distinct eigenvalues iff $b^2 + 4c > 0$. Let us assume this is the case and let the two eigenvalues be $\lambda_1$ and $\lambda_2$. You can check that the corresponding eigenvectors are $(\lambda_1,1)$ and $(\lambda_2,1)$ through the following computation.
 $$\begin{bmatrix}
-b & c\\
-1 & 0
+    b & c\\
+    1 & 0
 \end{bmatrix}\begin{bmatrix}
-\lambda_i\\
-1
+    \lambda_i\\
+    1
 \end{bmatrix} = \begin{bmatrix}
-b\lambda_i + c\\
-\lambda_i
+    b\lambda_i + c\\
+    \lambda_i
 \end{bmatrix} = \begin{bmatrix}
-\lambda_i^2\\
-\lambda_i
+    \lambda_i^2\\
+    \lambda_i
 \end{bmatrix} = \lambda_i\begin{bmatrix}
-\lambda_i\\
-1
+    \lambda_i\\
+    1
 \end{bmatrix}.$$
 
 Thus,
 $$\begin{bmatrix}
-b & c\\
-1 & 0
+    b & c\\
+    1 & 0
 \end{bmatrix} = \frac{1}{\lambda_1 - \lambda_2}\begin{bmatrix}
-\lambda_1 & \lambda_2\\
-1 & 1
+    \lambda_1 & \lambda_2\\
+    1 & 1
 \end{bmatrix} \begin{bmatrix}
-\lambda_1 & 0\\
-0 & \lambda_2
+    \lambda_1 & 0\\
+    0 & \lambda_2
 \end{bmatrix} \begin{bmatrix}
-1 & -\lambda_2\\
--1 & \lambda_1
+    1 & -\lambda_2\\
+    -1 & \lambda_1
 \end{bmatrix} $$
 Hence,
 $$
 \begin{align*}
-\begin{bmatrix}
-b & c\\
-1 & 0
+    \begin{bmatrix}
+    b & c\\
+    1 & 0
 \end{bmatrix}^{n-1} &= \frac{1}{\lambda_1 - \lambda_2}\begin{bmatrix}
-\lambda_1 & \lambda_2\\
-1 & 1
+    \lambda_1 & \lambda_2\\
+    1 & 1
 \end{bmatrix} \begin{bmatrix}
-\lambda_1^{n-1} & 0\\
-0 & \lambda_2^{n-1}
+    \lambda_1^{n-1} & 0\\
+    0 & \lambda_2^{n-1}
 \end{bmatrix} \begin{bmatrix}
-1 & -\lambda_2\\
--1 & \lambda_1
+    1 & -\lambda_2\\
+    -1 & \lambda_1
 \end{bmatrix}\\
 &= \frac{1}{\lambda_1 - \lambda_2}\begin{bmatrix}
-\lambda_1 & \lambda_2\\
-1 & 1
+    \lambda_1 & \lambda_2\\
+    1 & 1
 \end{bmatrix} \begin{bmatrix}
-\lambda_1^{n-1} & -\lambda_2\lambda_1^{n-1}\\
--\lambda_2^{n-1} & \lambda_1\lambda_2^{n-1}
+    \lambda_1^{n-1} & -\lambda_2\lambda_1^{n-1}\\
+    -\lambda_2^{n-1} & \lambda_1\lambda_2^{n-1}
 \end{bmatrix}\\
 &= \frac{1}{\lambda_1 - \lambda_2}\begin{bmatrix}
-\lambda_1^{n} - \lambda_2^{n} & \lambda_1\lambda_2^{n} -\lambda_2\lambda_1^n\\
-\lambda_1^{n-1} - \lambda_2^{n-1} & \lambda_1\lambda_2^{n-1} - \lambda_2\lambda_1^{n-1}
+    \lambda_1^{n} - \lambda_2^{n} & \lambda_1\lambda_2^{n} -\lambda_2\lambda_1^n\\
+    \lambda_1^{n-1} - \lambda_2^{n-1} & \lambda_1\lambda_2^{n-1} - \lambda_2\lambda_1^{n-1}
 \end{bmatrix}
 \end{align*}
 $$
@@ -370,57 +370,57 @@ $$a_n = \frac{a_1}{\lambda_1 - \lambda_2}(\lambda_1^n - \lambda_2^n) + \frac{a_0
 
 Now, let us consider the case when $b^2+4c=0$.  In this case, the matrix cannot be diagonalisable.  Assume it was diagonalisable.  Then, you will be able to find an invertible matrix $B$ for which
 $$\begin{bmatrix}
-b & -\frac{b^2}{4}\\
-1 & 0 
+    b & -\frac{b^2}{4}\\
+    1 & 0 
 \end{bmatrix} = B\begin{bmatrix}
-\frac{b}{2} & 0\\
-0 & \frac{b}{2} 
+    \frac{b}{2} & 0\\
+    0 & \frac{b}{2} 
 \end{bmatrix}B^{-1} = \begin{bmatrix}
-\frac{b}{2} & 0\\
-0 & \frac{b}{2} 
+    \frac{b}{2} & 0\\
+    0 & \frac{b}{2} 
 \end{bmatrix}$$
 But, that makes no sense.  So, our assumption has to be wrong - it is not diagonalisable.  However, it is still too early to lose hope.  Although, we cannot diagonalise this matrix, we can convert it into a reasonably good form.  First notice that the eigenvalue corresponding to the eigenvalue $\lambda = \frac{b}{2}$ is $(\lambda,1)$.  Now we consider another vector $v$ for which 
 $$\left(\begin{bmatrix}
-2\lambda & -\lambda^2\\
-1 & 0 
+    2\lambda & -\lambda^2\\
+    1 & 0 
 \end{bmatrix} - \lambda I\right)v = \begin{bmatrix}
-\lambda\\
-1 
+    \lambda\\
+    1 
 \end{bmatrix}.$$  
 An example of such a vector is $(\lambda + 1,1)$ as shown by the following computation:
 $$
 \begin{align*}
-\left(\begin{bmatrix}
-2\lambda & -\lambda^2\\
-1 & 0 
+    \left(\begin{bmatrix}
+     2\lambda & -\lambda^2\\
+    1 & 0 
 \end{bmatrix} - \lambda I\right)\begin{bmatrix}
-\lambda + 1\\
-1 
+    \lambda + 1\\
+    1 
 \end{bmatrix}= \begin{bmatrix}
-\lambda & -\lambda^2\\
-1 & -\lambda 
+    \lambda & -\lambda^2\\
+    1 & -\lambda 
 \end{bmatrix}\begin{bmatrix}
-\lambda + 1\\
-1 
+    \lambda + 1\\
+    1 
 \end{bmatrix} = \begin{bmatrix}
-\lambda\\
-1
+    \lambda\\
+    1
 \end{bmatrix}
 \end{align*}
 $$
 To see why $\lambda^2 + 2\lambda = \lambda$, we will substitute the value of $\lambda$.  We have, $\lambda^2 + 2\lambda = \frac{b^2}{4} + b$ Notice that, for this vector $v$, 
 $$\left(\begin{bmatrix}
-2\lambda & -\lambda^2\\
-1 & 0 
+    2\lambda & -\lambda^2\\
+    1 & 0 
 \end{bmatrix} - \lambda I\right)^2v = \left(\begin{bmatrix}
-2\lambda & -\lambda^2\\
-1 & 0 
+    2\lambda & -\lambda^2\\
+    1 & 0 
 \end{bmatrix} - \lambda I\right)\begin{bmatrix}
-\lambda\\
-1 
+    \lambda\\
+    1 
 \end{bmatrix} = \begin{bmatrix}
-0\\
-0 
+    0\\
+    0 
 \end{bmatrix}$$ 
 This is an example of a generalised eigenvector.  More generally,
 
@@ -434,62 +434,62 @@ Given an eigenvalue $\lambda$, the vectors $v$ for which $(A-\lambda I)^kv=0$ ar
 The two vectors $(\lambda,1)$ and $(\lambda +1, 1)$ form a basis and the matrix has a nice form with respect to this basis.  More precisely,
 $$
 \begin{align*}
-\begin{bmatrix}
-\lambda & \lambda + 1\\
-1 & 1 
+    \begin{bmatrix}
+    \lambda & \lambda + 1\\
+    1 & 1 
 \end{bmatrix}^{-1} \begin{bmatrix}
-2\lambda & -\lambda^2\\
-1 & 0 
+    2\lambda & -\lambda^2\\
+    1 & 0 
 \end{bmatrix} \begin{bmatrix}
-\lambda & \lambda + 1\\
-1 & 1 
+    \lambda & \lambda + 1\\
+    1 & 1 
 \end{bmatrix} = \begin{bmatrix}
--1 & \lambda + 1\\
-1 & -\lambda 
+    -1 & \lambda + 1\\
+    1 & -\lambda 
 \end{bmatrix}\begin{bmatrix}
-\lambda^2 & \lambda^2 + 2\lambda\\
-\lambda & \lambda + 1 
+    \lambda^2 & \lambda^2 + 2\lambda\\
+    \lambda & \lambda + 1 
 \end{bmatrix} = \begin{bmatrix}
-\lambda & 1\\
-0 & \lambda
+    \lambda & 1\\
+    0 & \lambda
 \end{bmatrix}
 \end{align*}
 $$
 Therefore, 
 $$
 \begin{align*}
-\begin{bmatrix}
-2\lambda & -\lambda^2\\
-1 & 0 
+    \begin{bmatrix}
+    2\lambda & -\lambda^2\\
+    1 & 0 
 \end{bmatrix}^{n-1} &=\begin{bmatrix}
-\lambda & \lambda + 1\\
-1 & 1 
+    \lambda & \lambda + 1\\
+    1 & 1 
 \end{bmatrix} \begin{bmatrix}
-\lambda & 1\\
-0 & \lambda 
+    \lambda & 1\\
+    0 & \lambda 
 \end{bmatrix}^{n-1} \begin{bmatrix}
-\lambda & \lambda + 1\\
-1 & 1 
+    \lambda & \lambda + 1\\
+    1 & 1 
 \end{bmatrix}^{-1} =\begin{bmatrix}
-\lambda & \lambda + 1\\
-1 & 1 
+    \lambda & \lambda + 1\\
+    1 & 1 
 \end{bmatrix} \begin{bmatrix}
-\lambda^{n-1} & (n-1)\lambda^{n-2}\\
-0 & \lambda^{n-1} 
+    \lambda^{n-1} & (n-1)\lambda^{n-2}\\
+    0 & \lambda^{n-1} 
 \end{bmatrix} \begin{bmatrix}
--1 & \lambda + 1\\
-1 & -\lambda 
+    -1 & \lambda + 1\\
+    1 & -\lambda 
 \end{bmatrix}\\
 &= \begin{bmatrix}
-\lambda & \lambda + 1\\
-1 & 1 
+    \lambda & \lambda + 1\\
+    1 & 1 
 \end{bmatrix} \begin{bmatrix}
-(n-1)\lambda^{n-2} - \lambda^{n-1} & \lambda^n + \lambda^{n-1} -(n-1)\lambda^{n-1}\\
-\lambda^{n-1} & -\lambda^{n} 
+    (n-1)\lambda^{n-2} - \lambda^{n-1} & \lambda^n + \lambda^{n-1} -(n-1)\lambda^{n-1}\\
+    \lambda^{n-1} & -\lambda^{n} 
 \end{bmatrix} \\
 &= \begin{bmatrix}
-n\lambda^{n-1} & \lambda^n - \lambda n\lambda^{n-1}\\
-(n-1)\lambda^{n-2}  & \lambda^{n-1} - \lambda (n-1)\lambda^{n-2} 
+    n\lambda^{n-1} & \lambda^n - \lambda n\lambda^{n-1}\\
+     (n-1)\lambda^{n-2}  & \lambda^{n-1} - \lambda (n-1)\lambda^{n-2} 
 \end{bmatrix}
 \end{align*}
 $$
@@ -507,12 +507,12 @@ $$a_n = a_0 \lambda^n + \left(a_1 - a_0\lambda\right)n\lambda^{n-1}.$$
 
 - Show that 
 $$\begin{bmatrix}
-\lambda & 1\\
-0 & \lambda
-\end{bmatrix}^n = \begin{bmatrix}
-\lambda^n & n\lambda^{n-1}\\
-0 & \lambda^n
-\end{bmatrix}$$
+        \lambda & 1\\
+        0 & \lambda
+    \end{bmatrix}^n = \begin{bmatrix}
+        \lambda^n & n\lambda^{n-1}\\
+        0 & \lambda^n
+    \end{bmatrix}$$
 - Solve these recurrence relations (without appealing to the general result) so that they also satisfy the initial conditions:
 
 - $a_{n+1} = 2a_n$, $a_0 = 2$
@@ -535,12 +535,12 @@ Show that the sequence $a_n$ satisﬁes the same recurrence relation and initial
 - Show that $P_{m,m}= P_m$
 - Show that the following recursive definition for $P_{m,n}$ is correct:
 $$P_{m,n} = \begin{cases}
-1 & \text{ if $m = 1$}\\
-1 & \text{ if $n = 1$}\\
-P_{m,m} & \text{ if $m< n$}\\
-1 + P_{m,m-1} & \text{ if $m=n>1$}\\
-P_{m,n-1} + P_{m-n,n} & \text{ if $m>n>1$}
-\end{cases}$$
+            1 & \text{ if $m = 1$}\\
+            1 & \text{ if $n = 1$}\\
+            P_{m,m} & \text{ if $m< n$}\\
+            1 + P_{m,m-1} & \text{ if $m=n>1$}\\
+            P_{m,n-1} + P_{m-n,n} & \text{ if $m>n>1$}
+        \end{cases}$$
 - Find the number of partitions of 5 and of 6 using this recursive definition.
 - Implement this function in gofer
 

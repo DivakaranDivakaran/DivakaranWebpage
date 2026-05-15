@@ -206,10 +206,10 @@ Let $f$ be a power series. Show that if $ord(f) > 0$, then $f$ does not have a m
 Let $f(z) = z^2 + 3$.  Then,
 $$
 \begin{align*}
-\frac{1}{f(z)} &= \frac{1}{3}\frac{1}{1 - (-z^2)}\\
-&= \frac{1}{3}\left(1 + (-z^2) + (-z^2)^2 + (-z^2)^3 + \dots\right)\\
-&= \frac{1}{3}\left(1 - z^2 + z^4 - z^6 +\dots\right).
-\end{align*}
+         \frac{1}{f(z)} &= \frac{1}{3}\frac{1}{1 - (-z^2)}\\
+         &= \frac{1}{3}\left(1 + (-z^2) + (-z^2)^2 + (-z^2)^3 + \dots\right)\\
+         &= \frac{1}{3}\left(1 - z^2 + z^4 - z^6 +\dots\right).
+     \end{align*}
 $$
 
 </div>
@@ -223,10 +223,10 @@ $$
 Recall that $\cos(z) = \sum \frac{(-1)^n}{2n!}z^{2n}$.  Thus, 
 $$
 \begin{align*}
-\frac{1}{\cos(z)} &= \frac{1}{1-\left(\frac{z^2}{2!} -\frac{z^4}{4!} + \dots\right)}\\
-&= 1 + \left(\frac{z^2}{2!} -\frac{z^4}{4!} + \dots\right) + \left(\frac{z^2}{2!} -\frac{z^4}{4!} + \dots\right)^2 + \dots\\
-&= 1 + \frac{z^2}{2!} + \left(\frac{1}{4}-\frac{1}{24}\right)z^4 + \text{higher order terms}
-\end{align*}
+        \frac{1}{\cos(z)} &= \frac{1}{1-\left(\frac{z^2}{2!} -\frac{z^4}{4!} + \dots\right)}\\
+        &= 1 + \left(\frac{z^2}{2!} -\frac{z^4}{4!} + \dots\right) + \left(\frac{z^2}{2!} -\frac{z^4}{4!} + \dots\right)^2 + \dots\\
+        &= 1 + \frac{z^2}{2!} + \left(\frac{1}{4}-\frac{1}{24}\right)z^4 + \text{higher order terms}
+    \end{align*}
 $$
 
 </div>
@@ -241,11 +241,11 @@ This technique can sometime be used to find inverse of power series that do not 
 Recall that $\sin(z) = \sum \frac{(-1)^n}{(2n+1)!}z^{2n+1} = z(1-\frac{z^2}{3!} + \frac{z^4}{5!}-\dots)$.  Thus,
 $$
 \begin{align*}
-\frac{1}{\sin(z)} &= \frac{1}{z(1-\frac{z^2}{3!} + \frac{z^4}{5!}-\dots)}\\
-&= \frac{1}{z}\left(1 + \left(\frac{z^2}{3!}-\frac{z^4}{5!} + \dots \right) + \left(\frac{z^2}{3!}-\frac{z^4}{5!} + \dots \right)^2 + 
-dots \right)\\
-&= \frac{1}{z} + \frac{z}{3!} - \left(\left(\frac{1}{3!}\right)^2 - \frac{1}{5!}\right) z^3 + \text{higher order terms}.
-\end{align*}
+        \frac{1}{\sin(z)} &= \frac{1}{z(1-\frac{z^2}{3!} + \frac{z^4}{5!}-\dots)}\\
+        &= \frac{1}{z}\left(1 + \left(\frac{z^2}{3!}-\frac{z^4}{5!} + \dots \right) + \left(\frac{z^2}{3!}-\frac{z^4}{5!} + \dots \right)^2 + 
+        dots \right)\\
+        &= \frac{1}{z} + \frac{z}{3!} - \left(\left(\frac{1}{3!}\right)^2 - \frac{1}{5!}\right) z^3 + \text{higher order terms}.
+    \end{align*}
 $$
 
 </div>
@@ -756,8 +756,8 @@ Assume $\sum_{n=1}^{\infty} x_n$ is a convergent series of positive real numbers
 As the series $\sum_{n=1}^{\infty} x_n$ converge, its value is some number, say $A$.  We know that the series of partial sums $t_m = \sum_{n=1}^{m}\vert z_n \vert$ is a monotonically increasing sequence.  Thus, to prove it is convergent, it is enough to show it is bounded above.  And, note that,
 $$
 \begin{align*}
-t_m = \sum_{n=1}^{m}\vert z_n \vert \leq \sum_{n=1}^m x_n \leq \sum_{n=1}^{\infty} x_n = A.
-\end{align*}
+        t_m = \sum_{n=1}^{m}\vert z_n \vert \leq \sum_{n=1}^m x_n \leq \sum_{n=1}^{\infty} x_n = A.
+    \end{align*}
 $$
 Thus, the sequence of partial sums $t_m$ is bounded above by $A$ and hence convergent.
 
@@ -956,11 +956,11 @@ Let $\sum a_n z^n$ be a power series and let $r$ be its radius of convergence.  
 Let $t = \limsup |a_n|^{\frac{1}{n}}$ and $t \neq 0,\infty$.  Given $\varepsilon >0$, there exists only finitely many $n$ such that $|a_n|^{\frac{1}{n}} \geq t+\varepsilon$.  Thus, for all but finitely many $n$, we have $|a_n| \leq (t+\varepsilon)^n$.  Let $k$ be such that $\vert a_n\vert \leq (t+\varepsilon)^n$.  Thus, we have 
 $$
 \begin{align*}
-\sum |a_n z^n| &\leq \sum_{n=0}^k \vert a_n z^n \vert + \sum_{n=k}^{\infty} \vert a_n z^n \vert\\
-&\leq \sum_{n=0}^k \vert a_n\vert \vert z\vert^n + \sum_{n=k}^{\infty} ((t+\varepsilon)\vert z\vert)^n\\
-&= \sum_{n=0}^k \left((t+\varepsilon) \vert z\vert\right)^n + \sum_{n=0}^k \left(\vert a_n \vert - (t+\varepsilon)^n\right) \vert z \vert^n + \sum_{n=k}^{\infty} \left((t+\varepsilon) \vert z\vert\right)^n\\
-&= A + \sum_{n=0}^{\infty} (|z|(t+\varepsilon))^n
-\end{align*}
+        \sum |a_n z^n| &\leq \sum_{n=0}^k \vert a_n z^n \vert + \sum_{n=k}^{\infty} \vert a_n z^n \vert\\
+        &\leq \sum_{n=0}^k \vert a_n\vert \vert z\vert^n + \sum_{n=k}^{\infty} ((t+\varepsilon)\vert z\vert)^n\\
+        &= \sum_{n=0}^k \left((t+\varepsilon) \vert z\vert\right)^n + \sum_{n=0}^k \left(\vert a_n \vert - (t+\varepsilon)^n\right) \vert z \vert^n + \sum_{n=k}^{\infty} \left((t+\varepsilon) \vert z\vert\right)^n\\
+        &= A + \sum_{n=0}^{\infty} (|z|(t+\varepsilon))^n
+    \end{align*}
 $$
 where $$A = \sum_{n=0}^k \left(\vert a_n \vert - (t+\varepsilon)^n\right) \vert z \vert^n.$$ As the series $\sum (|z|(t+\varepsilon))^n$ converge if $|z|(t+\varepsilon) < 1$, or in other words, $|z| < \frac{1}{t+\varepsilon}$.  Thus, $r\geq \frac{1}{t+\varepsilon}$ for all $\varepsilon>0$.  Thus, $r\geq \frac{1}{t}$.
 
@@ -1231,10 +1231,10 @@ Notice that each of the functions $f_n$ is discontinuous only at finitely many p
 
 Consider a recursively defined sequence of function, $f_0(x) = x$ and 
 $$f_{n+1}(x) = \begin{cases}
-\frac{f_n(3x)}{2} & \text{if } x\in [0,\frac{1}{3}]\\
-\frac{1}{2 } & \text{if } x\in [\frac{1}{3},\frac{2}{3}]\\
-\frac{f_n(3x-2) + 1}{2} & \text{if } x\in [\frac{2}{3},1]
-\end{cases}.$$
+        \frac{f_n(3x)}{2} & \text{if } x\in [0,\frac{1}{3}]\\
+        \frac{1}{2 } & \text{if } x\in [\frac{1}{3},\frac{2}{3}]\\
+        \frac{f_n(3x-2) + 1}{2} & \text{if } x\in [\frac{2}{3},1]
+    \end{cases}.$$
 
 Let $f:[0,1]\to \mathbb{R}$ be the function defined as follows.  If $a$ belongs to the Cantor set, that is $a$ is of the form $a = \sum_{n=1}^{\infty} \frac{2a_n}{3^n} \text{ for } a_n\in \{0,1\}$, then $f(a) = \sum_{n=1}^{\infty} \frac{a_n}{2^n}$.  If $a = \sum_{n=1}^{\infty} \frac{a_n}{3^n}$ does not belong the Cantor set.  Define $N = \min\{n\in \mathbb{N} : a_n = 1\}$ and $f(a) = \sum_{i=1}^{N-1} \frac{a_i}{2^{i+1}} + \frac{1}{2^{N}}$. 
 
@@ -1262,10 +1262,10 @@ $$f_{m}(a) = \frac{f_{m-1}(\sum_{i=2}^{\infty} \frac{2a_i}{3^{i-1}})}{2} + \frac
 Thus, by taking $m=0$, we have proved base case of the theorem, that is when $n=1$.  We will now assume the statement is true when $n=k$ and prove the statement for $n=k+1$.
 $$
 \begin{align*}
-f_{k+1}(a) &= \frac{f_{k}\left(\sum_{i=2}^{\infty} \frac{2a_i}{3^{i-1}}\right)}{2} + \frac{a_1}{2}\\
-&= \frac{\frac{f_0\left(\sum_{i=k+2}^{\infty} \frac{2a_i}{3^{i- k - 1}}\right)}{2^k} + \sum_{i=2}^{k+1} \frac{a_i}{2^{i}}}{2} + \frac{a_1}{2}\\
-&= \frac{f_0\left(\sum_{i=k+2}^{\infty} \frac{2a_i}{3^{i-k-1}}\right)}{2^{k+1}} + \sum_{i=1}^{k+1} \frac{a_i}{2^{i}}
-\end{align*}
+        f_{k+1}(a) &= \frac{f_{k}\left(\sum_{i=2}^{\infty} \frac{2a_i}{3^{i-1}}\right)}{2} + \frac{a_1}{2}\\
+        &= \frac{\frac{f_0\left(\sum_{i=k+2}^{\infty} \frac{2a_i}{3^{i- k - 1}}\right)}{2^k} + \sum_{i=2}^{k+1} \frac{a_i}{2^{i}}}{2} + \frac{a_1}{2}\\
+        &= \frac{f_0\left(\sum_{i=k+2}^{\infty} \frac{2a_i}{3^{i-k-1}}\right)}{2^{k+1}} + \sum_{i=1}^{k+1} \frac{a_i}{2^{i}}
+    \end{align*}
 $$
 
 </details>
@@ -1409,9 +1409,9 @@ $$f_n(x) = \begin{cases}-1 & \text{if } x\leq \frac{-1}{n}\\ nx & \text{if } \ve
 Then,
 $$
 \begin{align*}
-\sup \{|f_n(x) - f(x)| : x\in \mathbb{R}\} &\leq \sup \left\{\left\vert f_n(x) - f(x) \right\vert : x\in \left[-\frac{1}{n},\frac{1}{n}\right]\right\}\\
-&= \left\{\left\vert nx - 0 \right\vert : x\in \left[-\frac{1}{n},\frac{1}{n}\right]\right\} = 1.
-\end{align*}
+        \sup \{|f_n(x) - f(x)| : x\in \mathbb{R}\} &\leq \sup \left\{\left\vert f_n(x) - f(x) \right\vert : x\in \left[-\frac{1}{n},\frac{1}{n}\right]\right\}\\
+        &= \left\{\left\vert nx - 0 \right\vert : x\in \left[-\frac{1}{n},\frac{1}{n}\right]\right\} = 1.
+    \end{align*}
 $$
 
 </div>
@@ -1508,10 +1508,10 @@ $$\vert f(x) - f_n(x)\vert \leq \sup\{\vert f(x) - f_n(x)\vert x\in A\} < \frac{
 Thus, if $n,m > N$, then by triangle inequality,
 $$
 \begin{align*}
-\vert f_n(x) - f_m(x)\vert &= \vert f_n(x) -f(x) + f(x) - f_m(x)\vert \\
-&\leq \vert f_n(x) - f(x) \vert + \vert f(x) - f_m(x)\vert\\
-&\leq \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
-\end{align*}
+        \vert f_n(x) - f_m(x)\vert &= \vert f_n(x) -f(x) + f(x) - f_m(x)\vert \\
+        &\leq \vert f_n(x) - f(x) \vert + \vert f(x) - f_m(x)\vert\\
+        &\leq \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
+    \end{align*}
 $$
 for all $x\in A$.  
 
@@ -1520,10 +1520,10 @@ $$f(x) = \lim_{n\to \infty}f_n(x).$$
 We will show that $f_n$ converges to $f$ uniformly.  Given any $\varepsilon>0$, let $N$ be a number such that $\vert f_n(x) - f_m(x) \vert < \frac{\varepsilon}{2}$ for all $n,m>N$.  Given any $x$, let $m$ be large enough that $\vert f_m(x) -f(x)\vert <\frac{\varepsilon}{2}$.  Then,
 $$
 \begin{align*}
-\vert f_n(x) - f(x)\vert &= \vert f_n(x) - f_m(x) + f_m(x) - f(x)\vert\\
-&\leq \vert f_n(x) - f_m(x)\vert + \vert f_m(x) -f(x)\vert\\
-&\leq \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
-\end{align*}
+        \vert f_n(x) - f(x)\vert &= \vert f_n(x) - f_m(x) + f_m(x) - f(x)\vert\\
+        &\leq \vert f_n(x) - f_m(x)\vert + \vert f_m(x) -f(x)\vert\\
+        &\leq \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
+    \end{align*}
 $$
 Thus, if $n > N$, then $\vert f_n(x) - f(x)\vert < \varepsilon$ for all $x\in A$.  Thus, $\sup\{\vert f(x) - f_n(x)\vert x\in A\} < \varepsilon$ for all $n>N$.
 
@@ -1554,78 +1554,78 @@ We will first observe that
 $\sup\left\{\vert f_1(x) - f_0(x)\vert : x\in \left[0,1\right]\right\} = \frac{1}{6}$, by considering three cases.  
 $$
 \begin{align*}
-\sup\left\{\vert f_1(x) - f_0(x)\vert : x\in \left[0,\frac{1}{3}\right]\right\} &= \sup\left\{\left \vert \frac{3x}{2} - x\right\vert : x\in \left[0,\frac{1}{3}\right]\right\}\\
-&= \sup\left\{\left\vert \frac{x}{2}\right\vert : x\in \left[0,\frac{1}{3}\right]\right\} = \frac{1}{6}
-\end{align*}
+        \sup\left\{\vert f_1(x) - f_0(x)\vert : x\in \left[0,\frac{1}{3}\right]\right\} &= \sup\left\{\left \vert \frac{3x}{2} - x\right\vert : x\in \left[0,\frac{1}{3}\right]\right\}\\
+        &= \sup\left\{\left\vert \frac{x}{2}\right\vert : x\in \left[0,\frac{1}{3}\right]\right\} = \frac{1}{6}
+    \end{align*}
 $$
 
 $$
 \begin{align*}
-\sup\left\{\vert f_1(x) - f_0(x)\vert : x\in \left[\frac{1}{3},\frac{2}{3}\right]\right\} &= \sup\left\{\left \vert \frac{1}{2} - x\right\vert : x\in \left[\frac{1}{3},\frac{2}{3}\right]\right\} = \frac{1}{6}
-\end{align*}
+        \sup\left\{\vert f_1(x) - f_0(x)\vert : x\in \left[\frac{1}{3},\frac{2}{3}\right]\right\} &= \sup\left\{\left \vert \frac{1}{2} - x\right\vert : x\in \left[\frac{1}{3},\frac{2}{3}\right]\right\} = \frac{1}{6}
+    \end{align*}
 $$
 
 $$
 \begin{align*}
-\sup\left\{\vert f_1(x) - f_0(x)\vert : x\in \left[\frac{2}{3},1\right]\right\} &= \sup\left\{\left \vert \frac{3x-1}{2} - x\right\vert : x\in \left[\frac{2}{3},1\right]\right\}\\
-&= \sup\left\{\left \vert \frac{x - 1}{2} \right\vert : x\in \left[\frac{2}{3},1\right]\right\} = \frac{1}{6}
-\end{align*}
+        \sup\left\{\vert f_1(x) - f_0(x)\vert : x\in \left[\frac{2}{3},1\right]\right\} &= \sup\left\{\left \vert \frac{3x-1}{2} - x\right\vert : x\in \left[\frac{2}{3},1\right]\right\}\\
+        &= \sup\left\{\left \vert \frac{x - 1}{2} \right\vert : x\in \left[\frac{2}{3},1\right]\right\} = \frac{1}{6}
+    \end{align*}
 $$
 
 Now, we will use a similar analysis to show that $\sup\left\{\vert f_2(x) - f_1(x)\vert : x\in \left[0,1\right]\right\} = \frac{1}{12}$ which would complete the proof of the base case.  
 
 $$
 \begin{align*}
-\sup\left\{\vert f_2(x) - f_1(x)\vert : x\in \left[0,\frac{1}{9}\right]\right\} &= \sup\left\{\left \vert \frac{f_1(3x)}{2} - \frac{3x}{2}\right\vert : x\in \left[0,\frac{1}{9}\right]\right\}\\
-&= \sup\left\{\left \vert \frac{9x}{4} - \frac{3x}{2}\right\vert : x\in \left[0,\frac{1}{9}\right]\right\}\\
-&= \sup\left\{\left\vert \frac{3x}{4}\right\vert : x\in \left[0,\frac{1}{9}\right]\right\} = \frac{1}{12}
-\end{align*}
+        \sup\left\{\vert f_2(x) - f_1(x)\vert : x\in \left[0,\frac{1}{9}\right]\right\} &= \sup\left\{\left \vert \frac{f_1(3x)}{2} - \frac{3x}{2}\right\vert : x\in \left[0,\frac{1}{9}\right]\right\}\\
+        &= \sup\left\{\left \vert \frac{9x}{4} - \frac{3x}{2}\right\vert : x\in \left[0,\frac{1}{9}\right]\right\}\\
+        &= \sup\left\{\left\vert \frac{3x}{4}\right\vert : x\in \left[0,\frac{1}{9}\right]\right\} = \frac{1}{12}
+    \end{align*}
 $$
 
 $$
 \begin{align*}
-\sup\left\{\vert f_2(x) - f_1(x)\vert : x\in \left[\frac{1}{9},\frac{2}{9} \right]\right\} &= \sup\left\{\left \vert \frac{f_1(3x)}{2} - \frac{3x}{2}\right\vert : x\in \left[\frac{1}{9},\frac{2}{9}\right]\right\}\\
-&= \sup\left\{\left \vert \frac{1}{4} - \frac{3x}{2}\right\vert : x\in \left[\frac{1}{9},\frac{2}{9}\right]\right\} = \frac{1}{12}.
-\end{align*}
+        \sup\left\{\vert f_2(x) - f_1(x)\vert : x\in \left[\frac{1}{9},\frac{2}{9} \right]\right\} &= \sup\left\{\left \vert \frac{f_1(3x)}{2} - \frac{3x}{2}\right\vert : x\in \left[\frac{1}{9},\frac{2}{9}\right]\right\}\\
+        &= \sup\left\{\left \vert \frac{1}{4} - \frac{3x}{2}\right\vert : x\in \left[\frac{1}{9},\frac{2}{9}\right]\right\} = \frac{1}{12}.
+    \end{align*}
 $$
 
 $$
 \begin{align*}
-\sup\left\{\vert f_2(x) - f_1(x)\vert : x\in \left[\frac{2}{9},\frac{3}{9}\right]\right\} &= \sup\left\{\left \vert \frac{f_1(3x)}{2} - \frac{3x}{2}\right\vert : x\in \left[\frac{2}{9},\frac{3}{9}\right]\right\}\\
-&= \sup\left\{\left \vert \frac{9x-1}{4} - \frac{6x}{4}\right\vert : x\in \left[\frac{2}{9},\frac{3}{9}\right]\right\}\\
-&= \sup\left\{\left\vert \frac{3x-1}{4}\right\vert : x\in \left[\frac{2}{9},\frac{3}{9}\right]\right\} = \frac{1}{12}
-\end{align*}
+        \sup\left\{\vert f_2(x) - f_1(x)\vert : x\in \left[\frac{2}{9},\frac{3}{9}\right]\right\} &= \sup\left\{\left \vert \frac{f_1(3x)}{2} - \frac{3x}{2}\right\vert : x\in \left[\frac{2}{9},\frac{3}{9}\right]\right\}\\
+        &= \sup\left\{\left \vert \frac{9x-1}{4} - \frac{6x}{4}\right\vert : x\in \left[\frac{2}{9},\frac{3}{9}\right]\right\}\\
+        &= \sup\left\{\left\vert \frac{3x-1}{4}\right\vert : x\in \left[\frac{2}{9},\frac{3}{9}\right]\right\} = \frac{1}{12}
+    \end{align*}
 $$
 
 $$
 \begin{align*}
-\sup\left\{\vert f_2(x) - f_1(x)\vert : x\in \left[\frac{1}{3},\frac{2}{3} \right]\right\} = \sup\left\{\left\vert \frac{1}{2} - \frac{1}{2}\right\vert : x\in \left[\frac{1}{3},\frac{2}{3} \right]\right\} = 0.
-\end{align*}
+        \sup\left\{\vert f_2(x) - f_1(x)\vert : x\in \left[\frac{1}{3},\frac{2}{3} \right]\right\} = \sup\left\{\left\vert \frac{1}{2} - \frac{1}{2}\right\vert : x\in \left[\frac{1}{3},\frac{2}{3} \right]\right\} = 0.
+    \end{align*}
 $$
 
 $$
 \begin{align*}
-\sup\left\{\vert f_2(x) - f_1(x)\vert : x\in \left[\frac{6}{9},\frac{7}{9}\right]\right\} &= \sup\left\{\left \vert \frac{f_1(3x-2) + 1}{2} - \frac{f_0(3x-2) + 1}{2}\right\vert : x\in \left[\frac{6}{9},\frac{7}{9}\right]\right\}\\
-&= \sup\left\{\left \vert \frac{\frac{f_0(9x-6)}{2} + 1}{2} - \frac{3x-1}{2}\right\vert : x\in \left[\frac{6}{9},\frac{7}{9}\right]\right\}\\
-&= \sup\left\{\left \vert \frac{9x-6 + 2 - 6x + 2}{4}\right\vert : x\in \left[\frac{6}{9},\frac{7}{9}\right]\right\}\\
-&= \sup\left\{\left\vert \frac{3x - 2}{4}\right\vert : x\in \left[\frac{6}{9},\frac{7}{9}\right]\right\} = \frac{1}{12}
-\end{align*}
+        \sup\left\{\vert f_2(x) - f_1(x)\vert : x\in \left[\frac{6}{9},\frac{7}{9}\right]\right\} &= \sup\left\{\left \vert \frac{f_1(3x-2) + 1}{2} - \frac{f_0(3x-2) + 1}{2}\right\vert : x\in \left[\frac{6}{9},\frac{7}{9}\right]\right\}\\
+        &= \sup\left\{\left \vert \frac{\frac{f_0(9x-6)}{2} + 1}{2} - \frac{3x-1}{2}\right\vert : x\in \left[\frac{6}{9},\frac{7}{9}\right]\right\}\\
+        &= \sup\left\{\left \vert \frac{9x-6 + 2 - 6x + 2}{4}\right\vert : x\in \left[\frac{6}{9},\frac{7}{9}\right]\right\}\\
+        &= \sup\left\{\left\vert \frac{3x - 2}{4}\right\vert : x\in \left[\frac{6}{9},\frac{7}{9}\right]\right\} = \frac{1}{12}
+    \end{align*}
 $$
 
 $$
 \begin{align*}
-\sup\left\{\vert f_2(x) - f_1(x)\vert : x\in \left[\frac{7}{9},\frac{8}{9}\right]\right\} &= \sup\left\{\left \vert \frac{f_1(3x-2) + 1}{2} - \frac{3x-2 + 1}{2}\right\vert : x\in \left[\frac{7}{9},\frac{8}{9}\right]\right\}\\
-&= \sup\left\{\left \vert \frac{3}{4} - \frac{3x-1}{2}\right\vert : x\in \left[\frac{7}{9},\frac{8}{9}\right]\right\}\\
-&= \sup\left\{\left \vert \frac{5 - 6x}{4}\right\vert : x\in \left[\frac{7}{9},\frac{8}{9}\right]\right\}= \frac{1}{12}
-\end{align*}
+        \sup\left\{\vert f_2(x) - f_1(x)\vert : x\in \left[\frac{7}{9},\frac{8}{9}\right]\right\} &= \sup\left\{\left \vert \frac{f_1(3x-2) + 1}{2} - \frac{3x-2 + 1}{2}\right\vert : x\in \left[\frac{7}{9},\frac{8}{9}\right]\right\}\\
+        &= \sup\left\{\left \vert \frac{3}{4} - \frac{3x-1}{2}\right\vert : x\in \left[\frac{7}{9},\frac{8}{9}\right]\right\}\\
+        &= \sup\left\{\left \vert \frac{5 - 6x}{4}\right\vert : x\in \left[\frac{7}{9},\frac{8}{9}\right]\right\}= \frac{1}{12}
+    \end{align*}
 $$
 
 $$
 \begin{align*}
-\sup\left\{\vert f_2(x) - f_1(x)\vert : x\in \left[\frac{8}{9},\frac{9}{9}\right]\right\} &= \sup\left\{\left \vert \frac{f_1(3x-2) + 1}{2} - \frac{3x-2 + 1}{2}\right\vert : x\in \left[\frac{8}{9},\frac{9}{9}\right]\right\}\\
-&= \sup\left\{\left \vert \frac{\frac{3(3x-2) - 2 + 1}{2} + 1}{2} - \frac{3x-1}{2}\right\vert : x\in \left[\frac{8}{9},\frac{9}{9}\right]\right\}\\
-&= \sup\left\{\left \vert \frac{3x-3}{4}\right\vert : x\in \left[\frac{8}{9},\frac{9}{9}\right]\right\}= \frac{1}{12}
-\end{align*}
+        \sup\left\{\vert f_2(x) - f_1(x)\vert : x\in \left[\frac{8}{9},\frac{9}{9}\right]\right\} &= \sup\left\{\left \vert \frac{f_1(3x-2) + 1}{2} - \frac{3x-2 + 1}{2}\right\vert : x\in \left[\frac{8}{9},\frac{9}{9}\right]\right\}\\
+        &= \sup\left\{\left \vert \frac{\frac{3(3x-2) - 2 + 1}{2} + 1}{2} - \frac{3x-1}{2}\right\vert : x\in \left[\frac{8}{9},\frac{9}{9}\right]\right\}\\
+        &= \sup\left\{\left \vert \frac{3x-3}{4}\right\vert : x\in \left[\frac{8}{9},\frac{9}{9}\right]\right\}= \frac{1}{12}
+    \end{align*}
 $$
 
 
@@ -1637,11 +1637,11 @@ $$sup\{\vert f_{k+1}(x) - f_k(x) \vert : x\in [a,b] \}\leq \frac{1}{2}sup\{\vert
 
 $$
 \begin{align*}
-sup\left\{\left\vert f_{k+1}(x) - f_k(x) \right\vert : x\in \left[0,\frac{1}{3}\right]\right\} &= sup\left\{\left\vert \frac{f_{k}(3x)}{2} - \frac{f_{k-1}(3x)}{2} \right\vert : x\in \left[0,\frac{1}{3}\right]\right\}\\
-&= \frac{1}{2} sup\left\{\left\vert f_{k}(3x) - f_{k-1}(3x) \right\vert : x\in \left[0,\frac{1}{3}\right]\right\}\\
-&\leq \frac{1}{4} sup\left\{\left\vert f_{k-1}(3x) - f_{k-2}(3x) \right\vert : x\in \left[0,\frac{1}{3}\right]\right\}\\
-&= \frac{1}{2}sup\left\{\left\vert f_{k}(x) - f_{k-1}(x) \right\vert : x\in \left[a,b\right] \right\}
-\end{align*}
+        sup\left\{\left\vert f_{k+1}(x) - f_k(x) \right\vert : x\in \left[0,\frac{1}{3}\right]\right\} &= sup\left\{\left\vert \frac{f_{k}(3x)}{2} - \frac{f_{k-1}(3x)}{2} \right\vert : x\in \left[0,\frac{1}{3}\right]\right\}\\
+        &= \frac{1}{2} sup\left\{\left\vert f_{k}(3x) - f_{k-1}(3x) \right\vert : x\in \left[0,\frac{1}{3}\right]\right\}\\
+        &\leq \frac{1}{4} sup\left\{\left\vert f_{k-1}(3x) - f_{k-2}(3x) \right\vert : x\in \left[0,\frac{1}{3}\right]\right\}\\
+        &= \frac{1}{2}sup\left\{\left\vert f_{k}(x) - f_{k-1}(x) \right\vert : x\in \left[a,b\right] \right\}
+    \end{align*}
 $$
 
 </details>
@@ -1665,8 +1665,8 @@ $$sup\{\vert f_{n+1}(x) - f_n(x) \vert : x\in [0,1] \} \leq \frac{1}{2^{n+1}}$$
 Again we use a proof by induction.  The previous lemma gives us the base case.  Assume that the result is true for $n$, that is $sup\{\vert f_{n}(x) - f_{n-1}(x) \vert : x\in [0,1] \} \leq \frac{1}{2^n}$.  Combining the previous lemma and the induction hypothesis, we have
 $$
 \begin{align*}
-sup\{\vert f_{n+1}(x) - f_n(x) \vert : x\in [0,1] \}\leq \frac{1}{2}sup\{\vert f_{n}(x) - f_{n-1}(x) \vert : x\in [0,1] \}\leq \frac{1}{2^{n+1}}
-\end{align*}
+        sup\{\vert f_{n+1}(x) - f_n(x) \vert : x\in [0,1] \}\leq \frac{1}{2}sup\{\vert f_{n}(x) - f_{n-1}(x) \vert : x\in [0,1] \}\leq \frac{1}{2^{n+1}}
+    \end{align*}
 $$
 
 </details>
@@ -1699,9 +1699,9 @@ The sequence $f_n$ is uniformly cauchy and hence uniformly convergent.
 Let $\varepsilon$.  As the series $\sum \frac{1}{2^k}$ converges, there exists an $N$ such that if $n,m>N$ (we may assume without loss of generality that $n>m$), then $\sum_{k=m}^n \frac{1}{2^k} < \varepsilon$.  Thus, 
 $$
 \begin{align*}
-\vert f_n(x) - f_m(x)\vert &\leq \vert f_n(x) - f_{n-1}(x)\vert + \dots + \vert f_{m+1}(x) - f_m(x)\vert\\
-&\leq \frac{1}{2^n} + \dots + \frac{1}{2^m} < \varepsilon.
-\end{align*}
+        \vert f_n(x) - f_m(x)\vert &\leq \vert f_n(x) - f_{n-1}(x)\vert + \dots + \vert f_{m+1}(x) - f_m(x)\vert\\
+        &\leq \frac{1}{2^n} + \dots + \frac{1}{2^m} < \varepsilon.
+    \end{align*}
 $$
 As $x$ was arbitrary, we have our result.
 
@@ -1799,10 +1799,10 @@ Suppose $f(z) = \sum a_n z^n$ be a power series whose radius of convergence is $
 To prove this theorem, we will pick an arbitrary point $z_0$ and show that there is a power series expansion $\sum b_n (z-z_0)^n$ that converges in some neighbourhood of $z_0$ and $\sum a_n z^n = \sum b_n (z-z_0)^n$.  Notice,
 $$
 \begin{align*}
-\sum a_n z^n &= \sum a_n (z_0 + (z-z_0))^n\\
-&= \sum_{n=0}^{\infty} a_n \sum_{k = 0}^n {n \choose k}z_0^{n-k}(z-z_0)^k\\
-&= \sum_{k=0}^{\infty} \left[ \sum_{n=k}^{\infty} a_n {n\choose k}z_0^{n-k}\right] (z-z_0)^k
-\end{align*}
+        \sum a_n z^n &= \sum a_n (z_0 + (z-z_0))^n\\
+        &= \sum_{n=0}^{\infty} a_n \sum_{k = 0}^n {n \choose k}z_0^{n-k}(z-z_0)^k\\
+        &= \sum_{k=0}^{\infty} \left[ \sum_{n=k}^{\infty} a_n {n\choose k}z_0^{n-k}\right] (z-z_0)^k
+    \end{align*}
 $$
 
 The last equality follows because the series is absolutely convergent and in an absolutely convergent series, rearrangement of terms do not affect the convergence of the series or its limit.   From the above rearrangement, it is clear that
@@ -1881,9 +1881,9 @@ Thus, all analytic functions are holomorphic.  Are all holomorphic functions ana
 <span class="env-label">Example 3.23</span>
 
 The function $$f(x) = \begin{cases}
-x^n \sin(\frac{1}{x}) & \text{if } x\neq 0\\
-0 & \text{otherwise}
-\end{cases}$$
+        x^n \sin(\frac{1}{x}) & \text{if } x\neq 0\\
+        0 & \text{otherwise}
+    \end{cases}$$
 is differentiable $n-1$ times but not $n$ times!
 
 </div>
@@ -1917,9 +1917,9 @@ Thus, $g(f(z)) = z = f(g(z))$.  That is a formal inverse exists and is unique.
 Now, we will prove that the radius of convergence of $g$ is non-zero.  To simplify notation, we first prove that we may assume $a_1 = 1$.  As $a_1 \neq 0$, you can consider the function $F(z) = \frac{f(z)}{a_1}$.  If $h(z) = \frac{z}{a}$, then $F(z) = h\circ f(z)$.  Thus, the inverse of $F$ denoted by $G$ is the function $G(z) = g(a_1 z)$.  Thus, $G(z) = \sum b_n (a_1 z)^n = \sum b_n (a_1)^n z^n$.  Thus, if $r_G$ is the radius of convergence of $G$ and $r_g$ is the radius of convergence of $g$, then
 $$
 \begin{align*}
-r_G &= \frac{1}{\limsup_{n\to \infty} \vert a_1^n b_n\vert^{\frac{1}{n}}} = \frac{1}{\limsup_{n\to \infty} \vert a_1 \vert \vert b_n\vert^{\frac{1}{n}}}\\
-&= \frac{1}{\vert a_1 \vert}\frac{1}{\limsup_{n\to \infty} \vert b_n\vert^{\frac{1}{n}}} = \frac{r_g}{\vert a_1 \vert}
-\end{align*}
+        r_G &= \frac{1}{\limsup_{n\to \infty} \vert a_1^n b_n\vert^{\frac{1}{n}}} = \frac{1}{\limsup_{n\to \infty} \vert a_1 \vert \vert b_n\vert^{\frac{1}{n}}}\\
+        &= \frac{1}{\vert a_1 \vert}\frac{1}{\limsup_{n\to \infty} \vert b_n\vert^{\frac{1}{n}}} = \frac{r_g}{\vert a_1 \vert}
+    \end{align*}
 $$
 Thus, $G$ is convergent in some disk iff $g$ is convergent in some disk.  Hence, it is enough to prove the case when $a_1 = 1$.
 

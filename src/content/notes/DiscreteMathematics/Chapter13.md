@@ -86,13 +86,13 @@ Let $G = (V,E)$ be a finite graph with $V = \{v_1,\dots,v_n\}$.  We can capture 
 
 The adjacency matrix of $G$ from Example **13.1** is 
 $$\begin{bmatrix}
-0 & 1 & 1 & 0 & 0 & 0\\
-1 & 0 & 1 & 1 & 0 & 0\\
-1 & 1 & 0 & 0 & 0 & 0\\
-0 & 1 & 0 & 0 & 1 & 1\\
-0 & 0 & 0 & 1 & 0 & 1\\
-0 & 0 & 0 & 1 & 1 & 0
-\end{bmatrix}.$$
+        0 & 1 & 1 & 0 & 0 & 0\\
+        1 & 0 & 1 & 1 & 0 & 0\\
+        1 & 1 & 0 & 0 & 0 & 0\\
+        0 & 1 & 0 & 0 & 1 & 1\\
+        0 & 0 & 0 & 1 & 0 & 1\\
+        0 & 0 & 0 & 1 & 1 & 0
+    \end{bmatrix}.$$
 
 </div>
 

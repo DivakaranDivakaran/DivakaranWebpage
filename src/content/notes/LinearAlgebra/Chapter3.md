@@ -166,22 +166,22 @@ Mathematicians often like to have a minimal set of axioms.  Famously, many mathe
 Similarly, one may ask if axioms of vector spaces are essential.  Here I reproduce the proof in \cite{Bryant} of the fact that Axiom 2 is redundant.  If $v,w\in V$, then notice that $(v+w) + (v+w) = (1+1)(v+w) = (1+1)v + (1+1)w = (v+v) + (w+w)$.  Let $v'$ be the inverse of $v$ and $w'$ be the inverse of $w$.  Then,
 $$
 \begin{align*}
-(v'+ ((v+w) + (v+w))) + w' &= ((v' + (v+w)) + (v+w))+w'\\
-&= (((v'+v)+w) + (v+w))+w'\\ 
-&= ((0+w) + (v+w)) + w' = (w + (v+w)) + w'\\
-&= w + ((v+w)+w') = w + (v + (w+w')) = w + (v+0)\\
-&= w+v.
-\end{align*}
+        (v'+ ((v+w) + (v+w))) + w' &= ((v' + (v+w)) + (v+w))+w'\\
+        &= (((v'+v)+w) + (v+w))+w'\\ 
+        &= ((0+w) + (v+w)) + w' = (w + (v+w)) + w'\\
+        &= w + ((v+w)+w') = w + (v + (w+w')) = w + (v+0)\\
+        &= w+v.
+    \end{align*}
 $$  
 And,
 $$
 \begin{align*}
-(v'+ ((v+v) + (w+w))) + w' &= ((v' + (v+v)) + (w+w))+w'\\
-&= (((v'+v)+v) + (w+w))+w'\\ 
-&= ((0+v) + (w+w)) + w' = (v + (w+w)) + w'\\
-&= v + ((w+w)+w') = v + (w + (w+w')) = v + (w+0)\\
-&= v+w.
-\end{align*}
+        (v'+ ((v+v) + (w+w))) + w' &= ((v' + (v+v)) + (w+w))+w'\\
+        &= (((v'+v)+v) + (w+w))+w'\\ 
+        &= ((0+v) + (w+w)) + w' = (v + (w+w)) + w'\\
+        &= v + ((w+w)+w') = v + (w + (w+w')) = v + (w+0)\\
+        &= v+w.
+    \end{align*}
 $$
 
 
@@ -318,8 +318,8 @@ Additive inverse is unique.  That is, given any vector $v$, there exists a uniqu
 Assume the contrary.  Assume there exists vector $u,v,w$ such that $u+v=0=v+u$ and $u+w=0=w+u$ ($v$ and $w$ are both inverses of $u$).  Then, 
 $$
 \begin{align*}
-v = v+0 = v+(u+w) = (v+u)+w = 0+w = w 
-\end{align*}
+        v = v+0 = v+(u+w) = (v+u)+w = 0+w = w 
+    \end{align*}
 $$
 In other words, any two additive inverses have to be equal.  So, additive inverse is unique.
 
@@ -386,8 +386,8 @@ Given an vector $v$, the vector $(-1).v$ is the additive inverse of $v$.
 
 $$
 \begin{align*}
-v + (-1).v = 1.v + (-1).v = (1+(-1)).v = 0.v = 0
-\end{align*}
+        v + (-1).v = 1.v + (-1).v = (1+(-1)).v = 0.v = 0
+    \end{align*}
 $$
 
 </details>
@@ -890,19 +890,19 @@ The list $(1+x,1-x,x^2)$ is a basis for $\mathcal{P}(2)$ and the list $(1+2x+3x^
 Let $I_n = \{1,\dots,n\}$.  Then, the vector space $(\mathcal{F}(I_n,\mathbb{R}),+,.)$ is a finite dimensional vector space.  Moreover, if we define functions $f_i:I_n\to \mathbb{R}$ as 
 $$
 \begin{align*}
-f_i(j) = \begin{cases}
-1 & \text{ if $i=j$}\\
-0 & \text{otherwise}
-\end{cases}
-\end{align*}
+        f_i(j) = \begin{cases}
+            1 & \text{ if $i=j$}\\
+            0 & \text{otherwise}
+        \end{cases}
+    \end{align*}
 $$
 then $(f_1,\dots,f_n)$ form a basis for $(\mathcal{F}(I_n,\mathbb{R}),+,.)$.  To see that given any function $f:I_n\to \mathbb{R}$, define the linear combination $f(1)f_1 + \dots f(n)f_n$.  Then, notice that $(f(1)f_1 + \dots + f(n)f_n)(i)$
 $$
 \begin{align*}
-&= f(1)f_1(i) + \dots + f(i-1)f_{i-1}(i)+ f(i)f_i(i) + f(i+1)f_{i+1} + \dots + f(n)f_n(i)\\
-&= f(1).0 + \dots + f(i-1).0 + f(i).1 + f(i+1).0 + \dots + f(n).0\\
-&= f(i)
-\end{align*}
+        &= f(1)f_1(i) + \dots + f(i-1)f_{i-1}(i)+ f(i)f_i(i) + f(i+1)f_{i+1} + \dots + f(n)f_n(i)\\
+        &= f(1).0 + \dots + f(i-1).0 + f(i).1 + f(i+1).0 + \dots + f(n).0\\
+        &= f(i)
+    \end{align*}
 $$
 As $i$ was arbitrary, $f(1)f_1 + \dots f(n)f_n = f$.  As $f$ was arbitrary, $\text{Span}(f_1,\dots,f_n) = \mathcal{F}(I_n,\mathbb{R})$.  Moreover, if $\alpha_1 f_1 + \dots +\alpha_n f_n = 0$, then $\alpha_1 f_1 + \dots +\alpha_n f_n(i) = 0$ for all $i$ (as here the zero vector is the constant function $0$).  But, $\alpha_1 f_1 + \dots +\alpha_n f_n(i) = \alpha_i$.  Therefore, $(\alpha_1,\dots,\alpha_n) = 0$, thus, $(f_1,\dots,f_n)$ is linearly independent.
 
@@ -1085,9 +1085,9 @@ Let $(V,+,.)$ be a finite dimensional vector space.  We say the dimension of $V$
 Let $M_2(\mathbb{R}) = \left\{\begin{bmatrix}a&b\\c&d\end{bmatrix} \ | \ a,b,c,d\in \mathbb{R}\right\}$ and let $+$ and $.$ be defined as follows:
 $$
 \begin{align*}
-\begin{bmatrix}a_1 & b_1\\c_1 & d_1\end{bmatrix} + \begin{bmatrix}a_2 & b_2 \\c_2 & d_2\end{bmatrix} &= \begin{bmatrix}a_1 + a_2 & b_1 + b_2 \\ c_1 + c_2 & d_1+d_2\end{bmatrix}\\
-\alpha \begin{bmatrix}a&b\\c&d\end{bmatrix} &= \begin{bmatrix}\alpha a & \alpha b\\\alpha c & \alpha d\end{bmatrix}
-\end{align*}
+        \begin{bmatrix}a_1 & b_1\\c_1 & d_1\end{bmatrix} + \begin{bmatrix}a_2 & b_2 \\c_2 & d_2\end{bmatrix} &= \begin{bmatrix}a_1 + a_2 & b_1 + b_2 \\ c_1 + c_2 & d_1+d_2\end{bmatrix}\\
+        \alpha \begin{bmatrix}a&b\\c&d\end{bmatrix} &= \begin{bmatrix}\alpha a & \alpha b\\\alpha c & \alpha d\end{bmatrix}
+    \end{align*}
 $$
 Then, $M_2(\mathbb{R})$ is a vector space.  Moreover, $\left(\begin{bmatrix}1&0\\0&0\end{bmatrix},\begin{bmatrix}0&1\\0&0\end{bmatrix},\begin{bmatrix}0&0\\1&0\end{bmatrix},\begin{bmatrix}0&0\\0&1\end{bmatrix}\right)$ is a basis for $M_2(\mathbb{R})$.  To show that $\text{Span}\left(\begin{bmatrix}1&0\\0&0\end{bmatrix},\begin{bmatrix}0&1\\0&0\end{bmatrix},\begin{bmatrix}0&0\\1&0\end{bmatrix},\begin{bmatrix}0&0\\0&1\end{bmatrix}\right) = M_2(\mathbb{R})$, note that given any element $\begin{bmatrix}a&b\\c&d\end{bmatrix}\in M_2(\mathbb{R})$,
 $$\begin{bmatrix}a&b\\c&d\end{bmatrix} = a \begin{bmatrix}1&0\\0&0\end{bmatrix} + b \begin{bmatrix}0&1\\0&0\end{bmatrix} + c \begin{bmatrix}0&0\\1&0\end{bmatrix} + d \begin{bmatrix}0&0\\0&1\end{bmatrix}.$$
@@ -1105,18 +1105,18 @@ iff $(\alpha,\beta,\gamma,\delta) = 0$.  Thus, $\left(\begin{bmatrix}1&0\\0&0\en
 Conside the vector space $\mathcal{F}(\{1,2,3\},\mathbb{R})$.  Note that any function $f:\{1,2,3\} \to \mathbb{R}$ is defined uniquely once we specify $f(1),f(2)$, and $f(3)$.  Let $f_1:\{1,2,3\}\to \mathbb{R}$ be the function with $f_1(1) = 1$, $f_1(2) = 0$, and $f_1(3) = 0$. Let $f_2:\{1,2,3\}\to \mathbb{R}$ be the function with $f_2(1) = 0$, $f_2(2) = 1$, and $f_2(3) = 0$. Let $f_3:\{1,2,3\}\to \mathbb{R}$ be the function with $f_3(1) = 0$, $f_3(2) = 0$, and $f_3(3) = 1$.  Then, $(f_1,f_2,f_3)$ is a basis for $\mathcal{F}(\{1,2,3\},\mathbb{R})$.  To show linear independence, note that the zero vector is the function $0:\{1,2,3\}\to \mathbb{R}$ such that $0(1) = 0$, $0(2)=0$, and $0(3) = 0$.  Thus, $\alpha_1 f_1 + \alpha_2 f_2 + \alpha_3 f_3 = 0$ iff 
 $$
 \begin{align*}
-\alpha_1 = (\alpha_1 f_1 + \alpha_2 f_2 + \alpha_3 f_3)(1) = 0(1) = 0\\ 
-\alpha_2 = (\alpha_1 f_1 + \alpha_2 f_2 + \alpha_3 f_3)(2) = 0(2) = 0\\
-\alpha_3 = (\alpha_1 f_1 + \alpha_2 f_2 + \alpha_3 f_3)(3) = 0(3) = 0
-\end{align*}
+        \alpha_1 = (\alpha_1 f_1 + \alpha_2 f_2 + \alpha_3 f_3)(1) = 0(1) = 0\\ 
+        \alpha_2 = (\alpha_1 f_1 + \alpha_2 f_2 + \alpha_3 f_3)(2) = 0(2) = 0\\
+        \alpha_3 = (\alpha_1 f_1 + \alpha_2 f_2 + \alpha_3 f_3)(3) = 0(3) = 0
+    \end{align*}
 $$
 Thus, $(f_1,f_2,f_3)$ is linearly independent.  To show that $(f_1,f_2,f_3)$ span $\mathcal{F}(\{1,2,3\},\mathbb{R})$, note that given any $f:\{1,2,3\}\to \mathbb{R}$, $f = f(1).f_1 + f(2).f_2 + f(3)f_3$ as
 $$
 \begin{align*}
-f(1) = f(1).1 + f(2).0 + f(3).0 = (f(1).f_1 + f(2).f_2 + f(3)f_3)(1)\\
-f(2) = f(1).0 + f(2).1 + f(3).0 = (f(1).f_1 + f(2).f_2 + f(3)f_3)(2)\\
-f(3) = f(1).0 + f(2).0 + f(3).1 = (f(1).f_1 + f(2).f_2 + f(3)f_3)(3)
-\end{align*}
+        f(1) = f(1).1 + f(2).0 + f(3).0 = (f(1).f_1 + f(2).f_2 + f(3)f_3)(1)\\
+        f(2) = f(1).0 + f(2).1 + f(3).0 = (f(1).f_1 + f(2).f_2 + f(3)f_3)(2)\\
+        f(3) = f(1).0 + f(2).0 + f(3).1 = (f(1).f_1 + f(2).f_2 + f(3)f_3)(3)
+    \end{align*}
 $$
 
 </div>

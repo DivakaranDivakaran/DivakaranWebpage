@@ -3,23 +3,23 @@
 In school, you would have encountered questions of the form: Solve
 $$
 \begin{align*}
-x + 2y &= 0\\
-2x + y &= 3.
+    x + 2y &= 0\\
+    2x + y &= 3.
 \end{align*}
 $$
 You might not have realised, but the question is a little ambiguous.  It was implicit that you need to find a tuple $(x,y)$ that satisfies both equations.  Not a tuple $(x,y,z)$ or $(x,y,z,w)$.  If I had instead asked you to solve
 $$
 \begin{align*}
-x + 2y &= 0\\
-2x + y &= 3\\
-x + z &= 0
+    x + 2y &= 0\\
+    2x + y &= 3\\
+    x + z &= 0
 \end{align*}
 $$
 you would have assumed you need to find a triple $(x,y,z)$.  In other words, the context informs you what you are looking for.  However, this can be at times confusing.  In this course, we would try to avoid such ambiguities as much as possible.  Don't hesitate to point out if/when I turn sloppy.  And, I promise, I would hold high expectations from you.  Thus, I would rephrase the earlier question as: Find all $(x,y)$ such that $x,y\in \mathbb{R}$ and 
 $$
 \begin{align*}
-x + 2y &= 0\\
-2x + y &= 3.
+    x + 2y &= 0\\
+    2x + y &= 3.
 \end{align*}
 $$
 
@@ -44,9 +44,9 @@ Thus, the question is asking us to find the set $\{(x,y)\in \mathbb{R}^2| x + 2y
 More generally, the set of all $(x,y)\in \mathbb{R}^2$ such that 
 $$
 \begin{align}
-\label{sysLE}
-ax + by &= e \\
-cx + dy &= f \nonumber
+    \label{sysLE}
+    ax + by &= e \\
+    cx + dy &= f \nonumber
 \end{align}
 $$
 
@@ -61,29 +61,29 @@ We will explore how to solve such a system of equations.  Note that if $(x,y)\in
 
 $$
 \begin{align}
-adx + bdy &= de \label{sysLE2} \\
-bcx + bdy &= bf \nonumber
+    adx + bdy &= de \label{sysLE2} \\
+    bcx + bdy &= bf \nonumber
 \end{align}
 $$
 In other words, a tuple $(x,y)\in \mathbb{R}^2$ satisfies the system **1.1** only if $x$ should satisfy the equation
 $$
 \begin{align}
-\label{sysLE3}
-(ad-bc)x = de-bf
+    \label{sysLE3}
+    (ad-bc)x = de-bf
 \end{align}
 $$
 
 **Case 1: $ad-bc \neq 0$ -** If $ad-bc\neq 0$, then a tuple $(x,y)$ satisfies the system **1.1** only if $x$ satisfies Equation **1.3**.  But, $x$ satisfies Equation **1.3** only if $x = \frac{de-bf}{ad-bc}$.  Substituting the value back in the system of equations **1.1** we get
 $$
 \begin{align}
-\left[ a\left(\frac{de-bf}{ad-bc}\right) + by = e \right] \equiv \left[y = \frac{ade-bce-ade+abf}{abd-b^2c} =\frac{abf-bce}{abd-b^2c} = \frac{af-ce}{ad-bc}\right]\\
-\left[c\left(\frac{de-bf}{ad-bc}\right) + dy = f \right] \equiv \left[y = \frac{adf - bcf -cde + bcf}{ad^2 - bcd}= \frac{adf-cde}{ad^2-bcd} = \frac{af-ce}{ad-bc}\right] \nonumber
+    \left[ a\left(\frac{de-bf}{ad-bc}\right) + by = e \right] \equiv \left[y = \frac{ade-bce-ade+abf}{abd-b^2c} =\frac{abf-bce}{abd-b^2c} = \frac{af-ce}{ad-bc}\right]\\
+    \left[c\left(\frac{de-bf}{ad-bc}\right) + dy = f \right] \equiv \left[y = \frac{adf - bcf -cde + bcf}{ad^2 - bcd}= \frac{adf-cde}{ad^2-bcd} = \frac{af-ce}{ad-bc}\right] \nonumber
 \end{align}
 $$
 Thus, the set of solutions of the system of equations **1.1** is
 $$
 \begin{align*}
-\left\{ \left(\frac{de-bf}{ad-bc}, \frac{af-ce}{ad-bc}\right)\right\}
+    \left\{ \left(\frac{de-bf}{ad-bc}, \frac{af-ce}{ad-bc}\right)\right\}
 \end{align*}
 $$
 
@@ -94,9 +94,9 @@ $$
 Find all $(x,y)\in \mathbb{R}^2$ such that 
 $$
 \begin{align*}
-x + 2y &= 0\\
-2x + y &= 3.
-\end{align*}
+        x + 2y &= 0\\
+        2x + y &= 3.
+    \end{align*}
 $$
 
 
@@ -113,7 +113,7 @@ As $ad - bc = 1 - 4 = -3 \neq 0$, the set of solutions is $\left\{ \left(\frac{d
 **Case 2: $ad-bc = 0$ and $de-bf\neq 0$ -** If the system **1.1** has a solution, then there should be an $x$ that satisfies Equation **1.3**.  But, when $ad-bc = 0$ and $de-bf\neq 0$, Equation **1.3** takes the following form
 $$
 \begin{align*}
-0 = de-bf 
+    0 = de-bf 
 \end{align*}
 $$
 and clearly it has no solution.  Thus, there are no solutions for the system **1.1**.  Geometrically, this is a case when the two lines are parallel. 
@@ -125,9 +125,9 @@ and clearly it has no solution.  Thus, there are no solutions for the system **1
 Find all $(x,y)\in \mathbb{R}^2$ such that 
 $$
 \begin{align*}
-x + 2y &= 0\\
-x + 2y &= 3.
-\end{align*}
+        x + 2y &= 0\\
+        x + 2y &= 3.
+    \end{align*}
 $$
 As $ad - bc = 2 - 2 = 0$ and $de-bf = 0 - 6 = -6 \neq 0$, there are no solutions.  Figure **1.2** shows the GeoGebra solution.  Note that it agrees with what we have obtained.
 
@@ -144,8 +144,8 @@ As $ad - bc = 2 - 2 = 0$ and $de-bf = 0 - 6 = -6 \neq 0$, there are no solutions
 **Case 3a: $ad-bc = 0$, $de-bf=0$, $d\neq 0$ and $b\neq 0$ -** Then, $a = \frac{bc}{d}$. We may rewrite Equation **1.1** as 
 $$
 \begin{align*}
-\left[\left(\frac{bc}{d}\right)x + by = e\right] \equiv \left[bcx + bdy = de = bf\right] \equiv \left[cx + dy = f \right]\\
-cx + dy = f 
+    \left[\left(\frac{bc}{d}\right)x + by = e\right] \equiv \left[bcx + bdy = de = bf\right] \equiv \left[cx + dy = f \right]\\
+    cx + dy = f 
 \end{align*}
 $$
 Thus, ``in-effect" we have only one equation - $cx+dy = f$ - in this case.  We know that the set of all $(x,y)$ satisfying the equation forms a line.  This is a case when the two lines coincide.
@@ -157,9 +157,9 @@ Thus, ``in-effect" we have only one equation - $cx+dy = f$ - in this case.  We k
 Find all $(x,y)\in \mathbb{R}^2$ such that 
 $$
 \begin{align*}
-x + 2y &= 3\\
-2x + 4y &= 6.
-\end{align*}
+        x + 2y &= 3\\
+        2x + 4y &= 6.
+    \end{align*}
 $$
 Note that $ad-bc = 4-4 = 0$, $de-bf = 12-12 = 0$, $d=4\neq0$, and $b=2\neq 0$.  Both equations in the system represent the same line.
 
@@ -169,29 +169,29 @@ Note that $ad-bc = 4-4 = 0$, $de-bf = 12-12 = 0$, $d=4\neq0$, and $b=2\neq 0$.  
 **Case 3b: $b=0=d$ -** We may rewrite Equation **1.1** as 
 $$
 \begin{align*}
-ax &= e \\
-cx &= f.
+    ax &= e \\
+    cx &= f.
 \end{align*}
 $$
 Note that 
 $$
 \begin{align*}
-\{(x,y) \ | \ ax = e\} = \left\{\left(\frac{e}{a},y\right)\ | \ y\in \mathbb{R}\right\}.
+    \{(x,y) \ | \ ax = e\} = \left\{\left(\frac{e}{a},y\right)\ | \ y\in \mathbb{R}\right\}.
 \end{align*}
 $$   
 Similarly, 
 $$
 \begin{align*}
-\{(x,y) \ | \ cx = f\} = \left\{\left(\frac{f}{c},y\right)\ | \ y\in \mathbb{R}\right\}.
+    \{(x,y) \ | \ cx = f\} = \left\{\left(\frac{f}{c},y\right)\ | \ y\in \mathbb{R}\right\}.
 \end{align*}
 $$  
 Thus,
 $$
 \begin{align*}
-\{(x,y) \ | \ ax = e\} \cap \{(x,y) \ | \ cx = f\} = \begin{cases}
-\left\{\left(\frac{f}{c},y\right)\ | \ y\in \mathbb{R}\right\} & \text{if $c\neq 0$, $a\neq 0$, and $\frac{e}{a} = \frac{f}{c}$}\\
-\emptyset & \text{otherwise}
-\end{cases}.
+    \{(x,y) \ | \ ax = e\} \cap \{(x,y) \ | \ cx = f\} = \begin{cases}
+    \left\{\left(\frac{f}{c},y\right)\ | \ y\in \mathbb{R}\right\} & \text{if $c\neq 0$, $a\neq 0$, and $\frac{e}{a} = \frac{f}{c}$}\\
+    \emptyset & \text{otherwise}
+    \end{cases}.
 \end{align*}
 $$  
 
@@ -202,9 +202,9 @@ $$
 Find all $(x,y)\in \mathbb{R}^2$ such that 
 $$
 \begin{align*}
-2x = 4\\
-x = 3
-\end{align*}
+        2x = 4\\
+        x = 3
+    \end{align*}
 $$
 As $c\neq 0$, $a\neq 0$, and $\frac{e}{a}\neq \frac{f}{c}$ this system does not have a solution.  Figure **1.4** shows the GeoGebra solution.  Note that it agrees with what we have obtained.
 
@@ -224,9 +224,9 @@ As $c\neq 0$, $a\neq 0$, and $\frac{e}{a}\neq \frac{f}{c}$ this system does not 
 Find all $(x,y)\in \mathbb{R}^2$ such that 
 $$
 \begin{align*}
-2x = 4\\
-x = 2
-\end{align*}
+        2x = 4\\
+        x = 2
+    \end{align*}
 $$
 As $c\neq 0$, $a\neq 0$, and $\frac{e}{a} = \frac{f}{c}$ the set of solutions is $\{(2,y) \ | \ y\in \mathbb{R}\}$.
 
@@ -251,9 +251,9 @@ Notice that the solution exists and is unique only when $ad-bc\neq 0$.  Thus, th
 Consider the system 
 $$
 \begin{align*}
-x + ay &= b\\
-2x + 10y &= 4
-\end{align*}
+        x + ay &= b\\
+        2x + 10y &= 4
+    \end{align*}
 $$
 Give a value of $a$ for which the system has a unique solution.  Does the value of $b$ matter?  Explain your answer.  Give a value of $(a,b)$ for which the system has no solution.  Give a value of $(a,b)$ for which the system has infinitely many values.
 
@@ -313,16 +313,16 @@ The statement $\forall (a,b)\in \mathbb{R}^2$, $(a,b) + (0,0) = (a,b) = (0,0) + 
 Fix an arbitrary element $(a,b)\in \mathbb{R}^2$, then we need to prove $(a,b) + (0,0) = (a,b) = (0,0) + (a,b)$.  The statement $(a,b) + (0,0) = (a,b) = (0,0) + (a,b)$ is actually a compound sentence.  It is a short hand for $(a,b) + (0,0) = (a,b)$ and $(a,b) = (0,0) + (a,b)$.  Thus, we need to prove both the statements $(a,b) + (0,0) = (a,b)$ and $(a,b) = (0,0) + (a,b)$.  But, they are both easy to prove.
 $$
 \begin{align*}
-(a,b) + (0,0) &= (a+0,b+0) & \text{(definition of addition on $\mathbb{R}^2$)}\\
-&= (a,b) & \text{($0$ is the additive identity in $\mathbb{R}$)}
-\end{align*}
+        (a,b) + (0,0) &= (a+0,b+0) & \text{(definition of addition on $\mathbb{R}^2$)}\\
+        &= (a,b) & \text{($0$ is the additive identity in $\mathbb{R}$)}
+    \end{align*}
 $$ 
 Similarly,
 $$
 \begin{align*}
-(0,0) + (a,b) &= (0+a,0+b) & \framebox(125,10){}\\
-&= (a,b) & \framebox(125,10){}
-\end{align*}
+        (0,0) + (a,b) &= (0+a,0+b) & \framebox(125,10){}\\
+        &= (a,b) & \framebox(125,10){}
+    \end{align*}
 $$
 \end{mdframed}
 
@@ -343,9 +343,9 @@ Addition on $\mathbb{R}^2$ is commutative.  More precisely, $\forall (a,b),(c,d)
 Fix an arbitrary pair $(a,b)$ and $(c,d)$ in $\mathbb{R}^2$.  We will show that $(a,b) + (c,d) = (c,d) + (a,b)$.  As the elements were arbitrary, this would prove the universal statement.  
 $$
 \begin{align*}
-(a,b) + (c,d) &= (a+c,b+d)  & \framebox(175,10){}\\
-&= (c+a,b+d) & \text{(from commutativity of addition on $\mathbb{R}$)}
-\end{align*}
+        (a,b) + (c,d) &= (a+c,b+d)  & \framebox(175,10){}\\
+        &= (c+a,b+d) & \text{(from commutativity of addition on $\mathbb{R}$)}
+    \end{align*}
 $$
 
 </details>
@@ -369,12 +369,12 @@ Addition on $\mathbb{R}^2$ is associative.  More precisely, $\forall (a,b),(c,d)
 Fix arbitrary elements $(a,b),(c,d),(e,f)\in \mathbb{R}^2$.  We will show that $(a,b) + ((c,d) + (e,f)) = ((a,b) + (c,d)) + (e,f)$.  As the elements were arbitrary, this would prove the universal statement.  
 $$
 \begin{align*}
-(a,b) + ((c,d) + (e,f)) &= (a,b) + (c+e,d+f) & \framebox(150,10){}\\
-&= (a + (c+e), b + (d + f)) & \framebox(150,10){}\\
-&= ((a+c) + e, (b+d) + f) & \text{(associativity of addition in $\mathbb{R}$)}\\
-&= (a+c,b+d) + (e,f) & \framebox(150,10){}\\
-&= ((a,b) + (c,d)) + (e,f) & \framebox(150,10){}
-\end{align*}
+        (a,b) + ((c,d) + (e,f)) &= (a,b) + (c+e,d+f) & \framebox(150,10){}\\
+        &= (a + (c+e), b + (d + f)) & \framebox(150,10){}\\
+        &= ((a+c) + e, (b+d) + f) & \text{(associativity of addition in $\mathbb{R}$)}\\
+        &= (a+c,b+d) + (e,f) & \framebox(150,10){}\\
+        &= ((a,b) + (c,d)) + (e,f) & \framebox(150,10){}
+    \end{align*}
 $$
 
 </details>
@@ -635,14 +635,14 @@ Thus, you can find a $\theta$ such that $\cos(\theta) = \frac{x}{\sqrt{x^2 + y^2
 We already had a through discussion on the solutions of a system of linear equations.  In this section, we would take a different perspective which would often come handy.  Notice that $(x,y)\in \mathbb{R}^2$ satisfy the system 
 $$
 \begin{align*}
-ax + by &= e \\
-cx + dy &= f 
+    ax + by &= e \\
+    cx + dy &= f 
 \end{align*}
 $$
 iff 
 $$
 \begin{align*}
-x(a,c) + y(b,d) = (e,f).
+    x(a,c) + y(b,d) = (e,f).
 \end{align*}
 $$
 
@@ -653,8 +653,8 @@ $$
 Given two elements $(v_1,v_2)$ and $(w_1,w_2)$, in $\mathbb{R}^2$, an expression of the form $\alpha (v_1,v_2) + \beta (w_1,w_2)$ is called a linear combination of the $(v_1,v_2)$ and $(w_1,w_2)$.  The collection of all such linear combinations is called the span of $(v_1,v_2)$ and $(w_1,w_2)$.
 $$
 \begin{align*}
-\text{Span}((v_1,v_2),(w_1,w_2)) = \{\alpha (v_1,v_2) + \beta (w_1,w_2) \ | \alpha,\beta \in \mathbb{R}\}.
-\end{align*}
+        \text{Span}((v_1,v_2),(w_1,w_2)) = \{\alpha (v_1,v_2) + \beta (w_1,w_2) \ | \alpha,\beta \in \mathbb{R}\}.
+    \end{align*}
 $$
 
 </div>
@@ -960,11 +960,11 @@ The above statement has the form: $\forall v,w\in \mathbb{R}^2$, if $p(v,w)$ the
 
 $$
 \begin{align*}
-\text{Span}(v,w) &= \{\alpha v + \beta w| \alpha, \beta \in \mathbb{R}\}& \framebox(150,10){}\\
-&= \{\alpha \gamma w + \beta w | \alpha, \beta \in \mathbb{R}\}& \framebox(150,10){}\\
-&= \{(\alpha\gamma + \beta)w | \alpha,\beta \in \mathbb{R}\}& \framebox(150,10){}\\
-&= \{k w | k\in \mathbb{R}\}
-\end{align*}
+        \text{Span}(v,w) &= \{\alpha v + \beta w| \alpha, \beta \in \mathbb{R}\}& \framebox(150,10){}\\
+        &= \{\alpha \gamma w + \beta w | \alpha, \beta \in \mathbb{R}\}& \framebox(150,10){}\\
+        &= \{(\alpha\gamma + \beta)w | \alpha,\beta \in \mathbb{R}\}& \framebox(150,10){}\\
+        &= \{k w | k\in \mathbb{R}\}
+    \end{align*}
 $$
 The last equality is a bit trickier than the rest, so I would elaborate the argument involved.  We need to show that $\{(\alpha\gamma + \beta)w | \alpha,\beta \in \mathbb{R}\} = \{k w | k\in \mathbb{R}\}$
 
@@ -1027,8 +1027,8 @@ Fix arbitrary elements $(a,c)$ and $(b,d)$.  We need to prove ``if $(a,c),(b,d)$
 we get,
 $$
 \begin{align*}
-(x_1-x_2)(a,c) + (y_1-y_2)(b,d) = (0,0) 
-\end{align*}
+        (x_1-x_2)(a,c) + (y_1-y_2)(b,d) = (0,0) 
+    \end{align*}
 $$
 As $(a,c)$ and $(b,d)$ are linearly independent, this would mean that $x_1-x_2=0$ and $y_1-y_2 = 0$.  That is, $x_1 = x_2$ and $y_1 = y_2$ or $(x_1,y_1)= (x_2,y_2)$.
 
@@ -1041,9 +1041,9 @@ Recall from the first section that if $ad-bc = 0$, then **1.1** has a solution i
 Given a system **1.1**, we can consider the related system 
 $$
 \begin{align}   
-\label{sysLEhomo}
-ax + by = 0\\
-cx + dy = 0 \nonumber
+    \label{sysLEhomo}
+    ax + by = 0\\
+    cx + dy = 0 \nonumber
 \end{align}
 $$
 A system of linear equations where all the constant terms are zero is called a homogeneous system of linear equations.  Notice that a homogeneous system of linear equations will always have a solution, namely $(0,0)$.  If $(a,c),(b,d)$ are linearly independent, then $(0,0)$ is the unique solution.
@@ -1077,8 +1077,8 @@ would be analogous.  If one understands the proof in one case, one should be abl
 Let us assume without loss of generality that $\exists \alpha\in \mathbb{R}$ such that $(a,c) = \alpha (b,d)$.  That is $a = \alpha b$ and $c = \alpha d$.  Thus, the system **1.4** takes the form 
 $$
 \begin{align}   
-\alpha b x + by = 0\\
-\alpha d x + dy = 0 \nonumber
+    \alpha b x + by = 0\\
+    \alpha d x + dy = 0 \nonumber
 \end{align}
 $$
 Note that, $b=0$ implies $a=0$ - but we assumed $a$ and $b$ are not simultaneously $0$.  Thus,  That is, $y = -\alpha x$.  In other words, the set of solutions of system **1.4** is the set $\{k(1,-\alpha) \ | \ k \in \mathbb{R}\}$.  In other words, $(u_1,u_2) = (1,-\alpha)$.  
@@ -1152,12 +1152,12 @@ Assume $F$ is injective.  Note that $F(0,0) = (0,0)$.  As $F$ is injective, if $
 Assume $(a,c)$ and $(b,d)$ are linearly independent.  That is if $x(a,c) + y(b,d) = 0$, then $(x,y) = (0,0)$. But, $F(x,y) = (ax+by,cx+dy) = x(a,c) + y(b,d)$.  Thus, if $F(x,y) = (0,0)$ then $(x,y) = (0,0)$.  Now let $v=(v_1,v_2)$ and $w=(w_1,w_2)$ be arbitrary elements such that $F(v_1,v_2) = F(w_1,w_2)$,  Then
 $$
 \begin{align*}
-0 &= F(v_1,v_2) - F(w_1,w_2)\\
-&= (av_1 + bv_2,cv_1 + dv_2) - (aw_1+bw_2,cw_1+dw_2) & \framebox(150,10){}\\
-&= ((av_1 + bv_2) - (aw_1 + bw_2),(cv_1 + dv_2) - (cw_1 + dw_2)) & \framebox(150,10){}\\
-&= (a(v_1 - w_1) + b(v_2 - w_2),c(v_1 - w_1) + d(v_2 - w_2)) & \framebox(150,10){}\\
-&= F(v_1 - w_1,v_2-w_2) & \framebox(150,10){}
-\end{align*}
+        0 &= F(v_1,v_2) - F(w_1,w_2)\\
+        &= (av_1 + bv_2,cv_1 + dv_2) - (aw_1+bw_2,cw_1+dw_2) & \framebox(150,10){}\\
+        &= ((av_1 + bv_2) - (aw_1 + bw_2),(cv_1 + dv_2) - (cw_1 + dw_2)) & \framebox(150,10){}\\
+        &= (a(v_1 - w_1) + b(v_2 - w_2),c(v_1 - w_1) + d(v_2 - w_2)) & \framebox(150,10){}\\
+        &= F(v_1 - w_1,v_2-w_2) & \framebox(150,10){}
+    \end{align*}
 $$
 Thus, $(v_1-w_1,v_2-w_2) = (0,0)$.  That is, $v_1 = w_1$ and $v_2=w_2$.  Therefore, $(v_1,v_2) = (w_1,w_2)$.  But, as $v$ and $w$ were arbitrary, $F$ is an injection.
 
@@ -1212,8 +1212,8 @@ An array (generally of numbers) arranged into rows and columns is called a matri
 Let
 $$
 \begin{align*}
-M_2(\mathbb{R}) = \left\{\begin{bmatrix} a & b\\ c & d \end{bmatrix} \ | a,b,c,d\in \mathbb{R}\right\}
-\end{align*}
+        M_2(\mathbb{R}) = \left\{\begin{bmatrix} a & b\\ c & d \end{bmatrix} \ | a,b,c,d\in \mathbb{R}\right\}
+    \end{align*}
 $$
 
 </div>
@@ -1226,8 +1226,8 @@ $$
 Let 
 $$
 \begin{align*}
-M_2^1(\mathbb{R}) = \left\{\begin{bmatrix}x\\y\end{bmatrix} \ | \ x,y \in \mathbb{R}\right\}
-\end{align*}
+        M_2^1(\mathbb{R}) = \left\{\begin{bmatrix}x\\y\end{bmatrix} \ | \ x,y \in \mathbb{R}\right\}
+    \end{align*}
 $$
 
 </div>
@@ -1251,14 +1251,14 @@ Show that $f$ is a bijection.
 Let $A = \begin{bmatrix}a&b\\c&d\end{bmatrix}$ and $v_0 = \begin{bmatrix}e\\f \end{bmatrix}$.  Further, let
 $$
 \begin{align*}
-V = \{(x,y)\in \mathbb{R}^2 | ax+by = e \text{ and } cx + dy = f\}
-\end{align*}
+        V = \{(x,y)\in \mathbb{R}^2 | ax+by = e \text{ and } cx + dy = f\}
+    \end{align*}
 $$
 and 
 $$
 \begin{align*}
-W = \{v\in M_2^1(\mathbb{R}) \ | \ Av = v_0\}.  
-\end{align*}
+        W = \{v\in M_2^1(\mathbb{R}) \ | \ Av = v_0\}.  
+    \end{align*}
 $$
 Then, $f(V) = W$.
 
@@ -1272,13 +1272,13 @@ Then, $f(V) = W$.
 
 $$
 \begin{align*}
-f(V) &= \{f(v) \ | \ v\in V\} & \framebox(140,10){}\\
-&= \{f(x,y) \ | \ (x,y)\in \mathbb{R}^2 \text{ and } (ax+by = e \text{ and } cx + dy = f)\} & \framebox(140,10){}\\
-&= \left\{\begin{bmatrix}x\\y\end{bmatrix} \ | \ (x,y)\in \mathbb{R}^2 \text{ and } (ax+by = e \text{ and } cx + dy = f) \right\} & \framebox(140,10){} \\
-&= \left\{\begin{bmatrix}x\\y\end{bmatrix} \in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}e\\f \end{bmatrix}  \right\} & \framebox(140,10){}\\
-&= \left\{ v\in M_2^1(\mathbb{R}) \ | \ Av = v_0 \right\} & \framebox(140,10){}\\
-&= W.
-\end{align*}
+        f(V) &= \{f(v) \ | \ v\in V\} & \framebox(140,10){}\\
+        &= \{f(x,y) \ | \ (x,y)\in \mathbb{R}^2 \text{ and } (ax+by = e \text{ and } cx + dy = f)\} & \framebox(140,10){}\\
+        &= \left\{\begin{bmatrix}x\\y\end{bmatrix} \ | \ (x,y)\in \mathbb{R}^2 \text{ and } (ax+by = e \text{ and } cx + dy = f) \right\} & \framebox(140,10){} \\
+        &= \left\{\begin{bmatrix}x\\y\end{bmatrix} \in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}e\\f \end{bmatrix}  \right\} & \framebox(140,10){}\\
+        &= \left\{ v\in M_2^1(\mathbb{R}) \ | \ Av = v_0 \right\} & \framebox(140,10){}\\
+        &= W.
+    \end{align*}
 $$
 
 </details>
@@ -1288,31 +1288,31 @@ $$
 This is the reason why the system **1.1** is often expressed as 
 $$
 \begin{align}
-\label{eqn:matrixform}
-\begin{bmatrix}a & b\\ c & d\end{bmatrix} \begin{bmatrix} x\\y\end{bmatrix} = \begin{bmatrix} e \\ f\end{bmatrix}
+    \label{eqn:matrixform}
+    \begin{bmatrix}a & b\\ c & d\end{bmatrix} \begin{bmatrix} x\\y\end{bmatrix} = \begin{bmatrix} e \\ f\end{bmatrix}
 \end{align}
 $$
 This representation gives a first clue on how to define multiplication of $2$ matrices.  We would want 
 $$
 \begin{align*}
-\begin{bmatrix}a & b\\ c & d\end{bmatrix} \begin{bmatrix} x\\y\end{bmatrix} = \begin{bmatrix} ax+by \\ cx+dy\end{bmatrix}
+    \begin{bmatrix}a & b\\ c & d\end{bmatrix} \begin{bmatrix} x\\y\end{bmatrix} = \begin{bmatrix} ax+by \\ cx+dy\end{bmatrix}
 \end{align*}
 $$
 Thus, you can think of the multiplication $\begin{bmatrix}a & b\\ c & d\end{bmatrix} \begin{bmatrix} x\\y\end{bmatrix}$ as the action of the function $F$ on $(x,y)$.  If there is yet another matrix $\begin{bmatrix}a' & b'\\ c' & d'\end{bmatrix}$, then it corresponds to the function $F':\mathbb{R}^2 \to \mathbb{R}^2$ defined as $F'(x,y) = (a'x+b'y,c'x+d'y)$.   The action of $F'$ on $F(x,y)$ should thus correspond to $\begin{bmatrix}a' & b'\\ c' & d'\end{bmatrix} \left(\begin{bmatrix}a & b\\ c & d\end{bmatrix}\begin{bmatrix} x\\y\end{bmatrix}\right)$.  But, if have a ``sensible definition of multiplication, we should have
 $$
 \begin{align*}
-\left(\begin{bmatrix}a' & b'\\ c' & d'\end{bmatrix}\begin{bmatrix}a & b\\ c & d\end{bmatrix} \right) \begin{bmatrix} x\\y \end{bmatrix} &=  \begin{bmatrix}a' & b'\\ c' & d'\end{bmatrix}\left(\begin{bmatrix}a & b\\ c & d\end{bmatrix}\begin{bmatrix} x\\y\end{bmatrix}\right)\\
-&= \begin{bmatrix}a' & b'\\ c' & d'\end{bmatrix} \begin{bmatrix} ax+by\\cx+dy\end{bmatrix}\\
-&= \begin{bmatrix} a'(ax+by) + b'(cx+dy)\\ c'(ax+by) + d'(cx+dy)\end{bmatrix}\\
-&= \begin{bmatrix} x(a'a + b'c) + y(a'b+b'd)\\ x(c'a+d'c) + y(c'b+d'd)\end{bmatrix}\\
-&= \begin{bmatrix} (a'a + b'c) & (a'b+b'd)\\(c'a+d'c) & (c'b+d'd) \end{bmatrix} \begin{bmatrix} x\\y \end{bmatrix}.
+    \left(\begin{bmatrix}a' & b'\\ c' & d'\end{bmatrix}\begin{bmatrix}a & b\\ c & d\end{bmatrix} \right) \begin{bmatrix} x\\y \end{bmatrix} &=  \begin{bmatrix}a' & b'\\ c' & d'\end{bmatrix}\left(\begin{bmatrix}a & b\\ c & d\end{bmatrix}\begin{bmatrix} x\\y\end{bmatrix}\right)\\
+    &= \begin{bmatrix}a' & b'\\ c' & d'\end{bmatrix} \begin{bmatrix} ax+by\\cx+dy\end{bmatrix}\\
+    &= \begin{bmatrix} a'(ax+by) + b'(cx+dy)\\ c'(ax+by) + d'(cx+dy)\end{bmatrix}\\
+    &= \begin{bmatrix} x(a'a + b'c) + y(a'b+b'd)\\ x(c'a+d'c) + y(c'b+d'd)\end{bmatrix}\\
+    &= \begin{bmatrix} (a'a + b'c) & (a'b+b'd)\\(c'a+d'c) & (c'b+d'd) \end{bmatrix} \begin{bmatrix} x\\y \end{bmatrix}.
 \end{align*}
 $$
 
 This allows us to arrive at the definition of matrix multiplication you would have encountered in school.   
 $$
 \begin{align*}
-\begin{bmatrix}a' & b'\\ c' & d'\end{bmatrix}\begin{bmatrix}a & b\\ c & d\end{bmatrix} = \begin{bmatrix} (a'a + b'c) & (a'b+b'd)\\(c'a+d'c) & (c'b+d'd) \end{bmatrix}
+    \begin{bmatrix}a' & b'\\ c' & d'\end{bmatrix}\begin{bmatrix}a & b\\ c & d\end{bmatrix} = \begin{bmatrix} (a'a + b'c) & (a'b+b'd)\\(c'a+d'c) & (c'b+d'd) \end{bmatrix}
 \end{align*}
 $$
 
@@ -1323,13 +1323,13 @@ $$
 We can define two operations on this set. Addition $+: M_2(\mathbb{R}) \times M_2(\mathbb{R}) \to M_2(\mathbb{R})$  defined as 
 $$
 \begin{align*}
-\begin{bmatrix} a & b\\ c & d \end{bmatrix} + \begin{bmatrix} a' & b'\\ c' & d' \end{bmatrix} = \begin{bmatrix} a + a' & b + b'\\ c + c' & d + d' \end{bmatrix}
-\end{align*}
+        \begin{bmatrix} a & b\\ c & d \end{bmatrix} + \begin{bmatrix} a' & b'\\ c' & d' \end{bmatrix} = \begin{bmatrix} a + a' & b + b'\\ c + c' & d + d' \end{bmatrix}
+    \end{align*}
 $$
 and multiplication $\times:M_2(\mathbb{R}) \to M_2(\mathbb{R})$ defined as 
 $$
 \begin{align*}
-\begin{bmatrix}a' & b'\\ c' & d'\end{bmatrix}\begin{bmatrix}a & b\\ c & d\end{bmatrix} = \begin{bmatrix} (a'a + b'c) & (a'b+b'd)\\(c'a+d'c) & (c'b+d'd) \end{bmatrix}
+    \begin{bmatrix}a' & b'\\ c' & d'\end{bmatrix}\begin{bmatrix}a & b\\ c & d\end{bmatrix} = \begin{bmatrix} (a'a + b'c) & (a'b+b'd)\\(c'a+d'c) & (c'b+d'd) \end{bmatrix}
 \end{align*}
 $$
 
@@ -1361,20 +1361,20 @@ Show that
 Let $A = \begin{bmatrix} 1& 2\\ 3& 4\end{bmatrix}$ and $B = \begin{bmatrix} -1& 0\\ 0& 1\end{bmatrix}$.  Then, 
 $$
 \begin{align*}
-\begin{bmatrix} 1& 2\\ 3& 4\end{bmatrix}\begin{bmatrix} -1& 0\\ 0& 1\end{bmatrix} = \begin{bmatrix} 1.(-1) + 2.0 & 1.0 + 2.1\\ 3.(-1) + 4.0 & 3.0 + 4.1\end{bmatrix} = \begin{bmatrix} -1& 2\\ -3& 4\end{bmatrix}
-\end{align*}
+        \begin{bmatrix} 1& 2\\ 3& 4\end{bmatrix}\begin{bmatrix} -1& 0\\ 0& 1\end{bmatrix} = \begin{bmatrix} 1.(-1) + 2.0 & 1.0 + 2.1\\ 3.(-1) + 4.0 & 3.0 + 4.1\end{bmatrix} = \begin{bmatrix} -1& 2\\ -3& 4\end{bmatrix}
+    \end{align*}
 $$
 but,
 $$
 \begin{align*}
-\begin{bmatrix} -1& 0\\ 0& 1\end{bmatrix}\begin{bmatrix} 1& 2\\ 3& 4\end{bmatrix} = \begin{bmatrix} (-1).1 + 0.3 & (-1).2 + 0.4\\ 0.1 + 1.3 & 0.2 + 1.4\end{bmatrix} = \begin{bmatrix} -1& -2\\ 3& 4\end{bmatrix}
-\end{align*}
+        \begin{bmatrix} -1& 0\\ 0& 1\end{bmatrix}\begin{bmatrix} 1& 2\\ 3& 4\end{bmatrix} = \begin{bmatrix} (-1).1 + 0.3 & (-1).2 + 0.4\\ 0.1 + 1.3 & 0.2 + 1.4\end{bmatrix} = \begin{bmatrix} -1& -2\\ 3& 4\end{bmatrix}
+    \end{align*}
 $$
 Therefore, 
 $$
 \begin{align*}
-\begin{bmatrix} 1& 2\\ 3& 4\end{bmatrix}\begin{bmatrix} -1& 0\\ 0& 1\end{bmatrix} \neq \begin{bmatrix} -1& 0\\ 0& 1\end{bmatrix}\begin{bmatrix} 1& 2\\ 3& 4\end{bmatrix} 
-\end{align*}
+        \begin{bmatrix} 1& 2\\ 3& 4\end{bmatrix}\begin{bmatrix} -1& 0\\ 0& 1\end{bmatrix} \neq \begin{bmatrix} -1& 0\\ 0& 1\end{bmatrix}\begin{bmatrix} 1& 2\\ 3& 4\end{bmatrix} 
+    \end{align*}
 $$
 
 </div>
@@ -1416,9 +1416,9 @@ F & T & T\\
 Assume $\exists B \in M_2(\mathbb{R})$ such that $AB=I=BA$.  We need to show that $\forall \begin{bmatrix}x \\y \end{bmatrix} \neq \begin{bmatrix}0 \\0 \end{bmatrix}$, $\begin{bmatrix} a & b\\c & d\end{bmatrix}\begin{bmatrix}x \\y \end{bmatrix} \neq 0$.  We would intead assume it is false.  That is, $\exists \begin{bmatrix}x \\y \end{bmatrix}\neq \begin{bmatrix}0 \\0 \end{bmatrix}$ such that $\begin{bmatrix} a & b\\c & d\end{bmatrix}\begin{bmatrix}x \\y \end{bmatrix} = \begin{bmatrix} 0\\ 0\end{bmatrix}$   .  Then,
 $$
 \begin{align*}
-\begin{bmatrix}x \\y \end{bmatrix} &= (BA)\begin{bmatrix}x \\y \end{bmatrix} =
-B\left(A\begin{bmatrix}x \\y \end{bmatrix}\right)= B\begin{bmatrix}0 \\0 \end{bmatrix} =\begin{bmatrix}0 \\0 \end{bmatrix}
-\end{align*}
+        \begin{bmatrix}x \\y \end{bmatrix} &= (BA)\begin{bmatrix}x \\y \end{bmatrix} =
+         B\left(A\begin{bmatrix}x \\y \end{bmatrix}\right)= B\begin{bmatrix}0 \\0 \end{bmatrix} =\begin{bmatrix}0 \\0 \end{bmatrix}
+    \end{align*}
 $$
 
 </details>
@@ -1460,18 +1460,18 @@ Show that
 
 - $$
 \begin{align*}
-\begin{bmatrix}1&1\\0&1\end{bmatrix} \begin{bmatrix}1&-1\\0&1\end{bmatrix} = \begin{bmatrix}1&0\\0&1\end{bmatrix} = \begin{bmatrix}1&-1\\0&1\end{bmatrix} \begin{bmatrix}1&1\\0&1\end{bmatrix}.
-\end{align*}
+                \begin{bmatrix}1&1\\0&1\end{bmatrix} \begin{bmatrix}1&-1\\0&1\end{bmatrix} = \begin{bmatrix}1&0\\0&1\end{bmatrix} = \begin{bmatrix}1&-1\\0&1\end{bmatrix} \begin{bmatrix}1&1\\0&1\end{bmatrix}.
+            \end{align*}
 $$
 - $$
 \begin{align*}
-\begin{bmatrix}1&0\\1&1\end{bmatrix} \begin{bmatrix}1&0\\-1&1\end{bmatrix} = \begin{bmatrix}1&0\\0&1\end{bmatrix} = \begin{bmatrix}1&0\\-1&1\end{bmatrix} \begin{bmatrix}1&0\\1&1\end{bmatrix}.
-\end{align*}
+                \begin{bmatrix}1&0\\1&1\end{bmatrix} \begin{bmatrix}1&0\\-1&1\end{bmatrix} = \begin{bmatrix}1&0\\0&1\end{bmatrix} = \begin{bmatrix}1&0\\-1&1\end{bmatrix} \begin{bmatrix}1&0\\1&1\end{bmatrix}.
+            \end{align*}
 $$
 - $$
 \begin{align*}
-\begin{bmatrix}0&1\\1&0\end{bmatrix} \begin{bmatrix}0&1\\1&0\end{bmatrix} = \begin{bmatrix}1&0\\0&1\end{bmatrix}
-\end{align*}
+                \begin{bmatrix}0&1\\1&0\end{bmatrix} \begin{bmatrix}0&1\\1&0\end{bmatrix} = \begin{bmatrix}1&0\\0&1\end{bmatrix}
+            \end{align*}
 $$
 
 
@@ -1485,8 +1485,8 @@ $$
 The set of all invertible $2\times 2$ matrices is denoted as $GL_2(\mathbb{R})$
 $$
 \begin{align*}
-GL_2(R) = \left\{A\in M_2(\mathbb{R}) \ | \ \exists B\in M_2(\mathbb{R}) \text{ such that } AB = I = BA\right\}.
-\end{align*}
+        GL_2(R) = \left\{A\in M_2(\mathbb{R}) \ | \ \exists B\in M_2(\mathbb{R}) \text{ such that } AB = I = BA\right\}.
+    \end{align*}
 $$
 
 </div>
@@ -1515,19 +1515,19 @@ $$\left\{v\in M_2^1(\mathbb{R}) \ | \ Av = v_0\right\} \subseteq \left\{v\in M_2
 Let $v\in \left\{v\in M_2^1(\mathbb{R}) \ | \ BAv = Bv_0\right\}$ be arbitrary.  Then $(BA)v = Bv_0$.  But, $B$ is invertible.  So, there exists $C\in M_2(\mathbb{R})$ such that $CB = I = C$.  Multiplying both sides of the equation $BAv = Bv_0$ by $C$, we get $C((BA)v) = C(Bv_0)$.  But,
 $$
 \begin{align*}
-C((BA)v) &= (C(BA))v & \framebox(150,10){}\\
-&= ((CB)A))v & \framebox(150,10){}\\
-&= (IA)v & \framebox(150,10){}\\
-&= Av & \framebox(150,10){}
-\end{align*}
+        C((BA)v) &= (C(BA))v & \framebox(150,10){}\\
+        &= ((CB)A))v & \framebox(150,10){}\\
+        &= (IA)v & \framebox(150,10){}\\
+        &= Av & \framebox(150,10){}
+    \end{align*}
 $$
 and 
 $$
 \begin{align*}
-C(Bv_0) &= (CB)v_0 & \framebox(150,10){}\\
-&= Iv_0 & \framebox(150,10){}\\
-&= v_0 & \framebox(150,10){}
-\end{align*}
+        C(Bv_0) &= (CB)v_0 & \framebox(150,10){}\\
+        &= Iv_0 & \framebox(150,10){}\\
+        &= v_0 & \framebox(150,10){}
+    \end{align*}
 $$
 
 Thus, $Av= v_0$ or in other words $v\in \left\{v\in M_2^1(\mathbb{R}) \ | \ Av = v_0\right\}$.  As $v\in \left\{v\in M_2^1(\mathbb{R}) \ | \ BAv = Bv_0\right\}$ was arbitrary, we have 
@@ -1541,56 +1541,56 @@ Notice that
 
 $$
 \begin{align*}              
-\begin{bmatrix}1&1\\0&1\end{bmatrix} \begin{bmatrix}a&b\\c&d\end{bmatrix} = \begin{bmatrix}a+c&b+d\\c&d\end{bmatrix} 
+    \begin{bmatrix}1&1\\0&1\end{bmatrix} \begin{bmatrix}a&b\\c&d\end{bmatrix} = \begin{bmatrix}a+c&b+d\\c&d\end{bmatrix} 
 \end{align*}
 $$
 and
 $$
 \begin{align*}
-\begin{bmatrix}1&1\\0&1\end{bmatrix}\begin{bmatrix}e\\f\end{bmatrix} = \begin{bmatrix}e+f\\f\end{bmatrix}
+        \begin{bmatrix}1&1\\0&1\end{bmatrix}\begin{bmatrix}e\\f\end{bmatrix} = \begin{bmatrix}e+f\\f\end{bmatrix}
 \end{align*}
 $$
 As $\begin{bmatrix}1&1\\0&1\end{bmatrix}$ is invertible, the previous theorem implies that 
 $$
 \begin{align*}
-\left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}e\\f\end{bmatrix}\right\} = \left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix}a+c & b+d \\c & d\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}e+f \\f\end{bmatrix}\right\}
+    \left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}e\\f\end{bmatrix}\right\} = \left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix}a+c & b+d \\c & d\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}e+f \\f\end{bmatrix}\right\}
 \end{align*}
 $$
 The effect of multiplication by $\begin{bmatrix}1&1\\0&1\end{bmatrix}$ is that of ``row addition".  Multiplication by $\begin{bmatrix}1&0\\1&1\end{bmatrix}$ has a very similar impact.  More precisely, 
 $$
 \begin{align*}              
-\begin{bmatrix}1&0\\1&1\end{bmatrix} \begin{bmatrix}a&b\\c&d\end{bmatrix} = \begin{bmatrix}a&b\\c+a & b+d\end{bmatrix} 
+    \begin{bmatrix}1&0\\1&1\end{bmatrix} \begin{bmatrix}a&b\\c&d\end{bmatrix} = \begin{bmatrix}a&b\\c+a & b+d\end{bmatrix} 
 \end{align*}
 $$
 and
 $$
 \begin{align*}
-\begin{bmatrix}1&0\\1&1\end{bmatrix}\begin{bmatrix}e\\f\end{bmatrix} = \begin{bmatrix}e\\f+e\end{bmatrix}
+        \begin{bmatrix}1&0\\1&1\end{bmatrix}\begin{bmatrix}e\\f\end{bmatrix} = \begin{bmatrix}e\\f+e\end{bmatrix}
 \end{align*}
 $$
 Once again, as $\begin{bmatrix}1&0\\1&1\end{bmatrix}$ is invertible, we have
 $$
 \begin{align*}
-\left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}e\\f\end{bmatrix}\right\} = \left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix}a & b \\c+a & d+b\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}e \\f+e\end{bmatrix}\right\}
+    \left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}e\\f\end{bmatrix}\right\} = \left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix}a & b \\c+a & d+b\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}e \\f+e\end{bmatrix}\right\}
 \end{align*}
 $$
 
 Multiplication by $\begin{bmatrix}0& 1\\1&0\end{bmatrix}$ on the other hand has the effect of swapping the rows.  More precisely,  
 $$
 \begin{align*}              
-\begin{bmatrix}0&1\\1&0\end{bmatrix} \begin{bmatrix}a&b\\c&d\end{bmatrix} = \begin{bmatrix}c&d\\a & b\end{bmatrix}
+    \begin{bmatrix}0&1\\1&0\end{bmatrix} \begin{bmatrix}a&b\\c&d\end{bmatrix} = \begin{bmatrix}c&d\\a & b\end{bmatrix}
 \end{align*}
 $$
 and
 $$
 \begin{align*}
-\begin{bmatrix}0&1\\1&0\end{bmatrix}\begin{bmatrix}e\\f\end{bmatrix} = \begin{bmatrix}f\\e\end{bmatrix}
+        \begin{bmatrix}0&1\\1&0\end{bmatrix}\begin{bmatrix}e\\f\end{bmatrix} = \begin{bmatrix}f\\e\end{bmatrix}
 \end{align*}
 $$
 Once again, as $\begin{bmatrix}0&1\\1&0\end{bmatrix}$ is invertible, we have
 $$
 \begin{align*}
-\left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}e\\f\end{bmatrix}\right\} = \left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix}c & d \\a & b\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}f \\e\end{bmatrix}\right\}
+    \left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}e\\f\end{bmatrix}\right\} = \left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix}c & d \\a & b\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}f \\e\end{bmatrix}\right\}
 \end{align*}
 $$
 
@@ -1601,9 +1601,9 @@ $$
 Use the fact that $\begin{bmatrix}1 & -1\\0&1\end{bmatrix}$ is invertible to show that
 $$
 \begin{align}
-\label{eqn: rowoperation1}
-\left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}e\\f\end{bmatrix}\right\} = \left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix}a-c & b-d \\c & d\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}e-f \\f\end{bmatrix}\right\}
-\end{align}
+        \label{eqn: rowoperation1}
+        \left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}e\\f\end{bmatrix}\right\} = \left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix}a-c & b-d \\c & d\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}e-f \\f\end{bmatrix}\right\}
+    \end{align}
 $$
 
 </div>
@@ -1616,9 +1616,9 @@ $$
 Use the fact that $\begin{bmatrix}1 & 0\\-1 & 1\end{bmatrix}$ is invertible to show that
 $$
 \begin{align}
-\label{eqn: rowoperation2}
-\left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}e\\f\end{bmatrix}\right\} = \left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix}a & b \\c - a & d - b\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}e \\f - e\end{bmatrix}\right\}
-\end{align}
+        \label{eqn: rowoperation2}
+        \left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}e\\f\end{bmatrix}\right\} = \left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix}a & b \\c - a & d - b\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}e \\f - e\end{bmatrix}\right\}
+    \end{align}
 $$
 
 </div>
@@ -1631,16 +1631,16 @@ $$
 For all $\lambda\in \mathbb{R}$ such that $\lambda\neq 0$, show that $\begin{bmatrix}\lambda & 0\\0 & 1\end{bmatrix}$ and $\begin{bmatrix}1 & 0\\0 & \lambda\end{bmatrix}$ are invertible.  Thus, show that 
 $$
 \begin{align}
-\label{eqn: scaling matrix1}
-\left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}e\\f\end{bmatrix}\right\} = \left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix}\lambda a & \lambda b \\c & d\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}\lambda e \\f\end{bmatrix}\right\}
-\end{align}
+        \label{eqn: scaling matrix1}
+        \left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}e\\f\end{bmatrix}\right\} = \left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix}\lambda a & \lambda b \\c & d\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}\lambda e \\f\end{bmatrix}\right\}
+    \end{align}
 $$
 and
 $$
 \begin{align}
-\label{eqn: scaling matrix2}
-\left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}e\\f\end{bmatrix}\right\} = \left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix} a & b \\\lambda c & \lambda d\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}e \\\lambda f\end{bmatrix}\right\}
-\end{align}
+        \label{eqn: scaling matrix2}
+        \left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}e\\f\end{bmatrix}\right\} = \left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix} a & b \\\lambda c & \lambda d\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}e \\\lambda f\end{bmatrix}\right\}
+    \end{align}
 $$
 
 </div>
@@ -1657,34 +1657,34 @@ $$
 The ideas in the last section is implicitly used in the method taught in school.  Recall that if you are asked to find a solution to 
 $$
 \begin{align*}
-x + 2y = 0\\
-2x + y = 3
+    x + 2y = 0\\
+    2x + y = 3
 \end{align*}
 $$
 You use the fact that the set of solutions of this system is same as the set of solutions of the system
 $$
 \begin{align*}
-x + 2y = 0\\
-x + \frac{1}{2} y = \frac{3}{2}
+    x + 2y = 0\\
+    x + \frac{1}{2} y = \frac{3}{2}
 \end{align*}
 $$
 In other words, you are saying (using Equation **1.9**)
 $$
 \begin{align*}
-\left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix}1&2\\2&1\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}0\\3\end{bmatrix}\right\} = \left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix} 1 & 2 \\1 & \frac{1}{2}\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix} 0 \\ \frac{3}{2}\end{bmatrix}\right\}
+    \left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix}1&2\\2&1\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}0\\3\end{bmatrix}\right\} = \left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix} 1 & 2 \\1 & \frac{1}{2}\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix} 0 \\ \frac{3}{2}\end{bmatrix}\right\}
 \end{align*}
 $$
 Now we say, that the set of solutions of this new system is same as the set of solutions of (we are subtracting the first equation from the second)
 $$
 \begin{align*}
-x + 2y = 0\\
-0x + \frac{-3}{2}y = \frac{3}{2}
+    x + 2y = 0\\
+    0x + \frac{-3}{2}y = \frac{3}{2}
 \end{align*}
 $$
 In other words, we are using Equation **1.6** to conclude
 $$
 \begin{align*}
-\left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix} 1 & 2 \\1 & \frac{1}{2}\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix} 0 \\ \frac{3}{2}\end{bmatrix}\right\} = \left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix} 1 & 2 \\0 & \frac{-3}{2}\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix} 0 \\ \frac{3}{2}\end{bmatrix}\right\}
+    \left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix} 1 & 2 \\1 & \frac{1}{2}\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix} 0 \\ \frac{3}{2}\end{bmatrix}\right\} = \left\{\begin{bmatrix}x\\y\end{bmatrix}\in M_2^1(\mathbb{R}) \ | \ \begin{bmatrix} 1 & 2 \\0 & \frac{-3}{2}\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix} 0 \\ \frac{3}{2}\end{bmatrix}\right\}
 \end{align*}
 $$
 Now, it is easy to find the value of $y$ and that is then used to find the value of $x$ (this process is called back-substitution).  There are two key ideas here

@@ -22,38 +22,38 @@ A permutation matrix is a matrix obtained by permuting the rows or columns of th
 
 Let $n = 3$ and consider the permutation $f(1) = 2$, $f(2) = 3$, and $f(3) = 1$.  If we permute the columns of the $3\times 3$ identity matrix with respect to this permutation, we get the following matrix
 $$\begin{bmatrix}
-0 & 1 & 0\\
-0 & 0 & 1\\
-1 & 0 & 0
-\end{bmatrix}.$$
+        0 & 1 & 0\\
+        0 & 0 & 1\\
+        1 & 0 & 0
+    \end{bmatrix}.$$
 On the other hand, if we permute the rows of the matrix, we get
 $$\begin{bmatrix}
-0 & 0 & 1\\
-1 & 0 & 0\\
-0 & 1 & 0
-\end{bmatrix}.$$
+        0 & 0 & 1\\
+        1 & 0 & 0\\
+        0 & 1 & 0
+    \end{bmatrix}.$$
 Further notice that 
 $$\begin{bmatrix}
-0 & 1 & 0\\
-0 & 0 & 1\\
-1 & 0 & 0
-\end{bmatrix}\begin{bmatrix}
-0 & 0 & 1\\
-1 & 0 & 0\\
-0 & 1 & 0
-\end{bmatrix} = \begin{bmatrix}
-1 & 0 & 0\\
-0 & 1 & 0\\
-0 & 0 & 1
-\end{bmatrix}.$$
+        0 & 1 & 0\\
+        0 & 0 & 1\\
+        1 & 0 & 0
+    \end{bmatrix}\begin{bmatrix}
+        0 & 0 & 1\\
+        1 & 0 & 0\\
+        0 & 1 & 0
+    \end{bmatrix} = \begin{bmatrix}
+        1 & 0 & 0\\
+        0 & 1 & 0\\
+        0 & 0 & 1
+    \end{bmatrix}.$$
 
 </div>
 
 
 More generally, given a permutation $f:I_n \to I_n$, we can construct the matrix $R_f$ by permuting the rows of the identity matrix.  Let $\delta$ be the function
 $$\delta(i,j) = \begin{cases}
-1 & \text{if $i= j$}\\
-0 & \text{otherwise}
+    1 & \text{if $i= j$}\\
+    0 & \text{otherwise}
 \end{cases}$$
 Then, the $ij$-th entry of $R_f$ is $\delta(f(i),j)$ and Similarly, we can construct the matrix $C_f$ by permuting the columns of the identity matrix.  The $ij$-th entry of $C_f$ is $\delta(i,f(j))$.  Notice that $(R_f)^T = C_f$.  Further, the $ij$-th entry of $R_fC_f$ if $\sum_{k=1}^n \delta(f(i),k)\delta(k,f(j))$.  And the product $\delta(f(i),k)\delta(k,f(j))$ is non-zero iff $f(i) = k = f(j)$.  But, as $f$ is a bijection, $f(i) = f(j)$ iff $i=j$.  When $i=j$, $\sum_{k=1}^n \delta(f(i),k)\delta(k,f(j)) = 1$.  Thus, $R_fC_f$ is the identity matrix.  In other words, $C_f = (R_f)^{-1}$. 
 

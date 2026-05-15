@@ -30,11 +30,11 @@ $$\forall (x,y)\in \mathbb{R}^2, (x+y)^n = \sum_{k=0}^n \binom{n}{k}x^ky^{n-k}.$
 We will now prove the statement $P(n+1)$.  Let $(x,y)\in \mathbb{R}^2$ be arbitrary.  Notice that 
 $$
 \begin{align*}
-(x+y)^{n+1} &= (x+y)(x+y)^n \\ 
-&= (x+y)\sum_{k=0}^n \binom{n}{k}x^ky^{n-k}& \text{by the Induction hypothesis}\\
-&= x\sum_{k=0}^n \binom{n}{k}x^ky^{n-k} + y\sum_{k=0}^n \binom{n}{k}x^ky^{n-k} & \text{by distributivity}\\
-&= \sum_{k=0}^n \binom{n}{k}x^{k+1}y^{n-k} + \sum_{k=0}^n \binom{n}{k}x^ky^{n-k+1}& \text{by distributivity}\\
-\end{align*}
+        (x+y)^{n+1} &= (x+y)(x+y)^n \\ 
+        &= (x+y)\sum_{k=0}^n \binom{n}{k}x^ky^{n-k}& \text{by the Induction hypothesis}\\
+        &= x\sum_{k=0}^n \binom{n}{k}x^ky^{n-k} + y\sum_{k=0}^n \binom{n}{k}x^ky^{n-k} & \text{by distributivity}\\
+        &= \sum_{k=0}^n \binom{n}{k}x^{k+1}y^{n-k} + \sum_{k=0}^n \binom{n}{k}x^ky^{n-k+1}& \text{by distributivity}\\
+    \end{align*}
 $$
 
 We would like the index of the summation represent the power of $x$, so we would replace $k$ by $k-1$ in $\sum_{k=0}^n \binom{n}{k}x^{k+1}y^{n-k}$ and obtain 
@@ -43,10 +43,10 @@ $$\sum_{k=0}^n \binom{n}{k}x^ky^{n-k+1} = \binom{n}{0}x^0y^{n+1} + \sum_{k=1}^n 
 Thus, 
 $$
 \begin{align*}
-(x+y)^{n+1} &= \binom{n+1}{0} x^0y^{n+1} + \left(\sum_{k=1}^n \left[\binom{n}{k-1} + \binom{n}{k}\right] x^ky^{n-k+1}\right) + \binom{n+1}{n+1}x^{n+1}y^0 \\
-&= \binom{n+1}{0} x^0y^{n+1} + \left(\sum_{k=1}^n \binom{n+1}{k}x^ky^{n+1-k}\right) + \binom{n+1}{n+1}x^{n+1}y^0\\
-&= \sum_{k=0}^{n+1} \binom{n+1}{k}x^ky^{n+1-k}
-\end{align*}
+        (x+y)^{n+1} &= \binom{n+1}{0} x^0y^{n+1} + \left(\sum_{k=1}^n \left[\binom{n}{k-1} + \binom{n}{k}\right] x^ky^{n-k+1}\right) + \binom{n+1}{n+1}x^{n+1}y^0 \\
+         &= \binom{n+1}{0} x^0y^{n+1} + \left(\sum_{k=1}^n \binom{n+1}{k}x^ky^{n+1-k}\right) + \binom{n+1}{n+1}x^{n+1}y^0\\
+         &= \sum_{k=0}^{n+1} \binom{n+1}{k}x^ky^{n+1-k}
+    \end{align*}
 $$
 
 </details>
@@ -221,10 +221,10 @@ $$|\{(x_1,x_2,x_3) : x_1 + x_2 + x_3 = 12, x_1 > 5\}| = \{(y_1,x_2,x_3) : y_1 + 
 Similarly, $|A_2| = |A_3| = \binom{8}{2}$.  Thus, from the PIE, we have:
 $$
 \begin{align*}
-|A_1 \cup A_2 \cup A_3| &= |A_1| + |A_2| + |A_3| - |A_1 \cap A_2| - |A_2 \cap A_3| - |A_1 \cap A_3| + |A_1 \cap A_2 \cap A_3|\\
-&= \binom{8}{2} + \binom{8}{2} + \binom{8}{2} - 1 - 1 - 1 + 0\\
-&= 81.
-\end{align*}
+        |A_1 \cup A_2 \cup A_3| &= |A_1| + |A_2| + |A_3| - |A_1 \cap A_2| - |A_2 \cap A_3| - |A_1 \cap A_3| + |A_1 \cap A_2 \cap A_3|\\
+        &= \binom{8}{2} + \binom{8}{2} + \binom{8}{2} - 1 - 1 - 1 + 0\\
+        &= 81.
+    \end{align*}
 $$
 
 </details>

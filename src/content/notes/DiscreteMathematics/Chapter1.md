@@ -14,7 +14,7 @@ In my view, a unifying theme is the use of recursion/induction.  Natural numbers
 Although I don't want to tell much about induction or recursion right now, let me quickly discuss two examples of recursive definitions.  The first and perhaps the most famous example of a recursive sequence is the Fibonacci sequence.  It is defined using the recursive relation 
 $$
 \begin{align*}
-F(0) = 0\text{, } F(1)= 1 \text{, and } F(n) = F(n-1) + F(n-2)
+    F(0) = 0\text{, } F(1)= 1 \text{, and } F(n) = F(n-1) + F(n-2)
 \end{align*}
 $$
 

@@ -4,13 +4,13 @@ The previous chapter was a warm-up before we tackle the more general question of
 
 $$
 \begin{align}
-\label{eqn: gennonhom}
-a_{11} x_1 + a_{12} x_2 + \dots + a_{1n} x_n &= b_1\\ \nonumber
-a_{21} x_1 + a_{22} x_2 + \dots + a_{2n} x_n &= b_2\\ \nonumber
-.\\ \nonumber
-.\\ \nonumber
-.\\ \nonumber
-a_{m1} x_1 + a_{m2} x_2 + \dots + a_{mn} x_n &= b_m\\ \nonumber
+    \label{eqn: gennonhom}
+    a_{11} x_1 + a_{12} x_2 + \dots + a_{1n} x_n &= b_1\\ \nonumber
+    a_{21} x_1 + a_{22} x_2 + \dots + a_{2n} x_n &= b_2\\ \nonumber
+    .\\ \nonumber
+    .\\ \nonumber
+    .\\ \nonumber
+    a_{m1} x_1 + a_{m2} x_2 + \dots + a_{mn} x_n &= b_m\\ \nonumber
 \end{align}
 $$
 
@@ -98,16 +98,16 @@ To prove an existential statement, it is enough to give an example.  We would pr
 we need to prove $a + x = a$ and $x+a = a$.  But, they are both easy to prove.
 $$
 \begin{align*}
-(a_1,\dots a_n) + (0,\dots,0) &= (a_1+0,\dots,a_n+0) & \text{(definition of addition on $\mathbb{R}^n$)}\\
-&= (a_1,\dots,a_n) & \text{($0$ is additive identity in $\mathbb{R}$)}
-\end{align*}
+        (a_1,\dots a_n) + (0,\dots,0) &= (a_1+0,\dots,a_n+0) & \text{(definition of addition on $\mathbb{R}^n$)}\\
+        &= (a_1,\dots,a_n) & \text{($0$ is additive identity in $\mathbb{R}$)}
+    \end{align*}
 $$ 
 Similarly,
 $$
 \begin{align*}
-(0,\dots,0) + (a_1,\dots,a_n) &= (0+a_1,\dots,0+a_n) & \framebox(125,10){}\\
-&= (a_1,\dots,a_n) & \framebox(125,10){}
-\end{align*}
+        (0,\dots,0) + (a_1,\dots,a_n) &= (0+a_1,\dots,0+a_n) & \framebox(125,10){}\\
+        &= (a_1,\dots,a_n) & \framebox(125,10){}
+    \end{align*}
 $$
 
 </details>
@@ -229,8 +229,8 @@ Find the distance between $(1,2,3)$ and $(1,1,1)$.
 Given $m$ vectors $v_1,\dots, v_m \in \mathbb{R}^n$ and $\alpha_1,\dots,\alpha_n \in \mathbb{R}$ an expression of the form $\alpha_1 v_1 + \dots \alpha_n v_n$ is called a linear combination of the vectors $v_i$.  Span of $m$ vectors is the set of all linear combinations - more precisely, 
 $$
 \begin{align*}
-Span(v_1,\dots, v_m) = \{\alpha_1 v_1 + \dots \alpha_n v_m \ | \ \alpha_1,\dots,\alpha_m \in \mathbb{R}\}
-\end{align*}
+        Span(v_1,\dots, v_m) = \{\alpha_1 v_1 + \dots \alpha_n v_m \ | \ \alpha_1,\dots,\alpha_m \in \mathbb{R}\}
+    \end{align*}
 $$
 
 </div>
@@ -265,10 +265,10 @@ In Exercise **1.12**, we saw how we can use the Sequence function to construct t
 Let $v_1 = (1,0,0)$, $v_2 = (0,1,0)$.  Then, 
 $$
 \begin{align*}
-\text{Span}(v_1,v_2) &= \{x(1,0,0) + y(0,1,0) \ | \ x,y\in \mathbb{R}\} & \framebox(125,10){}\\
-&= \{(x,0,0) + (0,y,0) \ | \ x,y\in \mathbb{R}\} & \framebox(125,10){}\\
-&= \{(x,y,0) \ | \ x,y\in \mathbb{R}\} & \framebox(125,10){}
-\end{align*}
+        \text{Span}(v_1,v_2) &= \{x(1,0,0) + y(0,1,0) \ | \ x,y\in \mathbb{R}\} & \framebox(125,10){}\\
+        &= \{(x,0,0) + (0,y,0) \ | \ x,y\in \mathbb{R}\} & \framebox(125,10){}\\
+        &= \{(x,y,0) \ | \ x,y\in \mathbb{R}\} & \framebox(125,10){}
+    \end{align*}
 $$
 Thus, the $\text{Span}(v_1,v_2)$ is what is called the $xy$ plane.  Similarly, $\text{Span}((1,0,0),(0,0,1))$ would be the $xz$ plane and $\text{Span}((0,1,0),(0,0,1))$ would be the $yz$ plane.
 
@@ -282,11 +282,11 @@ Thus, the $\text{Span}(v_1,v_2)$ is what is called the $xy$ plane.  Similarly, $
 Let $v_1 = (1,0,0)$, $v_2 = (0,1,0)$, $v_3 = (0,0,1)$.  Then, 
 $$
 \begin{align*}
-\text{Span}(v_1,v_2,v_3) &= \{x(1,0,0) + y(0,1,0) + z(0,0,1) \ | \ x,y,z\in \mathbb{R}\} & \framebox(125,10){}\\
-&= \{(x,0,0) + (0,y,0) + (0,0,z) \ | \ x,y,z\in \mathbb{R}\} & \framebox(125,10){}\\
-&= \{(x,y,z) \ | \ x,y,z\in \mathbb{R}\} & \framebox(125,10){}\\
-&= \mathbb{R}^3
-\end{align*}
+        \text{Span}(v_1,v_2,v_3) &= \{x(1,0,0) + y(0,1,0) + z(0,0,1) \ | \ x,y,z\in \mathbb{R}\} & \framebox(125,10){}\\
+        &= \{(x,0,0) + (0,y,0) + (0,0,z) \ | \ x,y,z\in \mathbb{R}\} & \framebox(125,10){}\\
+        &= \{(x,y,z) \ | \ x,y,z\in \mathbb{R}\} & \framebox(125,10){}\\
+        &= \mathbb{R}^3
+    \end{align*}
 $$
 
 </div>
@@ -355,30 +355,30 @@ Consider the vector $v\times w = (v_2w_3 - v_3w_2, v_3w_1 - v_1w_3, v_1w_2 - v_2
 Assume $v\times w\in \text{Span}(v,w)$.  Then, there exists $\alpha,\beta\in \mathbb{R}$ such that $(v_2w_3 - v_3w_2, v_3w_1 - v_1w_3, v_1w_2 - v_2w_1) = \alpha v + \beta w = (\alpha v_1 + \beta w_1, \alpha v_2 + \beta w_2, \alpha v_3 + \beta w_3)$.  That is, 
 $$
 \begin{align*}
-\alpha v_1 + \beta w_1 &= v_2w_3 - v_3w_2\\
-\alpha v_2 + \beta w_2 &= v_3w_1 - v_1w_3\\
-\alpha v_3 + \beta w_3 &= v_1w_2 - v_2w_1
-\end{align*}
+        \alpha v_1 + \beta w_1 &= v_2w_3 - v_3w_2\\
+        \alpha v_2 + \beta w_2 &= v_3w_1 - v_1w_3\\
+        \alpha v_3 + \beta w_3 &= v_1w_2 - v_2w_1
+    \end{align*}
 $$
 The first two equations can be rewritten as the following matrix equation
 $$
 \begin{align*}
-\begin{bmatrix}v_1 & w_1\\v_2 & w_2\end{bmatrix} \begin{bmatrix}\alpha \\ \beta\end{bmatrix} = \begin{bmatrix}v_2w_3 - v_3w_2\\ v_3w_1 - v_1w_3\end{bmatrix}
-\end{align*}
+        \begin{bmatrix}v_1 & w_1\\v_2 & w_2\end{bmatrix} \begin{bmatrix}\alpha \\ \beta\end{bmatrix} = \begin{bmatrix}v_2w_3 - v_3w_2\\ v_3w_1 - v_1w_3\end{bmatrix}
+    \end{align*}
 $$
 By our assumption $v_1w_2 - v_2w_1 \neq 0$, the matrix $\begin{bmatrix}v_1 & w_1\\v_2 & w_2\end{bmatrix}$ is invertible.  Thus, 
 $$
 \begin{align*}
-\begin{bmatrix}\alpha \\ \beta\end{bmatrix} &= \frac{1}{v_1w_2 - v_2w_1}\begin{bmatrix}w_2 & -w_1\\-v_2 & v_1\end{bmatrix}\begin{bmatrix}v_2w_3 - v_3w_2\\ v_3w_1 - v_1w_3\end{bmatrix}\\
-&= \frac{1}{v_1w_2 - v_2w_1}\begin{bmatrix} w_3(w_2v_2 + w_1v_1) - v_3(w_2^2 + w_1^2)\\ v_3(v_2w_2 + v_1w_1) - w_3(v_1^2 + v_2^2)\end{bmatrix}
-\end{align*}
+        \begin{bmatrix}\alpha \\ \beta\end{bmatrix} &= \frac{1}{v_1w_2 - v_2w_1}\begin{bmatrix}w_2 & -w_1\\-v_2 & v_1\end{bmatrix}\begin{bmatrix}v_2w_3 - v_3w_2\\ v_3w_1 - v_1w_3\end{bmatrix}\\
+        &= \frac{1}{v_1w_2 - v_2w_1}\begin{bmatrix} w_3(w_2v_2 + w_1v_1) - v_3(w_2^2 + w_1^2)\\ v_3(v_2w_2 + v_1w_1) - w_3(v_1^2 + v_2^2)\end{bmatrix}
+    \end{align*}
 $$
 Substituting this value of $\alpha$ and $\beta$ in $\alpha v_3 + \beta w_3 = v_1w_2 - v_2w_1$, we get
 $$
 \begin{align*}
-(v_1w_2 - v_2w_1)^2 &= v_3w_3 (w_2v_2 + w_1v_1) - v_3^2 (w_2^2 + w_1^2) + v_3w_3(v_2w_2 + v_1w_1) - w_3^2(v_1^2 + v_2^2)\\
-&= -[(v_2w_3 - v_3w_2)^2 + (v_1w_3-v_3w_1)^2]
-\end{align*}
+        (v_1w_2 - v_2w_1)^2 &= v_3w_3 (w_2v_2 + w_1v_1) - v_3^2 (w_2^2 + w_1^2) + v_3w_3(v_2w_2 + v_1w_1) - w_3^2(v_1^2 + v_2^2)\\
+        &= -[(v_2w_3 - v_3w_2)^2 + (v_1w_3-v_3w_1)^2]
+    \end{align*}
 $$
 However, $(v_1w_2 - v_2w_1)^2 \geq 0$ and $-[(v_2w_3 - v_3w_2)^2 + (v_1w_3-v_3w_1)^2] \leq 0$.  So, the two can be equal iff $v_1w_2 - v_2w_1 = 0$.  But, we assumed $v_1w_2 - v_2w_1 \neq 0$.  Thus, we have arrived at a contradiction.  Therefore the assumption $v\times w\in \text{Span}(v,w)$ must be wrong and $\text{Span}(v,w) \neq \mathbb{R}^3$.
 
@@ -429,28 +429,28 @@ Let $v,w\in \mathbb{R}^n$.  Then, $\langle v,w \rangle \leq \Vert v\Vert \Vert w
 Let us first assume that $\Vert v\Vert = 1 = \Vert w\Vert$.  Then,
 $$
 \begin{align*}
-0 &\leq \Vert v-w\Vert^2 & \framebox(125,10){}\\
-&= \langle v-w,v-w \rangle & \framebox(125,10){}\\ 
-&= \langle v,v\rangle + \langle w,w\rangle - \langle v,w \rangle -\langle w,v \rangle & \framebox(125,10){}\\
-&= \langle v,v\rangle + \langle w,w\rangle -2\langle v,w \rangle & \framebox(125,10){}\\
-&= 2-2\langle v,w \rangle & \framebox(125,10){}
-\end{align*}
+        0 &\leq \Vert v-w\Vert^2 & \framebox(125,10){}\\
+        &= \langle v-w,v-w \rangle & \framebox(125,10){}\\ 
+        &= \langle v,v\rangle + \langle w,w\rangle - \langle v,w \rangle -\langle w,v \rangle & \framebox(125,10){}\\
+        &= \langle v,v\rangle + \langle w,w\rangle -2\langle v,w \rangle & \framebox(125,10){}\\
+        &= 2-2\langle v,w \rangle & \framebox(125,10){}
+    \end{align*}
 $$
 Thus, $\langle v,w \rangle \leq 1 = \Vert v\Vert \Vert w\Vert$.  Moreover, the equality holds iff $\Vert v-w\Vert = 0$, that is $v-w = 0$ or $v=w$.  
 
 Now, let $v$, $w$ be two arbitrary vectors in $\mathbb{R}^n$.  Then consdider the vectors $v' = \frac{1}{\Vert v\Vert}v$ and $w' = \frac{1}{\Vert w\Vert}w$.  Then, by the previous observation, $\langle v',w'\rangle \leq \Vert v'\Vert^2 \Vert w'\Vert^2 = 1$.  But,
 $$
 \begin{align*}
-\langle v',w'\rangle &= \langle \frac{1}{\Vert  v\Vert}v,\frac{1}{\Vert  w\Vert}w\rangle \\
-&= \frac{1}{\Vert  v\Vert}\langle v,\frac{1}{\Vert  w\Vert}w\rangle\\
-&= \frac{1}{\Vert  v\Vert\Vert  w\Vert}\langle v,w\rangle\\
-\end{align*}
+        \langle v',w'\rangle &= \langle \frac{1}{\Vert  v\Vert}v,\frac{1}{\Vert  w\Vert}w\rangle \\
+        &= \frac{1}{\Vert  v\Vert}\langle v,\frac{1}{\Vert  w\Vert}w\rangle\\
+        &= \frac{1}{\Vert  v\Vert\Vert  w\Vert}\langle v,w\rangle\\
+    \end{align*}
 $$
 Thus, 
 $$
 \begin{align*}
-\frac{1}{\Vert  v\Vert\Vert  w\Vert}\langle v,w\rangle \leq 1
-\end{align*}
+        \frac{1}{\Vert  v\Vert\Vert  w\Vert}\langle v,w\rangle \leq 1
+    \end{align*}
 $$
 and hence we have the result.
 
@@ -480,12 +480,12 @@ OK, the span of two vectors $v,w\in \mathbb{R}^3$ is not equal to $\mathbb{R}^3$
 If $w = \alpha v$, then
 $$
 \begin{align*}
-\text{Span(v,w)} &= \{xv + yw \ | \ x,y\in \mathbb{R}\} & \framebox(125,10){}\\
-&= \{xv + y(\alpha v)) \ | \ x,y\in \mathbb{R}\} & \framebox(125,10){}\\
-&= \{xv + (y\alpha) v \ | \ x,y\in \mathbb{R}\} & \framebox(125,10){}\\
-&= \{(x + y\alpha) v \ | \ x,y\in \mathbb{R}\} & \framebox(125,10){}\\
-&= \{zv \ | \ z\in \mathbb{R}\}
-\end{align*}
+        \text{Span(v,w)} &= \{xv + yw \ | \ x,y\in \mathbb{R}\} & \framebox(125,10){}\\
+        &= \{xv + y(\alpha v)) \ | \ x,y\in \mathbb{R}\} & \framebox(125,10){}\\
+        &= \{xv + (y\alpha) v \ | \ x,y\in \mathbb{R}\} & \framebox(125,10){}\\
+        &= \{(x + y\alpha) v \ | \ x,y\in \mathbb{R}\} & \framebox(125,10){}\\
+        &= \{zv \ | \ z\in \mathbb{R}\}
+    \end{align*}
 $$
 The last equality is a bit more subtle than the rest.  We will prove $\{(x + y\alpha) v \ | \ x,y\in \mathbb{R}\} = \{zv \ | \ z\in \mathbb{R}\}$, by showing $\{(x + y\alpha) v \ | \ x,y\in \mathbb{R}\} \subset \{zv \ | \ z\in \mathbb{R}\}$ and $\{zv \ | \ z\in \mathbb{R}\} \subset \{(x + y\alpha) v \ | \ x,y\in \mathbb{R}\}$.  To see the first containment, note that as $x$, $y$, and $\alpha$ are real numbers, so is $x + y\alpha$.  Thus, $\{(x + y\alpha) v \ | \ x,y\in \mathbb{R}\} \subset \{zv \ | \ z\in \mathbb{R}\}$.  On the other hand, given any $z\in \mathbb{R}$, choose $(x,y,\alpha) = (z,0,\alpha)$ and $z = x + y\alpha$.  So, $zw\in \{(x + y\alpha) v \ | \ x,y\in \mathbb{R}\}$.  Thus, $\{zv \ | \ z\in \mathbb{R}\} \subset \{(x + y\alpha) v \ | \ x,y\in \mathbb{R}\}$.
 
@@ -499,12 +499,12 @@ The last equality is a bit more subtle than the rest.  We will prove $\{(x + y\a
 Let $v_1 = (1,0,0)$, $v_2 = (1,1,0)$.  Then, 
 $$
 \begin{align*}
-\text{Span}(v_1,v_2) &= \{\alpha(1,0,0) + \beta(0,1,0)\ | \ \alpha ,\beta \in \mathbb{R}\} & \framebox(125,10){}\\
-&= \{(\alpha,0,0) + (0,\beta,0) \ | \ \alpha, \beta \in \mathbb{R}\} & \framebox(125,10){}\\
-&= \{(\alpha,\beta,0) \ | \ \alpha,\beta\in \mathbb{R}\} & \framebox(125,10){}\\
-&= \{(x,y,z)\in \mathbb{R}^3 \ | \ z = 0 \} & \framebox(125,10){}\\
-&= \{(x,y,z)\in \mathbb{R}^3 \ | \ \langle (x,y,z),(0,0,1)\rangle = 0 \} & \framebox(125,10){}
-\end{align*}
+        \text{Span}(v_1,v_2) &= \{\alpha(1,0,0) + \beta(0,1,0)\ | \ \alpha ,\beta \in \mathbb{R}\} & \framebox(125,10){}\\
+        &= \{(\alpha,0,0) + (0,\beta,0) \ | \ \alpha, \beta \in \mathbb{R}\} & \framebox(125,10){}\\
+        &= \{(\alpha,\beta,0) \ | \ \alpha,\beta\in \mathbb{R}\} & \framebox(125,10){}\\
+        &= \{(x,y,z)\in \mathbb{R}^3 \ | \ z = 0 \} & \framebox(125,10){}\\
+        &= \{(x,y,z)\in \mathbb{R}^3 \ | \ \langle (x,y,z),(0,0,1)\rangle = 0 \} & \framebox(125,10){}
+    \end{align*}
 $$
 
 </div>
@@ -517,11 +517,11 @@ $$
 Let $v_1 = (2,1,0)$, $v_2 = (3,0,1)$.  Then,
 $$
 \begin{align*}
-\text{Span}(v_1,v_2) &= \{\alpha(2,1,0) + \beta(3,0,1)\ | \ \alpha ,\beta \in \mathbb{R}\} & \framebox(125,10){}\\
-&= \{(2\alpha+3\beta,\alpha,\beta) \ | \ \alpha,\beta\in \mathbb{R}\} & \framebox(125,10){}\\
-&= \{(x,y,z)\in \mathbb{R}^3 \ | \ x = 2y + 3z \} & \framebox(125,10){}\\
-&= \{(x,y,z)\in \mathbb{R}^3 \ | \ \langle (x,y,z), (1,-2,-3)\rangle = 0 \} & \framebox(125,10){}
-\end{align*}
+        \text{Span}(v_1,v_2) &= \{\alpha(2,1,0) + \beta(3,0,1)\ | \ \alpha ,\beta \in \mathbb{R}\} & \framebox(125,10){}\\
+        &= \{(2\alpha+3\beta,\alpha,\beta) \ | \ \alpha,\beta\in \mathbb{R}\} & \framebox(125,10){}\\
+        &= \{(x,y,z)\in \mathbb{R}^3 \ | \ x = 2y + 3z \} & \framebox(125,10){}\\
+        &= \{(x,y,z)\in \mathbb{R}^3 \ | \ \langle (x,y,z), (1,-2,-3)\rangle = 0 \} & \framebox(125,10){}
+    \end{align*}
 $$
 
 </div>
@@ -534,11 +534,11 @@ $$
 Let $v_1 = (7,2,1)$, $v_2 = (0,1,0)$.  Then,
 $$
 \begin{align*}
-\text{Span}(v_1,v_2) &= \{\alpha(7,2,1) + \beta(0,1,0)\ | \ \alpha ,\beta \in \mathbb{R}\} & \framebox(125,10){}\\
-&= \{(7\alpha,2\alpha + \beta,\alpha) \ | \ \alpha,\beta\in \mathbb{R}\} & \framebox(125,10){}\\
-&= \{(x,y,z)\in \mathbb{R}^3 \ | \ z = 7x \} & \framebox(125,10){}\\
-&= \{(x,y,z)\in \mathbb{R}^3 \ | \ \langle (x,y,z), (-1,0,7)\rangle = 0 \} & \framebox(125,10){}
-\end{align*}
+        \text{Span}(v_1,v_2) &= \{\alpha(7,2,1) + \beta(0,1,0)\ | \ \alpha ,\beta \in \mathbb{R}\} & \framebox(125,10){}\\
+        &= \{(7\alpha,2\alpha + \beta,\alpha) \ | \ \alpha,\beta\in \mathbb{R}\} & \framebox(125,10){}\\
+        &= \{(x,y,z)\in \mathbb{R}^3 \ | \ z = 7x \} & \framebox(125,10){}\\
+        &= \{(x,y,z)\in \mathbb{R}^3 \ | \ \langle (x,y,z), (-1,0,7)\rangle = 0 \} & \framebox(125,10){}
+    \end{align*}
 $$
 
 </div>
@@ -634,10 +634,10 @@ For all vectors $v_1,\dots,v_m\in \mathbb{R}^n$, $\text{Span}(v_1,\dots,v_m)$ sa
 Note that $0 = 0v_1 + \dots + 0v_n \in \text{Span}(v_1,\dots,v_m)$.  Also, if $u_1\in \text{Span}(v_1,\dots,v_m)$, then there exits $\alpha_i \forall i\in \{1,\dots,m\}$ such that $u_1 = \alpha_1 v_1 + \dots +\alpha_m v_m$.  Similarly, if $u_2\in \text{Span}(v_1,\dots,v_m)$, then there exists $\beta_i \forall i\in \{1,\dots,m\}$ such that $u_2 = \beta_1 v_1 +\dots \beta_m v_m$.  Thus,
 $$
 \begin{align*}
-u_1 + u_2 &= \alpha_1 v_1 + \dots +\alpha_m v_m + \beta_1 v_1 +\dots \beta_m v_m\\
-&= (\alpha_1 + \beta_1)v_1 + \dots +(\alpha_m + \beta_m)v_m\\
-&\in \text{Span}(v_1,\dots,v_m)
-\end{align*}
+        u_1 + u_2 &= \alpha_1 v_1 + \dots +\alpha_m v_m + \beta_1 v_1 +\dots \beta_m v_m\\
+        &= (\alpha_1 + \beta_1)v_1 + \dots +(\alpha_m + \beta_m)v_m\\
+        &\in \text{Span}(v_1,\dots,v_m)
+    \end{align*}
 $$
 
 </details>
@@ -653,14 +653,14 @@ Similarly, one can prove that
 Consider the system of equations
 $$
 \begin{align}
-\label{eqn: homoMeqnNunkn}
-a_{11} x_1 + a_{12} x_2 + \dots + a_{1n} x_n &= 0\\ \nonumber
-a_{21} x_1 + a_{22} x_2 + \dots + a_{2n} x_n &= 0\\ \nonumber
-.\\ \nonumber
-.\\ \nonumber
-.\\ \nonumber
-a_{m1} x_1 + a_{m2} x_2 + \dots + a_{mn} x_n &= 0\\ \nonumber
-\end{align}
+        \label{eqn: homoMeqnNunkn}
+        a_{11} x_1 + a_{12} x_2 + \dots + a_{1n} x_n &= 0\\ \nonumber
+        a_{21} x_1 + a_{22} x_2 + \dots + a_{2n} x_n &= 0\\ \nonumber
+        .\\ \nonumber
+        .\\ \nonumber
+        .\\ \nonumber
+        a_{m1} x_1 + a_{m2} x_2 + \dots + a_{mn} x_n &= 0\\ \nonumber
+    \end{align}
 $$
 The set $S = \{x = (x_1,\dots, x_n)\ | \ (x_1,\dots,x_n) \text{ satisfy the system \ref{eqn: homoMeqnNunkn}} \}$ satisfies the following three conditions
 
@@ -818,7 +818,7 @@ Show that if $S\subset T$, then $\text{Span}(S)\subset \text{Span}(T)$.
 Given system $\ref{eqn: gennonhom}$ or **2.2**, we can associate to the system a function $F:\mathbb{R}^n \to \mathbb{R}^m$ defined as
 $$
 \begin{align*}
-F(x_1,\dots,x_n) = \left(\sum\limits_{i=1}^n a_{1i} x_i, \dots, \sum\limits_{i=1}^n a_{mi} x_i\right)
+    F(x_1,\dots,x_n) = \left(\sum\limits_{i=1}^n a_{1i} x_i, \dots, \sum\limits_{i=1}^n a_{mi} x_i\right)
 \end{align*}
 $$
 
@@ -884,19 +884,19 @@ Given a linear function $F:\mathbb{R}^n \to \mathbb{R}^m$, show that $Ker(F)$ an
 Let $F:\mathbb{R}^2 \to \mathbb{R}^3$ be the function $F(x,y) = (x+3y,2x+2y,3x+y)$.  Then, 
 $$
 \begin{align*}
-Ker(F) &= \{(x,y)\in R^2 \ | \ F(x,y) = (0,0,0)\}\\
-&= \{(x,y)\in R^2 \ | \ (x+3y,2x+2y,3x+y) = (0,0,0)\}
-\end{align*}
+        Ker(F) &= \{(x,y)\in R^2 \ | \ F(x,y) = (0,0,0)\}\\
+        &= \{(x,y)\in R^2 \ | \ (x+3y,2x+2y,3x+y) = (0,0,0)\}
+    \end{align*}
 $$
 As $2x+2y = 0$, we have $y = -x$.  Substituting this value of $y$ in $x+3y=0$, we get $x - 3x = 0$ or $x=0$.  Substituting this value in $3x+y=0$, we get $y=0$. Thus, $(x,y)\in \{(x,y)\in R^2 \ | \ (x+3y,2x+2y,3x+y) = (0,0,0)\}$ implies that $(x,y) = (0,0)$.  That is, 
 $$Ker(F) = \{(x,y)\in R^2 \ | \ (x+3y,2x+2y,3x+y) = (0,0,0)\} = \{(0,0)\}.$$
 Now,
 $$
 \begin{align*}
-Im(F) &= \{F(x,y) | (x,y)\in\mathbb{R}^2\}\\
-&= \{(x+3y,2x+2y,3x+y) | (x,y)\in\mathbb{R}^2\}\\
-&= \left\{(a,b,c)\in \mathbb{R}^3 \ | \ b = \frac{a+c}{2}\right\}
-\end{align*}
+        Im(F) &= \{F(x,y) | (x,y)\in\mathbb{R}^2\}\\
+        &= \{(x+3y,2x+2y,3x+y) | (x,y)\in\mathbb{R}^2\}\\
+        &= \left\{(a,b,c)\in \mathbb{R}^3 \ | \ b = \frac{a+c}{2}\right\}
+    \end{align*}
 $$
 
 </div>
@@ -909,16 +909,16 @@ $$
 Let $F:\mathbb{R}^3 \to \mathbb{R}^2$ be the function $F(x,y,z) = (x+y,z)$.  Then, 
 $$
 \begin{align*}
-Ker(F) &= \{(x,y,z)\in R^3 \ | \ F(x,y,z) = (0,0)\}\\
-&= \{(x,y,z)\in R^3 \ | \ (x+y,z) = (0,0)\}\\
-&= \{(x,-x,0) \ | \ x\in \mathbb{R}\}
-\end{align*}
+        Ker(F) &= \{(x,y,z)\in R^3 \ | \ F(x,y,z) = (0,0)\}\\
+        &= \{(x,y,z)\in R^3 \ | \ (x+y,z) = (0,0)\}\\
+        &= \{(x,-x,0) \ | \ x\in \mathbb{R}\}
+    \end{align*}
 $$
 And,
 $$
 \begin{align*}
-Im(F) &= \{F(x,y,z) | (x,y,z)\in\mathbb{R}^3\} = \mathbb{R}^2
-\end{align*}
+        Im(F) &= \{F(x,y,z) | (x,y,z)\in\mathbb{R}^3\} = \mathbb{R}^2
+    \end{align*}
 $$
 To see that $Im(F) = \mathbb{R}^2$, we will show that an arbitrary element $(a,b)\in \mathbb{R}^2$ belongs to $Im(F)$.  More precisely, note that $F(a,0,b) = (a+0,b) = (a,b)$.
 
@@ -932,18 +932,18 @@ To see that $Im(F) = \mathbb{R}^2$, we will show that an arbitrary element $(a,b
 Let $F:\mathbb{R}^2 \to \mathbb{R}^4$ be the function $F(x,y) = \left(\sqrt{2}x+y,3x+\frac{2}{3}y,\frac{x}{3},4y\right)$.  Then, 
 $$
 \begin{align*}
-Ker(F) &= \{(x,y)\in \mathbb{R}^2 \ | \ F(x,y) = (0,0,0,0)\}\\
-&= \left\{(x,y)\in \mathbb{R}^2 \ | \ \left(\sqrt{2}x+y,3x+\frac{2}{3}y,\frac{x}{3},4y\right) = (0,0,0,0)\right\}
-\end{align*}
+        Ker(F) &= \{(x,y)\in \mathbb{R}^2 \ | \ F(x,y) = (0,0,0,0)\}\\
+        &= \left\{(x,y)\in \mathbb{R}^2 \ | \ \left(\sqrt{2}x+y,3x+\frac{2}{3}y,\frac{x}{3},4y\right) = (0,0,0,0)\right\}
+    \end{align*}
 $$
 Thus, $(x,y)\in Ker(F)$ iff $\left(\sqrt{2}x+y,3x+\frac{2}{3}y,\frac{x}{3},4y\right) = (0,0,0,0)$.  But, if $\left(\sqrt{2}x+y,3x+\frac{2}{3}y,\frac{x}{3},4y\right) = (0,0,0,0)$, then $\frac{x}{3} = 0$ and $4y = 0$.  Thus, $x = 0 = y$.  Therefore, $(x,y)\in Ker(F)$ iff $(x,y) = (0,0)$.  That is,
 $$Ker(F) = \{(0,0)\}.$$
 And,
 $$
 \begin{align*}
-Im(F) &= \{F(x,y) | (x,y)\in\mathbb{R}^2\}\\
-&= \left\{\left(\sqrt{2}x+y,3x+\frac{2}{3}y,\frac{x}{3},4y\right) | (x,y)\in\mathbb{R}^2\right\}
-\end{align*}
+        Im(F) &= \{F(x,y) | (x,y)\in\mathbb{R}^2\}\\
+        &= \left\{\left(\sqrt{2}x+y,3x+\frac{2}{3}y,\frac{x}{3},4y\right) | (x,y)\in\mathbb{R}^2\right\}
+    \end{align*}
 $$
 
 Thus, if $(a,b,c,d)\in Im(F)$, there exists, $(x,y)\in \mathbb{R}^2$ such that $a = \sqrt{2}x+y$, $b = 3x+\frac{2}{3}y$, $c=\frac{x}{3}$, and $d= 4y$.  Therefore, $3\sqrt{2}c + \frac{d}{4} = 3\sqrt{2}\frac{x}{3} + \frac{4y}{4} = \sqrt{2}x + y = a$.  Similarly, $9c + \frac{d}{6} = 9\frac{x}{3} + \frac{4y}{6} = 3x + \frac{2}{3}y = b$.  Thus, if $(a,b,c,d)\in Im(F)$, then if $(a,b,c,d)\in \left\{(a,b,c,d) \ | \ a = 3\sqrt{2}c + \frac{d}{4}, b = 9c + \frac{d}{6}\right\}$.  That is $Im(F)\subset \left\{(a,b,c,d) \ | \ a = 3\sqrt{2}c + \frac{d}{4}, b = 9c + \frac{d}{6}\right\}$.  
@@ -961,27 +961,27 @@ $$Im(F)= (a,b,c,d)\in \left\{(a,b,c,d) \ | \ a = 3\sqrt{2}c + \frac{d}{4}, b = 9
 Let $F:\mathbb{R}^4 \to \mathbb{R}^2$ be the function $F(a,b,c,d) = (2a+b+c,b,3c)$.  Then, 
 $$
 \begin{align*}
-Ker(F) &= \{(a,b,c,d)\in R^4 \ | \ F(a,b,c,d) = (0,0)\}\\
-&= \left\{(a,b,c,d)\in R^4 \ | \ (2a+b+c,b,3c) = (0,0,0)\right\}\\
-&= \{(0,0,0,d) \ | \ d\in \mathbb{R}\}
-\end{align*}
+        Ker(F) &= \{(a,b,c,d)\in R^4 \ | \ F(a,b,c,d) = (0,0)\}\\
+        &= \left\{(a,b,c,d)\in R^4 \ | \ (2a+b+c,b,3c) = (0,0,0)\right\}\\
+        &= \{(0,0,0,d) \ | \ d\in \mathbb{R}\}
+    \end{align*}
 $$
 
 And,
 $$
 \begin{align*}
-Im(F) &= \{F(a,b,c,d) | (a,b,c,d)\in\mathbb{R}^4\}\\
-&= \{(2a+b+c,b,3c) | (a,b,c,d)\in\mathbb{R}^4\}\\
-&= \mathbb{R}^3
-\end{align*}
+        Im(F) &= \{F(a,b,c,d) | (a,b,c,d)\in\mathbb{R}^4\}\\
+        &= \{(2a+b+c,b,3c) | (a,b,c,d)\in\mathbb{R}^4\}\\
+        &= \mathbb{R}^3
+    \end{align*}
 $$
 To see that $Im(F) = \mathbb{R}^3$, we will show that an arbitrary element $(x,y,z)\in \mathbb{R}^3$ belongs to $Im(F)$.  More precisely, note that
 $$
 \begin{align*}
-F\left(\frac{x}{2}-\frac{y}{2}-\frac{z}{6},y,\frac{z}{3},0\right) &= \left(2\left(\frac{x}{2}-\frac{y}{2}-\frac{z}{6}\right) + y +\frac{z}{3},y,3\frac{z}{3}\right)\\
-&= \left(x - y - \frac{z}{3} + y + \frac{z}{3},y,z\right)\\
-&= (x,y,z)
-\end{align*}
+        F\left(\frac{x}{2}-\frac{y}{2}-\frac{z}{6},y,\frac{z}{3},0\right) &= \left(2\left(\frac{x}{2}-\frac{y}{2}-\frac{z}{6}\right) + y +\frac{z}{3},y,3\frac{z}{3}\right)\\
+        &= \left(x - y - \frac{z}{3} + y + \frac{z}{3},y,z\right)\\
+        &= (x,y,z)
+    \end{align*}
 $$
 
 </div>
@@ -1045,46 +1045,46 @@ a_{m1} & \dots & a_{mn}
 \end{bmatrix}\begin{bmatrix}x_1\\ x_2 \\ . \\ . \\ . \\x_n\end{bmatrix}$ 
 - If $F:\mathbb{R}^n \to \mathbb{R}^m$ and $G:\mathbb{R}^m \to \mathbb{R}^k$ are such that 
 $$\overline{F}\left(\begin{bmatrix}x_1\\ x_2 \\ . \\ . \\ . \\x_n\end{bmatrix}\right) = \begin{bmatrix}
-a_{11} & a_{12} \dots & a_{1n}\\
-a_{21} & a_{22} \dots & a_{2n}\\
-. & . & . \\
-. & . & . \\
-. & . & . \\
-a_{m1} & \dots & a_{mn} 
+    a_{11} & a_{12} \dots & a_{1n}\\
+    a_{21} & a_{22} \dots & a_{2n}\\
+    . & . & . \\
+    . & . & . \\
+    . & . & . \\
+    a_{m1} & \dots & a_{mn} 
 \end{bmatrix}\begin{bmatrix}x_1\\ x_2 \\ . \\ . \\ . \\x_n\end{bmatrix}$$ and
 $$\overline{G}\left(\begin{bmatrix}x_1\\ x_2 \\ . \\ . \\ . \\x_m\end{bmatrix}\right) = \begin{bmatrix}
-b_{11} & b_{12} \dots & b_{1m}\\
-b_{21} & b_{22} \dots & b_{2m}\\
-. & . & . \\
-. & . & . \\
-. & . & . \\
-b_{k1} & \dots & b_{km} 
+    b_{11} & b_{12} \dots & b_{1m}\\
+    b_{21} & b_{22} \dots & b_{2m}\\
+    . & . & . \\
+    . & . & . \\
+    . & . & . \\
+    b_{k1} & \dots & b_{km} 
 \end{bmatrix}\begin{bmatrix}x_1\\ x_2 \\ . \\ . \\ . \\x_m\end{bmatrix}$$
 then,
 $$\overline{G\circ F}\left(\begin{bmatrix}x_1\\ x_2 \\ . \\ . \\ . \\x_n\end{bmatrix}\right) = \left(\begin{bmatrix}
-b_{11} & b_{12} \dots & b_{1m}\\
-b_{21} & b_{22} \dots & b_{2m}\\
-. & . & . \\
-. & . & . \\
-. & . & . \\
-b_{k1} & \dots & b_{km} 
+    b_{11} & b_{12} \dots & b_{1m}\\
+    b_{21} & b_{22} \dots & b_{2m}\\
+    . & . & . \\
+    . & . & . \\
+    . & . & . \\
+    b_{k1} & \dots & b_{km} 
 \end{bmatrix}\begin{bmatrix}
-a_{11} & a_{12} \dots & a_{1n}\\
-a_{21} & a_{22} \dots & a_{2n}\\
-. & . & . \\
-. & . & . \\
-. & . & . \\
-a_{m1} & \dots & a_{mn} 
+    a_{11} & a_{12} \dots & a_{1n}\\
+    a_{21} & a_{22} \dots & a_{2n}\\
+    . & . & . \\
+    . & . & . \\
+    . & . & . \\
+    a_{m1} & \dots & a_{mn} 
 \end{bmatrix}\right)\begin{bmatrix}x_1\\ x_2 \\ . \\ . \\ . \\x_n\end{bmatrix}$$
 
 To each function $F:\mathbb{R}^n \to \mathbb{R}^m$ of the form $F(x_1,\dots,x_n) = \left(\sum\limits_{i=1}^n a_{1i} x_i, \dots, \sum\limits_{i=1}^n a_{mi} x_i\right)$, we can associate an $m\times n$ matrix 
 $$\begin{bmatrix}
-a_{11} & a_{12} \dots & a_{1n}\\
-a_{21} & a_{22} \dots & a_{2n}\\
-. & . & . \\
-. & . & . \\
-. & . & . \\
-a_{m1} & \dots & a_{mn} 
+    a_{11} & a_{12} \dots & a_{1n}\\
+    a_{21} & a_{22} \dots & a_{2n}\\
+    . & . & . \\
+    . & . & . \\
+    . & . & . \\
+    a_{m1} & \dots & a_{mn} 
 \end{bmatrix}$$
 
 these two conditions would force the usual definition of matrix multiplication
@@ -1124,10 +1124,10 @@ $BA = \begin{bmatrix}
 Once again, let $F:\mathbb{R}^n \to \mathbb{R}^m$ be a linear function.  Then, there exists $a_{ij}$ such that $F(x_1,\dots,x_n) = \left(\sum\limits_{i=1}^n a_{1i} x_i, \dots, \sum\limits_{i=1}^n a_{mi} x_i\right)$.  Then, 
 $$
 \begin{align*}
-Im(F) &= \{F(x_1,\dots,x_n) \ | \ (x_1,\dots,x_n)\in \mathbb{R}^n\}\\
-&= \left\{\left(\sum\limits_{i=1}^n a_{1i} x_i, \dots, \sum\limits_{i=1}^n a_{mi} x_i\right) \ | \ (x_1,\dots,x_n)\in \mathbb{R}^n\right\}\\
-&= \left\{\sum\limits_{i=1}^n x_i\left(a_{1i}, \dots, a_{mi}\right) \ | \ (x_1,\dots,x_n)\in \mathbb{R}^n\right\}\\
-&= \left\{\sum\limits_{i=1}^n x_iA^i \ | \ (x_1,\dots,x_n)\in \mathbb{R}^n\right\}\\
+    Im(F) &= \{F(x_1,\dots,x_n) \ | \ (x_1,\dots,x_n)\in \mathbb{R}^n\}\\
+    &= \left\{\left(\sum\limits_{i=1}^n a_{1i} x_i, \dots, \sum\limits_{i=1}^n a_{mi} x_i\right) \ | \ (x_1,\dots,x_n)\in \mathbb{R}^n\right\}\\
+    &= \left\{\sum\limits_{i=1}^n x_i\left(a_{1i}, \dots, a_{mi}\right) \ | \ (x_1,\dots,x_n)\in \mathbb{R}^n\right\}\\
+    &= \left\{\sum\limits_{i=1}^n x_iA^i \ | \ (x_1,\dots,x_n)\in \mathbb{R}^n\right\}\\
 \end{align*}
 $$
 Thus, the image of $F$ is the span of the columns of the corresponding matrix!  Therefore, the system **2.1** has a solution for a given $(b_1,\dots,b_n)$ iff $(b_1,\dots,b_n)\in \text{Span}(A^1,\dots,A^n)$.  Also, $F$ is surjective iff $\mathbb{R}^m = \text{Span}(A^1,\dots,A^n)$ 
@@ -1169,11 +1169,11 @@ Instead of proving ``if $F$ is injective, then $Ker(F) = 0$", we will prove its 
 Now we will prove ``If $Ker(F) = \{0\}$, then $F$ is injective".  So, we will assume $Ker(F) = \{0\}$ and prove $F$ is injective.  In other words, we would assume $F(x_1,\dots,x_n) = F(y_1,\dots,y_n)$ and prove that $(x_1,\dots,x_n) = (y_1,\dots,y_n)$.  Notice that as $F$ is linear, there exists constants $a_{ij}$ such that $F(x_1,\dots,x_n) = \left(\sum\limits_{i=1}^n a_{1i} x_i, \dots, \sum\limits_{i=1}^n a_{mi} x_i\right)$.  Thus,
 $$
 \begin{align*}
-0 &= F(x_1,\dots,x_n) - F(y_1,\dots,y_n)\\
-&= \left(\sum\limits_{i=1}^n a_{1i} x_i, \dots, \sum\limits_{i=1}^n a_{mi} x_i\right) - \left(\sum\limits_{i=1}^n a_{1i} y_i, \dots, \sum\limits_{i=1}^n a_{mi} y_i\right)\\
-&= \left(\sum\limits_{i=1}^n a_{1i} (x_i-y_i), \dots, \sum\limits_{i=1}^n a_{mi} (x_i-y_i)\right)\\
-&= F(x_1-y_1,\dots,x_n-y_n)
-\end{align*}
+        0 &= F(x_1,\dots,x_n) - F(y_1,\dots,y_n)\\
+        &= \left(\sum\limits_{i=1}^n a_{1i} x_i, \dots, \sum\limits_{i=1}^n a_{mi} x_i\right) - \left(\sum\limits_{i=1}^n a_{1i} y_i, \dots, \sum\limits_{i=1}^n a_{mi} y_i\right)\\
+        &= \left(\sum\limits_{i=1}^n a_{1i} (x_i-y_i), \dots, \sum\limits_{i=1}^n a_{mi} (x_i-y_i)\right)\\
+        &= F(x_1-y_1,\dots,x_n-y_n)
+    \end{align*}
 $$
 Thus, $(x_1-y_1,\dots,x_n-y_n)\in Ker(F)$.  Hence $(x_1-y_1,\dots,x_n-y_n) = 0$ that is $(x_1,\dots,x_n) = (y_1,\dots,y_n)$.
 
@@ -1258,10 +1258,10 @@ We can also solve it in a systematic way which would be more useful in general. 
 The vectors $(1,2,3)$, $(4,5,6)$, and $(13,14,15)$ are not linearly independent.  To check linear independence, fix $3$ arbitrary real numbers $\alpha_1$, $\alpha_2$, and $\alpha_3$ and equate $(0,0,0) = \alpha_1(1,2,3) + \alpha_2 (4,5,6) + \alpha_3(13,14,15) = (\alpha_1 + 4\alpha_2 + 13\alpha_3,2\alpha_1 + 5\alpha_2 + 14\alpha_3,3\alpha_1 + 6\alpha_2 + 15\alpha_3)$. Thus, we have the system of linear equations.
 $$
 \begin{align*}
-\alpha_1 + 4\alpha_2 + 13\alpha_3 &= 0\\
-2\alpha_1 + 5\alpha_2 + 14\alpha_3 &= 0\\
-3\alpha_1 + 6\alpha_2 + 15\alpha_3 &= 0
-\end{align*}
+        \alpha_1 + 4\alpha_2 + 13\alpha_3 &= 0\\
+        2\alpha_1 + 5\alpha_2 + 14\alpha_3 &= 0\\
+        3\alpha_1 + 6\alpha_2 + 15\alpha_3 &= 0
+    \end{align*}
 $$
 Notice that $(\alpha_1,\alpha_2,\alpha_3)$ satisfies $\alpha_1 + 4\alpha_2 + 13\alpha_3 = 0$ iff it satisfies $2\alpha_1 + 8\alpha_2 + 26\alpha_3 = 0$.
 
@@ -1509,20 +1509,20 @@ Let $e_i$ be the vector in $\mathbb{R}^n$ whose $i$-th entry is $1$ and all othe
 Let $V = \text{Span}((1,2,3),(4,5,6),(13,14,15))$.  We will start by checking if the list $((1,2,3),(4,5,6),(13,14,15))$ is linearly independent.  Assume $\alpha (1,2,3) + \beta (4,5,6) +\gamma (13,14,15) = (0,0,0)$.  That is,
 $$
 \begin{align*}
-\alpha +4\beta + 13\gamma &= 0\\
-2\alpha + 5\beta + 14\gamma &= 0\\
-3\alpha + 6\beta + 15\gamma &= 0
-\end{align*}
+        \alpha +4\beta + 13\gamma &= 0\\
+        2\alpha + 5\beta + 14\gamma &= 0\\
+        3\alpha + 6\beta + 15\gamma &= 0
+    \end{align*}
 $$
 As $\alpha +4\beta + 13\gamma = 0$, $2\alpha +8\beta + 26\gamma = 0$.  Thus, $0 = (2\alpha +8\beta + 26\gamma) - (2\alpha + 5\beta + 14\gamma) = 3\beta + 12\gamma$.  That is, $\beta = -4\gamma$.  Substituting this value of $\beta$ in the equation $3\alpha + 6\beta + 15\gamma = 0$, we get $0 = 3\alpha + 6 ((-4)\gamma ) + 15\gamma = 3\alpha - 9\gamma$.  That is, $\alpha = 3\gamma$.  Taking $\gamma = 1$, we can check that $3(1,2,3) + (-4)(4,5,6) + (13,14,15) = (0,0,0)$.  In other words, $(13,14,15) = (-3)(1,2,3) + 4(4,5,6)$.  Thus, $(13,14,15)\in \text{Span}((1,2,3),(4,5,6))$.  Therefore, 
 $$\text{Span}((1,2,3),(4,5,6)) = \text{Span}((1,2,3),(4,5,6),(13,14,15)) = V.$$
 Now, let us check if $((1,2,3),(4,5,6))$ is linearly independent.  Assume $\alpha (1,2,3) + \beta (4,5,6) = (0,0,0)$.  That is
 $$
 \begin{align*}
-\alpha + 4\beta &= 0\\
-2\alpha + 5\beta &= 0\\
-3\alpha + 6\beta &= 0
-\end{align*}
+        \alpha + 4\beta &= 0\\
+        2\alpha + 5\beta &= 0\\
+        3\alpha + 6\beta &= 0
+    \end{align*}
 $$
 As $\alpha + 4\beta = 0$, $2\alpha + 8\beta = 0$.   Thus, $0 = (2\alpha + 8\beta) - 2\alpha + 5\beta = 3\beta$.  Therefore $\beta = 0$ and hence $\alpha = 0$.  That is, $((1,2,3),(4,5,6))$ is linearly independent.  Thus, $((1,2,3),(4,5,6))$ is a basis for $V$.
 
@@ -1536,10 +1536,10 @@ As $\alpha + 4\beta = 0$, $2\alpha + 8\beta = 0$.   Thus, $0 = (2\alpha + 8\beta
 Let $V = \text{Span}((1,2,3),(4,5,6),(13,14,13))$.  We will start by checking if the list $((1,2,3),(4,5,6),(13,14,13))$ is linearly independent.  Assume $\alpha (1,2,3) + \beta (4,5,6) +\gamma (13,14,13) = (0,0,0)$.  That is,
 $$
 \begin{align*}
-\alpha +4\beta + 13\gamma &= 0\\
-2\alpha + 5\beta + 14\gamma &= 0\\
-3\alpha + 6\beta + 13\gamma &= 0
-\end{align*}
+        \alpha +4\beta + 13\gamma &= 0\\
+        2\alpha + 5\beta + 14\gamma &= 0\\
+        3\alpha + 6\beta + 13\gamma &= 0
+    \end{align*}
 $$
 Thus, $0 = (3\alpha +6\beta + 13\gamma) - (\alpha + 4\beta + 13\gamma) = 2\alpha + 2\beta$.  That is, $\beta = -\alpha$.  Substituting this value of $\beta$ in $2\alpha + 5\beta + 14\gamma = 0$, we get $0 = 2\alpha - 5\alpha + 14\gamma = (-3)\alpha + 14\gamma$.  That is $\gamma = \frac{3}{14}\alpha$.  Substituting these values of $\beta$ and $\gamma$ in $\alpha +4\beta + 13\gamma = 0$, we get $0 = \alpha - 4\alpha + \frac{39}{14}\alpha = -\frac{3}{14}\alpha$.  Thus, $\alpha = 0$ and hence $(\alpha,\beta,\gamma) = \left(\alpha,-\alpha,\frac{3}{14}\alpha\right)= (0,0,0)$.  Therefore, $((1,2,3),(4,5,6),(13,14,13))$ is a basis of $V$.
 
@@ -1553,10 +1553,10 @@ Thus, $0 = (3\alpha +6\beta + 13\gamma) - (\alpha + 4\beta + 13\gamma) = 2\alpha
 Let $V = \{(x,y,z)\in \mathbb{R}^3 \ | 2x+3y = 0\}$.  Then,
 $$
 \begin{align*}
-V &= \left\{\left(x,-\frac{2}{3}x,z\right) | (x,z)\in \mathbb{R}^2\right\}\\
-&= \left\{x\left(1,-\frac{2}{3},0\right) + z(0,0,1) | (x,z)\in \mathbb{R}^2\right\}\\
-&= \text{Span}\left(\left(1,-\frac{2}{3},0\right),(0,0,1)\right)
-\end{align*}
+        V &= \left\{\left(x,-\frac{2}{3}x,z\right) | (x,z)\in \mathbb{R}^2\right\}\\
+        &= \left\{x\left(1,-\frac{2}{3},0\right) + z(0,0,1) | (x,z)\in \mathbb{R}^2\right\}\\
+        &= \text{Span}\left(\left(1,-\frac{2}{3},0\right),(0,0,1)\right)
+    \end{align*}
 $$
 It is easy to see that $\left(\left(1,-\frac{2}{3},0\right),(0,0,1)\right)$ is linearly independent as $\alpha \left(1,-\frac{2}{3},0\right) + \beta(0,0,1) = 0$ clearly implies $(\alpha,\beta) = (0,0)$.  Thus, $\left(\left(1,-\frac{2}{3},0\right),(0,0,1)\right)$ is a basis for $V$.
 

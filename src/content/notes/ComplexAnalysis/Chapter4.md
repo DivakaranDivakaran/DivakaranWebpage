@@ -50,8 +50,8 @@ $$\int_{\gamma}f = \int_{\beta}f.$$
 Using Chain Rule, we see that 
 $$
 \begin{align*}
-\int_{\gamma}f &= \int_a^b f(\gamma(t))\gamma'(t)dt =\int_a^b f(\beta(\varphi(t)))\beta\circ\varphi'(t)dt =\int_c^d f(\beta(s))\beta'(s)ds = \int_{\beta} f
-\end{align*}
+        \int_{\gamma}f &= \int_a^b f(\gamma(t))\gamma'(t)dt =\int_a^b f(\beta(\varphi(t)))\beta\circ\varphi'(t)dt =\int_c^d f(\beta(s))\beta'(s)ds = \int_{\beta} f
+    \end{align*}
 $$
 
 </details>

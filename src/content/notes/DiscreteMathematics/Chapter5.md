@@ -255,12 +255,12 @@ $|A \cup B \cup C| = |A| + |B| + |C| - |A\cap B| - |A \cap C| - |B \cap C| + |A 
 
 $$
 \begin{align*}
-|A \cup (B \cup C)| &= |A| + |B\cup C| - |A\cap (B\cup C|) & \text{by PIE}\\
-&= |A| + |B| + |C| - |B\cap C| - |A\cap (B\cup C|) & \text{by PIE}\\
-&= |A| + |B| + |C| - |B\cap C| - |(A\cap B) \cup (A\cap C)|) & \text{as $\cap$ distributes over $\cup$}\\
-&= |A| + |B| + |C| - |B\cap C| - \left(|A\cap B| + |A\cap C| - |(A\cap B)\cap (A\cap C)|\right) & \text{by PIE}\\
-&= |A| + |B| + |C| - |B\cap C| - |A\cap B| - |A\cap C| + |A\cap B \cap C)|
-\end{align*}
+        |A \cup (B \cup C)| &= |A| + |B\cup C| - |A\cap (B\cup C|) & \text{by PIE}\\
+        &= |A| + |B| + |C| - |B\cap C| - |A\cap (B\cup C|) & \text{by PIE}\\
+        &= |A| + |B| + |C| - |B\cap C| - |(A\cap B) \cup (A\cap C)|) & \text{as $\cap$ distributes over $\cup$}\\
+        &= |A| + |B| + |C| - |B\cap C| - \left(|A\cap B| + |A\cap C| - |(A\cap B)\cap (A\cap C)|\right) & \text{by PIE}\\
+        &= |A| + |B| + |C| - |B\cap C| - |A\cap B| - |A\cap C| + |A\cap B \cap C)|
+    \end{align*}
 $$
 
 </details>
@@ -284,12 +284,12 @@ For how many $n \in \{1, 2, . . . , 500\}$ is n a multiple of one or more of $5$
 Let $A_n$ denote the multiples of $n$ in the set $\{1,2,\dots, 500\}$.  Then, we are asked to find $|A_5 \cup A_6 \cup A_7|$.  By the previous theorem, we have
 $$
 \begin{align*}
-|A_5 \cup A_6 \cup A_7| &= |A_5| + |A_6| + |A_7| - |A_5 \cap A_6| - |A_6 \cap A_7| - |A_5 \cap A_7| + |A_5 \cap A_6 \cap A_7|\\
-&= 100 + 83 + 71 - |A_5 \cap A_6| - |A_6 \cap A_7| - |A_5 \cap A_7| + |A_5 \cap A_6 \cap A_7| & \text{as $|A_n| = 500//n$}\\
-&= 254 - |A_{30}| - |A_{42}| - |A_{35}| + |A_{210}| & \text{as $A_m \cap A_n = A_{\text{lcm}(m,n)}$}\\
-&= 254 - 16 - 11 - 14 + 2 & \text{as $|A_n| = 500//n$}\\
-&= 215.
-\end{align*}
+        |A_5 \cup A_6 \cup A_7| &= |A_5| + |A_6| + |A_7| - |A_5 \cap A_6| - |A_6 \cap A_7| - |A_5 \cap A_7| + |A_5 \cap A_6 \cap A_7|\\
+        &= 100 + 83 + 71 - |A_5 \cap A_6| - |A_6 \cap A_7| - |A_5 \cap A_7| + |A_5 \cap A_6 \cap A_7| & \text{as $|A_n| = 500//n$}\\
+        &= 254 - |A_{30}| - |A_{42}| - |A_{35}| + |A_{210}| & \text{as $A_m \cap A_n = A_{\text{lcm}(m,n)}$}\\
+        &= 254 - 16 - 11 - 14 + 2 & \text{as $|A_n| = 500//n$}\\
+        &= 215.
+    \end{align*}
 $$
 
 </details>

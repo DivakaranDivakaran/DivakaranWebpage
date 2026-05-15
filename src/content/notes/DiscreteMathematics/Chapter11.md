@@ -193,10 +193,10 @@ The idea of introducing an invariant comes handy when we try to prove the conver
 Let $f(z) = z^2 + 3$.  Then,
 $$
 \begin{align*}
-\frac{1}{f(z)} &= \frac{1}{3}\frac{1}{1 - \left(-\frac{z^2}{3}\right)}\\
-&= \frac{1}{3}\left(1 + \left(-\frac{z^2}{3}\right) + \left(-\frac{z^2}{3}\right)^2 + \left(-\frac{z^2}{3}\right)^3 + \dots\right)\\
-&= \frac{1}{3}\left(1 - \frac{z^2}{3} + \frac{z^4}{9} - \frac{z^6}{27} +\dots\right).
-\end{align*}
+         \frac{1}{f(z)} &= \frac{1}{3}\frac{1}{1 - \left(-\frac{z^2}{3}\right)}\\
+         &= \frac{1}{3}\left(1 + \left(-\frac{z^2}{3}\right) + \left(-\frac{z^2}{3}\right)^2 + \left(-\frac{z^2}{3}\right)^3 + \dots\right)\\
+         &= \frac{1}{3}\left(1 - \frac{z^2}{3} + \frac{z^4}{9} - \frac{z^6}{27} +\dots\right).
+     \end{align*}
 $$
 
 </div>
@@ -210,10 +210,10 @@ $$
 Recall that $\cos(z) = \sum \frac{(-1)^n}{2n!}z^{2n}$.  Thus, 
 $$
 \begin{align*}
-\frac{1}{\cos(z)} &= \frac{1}{1-\left(\frac{z^2}{2!} -\frac{z^4}{4!} + \dots\right)}\\
-&= 1 + \left(\frac{z^2}{2!} -\frac{z^4}{4!} + \dots\right) + \left(\frac{z^2}{2!} -\frac{z^4}{4!} + \dots\right)^2 + \dots\\
-&= 1 + \frac{z^2}{2!} + \left(\frac{1}{4}-\frac{1}{24}\right)z^4 + \text{higher order terms}
-\end{align*}
+        \frac{1}{\cos(z)} &= \frac{1}{1-\left(\frac{z^2}{2!} -\frac{z^4}{4!} + \dots\right)}\\
+        &= 1 + \left(\frac{z^2}{2!} -\frac{z^4}{4!} + \dots\right) + \left(\frac{z^2}{2!} -\frac{z^4}{4!} + \dots\right)^2 + \dots\\
+        &= 1 + \frac{z^2}{2!} + \left(\frac{1}{4}-\frac{1}{24}\right)z^4 + \text{higher order terms}
+    \end{align*}
 $$
 
 </div>
@@ -228,11 +228,11 @@ This technique can sometime be used to find inverse of power series that do not 
 Recall that $\sin(z) = \sum \frac{(-1)^n}{(2n+1)!}z^{2n+1} = z(1-\frac{z^2}{3!} + \frac{z^4}{5!}-\dots)$.  Thus,
 $$
 \begin{align*}
-\frac{1}{\sin(z)} &= \frac{1}{z(1-\frac{z^2}{3!} + \frac{z^4}{5!}-\dots)}\\
-&= \frac{1}{z}\left(1 + \left(\frac{z^2}{3!}-\frac{z^4}{5!} + \dots \right) + \left(\frac{z^2}{3!}-\frac{z^4}{5!} + \dots \right)^2 + 
-dots \right)\\
-&= \frac{1}{z} + \frac{z}{3!} - \left(\left(\frac{1}{3!}\right)^2 - \frac{1}{5!}\right) z^3 + \text{higher order terms}.
-\end{align*}
+        \frac{1}{\sin(z)} &= \frac{1}{z(1-\frac{z^2}{3!} + \frac{z^4}{5!}-\dots)}\\
+        &= \frac{1}{z}\left(1 + \left(\frac{z^2}{3!}-\frac{z^4}{5!} + \dots \right) + \left(\frac{z^2}{3!}-\frac{z^4}{5!} + \dots \right)^2 + 
+        dots \right)\\
+        &= \frac{1}{z} + \frac{z}{3!} - \left(\left(\frac{1}{3!}\right)^2 - \frac{1}{5!}\right) z^3 + \text{higher order terms}.
+    \end{align*}
 $$
 
 </div>
@@ -273,9 +273,9 @@ In particular, the generating function for the sequence $<1>$ is the series $$\s
 
 The generating function for the sequence $<a_k>$ defined as 
 $$a_k = \begin{cases}
-\binom{n}{k} & \text{ if } k \leq n\\
-0            & \text{otherwise}
-\end{cases}$$
+        \binom{n}{k} & \text{ if } k \leq n\\
+        0            & \text{otherwise}
+    \end{cases}$$
 is 
 $$\sum_{i=0}^n\binom{n}{k}x^i = (1+x)^n$$
 
@@ -317,31 +317,31 @@ Solve the recurrence relation $a_n = 2a_{n-1} - a_{n-2}$, $a_0 = 1$ $a_1 = 2$.
 The generating function $G(x) = \sum_{i=0}^{\infty}a_i x^i$.  Now consider the recurrence relation $a_i = 2a_{i-1} - a_{i-2}$.  Multiply both sides of this equation by $x^i$ and summing for all values of $i\geq 2$, we get
 $$
 \begin{align*}
-\sum_{i=2}^{\infty} a_ix^i &= \sum_{i=2}^{\infty} 2a_{i-1}x^i - \sum_{i=2}^{\infty} a_{i-2}x^i
-\end{align*}
+        \sum_{i=2}^{\infty} a_ix^i &= \sum_{i=2}^{\infty} 2a_{i-1}x^i - \sum_{i=2}^{\infty} a_{i-2}x^i
+    \end{align*}
 $$
 Further notice that 
 $$
 \begin{align*}
-\sum_{i=2}^{\infty} a_ix^i = G(x) - a_0 - a_1 x = G(x) - 1 - 2x
-\end{align*}
+        \sum_{i=2}^{\infty} a_ix^i = G(x) - a_0 - a_1 x = G(x) - 1 - 2x
+    \end{align*}
 $$
 $$
 \begin{align*}
-\sum_{i=2}^{\infty} 2a_{i-1}x^i = 2x\sum_{i=2}^{\infty} a_{i-1}x^{i-1} = 2x\sum_{i=1}^{\infty} a_ix^i = 2x(G(x) -a_0) = 2x(G(x) - 1)
-\end{align*}
+        \sum_{i=2}^{\infty} 2a_{i-1}x^i = 2x\sum_{i=2}^{\infty} a_{i-1}x^{i-1} = 2x\sum_{i=1}^{\infty} a_ix^i = 2x(G(x) -a_0) = 2x(G(x) - 1)
+    \end{align*}
 $$
 and
 $$
 \begin{align*}
-- \sum_{i=2}^{\infty} a_{i-2}x^i = - x^2\sum_{i=2}^{\infty} a_{i-2}x^{i-2} = - x^2 \sum_{i=0}^{\infty}a_{i}x^i = x^2 G(x)
-\end{align*}
+        - \sum_{i=2}^{\infty} a_{i-2}x^i = - x^2\sum_{i=2}^{\infty} a_{i-2}x^{i-2} = - x^2 \sum_{i=0}^{\infty}a_{i}x^i = x^2 G(x)
+    \end{align*}
 $$
 Thus, we have
 $$
 \begin{align*}
-G(x) - 1 - 2x = 2x(G(x) - 1) - x^2 G(x) &\iff G(x) (1-2x+x^2) = 1 \iff G(x) = \frac{1}{(1-x)^2}
-\end{align*}
+        G(x) - 1 - 2x = 2x(G(x) - 1) - x^2 G(x) &\iff G(x) (1-2x+x^2) = 1 \iff G(x) = \frac{1}{(1-x)^2}
+    \end{align*}
 $$
 We would now like to write $\frac{1}{(1-x)^2}$ as a power series. Notice that we already know the power series for $\frac{1}{1-x}$ and 
 $$\frac{1}{(1-x)^2} = \frac{d}{dx}\left(\frac{1}{1-x}\right) = \frac{d}{dx}\left(\sum_{i=0}^{\infty}x^i\right) = \sum_{i=1}^{\infty}ix^{i-1} = \sum_{i=0}^{\infty}(i+1)x^{i}.$$
@@ -368,28 +368,28 @@ Solve the recurrence relation $a_k = 3a_{k-1} - 2a_{k-2} + 2^k$, $a_0 = 1$, $a_1
 If $G(x)$ is the generating function for $a_n$, then following the same steps as before, we will get
 $$
 \begin{align*}
-G(x) - a_0 - a_1x = 3x(G(x) - a_0) - 2x^2G(x) + \sum_{i=2}^{\infty} 2^nx^n = 3x(G(x) - a_0) - 2x^2G(x) + \frac{4x^2}{1 - 2x} 
-\end{align*}
+        G(x) - a_0 - a_1x = 3x(G(x) - a_0) - 2x^2G(x) + \sum_{i=2}^{\infty} 2^nx^n = 3x(G(x) - a_0) - 2x^2G(x) + \frac{4x^2}{1 - 2x} 
+    \end{align*}
 $$
 We can simplify this to get
 $$
 \begin{align*}
-G(x)(1-3x + 2x^2) = a_0 + (a_1 - 3a_0)x + \frac{4x^2}{1 - 2x} = 1 + 2x + \frac{4x^2}{1 - 2x} = \frac{1 - 4x^2 + 4x^2}{1-2x} = \frac{1}{1-2x}
-\end{align*}
+        G(x)(1-3x + 2x^2) = a_0 + (a_1 - 3a_0)x + \frac{4x^2}{1 - 2x} = 1 + 2x + \frac{4x^2}{1 - 2x} = \frac{1 - 4x^2 + 4x^2}{1-2x} = \frac{1}{1-2x}
+    \end{align*}
 $$
 Thus, 
 $$
 \begin{align*}
-G(x) = \frac{1}{(1-x)(1-2x)^2}
-\end{align*}
+        G(x) = \frac{1}{(1-x)(1-2x)^2}
+    \end{align*}
 $$
 We need to now find the power series corresponding to $\frac{1}{(1-x)(1-2x)^2}$.  This can be done using partial fractions.  More precisely, we can write
 $$
 \begin{align*}
-\frac{1}{(1-x)(1-2x)^2} &= \frac{1}{1-x} + \frac{-2}{1-2x} + \frac{2}{(1-2x)^2}\\
-&= \sum_{i=0}^{\infty} x^i -2 \sum_{i=0}^{\infty}2^{i}x^i + 2\sum_{i=0}^{\infty}(i+1)2^ix^i\\
-&= \sum_{i=0}^{\infty} (1 + i2^{i+1}) x^i
-\end{align*}
+        \frac{1}{(1-x)(1-2x)^2} &= \frac{1}{1-x} + \frac{-2}{1-2x} + \frac{2}{(1-2x)^2}\\
+        &= \sum_{i=0}^{\infty} x^i -2 \sum_{i=0}^{\infty}2^{i}x^i + 2\sum_{i=0}^{\infty}(i+1)2^ix^i\\
+        &= \sum_{i=0}^{\infty} (1 + i2^{i+1}) x^i
+    \end{align*}
 $$
 Thus, $a_n = 1 + n2^{n+1}$.
 
@@ -414,20 +414,20 @@ Solve the recurrence relation $a_n = 9a_{n-1} - 26a_{n-2} + 24a_{n-3}$, $a_0 = 2
 If $G(x)$ is the generating function for $a_n$, then following similar steps as before (the only difference is that we will sum from $i=3$ onwards), we will get
 $$
 \begin{align*}
-G(x) - a_0 - a_1 x - a_2 x^2 = 9x(G(x) - a_0 - a_1 x) - 26x^2 (G(x) - a_0) + 24x^3 G(x)
-\end{align*}
+        G(x) - a_0 - a_1 x - a_2 x^2 = 9x(G(x) - a_0 - a_1 x) - 26x^2 (G(x) - a_0) + 24x^3 G(x)
+    \end{align*}
 $$
 Taking all terms containing $G(x)$ to LHS and all other terms to RHS, we get
 $$
 \begin{align*}
-G(x)(1 - 9x + 26x^2 - 24x^3) = a_0 + (a_1 - 9a_0)x + (a_2 - 9a_1 + 26a_0) = 2 -14x + 18x^2
-\end{align*}
+        G(x)(1 - 9x + 26x^2 - 24x^3) = a_0 + (a_1 - 9a_0)x + (a_2 - 9a_1 + 26a_0) = 2 -14x + 18x^2
+    \end{align*}
 $$
 Notice that $1 - 9x + 26x^2 - 24x^3 = (1-2x)(1-3x)(1-4x)$ and
 $$
 \begin{align*}
-G(x) = \frac{2 -14x + 18x^2}{1 - 9x + 26x^2 - 24x^3} = \frac{-1}{1-2x} + \frac{6}{1-3x} + \frac{-3}{1-4x} = \sum_{i=0}^{\infty} (-2^i + 6.3^i - 3.4^i) x^i.
-\end{align*}
+        G(x) = \frac{2 -14x + 18x^2}{1 - 9x + 26x^2 - 24x^3} = \frac{-1}{1-2x} + \frac{6}{1-3x} + \frac{-3}{1-4x} = \sum_{i=0}^{\infty} (-2^i + 6.3^i - 3.4^i) x^i.
+    \end{align*}
 $$
 That is,
 $a_n = -2^n + 6.3^n - 3.4^n$

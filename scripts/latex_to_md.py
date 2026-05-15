@@ -218,13 +218,17 @@ class LatexConverter:
         
         # 7. Final processing
         text = self.expand_macros(text)
-        text = self.restore_math(text)
         
         # Add final closing tag for the last section and clean up the extra opening tag at the start
         text = text + "\n\n</details>"
         text = re.sub(r'</details>\s*<details', '<details', text, count=1)
         
-        return '\n'.join([l.lstrip() for l in text.split('\n')]).strip()
+        # FINAL STEP: restore math after all other formatting is done
+        # This prevents lstrip() from mangling indentation inside math blocks
+        text = '\n'.join([l.lstrip() for l in text.split('\n')]).strip()
+        text = self.restore_math(text)
+        
+        return text
 
 def main():
     converter = LatexConverter()

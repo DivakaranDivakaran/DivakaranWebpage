@@ -41,7 +41,7 @@ When you encounter such questions, it is best to first start with smaller number
 Thus, we can certainly move all $n$ disks to peg $C$ in atmost $2T_{n-1} + 1$.  But, how do we know is this is the optimal solution?  Notice that if we want to move the largest disk to peg C, then you should have first moved all the other $n-1$ disks on to peg $B$.  If there are some disks on peg A, then you cannot lift the largest disk.  If there are some disks on peg C, then you cannot place the largest disk on peg C.  Thus, we could not have done any better and this is the optimal strategy.  Thus, the number of moves required satisfy the recurrence relation
 $$
 \begin{align*}
-T_n = 2T_{n-1} + 1 & \text{ and } T_0 = 0
+     T_n = 2T_{n-1} + 1 & \text{ and } T_0 = 0
 \end{align*}
 $$
 
@@ -49,14 +49,14 @@ Thus, we can guess the formula as follows,
 
 $$
 \begin{align*}
-T_n &= 2T_{n-1} + 1\\
-&= 2(2 T_{n-2} + 1) + 1 = 4T_{n-2} + 3\\
-&= 4(2T_{n-3} + 1) + 3 = 8T_{n-3} + 7\\
-&.\\
-&.\\
-&.\\
-&= 2^{n-1}T_{1} + 2^{n-1} -1\\
-&= 2^n - 1
+    T_n &= 2T_{n-1} + 1\\
+        &= 2(2 T_{n-2} + 1) + 1 = 4T_{n-2} + 3\\
+        &= 4(2T_{n-3} + 1) + 3 = 8T_{n-3} + 7\\
+        &.\\
+        &.\\
+        &.\\
+        &= 2^{n-1}T_{1} + 2^{n-1} -1\\
+        &= 2^n - 1
 \end{align*}
 $$
 
@@ -77,8 +77,8 @@ $\forall n, T_{n} = 2^n - 1$
 Notice that $P(n):= T_{n} = 2^n - 1$.  The base case is easy to check $2^0 - 1 = 0$.  Now assume $P(k)$, that is, $T_k = 2^k-1$.  Thus, 
 $$
 \begin{align*}
-T_{k+1} = 2T_{k} + 1 = 2.(2^k - 1) + 1 = 2^{k+1} - 2 + 1 = 2^{k+1} - 1. 
-\end{align*}
+        T_{k+1} = 2T_{k} + 1 = 2.(2^k - 1) + 1 = 2^{k+1} - 2 + 1 = 2^{k+1} - 1. 
+    \end{align*}
 $$
 Thus, $P(k+1)$ is true.  Hence, by the principle of mathematical induction, $P(n)$ is true for all $n$.  That is, $T_n = 2^n - 1$.
 
@@ -125,20 +125,20 @@ Now, assume that if $n \leq k$ and $n = 2^m + l$ where $0\leq l < 2^m$ then $f(n
 First assume $k+1$ is even, which implies $L = 2q$.  Thus, $k+1 = 2^M + 2q = 2.(2^{M-1} + q)$.  Hence, 
 $$
 \begin{align*}
-f(k+1) &= 2.f(2^{M-1} + q) - 1 & \text{ by the recurrence relation}\\
-&= 2(2q + 1) - 1 & \text{ by Induction hypothesis}\\
-&= 2.2q +1 \\
-&= 2.L + 1\\
-\end{align*}
+        f(k+1) &= 2.f(2^{M-1} + q) - 1 & \text{ by the recurrence relation}\\
+        &= 2(2q + 1) - 1 & \text{ by Induction hypothesis}\\
+        &= 2.2q +1 \\
+        &= 2.L + 1\\
+    \end{align*}
 $$
 Now let $k+1$ be odd.  Then, $L = 2q-1$.  Thus, $k+1 = 2^M + 2q - 1 = 2.(2^{M-1} + q) - 1$.  Hence,
 $$
 \begin{align*}
-f(k+1) &= 2.f(2^{M-1} + q - 1) + 1 & \text{ by the recurrence relation}\\
-&= 2.(2(q-1) + 1) + 1 & \text{by Induction hypothesis}\\
-&= 2.(2q - 1) + 1\\
-&= 2L + 1
-\end{align*}
+        f(k+1) &= 2.f(2^{M-1} + q - 1) + 1 & \text{ by the recurrence relation}\\
+        &= 2.(2(q-1) + 1) + 1 & \text{by Induction hypothesis}\\
+        &= 2.(2q - 1) + 1\\
+        &= 2L + 1
+    \end{align*}
 $$
 Thus, $P(k+1)$ is true and hence by the principle of mathematical induction, we have the result.
 
@@ -179,7 +179,7 @@ $$R_{k+1} = R_k + (k+1).$$
 We can observe a closed form formula for $R_n$ by using this recurrence relation. Namely,
 $$
 \begin{align*}
-R_n = R_{n-1} + n = R_{n-2} + (n-1) + (n-2) = ... = R_0 + 1 + 2 + \dots n = 1 + \frac{n(n+1)}{2}.
+    R_n = R_{n-1} + n = R_{n-2} + (n-1) + (n-2) = ... = R_0 + 1 + 2 + \dots n = 1 + \frac{n(n+1)}{2}.
 \end{align*}
 $$
 
@@ -215,8 +215,8 @@ Left as an Exercise
 Given $n$ matrices $A_1,A_2,\dots,A_n$, in how many ways can we compute the product $A_1\times A_2 \times \dots \times A_n$.  Recall that matrix multiplication is associative, but not commutative.  Thus, $(A_1\times A_2)\times A_3$ and $A_1\times (A_2\times A_3)$ give the same result.  However, $(A_2\times A_1)\times A_3$ need not give the same result.  And when we write $A_1\times A_2\times A_3$ we mean the value $(A_1\times A_2)\times A_3 = A_1\times (A_2\times A_3)$.  If there are four matrices, we can multiply them in five different ways as follows:
 $$
 \begin{align*}
-A_1\times (A_2\times (A_3\times A_4)) &= A_1\times ((A_2\times A_3)\times A_4) = (A_1\times A_2)\times (A_3\times A_4)\\
-&= (A_1\times (A_2\times A_3))\times A_4 =((A_1\times A_2)\times A_3)\times A_4.
+    A_1\times (A_2\times (A_3\times A_4)) &= A_1\times ((A_2\times A_3)\times A_4) = (A_1\times A_2)\times (A_3\times A_4)\\
+    &= (A_1\times (A_2\times A_3))\times A_4 =((A_1\times A_2)\times A_3)\times A_4.
 \end{align*}
 $$
 

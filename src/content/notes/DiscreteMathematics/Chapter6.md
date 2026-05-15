@@ -59,15 +59,15 @@ A subset of $A$ is completely determined if we know whether then $i$-th element 
 Let us make sure we understand the above statement using an examples.  Let $A = \{1,2,3\}$.  Then, the mapping between subsets of $A$ and strings of length $3$ is as follows:
 $$
 \begin{align*}
-\{\} &\mapsto (0,0,0) &\text{As all entries are zeroes, $1$, $2$, and $3$ are absent}\\
-\{1\} &\mapsto (1,0,0) &\text{As only the first entry is non-zero, it contains only $1$}\\
-\{2\} &\mapsto (0,1,0) &\text{As only the second entry is non-zero, it contains only $2$}\\
-\{3\} &\mapsto (0,0,1) &\text{As only the third entry is non-zero, it contains only $3$}\\
-\{2,3\} &\mapsto (0,1,1) &\text{As only the first entry is zero, only $1$ is absent}\\
-\{1,3\} &\mapsto (1,0,1) &\text{As only the second entry is zero, only $2$ is absent}\\
-\{1,2\} &\mapsto (1,1,0) &\text{As only the third entry is zero, only $3$ is absent}\\
-\{1,2,3\} &\mapsto (1,1,1) & \text{As all entries are one, $1$, $2$, and $3$ are present}
-\end{align*}
+        \{\} &\mapsto (0,0,0) &\text{As all entries are zeroes, $1$, $2$, and $3$ are absent}\\
+        \{1\} &\mapsto (1,0,0) &\text{As only the first entry is non-zero, it contains only $1$}\\
+        \{2\} &\mapsto (0,1,0) &\text{As only the second entry is non-zero, it contains only $2$}\\
+        \{3\} &\mapsto (0,0,1) &\text{As only the third entry is non-zero, it contains only $3$}\\
+        \{2,3\} &\mapsto (0,1,1) &\text{As only the first entry is zero, only $1$ is absent}\\
+        \{1,3\} &\mapsto (1,0,1) &\text{As only the second entry is zero, only $2$ is absent}\\
+        \{1,2\} &\mapsto (1,1,0) &\text{As only the third entry is zero, only $3$ is absent}\\
+        \{1,2,3\} &\mapsto (1,1,1) & \text{As all entries are one, $1$, $2$, and $3$ are present}
+    \end{align*}
 $$
 
 Thus, the number of subsets of an $n$ element set is equal to the cardinality of $\{0,1\}^n$.  By Theorem **6.2**, $|\{0,1\}^n| = |\{0,1\}|^n = 2^n$.
@@ -116,25 +116,25 @@ You might have heard teachers say that mathematical induction is the way to make
 Notice that, there is a bijection between $$\varphi: \{f:I_n \to I_n : f \text{ is a bijection, $f(n) = n$}\} \to \{f:I_n\to I_n : f \text{ is a bijection, $f(i) = n$}\}$$  
 defined as
 $$\varphi(f)(k) = \begin{cases}
-f(n) & \text{if $k = n$}\\
-f(i) & \text{if $k = i$}\\
-f(k) & \text{otherwise}
+    f(n) & \text{if $k = n$}\\
+    f(i) & \text{if $k = i$}\\
+    f(k) & \text{otherwise}
 \end{cases}$$
 Thus, $|\{f:I_n \to I_n : f \text{ is a bijection, $f(n) = n$}\}| = |\{f:I_n\to I_n : f \text{ is a bijection, $f(i) = n$}\}|$.  Moreover,
 $$
 \begin{align*}
-\{f:I_n \to I_n : \text{$f$ is a bijection}\} = \bigcup_{i=1}^n \{f:I_n\to I_n : f \text{ is a bijection, $f(i) = n$}\}
+    \{f:I_n \to I_n : \text{$f$ is a bijection}\} = \bigcup_{i=1}^n \{f:I_n\to I_n : f \text{ is a bijection, $f(i) = n$}\}
 \end{align*}
 $$
 Therefore, by the generalised addition principle,
 $$
 \begin{align*}
-\text{Number of permutations of $I_n$} &= |\{f:I_n \to I_n : \text{$f$ is a bijection}\}|\\
-&= \left|\bigcup_{i=1}^n \{f:I_n\to I_n : f \text{ is a bijection, $f(i) = n$}\}\right|\\
-&=\sum_{i=1}^n \left|\{f:I_n\to I_n : f \text{ is a bijection, $f(i) = n$}\}\right|\\
-&= n.\left|\{f:I_n \to I_n : f \text{ is a bijection, $f(n) = n$}\right|\\
-&= n. \left|\{f:I_{n-1} \to I_{n-1} : f \text{ is a bijection}\right|\\
-&= n. (\text{Number of permutations of $I_{n-1}$})
+    \text{Number of permutations of $I_n$} &= |\{f:I_n \to I_n : \text{$f$ is a bijection}\}|\\
+    &= \left|\bigcup_{i=1}^n \{f:I_n\to I_n : f \text{ is a bijection, $f(i) = n$}\}\right|\\
+    &=\sum_{i=1}^n \left|\{f:I_n\to I_n : f \text{ is a bijection, $f(i) = n$}\}\right|\\
+    &= n.\left|\{f:I_n \to I_n : f \text{ is a bijection, $f(n) = n$}\right|\\
+    &= n. \left|\{f:I_{n-1} \to I_{n-1} : f \text{ is a bijection}\right|\\
+    &= n. (\text{Number of permutations of $I_{n-1}$})
 \end{align*}
 $$
 
@@ -158,7 +158,7 @@ When $n=k$, $f$ is injective iff $f$ is bijective.  Therefore, we can think of t
 The logic we had used earlier is still useful.  We know that $f(1)$ has $n$ options, $f(2)$ has $(n-1)$ options,..., $f(i)$ has $n-i+1$ options,...,$f(k)$ has $n-k+1$ options.  Thus,
 $$
 \begin{align*}
-\Perm{n}{k} = n.(n-1)\dots(n-k+1) = \frac{n!}{(n-k)!}
+    \Perm{n}{k} = n.(n-1)\dots(n-k+1) = \frac{n!}{(n-k)!}
 \end{align*}
 $$
 
@@ -168,9 +168,9 @@ $$\Perm{n}{k} = k \Perm{n-1}{k-1} + \Perm{n-1}{k}.$$
 We can verify that $\frac{n!}{(n-k)!}$ is a solution to this recurrence relation as shown below. 
 $$
 \begin{align*}
-k.\frac{(n-1)!}{([n-1]-[k-1])!} + \frac{(n-1)!}{([n-1]-k)!} &= \frac{k.(n-1)! + (n-1)!([n-1]-[k-1])}{([n-1]-[k-1])!}\\
-&= \frac{k.(n-1)! + (n-1)!(n-k)}{(n-k)!}\\
-&= \frac{n!}{(n-k)!}
+    k.\frac{(n-1)!}{([n-1]-[k-1])!} + \frac{(n-1)!}{([n-1]-k)!} &= \frac{k.(n-1)! + (n-1)!([n-1]-[k-1])}{([n-1]-[k-1])!}\\
+    &= \frac{k.(n-1)! + (n-1)!(n-k)}{(n-k)!}\\
+    &= \frac{n!}{(n-k)!}
 \end{align*}
 $$
 

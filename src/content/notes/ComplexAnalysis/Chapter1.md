@@ -54,11 +54,11 @@ Complex addition is associative.
 
 $$
 \begin{align*}
-(a_1+i b_1) + ((a_2 + i b_2)+(a_3+ib_3)) &= (a_1+ib_1) + ((a_2+a_3)+i(b_2 + b_3)) \\
-&= (a_1 + (a_2 + a_3)) + i(b_1 + (b_2 + b_3))\\
-&= ((a_1 + a_2) + a_3) + i((b_1 + b_2) + b_3) \\
-&= ((a_1 + a_2) + i(b_1 + b_2)) + (a_3 + ib_3) \\
-&= ((a_1 + ib_1) + (a_2 + ib_2)) + (a_3 + ib_3) 
+    (a_1+i b_1) + ((a_2 + i b_2)+(a_3+ib_3)) &= (a_1+ib_1) + ((a_2+a_3)+i(b_2 + b_3)) \\
+    &= (a_1 + (a_2 + a_3)) + i(b_1 + (b_2 + b_3))\\
+    &= ((a_1 + a_2) + a_3) + i((b_1 + b_2) + b_3) \\
+    &= ((a_1 + a_2) + i(b_1 + b_2)) + (a_3 + ib_3) \\
+    &= ((a_1 + ib_1) + (a_2 + ib_2)) + (a_3 + ib_3) 
 \end{align*}
 $$
 
@@ -83,9 +83,9 @@ Complex addition is commutative
 
 $$
 \begin{align*}
-(a_1+i b_1) + (a_2 + i b_2) &= (a_1+a_2) + i (b_1+b_2) \\
-&= (a_2+a_1) + i(b_2+b_1) \\
-&= (a_2 + i b_2) + (a+i b) 
+    (a_1+i b_1) + (a_2 + i b_2) &= (a_1+a_2) + i (b_1+b_2) \\
+    &= (a_2+a_1) + i(b_2+b_1) \\
+    &= (a_2 + i b_2) + (a+i b) 
 \end{align*}
 $$
 
@@ -150,13 +150,13 @@ Multiplication is associative
 
 $$
 \begin{align*}
-(a_1 +ib_1)&((a_2+ib_2)(a_3+ib_3)) = (a_1 + ib_1)((a_2 a_3 - b_2 b_3) +i(a_2 b_3 + b_2 a_3))\\
-&= (a_1 (a_2 a_3 - b_2 b_3) - b_1 (a_2 b_3 + b_2 a_3)) + i(a_1 (a_2 b_3 + b_2 a_3) + b_1 (a_2 a_3 - b_2 b_3))\\
-&= (a_1 a_2 a_3 - a_1 b_2 b_3 - b_1 a_2 b_3 - b_1 b_2 a_3) + i(a_1 a_2 b_3 + a_1 b_2 a_3 + b_1 a_2 a_3 - b_1 b_2 b_3)\\
-&= ((a_1 a_2 - b_1 b_2 )a_3 - (a_1 b_2 + b_1 a_2 )b_3 ) + i((a_1 a_2 - b_1 b_2 )b_3 + (a_1 b_2 + b_1 a_2)a_3)\\
-&= ((a_1 a_2 -b_1 b_2) + i(a_1 b_2 + b_1 a_2))(a_3+ib_3)\\
-&= ((a_1 + ib_1 )(a_2 + ib_2 ))(a_3 + ib_3 ).
-\end{align*}
+        (a_1 +ib_1)&((a_2+ib_2)(a_3+ib_3)) = (a_1 + ib_1)((a_2 a_3 - b_2 b_3) +i(a_2 b_3 + b_2 a_3))\\
+        &= (a_1 (a_2 a_3 - b_2 b_3) - b_1 (a_2 b_3 + b_2 a_3)) + i(a_1 (a_2 b_3 + b_2 a_3) + b_1 (a_2 a_3 - b_2 b_3))\\
+        &= (a_1 a_2 a_3 - a_1 b_2 b_3 - b_1 a_2 b_3 - b_1 b_2 a_3) + i(a_1 a_2 b_3 + a_1 b_2 a_3 + b_1 a_2 a_3 - b_1 b_2 b_3)\\
+        &= ((a_1 a_2 - b_1 b_2 )a_3 - (a_1 b_2 + b_1 a_2 )b_3 ) + i((a_1 a_2 - b_1 b_2 )b_3 + (a_1 b_2 + b_1 a_2)a_3)\\
+        &= ((a_1 a_2 -b_1 b_2) + i(a_1 b_2 + b_1 a_2))(a_3+ib_3)\\
+        &= ((a_1 + ib_1 )(a_2 + ib_2 ))(a_3 + ib_3 ).
+    \end{align*}
 $$
 
 </details>
@@ -179,8 +179,8 @@ Multiplication is commutative
 
 $$
 \begin{align*}
-(a+ib)(c+id) = (ac-bd) + i(ad+bc) = (ca - db) + i(da+cb) = (c+id)(a+ib)
-\end{align*}
+        (a+ib)(c+id) = (ac-bd) + i(ad+bc) = (ca - db) + i(da+cb) = (c+id)(a+ib)
+    \end{align*}
 $$
 
 </details>
@@ -243,12 +243,12 @@ Complex multiplication distributes over addition
 
 $$
 \begin{align*}
-(a_1+ib_1)((a_2 +ib_2) &+ (a_3 + ib_3)) = (a_1 + ib_1)((a_2 + a_3) +i(b_2 + b_3))\\
-&= (a_1(a_2+a_3) - b_1(b_2 + b_3)) + i(a_1(b_2 + b_3) + b_1(a_2 + a_3))\\
-&= (a_1 a_2 + a_1 a_3 - b_1b_2 - b_1 b_3) + i(a_1b_2 + a_1 b_3 + b_1 a_2 + b_1 a_3)\\
-&= ((a_1 a_2 - b_1b_2) + i (a_1 b_2 + b_1 a_2)) + ((a_1 a_3 - b_1 b_3) + i(a_1b_3 + b_1 a_3))\\
-&= ((a_1 + ib_1)(a_2 + ib_2)) + ((a_1 + ib_1)(a_3 + ib_3)).
-\end{align*}
+        (a_1+ib_1)((a_2 +ib_2) &+ (a_3 + ib_3)) = (a_1 + ib_1)((a_2 + a_3) +i(b_2 + b_3))\\
+        &= (a_1(a_2+a_3) - b_1(b_2 + b_3)) + i(a_1(b_2 + b_3) + b_1(a_2 + a_3))\\
+        &= (a_1 a_2 + a_1 a_3 - b_1b_2 - b_1 b_3) + i(a_1b_2 + a_1 b_3 + b_1 a_2 + b_1 a_3)\\
+        &= ((a_1 a_2 - b_1b_2) + i (a_1 b_2 + b_1 a_2)) + ((a_1 a_3 - b_1 b_3) + i(a_1b_3 + b_1 a_3))\\
+        &= ((a_1 + ib_1)(a_2 + ib_2)) + ((a_1 + ib_1)(a_3 + ib_3)).
+    \end{align*}
 $$
 
 </details>
@@ -561,18 +561,18 @@ $$\langle v,w\rangle \leq \Vert v\Vert \Vert w\Vert.$$
 If $v$ or $w$ is the zero vector, then both sides are the equality would be zero.  So, we may assume that $v\neq 0\neq w$.  First consider the case $\Vert v\Vert = 1 = \Vert w\Vert$.  Then 
 $$
 \begin{align*}
-0 &\leq \Vert v-w \Vert^2 = \langle v-w,v-w\rangle \\
-&= \langle v,v-w\rangle - \langle w, v-w\rangle \\
-&= \langle v,v\rangle -\langle v,w \rangle - \langle w,v\rangle +\langle w,w \rangle \\
-&= \Vert v\Vert^2 - 2\langle v,w \rangle + \Vert w\Vert \\
-&= 2 - 2\langle v,w\rangle
-\end{align*}
+        0 &\leq \Vert v-w \Vert^2 = \langle v-w,v-w\rangle \\
+        &= \langle v,v-w\rangle - \langle w, v-w\rangle \\
+        &= \langle v,v\rangle -\langle v,w \rangle - \langle w,v\rangle +\langle w,w \rangle \\
+        &= \Vert v\Vert^2 - 2\langle v,w \rangle + \Vert w\Vert \\
+        &= 2 - 2\langle v,w\rangle
+    \end{align*}
 $$
 Thus, $\langle v,w\rangle \leq 1 = \Vert v \Vert \Vert w\Vert$. Now consider the more general case, where $\Vert v\Vert >0$ and $\Vert w \Vert >0$.  Then, take $v' = \frac{v}{\Vert v\Vert}$ and $w' = \frac{w}{\Vert w\Vert}$.  Thus, from the earlier case, we have
 $$
 \begin{align*}
-1 \geq \langle v',w'\rangle = \langle \frac{v}{\Vert v\Vert},\frac{w}{\Vert w\Vert}\rangle = \frac{1}{\Vert v\Vert \Vert w\Vert}\langle v,w\rangle.
-\end{align*}
+        1 \geq \langle v',w'\rangle = \langle \frac{v}{\Vert v\Vert},\frac{w}{\Vert w\Vert}\rangle = \frac{1}{\Vert v\Vert \Vert w\Vert}\langle v,w\rangle.
+    \end{align*}
 $$
 Therefore, $$\langle v,w\rangle \leq \Vert v\Vert \Vert w\Vert.$$
 
@@ -623,19 +623,19 @@ If $\langle \ , \rangle$ is an inner product on $V$, then $\Vert v \Vert := \lan
 **Triangle inequality: ** 
 $$
 \begin{align*}
-\Vert v+w \Vert^2 &= \langle v+w,v+w\rangle\\
-&= \Vert v\Vert^2 + 2\langle v,w\rangle +\Vert w\Vert^2\\
-&\leq \Vert v\Vert^2 + 2\Vert v\Vert \Vert w\Vert +\Vert w\Vert^2\\
-&= \left(\Vert v\Vert + \Vert w\Vert\right)^2
-\end{align*}
+        \Vert v+w \Vert^2 &= \langle v+w,v+w\rangle\\
+        &= \Vert v\Vert^2 + 2\langle v,w\rangle +\Vert w\Vert^2\\
+        &\leq \Vert v\Vert^2 + 2\Vert v\Vert \Vert w\Vert +\Vert w\Vert^2\\
+        &= \left(\Vert v\Vert + \Vert w\Vert\right)^2
+    \end{align*}
 $$
 Thus, by taking square root on both sides, we get the triangle inequality.  
 
 **Homogeneity:** 
 $$
 \begin{align*}
-\Vert \alpha v\Vert^2 = \langle \alpha v,\alpha v\rangle = \alpha^2\langle v,v\rangle = \alpha^2\Vert v\Vert^2 
-\end{align*}
+        \Vert \alpha v\Vert^2 = \langle \alpha v,\alpha v\rangle = \alpha^2\langle v,v\rangle = \alpha^2\Vert v\Vert^2 
+    \end{align*}
 $$
 Thus, by taking square root on both sides, we get the required equality.
 
@@ -688,13 +688,13 @@ Every inner product $\langle \rangle:\mathbb{R}^2 \to \mathbb{R}^2$ has the form
 Let $(x_1,y_1)$ and $(x_2,y_2)$ in $\mathbb{R}^2$ be fixed but arbitrary.  Then,
 $$
 \begin{align*}
-\langle (x_1,y_1),(x_2,y_2) \rangle &= \langle (x_1,0)+(0,y_1), (x_2,y_2)\rangle\\
-&= \langle (x_1,0), (x_2,y_2)\rangle + \langle(0,y_1), (x_2,y_2)\rangle\\
-&= \langle (x_1,0), (x_2,0) + (0,y_2)\rangle + \langle(0,y_1), (x_2,0) + (0,y_2)\rangle\\
-&= \langle (x_1,0), (x_2,0)\rangle + \langle (x_1,0), (0,y_2)\rangle + \langle(0,y_1), (x_2,0)\rangle + \langle(0,y_1),(0,y_2)\rangle\\
-&= x_1 x_2 \langle (1,0),(1,0) \rangle + x_1 y_2 \langle (1,0),(0,1) \rangle + y_1 x_2 \langle (0,1),(1,0)\rangle + y_1 y_2 \langle (0,1),(0,1) \rangle\\
-&= x_1 x_2 \langle (1,0),(1,0) \rangle + (x_1 y_2 + x_2 y_1) \langle (1,0),(0,1) \rangle + y_1 y_2 \langle (0,1),(0,1) \rangle.
-\end{align*}
+        \langle (x_1,y_1),(x_2,y_2) \rangle &= \langle (x_1,0)+(0,y_1), (x_2,y_2)\rangle\\
+        &= \langle (x_1,0), (x_2,y_2)\rangle + \langle(0,y_1), (x_2,y_2)\rangle\\
+        &= \langle (x_1,0), (x_2,0) + (0,y_2)\rangle + \langle(0,y_1), (x_2,0) + (0,y_2)\rangle\\
+        &= \langle (x_1,0), (x_2,0)\rangle + \langle (x_1,0), (0,y_2)\rangle + \langle(0,y_1), (x_2,0)\rangle + \langle(0,y_1),(0,y_2)\rangle\\
+        &= x_1 x_2 \langle (1,0),(1,0) \rangle + x_1 y_2 \langle (1,0),(0,1) \rangle + y_1 x_2 \langle (0,1),(1,0)\rangle + y_1 y_2 \langle (0,1),(0,1) \rangle\\
+        &= x_1 x_2 \langle (1,0),(1,0) \rangle + (x_1 y_2 + x_2 y_1) \langle (1,0),(0,1) \rangle + y_1 y_2 \langle (0,1),(0,1) \rangle.
+    \end{align*}
 $$
 Define $\alpha = \langle (1,0),(1,0) \rangle$, $\beta = \langle (1,0),(0,1) \rangle$, and $\gamma = \langle (0,1),(0,1) \rangle$ to complete the proof.
 
@@ -769,16 +769,16 @@ The lemma is called called parallelogram because $v+w$ and $v-w$ are the diagona
 Notice that for any $v,w$ 
 $$
 \begin{align*}
-\Vert v+w \Vert^2 &= \langle v+w, v+w \rangle\\
-&= \langle v, v+w \rangle + \langle w, v+w \rangle\\
-&= \langle v, v \rangle + \langle v, w \rangle  + \langle w, v \rangle + \langle w, w \rangle\\
-&= \Vert v\Vert^2 + 2 \langle v,w \rangle + \Vert w\Vert^2
+    \Vert v+w \Vert^2 &= \langle v+w, v+w \rangle\\
+    &= \langle v, v+w \rangle + \langle w, v+w \rangle\\
+    &= \langle v, v \rangle + \langle v, w \rangle  + \langle w, v \rangle + \langle w, w \rangle\\
+    &= \Vert v\Vert^2 + 2 \langle v,w \rangle + \Vert w\Vert^2
 \end{align*}
 $$
 Similarly, we can prove
 $$
 \begin{align*}
-\Vert v-w \Vert^2 = \Vert v\Vert^2 - 2\langle v,w \rangle +\Vert w \Vert^2
+    \Vert v-w \Vert^2 = \Vert v\Vert^2 - 2\langle v,w \rangle +\Vert w \Vert^2
 \end{align*}
 $$
 Adding the two, we get the required result $\Vert v + w \Vert^2 + \Vert v - w \Vert^2 = 2\Vert v \Vert^2 + 2\Vert w \Vert^2$.
@@ -920,40 +920,40 @@ Let us understand the definition using some examples.  We will primarily look at
 <span class="env-label">Example 1.4</span>
 
 Let the metric space be $(\mathbb{C},d_1)$.  Then, $d(x+iy,a+ib) = \Vert (x+iy) - (a+ib)\Vert_1 = \Vert (x-a)+i(y-b)\Vert_1 = \vert x-a\vert +\vert y-b \vert$.  Thus, $B(a+ib,r) = \{x+iy: \vert x-a\vert + \vert y-b\vert < r\}$.  Let us first understand the set $\{x+iy: \vert x-a\vert + \vert y-b\vert = r\}$.  Note that $$\vert x-a \vert + \vert y-b \vert = \begin{cases}
-x-a + y-b & \text{if $x>a$ and $y>b$}\\
-a-x + y-b & \text{if $x<a$ and $y>b$}\\
-x-a + b-y & \text{if $x>a$ and $y<b$}\\
-a-x + b-y & \text{if $x<a$ and $y<b$}
-\end{cases}.$$
+        x-a + y-b & \text{if $x>a$ and $y>b$}\\
+        a-x + y-b & \text{if $x<a$ and $y>b$}\\
+        x-a + b-y & \text{if $x>a$ and $y<b$}\\
+        a-x + b-y & \text{if $x<a$ and $y<b$}
+    \end{cases}.$$
 
 Thus, the set $\{x+iy: \vert x-a\vert + \vert y-b\vert = r\}$ is the union of four sets
 $$
 \begin{align*}
-L_1 &= \{x+iy: x-a + y-b = r,x\geq a,y\geq b\}\\
-&= \{x+iy: y = -x+r+a+b,x\geq a,y\geq b\}\\
-&= \{x+iy: y=-x+r+a+b,a\leq x\leq r+a\}
-\end{align*}
+        L_1 &= \{x+iy: x-a + y-b = r,x\geq a,y\geq b\}\\
+        &= \{x+iy: y = -x+r+a+b,x\geq a,y\geq b\}\\
+        &= \{x+iy: y=-x+r+a+b,a\leq x\leq r+a\}
+    \end{align*}
 $$
 $$
 \begin{align*}
-L_2 &= \{x+iy: a-x + y-b = r,x\leq a,y\geq b\}\\
-&= \{x+iy: y = x-a+b+r,x\leq a,y\geq b\}\\
-&= \{x+iy: y = x-a+b+r,a-r\leq x\leq a\}
-\end{align*}
+        L_2 &= \{x+iy: a-x + y-b = r,x\leq a,y\geq b\}\\
+        &= \{x+iy: y = x-a+b+r,x\leq a,y\geq b\}\\
+        &= \{x+iy: y = x-a+b+r,a-r\leq x\leq a\}
+    \end{align*}
 $$
 $$
 \begin{align*}
-L_3 &= \{x+iy: x-a + b-y = r,x\geq a,y\leq b\}\\
-&= \{x+iy: y = x-a+b-r,x\geq a,y\leq b\}\\
-&= \{x+iy: y = x-a+b-r,a\leq x\leq a+r\}
-\end{align*}
+        L_3 &= \{x+iy: x-a + b-y = r,x\geq a,y\leq b\}\\
+        &= \{x+iy: y = x-a+b-r,x\geq a,y\leq b\}\\
+        &= \{x+iy: y = x-a+b-r,a\leq x\leq a+r\}
+    \end{align*}
 $$
 $$
 \begin{align*}
-L_4 &= \{x+iy: a-x + b-y = r,x\leq a,y\leq b\}\\
-&= \{x+iy: y = -x + a + b -r,x\leq a,y\leq b\}\\
-&= \{x+iy: y = -x + a + b -r,a-r\leq x\leq a\}
-\end{align*}
+        L_4 &= \{x+iy: a-x + b-y = r,x\leq a,y\leq b\}\\
+        &= \{x+iy: y = -x + a + b -r,x\leq a,y\leq b\}\\
+        &= \{x+iy: y = -x + a + b -r,a-r\leq x\leq a\}
+    \end{align*}
 $$
 
 Thus, the sets $L_i$ are line segments.  Moreover, the endpoints of $L_1$ are $(a,r+b)$ and $(r+a,b)$.  The endpoints of $L_2$ are $(a-r,b)$ and $(a,r+b)$.  The endpoints of $L_3$ are $(a,b-r)$ and $(a+r,b)$.  The endpoints of $L_4$ are $(a-r,b)$ and $(a,b-r)$.  Thus, the union of the four sets is the quadrilateral with vertices $(a,r+b), (a+r,b), (a,b-r), (a-r,b)$.  Moreover, it can be seen that the quadrilateral is a rhombus as the length of each $L_i$ is $\sqrt{2}r$.  Thus, $B(a+ib,r) = \{x+iy: \vert x-a\vert + \vert y-b\vert < r\}$ is the interior of this rhombus.
@@ -977,11 +977,11 @@ Let the metric space be $(\mathbb{C},d_2)$.  Then, $d(x+iy,a+ib) = \Vert (x+iy) 
 Let the metric space be $(\mathbb{C},d_{\infty})$.  Then, $d(x+iy,a+ib) = \Vert (x+iy) - (a+ib)\Vert_1 = \Vert (x-a)+i(y-b)\Vert_1 = \max \{\vert x-a\vert , \vert y-b \vert\}$.  Thus, 
 $$
 \begin{align*}
-B(a+ib,r) &= \{x+iy: \max \{\vert x-a\vert , \vert y-b \vert\} < r\}\\
-&= \{x+iy: \vert x-a\vert <r,\vert y-b \vert < r\}\\
-&= \{x+iy: -r < x-a < r, -r < y-b < r\}\\
-&= \{x+iy: a-r < x < a+r, b-r < y < b+r\}
-\end{align*}
+        B(a+ib,r) &= \{x+iy: \max \{\vert x-a\vert , \vert y-b \vert\} < r\}\\
+        &= \{x+iy: \vert x-a\vert <r,\vert y-b \vert < r\}\\
+        &= \{x+iy: -r < x-a < r, -r < y-b < r\}\\
+        &= \{x+iy: a-r < x < a+r, b-r < y < b+r\}
+    \end{align*}
 $$
 
 </div>
@@ -1268,11 +1268,11 @@ By comparison, we see $\cos(\theta) = \frac{a}{a^2+b^2}$ and $\sin(\theta) = \fr
 
 Given a complex number $a + i b$, define the modulus of $a + i b$, denoted as $\vert a+i b\vert$, to the the number $a^2+b^2$.  Given a non-zero complex number $a+i b$, define the argument of $a+i b$, denoted as $arg(a+i b)$, using the formula
 $$ arg(a+i b) = \begin{cases} 
-\tan^{-1}(\frac{y}{x}) & \text{ if } y \geq 0 \text{ and } x\neq 0\\
-\pi + \tan^{-1}(\frac{y}{x}) & \text{ if } y < 0 \text{ and } x\neq 0\\
-\frac{\pi}{2} & \text{ if y > 0 \text{ and } x = 0\\
-\frac{-\pi}{2} & \text{ if } y < 0 \text{ and } x = 0
-\end{cases}.$$
+        \tan^{-1}(\frac{y}{x}) & \text{ if } y \geq 0 \text{ and } x\neq 0\\
+        \pi + \tan^{-1}(\frac{y}{x}) & \text{ if } y < 0 \text{ and } x\neq 0\\
+        \frac{\pi}{2} & \text{ if y > 0 \text{ and } x = 0\\
+        \frac{-\pi}{2} & \text{ if } y < 0 \text{ and } x = 0
+    \end{cases}.$$
 
 Geometrically, $|a+i b|$ is the length of the vector and $\arg(a+i b)$ is the angle it makes with $x$-axis.
 

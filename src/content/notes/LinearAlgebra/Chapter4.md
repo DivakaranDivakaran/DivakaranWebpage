@@ -162,11 +162,11 @@ In the above two examples, the subspace $U$ was given in a comfortable form whic
 Let $V = \mathbb{R}^3$ and let $U = \text{Span}((1,2,3))$.  Of course, we could express this subspace as the solution of two linear equations (or intersection of two planes), but we will take a different approach.  We note that the basis of $U$ can be extended to form a basis of $V$, namely, $((1,2,3),(0,1,0),(0,0,1))$ forms a basis of $V$.  Now, given any vector $(x,y,z)$, note that $(x,y,z) = x(1,2,3) + (y-2x)(0,1,0) + (z-3x)(0,0,1)$.  As $(1,2,3)\in Ker(L)$, we would certainly want $L(1,2,3) = 0$.  Moreover, we want $(L(0,1,0),L(0,0,1))$ to be linearly independent if we want $L$ to be injective.  Thus, the codomain should be atleast two dimensional.  Hence we may assume WLOG that the codomain is $\mathbb{R}^2$ and $L(0,1,0) = (1,0)$ and $L(0,0,1) = (0,1)$.  Thus,
 $$
 \begin{align*}
-L(x,y,z) &= L(x(1,2,3) + (y-2x)(0,1,0) + (z-3x)(0,0,1)) \\
-&= xL(1,2,3) + (y-2x)L(0,1,0) + (z-3x)L(0,0,1) \\
-&= 0 + (y-2x)(1,0) + (z-3x)(0,1) \\
-&= (y-2x,z-3x)
-\end{align*}
+        L(x,y,z) &= L(x(1,2,3) + (y-2x)(0,1,0) + (z-3x)(0,0,1)) \\
+        &= xL(1,2,3) + (y-2x)L(0,1,0) + (z-3x)L(0,0,1) \\
+        &= 0 + (y-2x)(1,0) + (z-3x)(0,1) \\
+        &= (y-2x,z-3x)
+    \end{align*}
 $$
 
 </div>
@@ -212,10 +212,10 @@ Let $(V,+,.)$ and $(W,\oplus,\otimes)$ be two finite dimensional vector spaces a
 We know that $Ker(L)$ is a subspace of $V$.  Thus, by Theorem **3.18**, $Ker(L)$ has some basis $(v_1,\dots,v_k)$.  Thus, $(v_1,\dots,v_k)$ is linearly independent.  Therefore, by Theorem **3.14**, we can extend $(v_1,\dots,v_k)$ to a list $(v_1,\dots,v_n)$ which form a basis of $V$.  Let $L(v_{k+1}) = w_{k+1}$, $L(v_{k+2}) = w_{k+2},\dots$ $L(v_n) = w_n$.  As $(v_1,\dots,v_n)$ is a basis of $V$, given any vector $v\in V$ there exists $(\alpha_1,\dots,\alpha_n)\in \mathbb{R}^n$ such that $v = \alpha_1 v_1 + \dots + \alpha_n v_n$.  As $L$ is linear,
 $$
 \begin{align*}
-L(v) &= \left(\alpha_1 \otimes L(v_1)\right) \oplus \dots \oplus \left(\alpha_n \otimes L(v_n)\right)\\
-&= \left(\alpha_1 \otimes 0\right) \oplus \dots \oplus \left(\alpha_k \otimes 0\right) \oplus \left(\alpha_{k+1} \otimes w_{k+1}\right) \oplus \dots \oplus \left(\alpha_n \otimes w_n\right)\\
-&= \left(\alpha_{k+1} \otimes w_{k+1}\right) \oplus \dots \oplus \left(\alpha_n \otimes w_n\right).
-\end{align*}
+        L(v) &= \left(\alpha_1 \otimes L(v_1)\right) \oplus \dots \oplus \left(\alpha_n \otimes L(v_n)\right)\\
+        &= \left(\alpha_1 \otimes 0\right) \oplus \dots \oplus \left(\alpha_k \otimes 0\right) \oplus \left(\alpha_{k+1} \otimes w_{k+1}\right) \oplus \dots \oplus \left(\alpha_n \otimes w_n\right)\\
+        &= \left(\alpha_{k+1} \otimes w_{k+1}\right) \oplus \dots \oplus \left(\alpha_n \otimes w_n\right).
+    \end{align*}
 $$
 As $v$ was arbitrary, this implies that $Im(L) = \text{Span}(w_{k+1},\dots,w_n)$.  Moreover, if $\left(\alpha_{k+1} \otimes w_{k+1}\right) \oplus \dots \oplus \left(\alpha_n \otimes w_n\right) = 0$, then, $L(\alpha_{k+1} v_{k+1} + \dots + \alpha_n v_n) = \left(\alpha_{k+1} \otimes w_{k+1}\right) \oplus \dots \oplus \left(\alpha_n \otimes w_n\right) = 0$.  That is $\alpha_{k+1}v_{k+1} + \dots + \alpha_n v_n \in Ker(L)$.  As $(v_1,\dots,v_k)$ is a basis of $Ker(L)$, there exists $(\alpha_1,\dots,\alpha_k)\in \mathbb{R}^k$ such that $\alpha_1 v_1 + \dots + \alpha_k v_k = \alpha_{k+1}v_{k+1} + \dots + \alpha_n v_n$.  In other words, $\alpha_1 v_1 + \dots + \alpha_k v_k + (-\alpha_{k+1})v_{k+1} + \dots + (-\alpha_n) v_n = 0$.  As $(v_1,\dots,v_n)$ is linearly independent, this would imply that $\alpha_i = 0$ for all $i \in \{1,\dots,n\}$.  Thus, in particular $(\alpha_{k+1},\dots,\alpha_n) = 0$.  Hence, $(w_{k+1},\dots,w_n)$ is linearly independent.  Therefore, $(w_{k+1},\dots,w_n)$ is a basis for $Im(L)$.  Thus, $dim(Ker(L)) + dim(Im(L)) = k + (n-k) = n = dim(V)$.
 
@@ -240,8 +240,8 @@ Let $(V,+,.)$ and $(W,\oplus,\otimes)$ be two finite dimensional vector spaces a
 Assume $\alpha_1 L(v_1) + \dots + \alpha_k L(v_k) = 0$.  Then, 
 $$
 \begin{align*}
-L(\alpha_1 v_1 +\dots + \alpha_k v_k) = \left(\alpha_1\otimes L(v_1)\right) \oplus \dots \oplus \left(\alpha_k \otimes L(v_k)\right) = 0
-\end{align*}
+        L(\alpha_1 v_1 +\dots + \alpha_k v_k) = \left(\alpha_1\otimes L(v_1)\right) \oplus \dots \oplus \left(\alpha_k \otimes L(v_k)\right) = 0
+    \end{align*}
 $$
 Thus, $\alpha_1 v_1 +\dots + \alpha_k v_k\in Ker(L) = \{0\}$ as $L$ is injective.  As $(v_1,\dots,v_k)$ is linearly independent, this would imply that $(\alpha_1,\dots,\alpha_k) = 0$.  Thus, $(L(v_1),\dots,L(v_k))$ is linearly independent.
 
@@ -300,13 +300,13 @@ Therefore, $Ker(L)\neq \{0\}$ and thus by Theorem **4.3**, $L$ is not injective.
 A system of $n$ equations in $m$ unknowns
 $$
 \begin{align*}
-a_{11} x_1 + a_{12} x_2 + \dots + a_{1n} x_m &= 0\\ \nonumber
-a_{21} x_1 + a_{22} x_2 + \dots + a_{2n} x_m &= 0\\ \nonumber
-.\\ \nonumber
-.\\ \nonumber
-.\\ \nonumber
-a_{n1} x_1 + a_{n2} x_2 + \dots + a_{nm} x_m &= 0\\ \nonumber
-\end{align*}
+        a_{11} x_1 + a_{12} x_2 + \dots + a_{1n} x_m &= 0\\ \nonumber
+        a_{21} x_1 + a_{22} x_2 + \dots + a_{2n} x_m &= 0\\ \nonumber
+        .\\ \nonumber
+        .\\ \nonumber
+        .\\ \nonumber
+        a_{n1} x_1 + a_{n2} x_2 + \dots + a_{nm} x_m &= 0\\ \nonumber
+    \end{align*}
 $$
 has a non-trivial solution if $m>n$.
 
@@ -372,15 +372,15 @@ Let $(V,+,.)$ and $(W,\oplus,\otimes)$ be two vector spaces and $L:V\to W$ be a 
 Let $w_1,w_2\in W$.  Let $L^{-1}(w_1) = v_1$ and $L^{-1}(w_2) = v_2$.  That is, $L(v_1) = w_1$ and $L(v_2) = w_2$.  Thus,
 $$
 \begin{align*}
-L^{-1}(w_1+w_2) &= L^{-1}(L(v_1) + L(v_2)) = L^{-1}(L(v_1 + v_2))\\
-&=v_1 + v_2 = L^{-1}(w_1) + L^{-1}(w_2)
-\end{align*}
+        L^{-1}(w_1+w_2) &= L^{-1}(L(v_1) + L(v_2)) = L^{-1}(L(v_1 + v_2))\\
+        &=v_1 + v_2 = L^{-1}(w_1) + L^{-1}(w_2)
+    \end{align*}
 $$
 Let $w\in W$ and let $v = L^{-1}(w)$.  That is $L(v) = w$.  Thus,
 $$
 \begin{align*}
-L^{-1}(\alpha\otimes w) &= L^{-1}(\alpha \otimes L(v)) = L^{-1}(L(\alpha . v)) = \alpha .v = \alpha . L^{-1}(w)
-\end{align*}
+        L^{-1}(\alpha\otimes w) &= L^{-1}(\alpha \otimes L(v)) = L^{-1}(L(\alpha . v)) = \alpha .v = \alpha . L^{-1}(w)
+    \end{align*}
 $$
 
 </details>
@@ -517,12 +517,12 @@ Let $(V,+,.)$ be a vector space and $U$ a subspace of $V$.  Does there exist a v
 
 Let $V$ and $W$ be finite dimensional vector spaces and let $B_1 = (v_1,\dots,v_m)$ and $B_2 = (w_1,\dots,w_n)$ be basis of $V$ and $W$ respectively.  Further, let $L:V\to W$, be a linear map.  Notice that as $L(v_j)\in W$, we can find constants $a_{ij}$ for $i\in {1,\dots,n}$ such that $L(v_j) = \sum_{i=1}^n a_{ij} w_i$.  The matrix 
 $$\begin{bmatrix}
-a_{11} & a_{12} & \dots & a_{1m}\\
-a_{21} & a_{22} & \dots & a_{2m}\\
-. & . & \dots & .\\
-. & . & \dots & .\\
-a_{n1} & a_{n_2} & \dots & a_{nm}\\
-\end{bmatrix}$$
+        a_{11} & a_{12} & \dots & a_{1m}\\
+        a_{21} & a_{22} & \dots & a_{2m}\\
+        . & . & \dots & .\\
+        . & . & \dots & .\\
+        a_{n1} & a_{n_2} & \dots & a_{nm}\\
+    \end{bmatrix}$$
 is called the matrix of the linear transformation $L$ with respect to the basis $B_1$ on $V$ and $B_2$ on $W$ and is denoted by $[L]_{B_1}^{B_2}$.
 
 </div>
@@ -556,10 +556,10 @@ $$[T\circ S]_{B_1}^{B_3} = [T]_{B_2}^{B_3}[S]_{B_1}^{B_2}.$$
 Let $[T]_{B_2}^{B_3} = (a_{ij})$ and let $[S]_{B_1}^{B_2} = (b_{jk})$.  Thus,
 $$
 \begin{align*}
-T\circ S(u_k) &= T(S(u_k)) = T\left(\sum_{j=1}^n b_{jk} v_j\right)\\
-&= \sum_{j=1}^n b_{jk} T(v_j) = \sum_{j=1}^n b_{jk} \left(\sum_{i=1}^p a_{ij} w_i\right)\\
-&= \sum_{i=1}^p \left(\sum_{k=1}^n a_{ij}b_{jk} \right) w_i
-\end{align*}
+        T\circ S(u_k) &= T(S(u_k)) = T\left(\sum_{j=1}^n b_{jk} v_j\right)\\
+        &= \sum_{j=1}^n b_{jk} T(v_j) = \sum_{j=1}^n b_{jk} \left(\sum_{i=1}^p a_{ij} w_i\right)\\
+        &= \sum_{i=1}^p \left(\sum_{k=1}^n a_{ij}b_{jk} \right) w_i
+    \end{align*}
 $$
 Therefore if $[T\circ S]_{B_1}^{B_3} = (c_{ij})$, then $c_{ij} = \sum_{k=1}^n a_{ij}b_{kj}$, which is also the $ij$-th entry of $[T]_{B_2}^{B_3}[S]_{B_1}^{B_2}$.  Hence, $[T\circ S]_{B_1}^{B_3} = [T]_{B_2}^{B_3}[S]_{B_1}^{B_2}$.
 
@@ -584,27 +584,27 @@ $$(0,1) = \frac{b}{a^2 + b^2}(a,b) + \frac{a}{a^2 + b^2}(-b,a).$$
 Thus, it is easy to see that $[I]_{B_1}^{B_2} = \begin{bmatrix}\frac{a}{a^2+b^2} & \frac{b}{a^2+b^2} \\ \frac{-b}{a^2+b^2} & \frac{a}{a^2+b^2}\end{bmatrix}$ and $I_{B_2}^{B_1} = \begin{bmatrix}a & -b\\b & a\end{bmatrix}$ and they are inverses to each other.  Further,
 $$
 \begin{align*}
-R(1,0) &= R\left(\frac{a}{a^2 + b^2}(a,b) + \frac{-b}{a^2 + b^2}(-b,a)\right)= R\left(\frac{a}{a^2 + b^2}(a,b)\right) + R\left(\frac{-b}{a^2 + b^2}(-b,a)\right)\\
-&= \frac{a}{a^2 + b^2} R\left(a,b\right) + \frac{-b}{a^2 + b^2} R\left(-b,a\right)= \frac{a}{a^2 + b^2} \left(a,b\right) + \frac{-b}{a^2 + b^2} \left(b,-a\right)\\
-&= \frac{a}{a^2 + b^2} \left(a(1,0)+b(0,1)\right) + \frac{-b}{a^2 + b^2} \left(b (1,0) + a(0,1)\right)\\
-&= \frac{a^2 - b^2}{a^2 + b^2} (1,0) + \frac{2ab}{a^2 + b^2}(0,1)
+    R(1,0) &= R\left(\frac{a}{a^2 + b^2}(a,b) + \frac{-b}{a^2 + b^2}(-b,a)\right)= R\left(\frac{a}{a^2 + b^2}(a,b)\right) + R\left(\frac{-b}{a^2 + b^2}(-b,a)\right)\\
+    &= \frac{a}{a^2 + b^2} R\left(a,b\right) + \frac{-b}{a^2 + b^2} R\left(-b,a\right)= \frac{a}{a^2 + b^2} \left(a,b\right) + \frac{-b}{a^2 + b^2} \left(b,-a\right)\\
+    &= \frac{a}{a^2 + b^2} \left(a(1,0)+b(0,1)\right) + \frac{-b}{a^2 + b^2} \left(b (1,0) + a(0,1)\right)\\
+    &= \frac{a^2 - b^2}{a^2 + b^2} (1,0) + \frac{2ab}{a^2 + b^2}(0,1)
 \end{align*}
 $$
 Similarly, 
 $$
 \begin{align*}
-R(0,1) &= R\left(\frac{b}{a^2 + b^2}(a,b) + \frac{a}{a^2 + b^2}(-b,a)\right)= R\left(\frac{b}{a^2 + b^2}(a,b)\right) + R\left(\frac{a}{a^2 + b^2}(-b,a)\right)\\
-&= \frac{b}{a^2 + b^2} R\left(a,b\right) + \frac{a}{a^2 + b^2} R\left(-b,a\right)= \frac{b}{a^2 + b^2} \left(a,b\right) + \frac{a}{a^2 + b^2} \left(b,-a\right)\\
-&= \frac{b}{a^2 + b^2} \left(a(1,0)+b(0,1)\right) + \frac{a}{a^2 + b^2} \left(b(1,0)-a(0,1)\right)\\
-&= \frac{2ab}{a^2 + b^2}(0,1) + \frac{b^2-a^2}{a^2+b^2}.
+    R(0,1) &= R\left(\frac{b}{a^2 + b^2}(a,b) + \frac{a}{a^2 + b^2}(-b,a)\right)= R\left(\frac{b}{a^2 + b^2}(a,b)\right) + R\left(\frac{a}{a^2 + b^2}(-b,a)\right)\\
+    &= \frac{b}{a^2 + b^2} R\left(a,b\right) + \frac{a}{a^2 + b^2} R\left(-b,a\right)= \frac{b}{a^2 + b^2} \left(a,b\right) + \frac{a}{a^2 + b^2} \left(b,-a\right)\\
+    &= \frac{b}{a^2 + b^2} \left(a(1,0)+b(0,1)\right) + \frac{a}{a^2 + b^2} \left(b(1,0)-a(0,1)\right)\\
+    &= \frac{2ab}{a^2 + b^2}(0,1) + \frac{b^2-a^2}{a^2+b^2}.
 \end{align*}
 $$
 Thus, 
 $$
 \begin{align*}
-R(x,y) &= R(x(1,0) + y(0,1)) = xR(1,0) + yR(0,1)\\
-&= x\left[\frac{a^2 - b^2}{a^2 + b^2} (1,0) + \frac{2ab}{a^2 + b^2}(0,1)\right] + y\left[\frac{2ab}{a^2 + b^2}(0,1) + \frac{b^2-a^2}{a^2+b^2}\right]\\
-&= \left(\left(\frac{a^2 - b^2}{a^2 + b^2}\right)x + \left(\frac{2ab}{a^2+b^2}\right)y,\left(\frac{2ab}{a^2+b^2}\right)x + \left(\frac{b^2-a^2}{a^2+b^2}\right)y\right)
+    R(x,y) &= R(x(1,0) + y(0,1)) = xR(1,0) + yR(0,1)\\
+    &= x\left[\frac{a^2 - b^2}{a^2 + b^2} (1,0) + \frac{2ab}{a^2 + b^2}(0,1)\right] + y\left[\frac{2ab}{a^2 + b^2}(0,1) + \frac{b^2-a^2}{a^2+b^2}\right]\\
+    &= \left(\left(\frac{a^2 - b^2}{a^2 + b^2}\right)x + \left(\frac{2ab}{a^2+b^2}\right)y,\left(\frac{2ab}{a^2+b^2}\right)x + \left(\frac{b^2-a^2}{a^2+b^2}\right)y\right)
 \end{align*}
 $$
 Hence, the matrix of this linear transformation is $\begin{bmatrix} \frac{a^2 - b^2}{a^2 + b^2} & \frac{2ab}{a^2 + b^2}\\ \frac{2ab}{a^2 + b^2} & \frac{b^2-a^2}{a^2 + b^2}\end{bmatrix}$.  From now on, we would be a little bit more specific and say that this is the matrix of $R$ with respect to the basis $B_1$ and denote it as $[R]_{B_1}$.  Further notice that 
@@ -612,9 +612,9 @@ $$[R]_{B_1} = \begin{bmatrix}a & -b \\b &a\end{bmatrix}\begin{bmatrix}1 & 0 \\0 
 Take any point $(x,y)\in \mathbb{R}^2$, that is, 
 $$
 \begin{align*}
-(x,y) &= x(0,1) + y(1,0)\\
-&= x\left(\frac{a}{a^2 + b^2}(a,b) + \frac{-b}{a^2 + b^2}(-b,a)\right) + y\left(\frac{b}{a^2 + b^2}(a,b) + \frac{a}{a^2 + b^2}(-b,a)\right)\\
-&= \left[\left(\frac{a}{a^2 + b^2}\right)x + \left(\frac{b}{a^2 + b^2}\right)y\right](a,b) + \left[\left(\frac{-b}{a^2 + b^2}\right)x + \left(\frac{a}{a^2 + b^2}\right)y\right](-b,a)
+    (x,y) &= x(0,1) + y(1,0)\\
+    &= x\left(\frac{a}{a^2 + b^2}(a,b) + \frac{-b}{a^2 + b^2}(-b,a)\right) + y\left(\frac{b}{a^2 + b^2}(a,b) + \frac{a}{a^2 + b^2}(-b,a)\right)\\
+    &= \left[\left(\frac{a}{a^2 + b^2}\right)x + \left(\frac{b}{a^2 + b^2}\right)y\right](a,b) + \left[\left(\frac{-b}{a^2 + b^2}\right)x + \left(\frac{a}{a^2 + b^2}\right)y\right](-b,a)
 \end{align*}
 $$
 As $\begin{bmatrix}\frac{xa+yb}{a^2+b^2} \\\frac{-xb+ya}{a^2+b^2}\end{bmatrix}$ represents the coefficients when you express $(x,y)$ as a linear combination of $(a,b)$ and $(-b,a)$, we say it is the coordinates of $(x,y)$ in basis $B_2$.  And we write $[(x,y)]_{B_2} = \begin{bmatrix}\frac{xa+yb}{a^2+b^2} \\\frac{-xb+ya}{a^2+b^2}\end{bmatrix}$.  We further notice that 
@@ -622,7 +622,7 @@ $$\begin{bmatrix}\frac{xa+yb}{a^2+b^2} \\\frac{-xb+ya}{a^2+b^2}\end{bmatrix} = \
 Thus, the matrix $[I]_{B_1}^{B_2}$ allows us to convert the coordinates of $(x,y)$ in terms of $B_1$ (written as $[(x,y)]_{B_1}$) to coordinates of $(x,y)$ in terms of $B_2$ (written as $[(x,y)]_{B_2}$).  Thus, the matrix is called a change of coordinate matrix.  Further notice that
 $$
 \begin{align*}
-\begin{bmatrix}\frac{a}{a^2 + b^2} & \frac{b}{a^2 + b^2} \\\frac{-b}{a^2 + b^2} &\frac{a}{a^2 + b^2}\end{bmatrix}\begin{bmatrix}a \\b \end{bmatrix} = \begin{bmatrix}1 \\0 \end{bmatrix} \text{ and }\begin{bmatrix}\frac{a}{a^2 + b^2} & \frac{b}{a^2 + b^2} \\\frac{-b}{a^2 + b^2} &\frac{a}{a^2 + b^2}\end{bmatrix}\begin{bmatrix}-b \\a \end{bmatrix} = \begin{bmatrix}0 \\1 \end{bmatrix}.
+    \begin{bmatrix}\frac{a}{a^2 + b^2} & \frac{b}{a^2 + b^2} \\\frac{-b}{a^2 + b^2} &\frac{a}{a^2 + b^2}\end{bmatrix}\begin{bmatrix}a \\b \end{bmatrix} = \begin{bmatrix}1 \\0 \end{bmatrix} \text{ and }\begin{bmatrix}\frac{a}{a^2 + b^2} & \frac{b}{a^2 + b^2} \\\frac{-b}{a^2 + b^2} &\frac{a}{a^2 + b^2}\end{bmatrix}\begin{bmatrix}-b \\a \end{bmatrix} = \begin{bmatrix}0 \\1 \end{bmatrix}.
 \end{align*}
 $$
 Hence, the matrix $[I]_{B_1}^{B_2}$ sends $B_2$ to $B_1$ while the matrix $[I]_{B^2}^{B_1}$ sends $B_1$ to $B_2$.   
@@ -689,23 +689,23 @@ Let $V$ be a finite-dimensional vector space and let $B_1$ and $B_2$ be two base
 Let $B_1 = (v_1,\dots, v_n)$ and $B_2 = (w_1,\dots,w_n)$.  Then,
 $$
 \begin{align*}
-[v]_{B_1} = (\alpha_1,\dots, \alpha_n) \iff v = \alpha_1 v_1+\dots + \alpha_n v_n.
-\end{align*}
+        [v]_{B_1} = (\alpha_1,\dots, \alpha_n) \iff v = \alpha_1 v_1+\dots + \alpha_n v_n.
+    \end{align*}
 $$
 Let $v_i = a_{1i}w_1 + \dots + a_{ni} w_n$.  Thus, 
 $$
 \begin{align*}
-v &= \alpha_1 v_1+\dots + \alpha_n v_n\\
-&= \alpha_1 (a_{11}w_1 + \dots + a_{n1} w_n) + \dots, \alpha_n (a_{1n}w_1 + \dots + a_{nn} w_n)\\
-&= (\alpha_1 a_{11} + \alpha_2 a_{12} + \dots \alpha_n a_{1n})w_1 + \dots + (\alpha_1 a_{n1} + \alpha_2 a_{n2} + \dots \alpha_n a_{nn})w_n
-\end{align*}
+        v &= \alpha_1 v_1+\dots + \alpha_n v_n\\
+        &= \alpha_1 (a_{11}w_1 + \dots + a_{n1} w_n) + \dots, \alpha_n (a_{1n}w_1 + \dots + a_{nn} w_n)\\
+        &= (\alpha_1 a_{11} + \alpha_2 a_{12} + \dots \alpha_n a_{1n})w_1 + \dots + (\alpha_1 a_{n1} + \alpha_2 a_{n2} + \dots \alpha_n a_{nn})w_n
+    \end{align*}
 $$
 That is,
 $$
 \begin{align*}
-[v]_{B_2} = \begin{bmatrix}\alpha_1 a_{11} + \alpha_2 a_{12} + \dots \alpha_n a_{1n}\\
-\alpha_1 a_{21} + \alpha_2 a_{22} + \dots \alpha_n a_{2n}\\ .\\ .\\ \alpha_1 a_{n1} + \alpha_2 a_{n2} + \dots \alpha_n a_{nn}\end{bmatrix} = \begin{bmatrix}a_{11} & a_{12} & \dots & a_{1n}\\ a_{21} & a_{22} & \dots & a_{2n}\\ . & .& \dots & .\\ . & .& \dots & .\\ a_{n1} & a_{n2}& \dots & a_{nn}\\  \end{bmatrix}\begin{bmatrix}\alpha_1\\ \alpha_2\\ . \\ .\\ \alpha_n \end{bmatrix}
-\end{align*}
+        [v]_{B_2} = \begin{bmatrix}\alpha_1 a_{11} + \alpha_2 a_{12} + \dots \alpha_n a_{1n}\\
+        \alpha_1 a_{21} + \alpha_2 a_{22} + \dots \alpha_n a_{2n}\\ .\\ .\\ \alpha_1 a_{n1} + \alpha_2 a_{n2} + \dots \alpha_n a_{nn}\end{bmatrix} = \begin{bmatrix}a_{11} & a_{12} & \dots & a_{1n}\\ a_{21} & a_{22} & \dots & a_{2n}\\ . & .& \dots & .\\ . & .& \dots & .\\ a_{n1} & a_{n2}& \dots & a_{nn}\\  \end{bmatrix}\begin{bmatrix}\alpha_1\\ \alpha_2\\ . \\ .\\ \alpha_n \end{bmatrix}
+    \end{align*}
 $$
 
 </details>
@@ -729,22 +729,22 @@ $$[I]_{B_1}^{B_2}[(x,y)]_{B_1} = \frac{1}{2}\begin{bmatrix}-1 & -7\\ 1 & 3\end{b
 Let $V = \mathbb{R}^3$, $B_1 = ((0,1,0),(0,0,1),(1,0,0))$ and $B_2 = ((1,1,-1), (1,-1,1),$ $(0,1,0))$.  Then, 
 $$
 \begin{align*}
-(0,1,0) &= 0(1,1,-1) + 0.(0,0,1) + 1(0,1,0)\\
-(0,0,1) &= \frac{-1}{2}(1,1,-1) + \frac{1}{2}(1,-1,1) + 1(0,1,0)\\
-(1,0,0) &= \frac{1}{2}(1,1,-1) + \frac{1}{2}(1,-1,1) + 0(0,1,0) 
-\end{align*}
+        (0,1,0) &= 0(1,1,-1) + 0.(0,0,1) + 1(0,1,0)\\
+        (0,0,1) &= \frac{-1}{2}(1,1,-1) + \frac{1}{2}(1,-1,1) + 1(0,1,0)\\
+        (1,0,0) &= \frac{1}{2}(1,1,-1) + \frac{1}{2}(1,-1,1) + 0(0,1,0) 
+    \end{align*}
 $$
 Thus, 
 $$[I]_{B_1}^{B_2} = \begin{bmatrix}
-0 & \frac{-1}{2} & \frac{1}{2}\\
-0 & \frac{1}{2} & \frac{1}{2}\\
-1 & 1 & 0
-\end{bmatrix}.$$
+        0 & \frac{-1}{2} & \frac{1}{2}\\
+        0 & \frac{1}{2} & \frac{1}{2}\\
+        1 & 1 & 0
+    \end{bmatrix}.$$
 And,
 $$
 \begin{align*}
-[I]_{B_1}^{B_2}[(x,y,z)]_{B_1} = \begin{bmatrix}0 & \frac{-1}{2} & \frac{1}{2}\\ 0 & \frac{1}{2} & \frac{1}{2}\\1 & 1 & 0 \end{bmatrix}\begin{bmatrix}y\\ z\\ x\end{bmatrix} = \begin{bmatrix}\frac{x-z}{2}\\ \frac{x+z}{2}\\ y+z\end{bmatrix} = [(x,y,z)]_{B_2}.
-\end{align*}
+        [I]_{B_1}^{B_2}[(x,y,z)]_{B_1} = \begin{bmatrix}0 & \frac{-1}{2} & \frac{1}{2}\\ 0 & \frac{1}{2} & \frac{1}{2}\\1 & 1 & 0 \end{bmatrix}\begin{bmatrix}y\\ z\\ x\end{bmatrix} = \begin{bmatrix}\frac{x-z}{2}\\ \frac{x+z}{2}\\ y+z\end{bmatrix} = [(x,y,z)]_{B_2}.
+    \end{align*}
 $$
 
 </div>
@@ -799,51 +799,51 @@ Let $L:\mathbb{R}^2 \to \mathbb{R}^2$ be the function $L(x,y) = (4x+3y,5x+7y)$. 
 Notice
 $$
 \begin{align*}
-L(1,1) = (4+3,5+7) &= (7,12) = \frac{19}{2}(1,1) + \frac{-5}{2}(1,-1)\\ 
-L(1,-1) = (4-3,5-7) &= (1,-2) = \frac{-1}{2}(1,1) + \frac{3}{2}(1,-1) 
-\end{align*}
+       L(1,1) = (4+3,5+7) &= (7,12) = \frac{19}{2}(1,1) + \frac{-5}{2}(1,-1)\\ 
+       L(1,-1) = (4-3,5-7) &= (1,-2) = \frac{-1}{2}(1,1) + \frac{3}{2}(1,-1) 
+   \end{align*}
 $$
 Thus,
 $$[L]_{B_1}^{B_1} = \frac{1}{2}\begin{bmatrix}
-19 & -1\\
--5 & 3
-\end{bmatrix}.$$
+       19 & -1\\
+      -5 & 3
+   \end{bmatrix}.$$
 Similarly, as
 $$
 \begin{align*}
-L(1,1) = (4+3,5+7) &= (7,12) = 4(1,2) + 1(3,4)\\ 
-L(1,-1) = (4-3,5-7) &= (1,-2) = -5(1,2) + 2(3,4)
-\end{align*}
+       L(1,1) = (4+3,5+7) &= (7,12) = 4(1,2) + 1(3,4)\\ 
+       L(1,-1) = (4-3,5-7) &= (1,-2) = -5(1,2) + 2(3,4)
+   \end{align*}
 $$
 we have
 $$[L]_{B_1}^{B_2} = \begin{bmatrix}
-4 & -5\\
-1 & 2
-\end{bmatrix}.$$
+       4 & -5\\
+       1 & 2
+   \end{bmatrix}.$$
 Similarly, as
 $$
 \begin{align*}
-L(1,2) = (4+6,5+14) &= (10,19) = \frac{29}{2}(1,1) + \frac{-9}{2}(1,-1)\\ 
-L(3,4) = (12+12,15+28) &= (24,43) = \frac{67}{2}(1,1) + \frac{-19}{2}(1,-1)
-\end{align*}
+       L(1,2) = (4+6,5+14) &= (10,19) = \frac{29}{2}(1,1) + \frac{-9}{2}(1,-1)\\ 
+       L(3,4) = (12+12,15+28) &= (24,43) = \frac{67}{2}(1,1) + \frac{-19}{2}(1,-1)
+   \end{align*}
 $$
 we have
 $$[L]_{B_2}^{B_1} = \frac{1}{2}\begin{bmatrix}
-29 & 67\\
--9 & -19
-\end{bmatrix}.$$
+       29 & 67\\
+       -9 & -19
+   \end{bmatrix}.$$
 Similarly, as
 $$
 \begin{align*}
-L(1,2) = (4+6,5+14) &= (10,19) = \frac{17}{2}(1,2) + \frac{1}{2}(3,4)\\ 
-L(3,4) = (12+12,15+28) &= (24,43) = \frac{33}{2}(1,2) + \frac{5}{2}(3,4)
-\end{align*}
+        L(1,2) = (4+6,5+14) &= (10,19) = \frac{17}{2}(1,2) + \frac{1}{2}(3,4)\\ 
+        L(3,4) = (12+12,15+28) &= (24,43) = \frac{33}{2}(1,2) + \frac{5}{2}(3,4)
+   \end{align*}
 $$
 we have
 $$[L]_{B_2}^{B_2} = \frac{1}{2}\begin{bmatrix}
-17 & 1\\
-33 & 5
-\end{bmatrix}.$$
+       17 & 1\\
+       33 & 5
+   \end{bmatrix}.$$
 
 </div>
 
@@ -925,11 +925,11 @@ we could choose a basis (namely $B_2 = ((a,b),(-b,a))$) such that $[L]_{B_2}$ is
 
 Let $V$ be a finite-dimensional vector space and $L:V\to V$ a linear map.  Assume there exists a basis $B = (v_1,\dots,v_n)$ with respect to which the matrix of the linear transformation is diagonal, say 
 $$[L]_{B} = \begin{bmatrix}
-\lambda_1 & 0 & 0 & \dots & 0 & 0\\
-0 & \lambda_2 & 0 & \dots & 0 &  0\\
-. & . & . & \dots & . & .\\
-. & . & . & \dots & . & .\\
-0 & 0 & 0 & \dots & 0 & \lambda_n\\
+    \lambda_1 & 0 & 0 & \dots & 0 & 0\\
+    0 & \lambda_2 & 0 & \dots & 0 &  0\\
+    . & . & . & \dots & . & .\\
+    . & . & . & \dots & . & .\\
+    0 & 0 & 0 & \dots & 0 & \lambda_n\\
 \end{bmatrix}$$
 Then by the definition of a matrix associated to a linear map, we have $L(v_i) = \lambda_i v_i$.  
 
@@ -998,8 +998,8 @@ $$\lambda = \frac{5\pm \sqrt{25 + 8}}{2}  = \frac{5\pm \sqrt{33}}{2}.$$
 Let us now find the corresponding eigenvectors
 $$
 \begin{align*}
-\begin{bmatrix} \frac{5+ \sqrt{33}}{2}x\\ \frac{5+ \sqrt{33}}{2}y\end{bmatrix} = \begin{bmatrix}1&2\\3&4\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix} x+2y\\ 3x+4y\end{bmatrix}
-\end{align*}
+        \begin{bmatrix} \frac{5+ \sqrt{33}}{2}x\\ \frac{5+ \sqrt{33}}{2}y\end{bmatrix} = \begin{bmatrix}1&2\\3&4\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix} x+2y\\ 3x+4y\end{bmatrix}
+    \end{align*}
 $$
 Thus, we get $2y = \frac{5+ \sqrt{33}}{2}x - x = \frac{3+ \sqrt{33}}{2}x$.  Thus, $(4,3+ \sqrt{33})$ is an eigenvector.  Let us confirm our answer.
 $$\begin{bmatrix}1&2\\3&4\end{bmatrix}\begin{bmatrix}4\\3+ \sqrt{33}\end{bmatrix} = \begin{bmatrix}10 + \sqrt{33}\\24+ \sqrt{33}\end{bmatrix} = \frac{5+\sqrt{33}}{2}\begin{bmatrix}4\\3+ \sqrt{33}\end{bmatrix}.$$
@@ -1026,17 +1026,17 @@ Thus, the determinant is not zero for any real number $\lambda$.
 Let $B = (e_1,e_2,e_3)$ be the standard basis of $\mathbb{R}^3$. Let $L:\mathbb{R}^3 \to \mathbb{R}^3$ be the linear map such that $[L]_B = \begin{bmatrix}1&2&3\\4&5&6\\7&8&9\end{bmatrix}$.  Then, 
 $$
 \begin{align*}
-det\left(\begin{bmatrix}1&2&3\\4&5&6\\7&8&9\end{bmatrix} -\lambda \begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}\right) &= det\left(\begin{bmatrix}1-\lambda &2&3\\4&5-\lambda&6\\7&8&9-\lambda \end{bmatrix}\right)\\
-&= (1-\lambda)(\lambda^2 - 14\lambda - 3) - 2(-6-4\lambda) + 3(-3+7\lambda)\\
-&= -\lambda^3 +15\lambda^2 + 18\lambda\\
-&= (-\lambda)(\lambda^2 - 15\lambda -18)
-\end{align*}
+        det\left(\begin{bmatrix}1&2&3\\4&5&6\\7&8&9\end{bmatrix} -\lambda \begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}\right) &= det\left(\begin{bmatrix}1-\lambda &2&3\\4&5-\lambda&6\\7&8&9-\lambda \end{bmatrix}\right)\\
+        &= (1-\lambda)(\lambda^2 - 14\lambda - 3) - 2(-6-4\lambda) + 3(-3+7\lambda)\\
+        &= -\lambda^3 +15\lambda^2 + 18\lambda\\
+        &= (-\lambda)(\lambda^2 - 15\lambda -18)
+    \end{align*}
 $$
 Thus, the eigenvalues are $0$, $\frac{15\pm \sqrt{297}}{2}$.  Solving 
 $$
 \begin{align*}
-\begin{bmatrix}1&2&3\\4&5&6\\7&8&9\end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix} = \begin{bmatrix}0\\0\\0\end{bmatrix}
-\end{align*}
+        \begin{bmatrix}1&2&3\\4&5&6\\7&8&9\end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix} = \begin{bmatrix}0\\0\\0\end{bmatrix}
+    \end{align*}
 $$
 we get $y = -2x$ and $z = x$.  Thus, $(1,-2,1)$ is an eigenvector corresponding to $0$.  
 The computations for the other eigenvectors is really tedious, so let us not do it.

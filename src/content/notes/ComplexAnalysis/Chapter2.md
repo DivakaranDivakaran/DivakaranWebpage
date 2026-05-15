@@ -244,12 +244,12 @@ The function $f:\mathbb{C} \to \mathbb{C}$ defined as $f(z) = c$ for some comple
 The function $f:\mathbb{C} \to \mathbb{C}$ defined as $f(z) = z^n$ is differentiable and its derivative $f'(z) = nz^{n-1}$.  
 $$
 \begin{align*}
-\lim_{h\to 0}\frac{1}{h}\left[(z+h)^n - z^n\right] &= \lim_{h\to 0} \frac{1}{h} \left[ \left(\sum_{k=0}^{n} {n\choose k} z^k h^{n-k}\right) - z^n \right] \\
-&= \lim_{h\to 0} \frac{1}{h} \left(\sum_{k=0}^{n-1} {n\choose k} z^k h^{n-k}\right)  \\
-&= \lim_{h\to 0} \left(\sum_{k=0}^{n-1} \frac{1}{h} {n\choose k} z^k h^{n-k}\right)  \\
-&= \sum_{k=0}^{n-1} \left( \lim_{h\to 0} \frac{1}{h} {n\choose k} z^k h^{n-k}\right)\\
-&= \sum_{k=0}^{n-1}\left( \lim_{h\to 0} {n\choose k} z^k h^{n-k-1}\right)\\
-\end{align*}
+        \lim_{h\to 0}\frac{1}{h}\left[(z+h)^n - z^n\right] &= \lim_{h\to 0} \frac{1}{h} \left[ \left(\sum_{k=0}^{n} {n\choose k} z^k h^{n-k}\right) - z^n \right] \\
+        &= \lim_{h\to 0} \frac{1}{h} \left(\sum_{k=0}^{n-1} {n\choose k} z^k h^{n-k}\right)  \\
+        &= \lim_{h\to 0} \left(\sum_{k=0}^{n-1} \frac{1}{h} {n\choose k} z^k h^{n-k}\right)  \\
+        &= \sum_{k=0}^{n-1} \left( \lim_{h\to 0} \frac{1}{h} {n\choose k} z^k h^{n-k}\right)\\
+        &= \sum_{k=0}^{n-1}\left( \lim_{h\to 0} {n\choose k} z^k h^{n-k-1}\right)\\
+    \end{align*}
 $$
 
 Now, 
@@ -266,8 +266,8 @@ is non-zero iff $n-k-1 = 0$ iff $k = n-1$ and then ${n\choose k} = n$.  Thus, we
 The function $f(z) = \overline{z}$ is not differentiable.
 $$
 \begin{align*}
-\lim_{h\to 0} \frac{\overline{z+h} - \overline{z}}{h} = \lim_{h\to 0} \frac{\overline{h}}{h}
-\end{align*}
+        \lim_{h\to 0} \frac{\overline{z+h} - \overline{z}}{h} = \lim_{h\to 0} \frac{\overline{h}}{h}
+    \end{align*}
 $$
 If $h_n = i/n$ then $\overline{h_n}/h_n$ tends to $-1$.  On the other hand, if $h = 1/n$, then $\overline{h_n}/h_n$ tends to $1$.  Thus, the above limit cannot exist.
 
@@ -296,12 +296,12 @@ $$\lim_{h\to 0}\frac{f(z+h) - f(z)}{h} \text{ and } \lim_{h\to 0}\frac{g(z+h) - 
 exists, by the algebra of limits we know 
 $$
 \begin{align*}
-f'(z) + g'(z) &= \lim_{h\to 0}\frac{f(z+h) - f(z)}{h} + \lim_{h\to 0}\frac{g(z+h) - g(z)}{h}\\
-&= \lim_{h\to 0}\frac{f(z+h) - f(z) + g(z+h) - g(z)}{h}\\
-&= \lim_{h\to 0}\frac{f(z+h) + g(z+h) - f(z) - g(z)}{h}\\
-&= \lim_{h\to 0}\frac{f+g(z+h) -f+g(z)}{h}\\
-&= (f+g)'(z)
-\end{align*}
+        f'(z) + g'(z) &= \lim_{h\to 0}\frac{f(z+h) - f(z)}{h} + \lim_{h\to 0}\frac{g(z+h) - g(z)}{h}\\
+        &= \lim_{h\to 0}\frac{f(z+h) - f(z) + g(z+h) - g(z)}{h}\\
+        &= \lim_{h\to 0}\frac{f(z+h) + g(z+h) - f(z) - g(z)}{h}\\
+        &= \lim_{h\to 0}\frac{f+g(z+h) -f+g(z)}{h}\\
+        &= (f+g)'(z)
+    \end{align*}
 $$
 
 </details>
@@ -334,11 +334,11 @@ If $f$ and $g$ are differentiable at a point $z$, then $fg$ is also differentiab
 Notice that,
 $$
 \begin{align*}
-\frac{fg(z+h) - fg(z)}{h} &= \frac{f(z+h)g(z+h) - f(z)g(z)}{h}\\
-&= \frac{f(z+h)g(z+h) - f(z+h)g(z) + f(z+h)g(z) - f(z)g(z)}{h}\\
-&= \frac{f(z+h)g(z+h) - f(z+h)g(z)}{h} + \frac{f(z+h)g(z) - f(z)g(z)}{h}\\
-&= f(z+h)\frac{g(z+h) - g(z)}{h} + \frac{f(z+h) - f(z)}{h}g(z)
-\end{align*}
+        \frac{fg(z+h) - fg(z)}{h} &= \frac{f(z+h)g(z+h) - f(z)g(z)}{h}\\
+        &= \frac{f(z+h)g(z+h) - f(z+h)g(z) + f(z+h)g(z) - f(z)g(z)}{h}\\
+        &= \frac{f(z+h)g(z+h) - f(z+h)g(z)}{h} + \frac{f(z+h)g(z) - f(z)g(z)}{h}\\
+        &= f(z+h)\frac{g(z+h) - g(z)}{h} + \frac{f(z+h) - f(z)}{h}g(z)
+    \end{align*}
 $$
 Now, algebra of limits will fetch us the result.
 
@@ -363,10 +363,10 @@ If $g$ is differentiable at a point $z$ and $g(z)\neq 0$, then $1/g$ is differen
 Notice that,
 $$
 \begin{align*}
-\frac{\frac{1}{g}(z+h) - \frac{1}{g}(z)}{h} &= \frac{\frac{1}{g(z+h)}- \frac{1}{g(z)}}{h}\\
-&= \frac{g(z) - g(z+h)}{hg(z+h)g(z)}\\
-&= \frac{g(z) - g(z+h)}{h} . \frac{1}{g(z+h)g(z)}
-\end{align*}
+        \frac{\frac{1}{g}(z+h) - \frac{1}{g}(z)}{h} &= \frac{\frac{1}{g(z+h)}- \frac{1}{g(z)}}{h}\\
+        &= \frac{g(z) - g(z+h)}{hg(z+h)g(z)}\\
+        &= \frac{g(z) - g(z+h)}{h} . \frac{1}{g(z+h)g(z)}
+    \end{align*}
 $$
 Now, algebra of limits will fetch us the result.
 
@@ -401,10 +401,10 @@ If $f$ is differentiable at $z$ and $g$ is differentiable at $f(z) = w$. then $g
 Notice,
 $$
 \begin{align*}
-\frac{g\circ f(z+h) - g\circ f(z)}{h} &= \frac{g(f(z+h)) - g(f(z))}{h}\\
-&= \frac{g(f(z+h)) - g(f(z))}{h} . \frac{f(z+h)-f(z)}{f(z+h)-f(z)}\\
-&= \frac{g(f(z+h)) - g(f(z))}{f(z+h)-f(z)} . \frac{f(z+h)-f(z)}{h}\\
-\end{align*}
+        \frac{g\circ f(z+h) - g\circ f(z)}{h} &= \frac{g(f(z+h)) - g(f(z))}{h}\\
+        &= \frac{g(f(z+h)) - g(f(z))}{h} . \frac{f(z+h)-f(z)}{f(z+h)-f(z)}\\
+        &= \frac{g(f(z+h)) - g(f(z))}{f(z+h)-f(z)} . \frac{f(z+h)-f(z)}{h}\\
+    \end{align*}
 $$
 Now, algebra of limits will fetch us the result.
 
@@ -465,18 +465,18 @@ $$\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \text{ and } \fr
 The basic idea is to compare the limit as $h$ tends to $0$ along the real and imaginary axes.  First, we will approach $0$ along the real axis, that is, assume that $h = h + i 0$, then
 $$
 \begin{align*}
-\frac{f(z+h) - f(z)}{h} &= \frac{u(x+h,y) + i v(x+h,y) - u(x,y) - i v(x,y)}{h}\\
-&= \frac{u(x+h,y) - u(x,y)}{h} + i . \frac{v(x+h,y) - v(x,y)}{h}
-\end{align*}
+        \frac{f(z+h) - f(z)}{h} &= \frac{u(x+h,y) + i v(x+h,y) - u(x,y) - i v(x,y)}{h}\\
+        &= \frac{u(x+h,y) - u(x,y)}{h} + i . \frac{v(x+h,y) - v(x,y)}{h}
+    \end{align*}
 $$
 
 Now, we approach $0$ along the imaginary axis, that is, take $h = 0 + i h$,
 $$
 \begin{align*}
-\frac{f(z+h) - f(z)}{i h} &= \frac{u(x,y+h) + i v(x,y+h) - u(x,y) - i v(x,y)}{i h}\\
-&= \frac{u(x,y+h) - u(x,y)}{i h} + i . \frac{v(x,y+h) - v(x,y)}{i h}\\
-&= \frac{v(x,y+h) - v(x,y)}{h} - i . \frac{u(x,y+h) - u(x,y)}{h}
-\end{align*}
+        \frac{f(z+h) - f(z)}{i h} &= \frac{u(x,y+h) + i v(x,y+h) - u(x,y) - i v(x,y)}{i h}\\
+        &= \frac{u(x,y+h) - u(x,y)}{i h} + i . \frac{v(x,y+h) - v(x,y)}{i h}\\
+        &= \frac{v(x,y+h) - v(x,y)}{h} - i . \frac{u(x,y+h) - u(x,y)}{h}
+    \end{align*}
 $$
 As $f$ is differentiable, the limit as $h$ tends to $0$ in each of the above situations would be equal to $f'(z)$.  Thus, 
 $$\frac{\partial u}{\partial x} + i \frac{\partial v}{\partial x} = f'(z) = \frac{\partial v}{\partial y} - i \frac{\partial u}{\partial y}.$$
@@ -492,9 +492,9 @@ Or alternatively,
 <span class="env-label">Theorem 2.9</span>
 
 Let $U$ be an open set and $f:U\to \mathbb{C}$ be a function.  We can write $f$ as $F(x+i y) = u(x,y) + i v(x,y)$ where $u,v:\mathbb{R}^2 \to \mathbb{R}$.  Define $F:\mathbb{R}^2 \to \mathbb{R}^2$ as $F(x,y) = (u(x,y),v(x,y))$.  If $f$ is complex differentiable at $z_0 = x_0 + i y_0$ then $F:\mathbb{R}^2 \to \mathbb{R}^2$ is differentiable at $(x_0,y_0)$ and satisfies the Cauchy-Riemann equations.  More precisely, if $f'(z_0) = a + i b$, then $$DF_{(x_0,y_0)} = \begin{bmatrix}
-a & -b\\
-b & a
-\end{bmatrix}.$$    
+        a & -b\\
+        b & a
+    \end{bmatrix}.$$    
 
 
 </div>
@@ -508,24 +508,24 @@ b & a
 Assume $f$ is differentiable at $z_0$.  Then,
 $$
 \begin{align*}
-f'(z_0) = \lim_{h\to 0}\frac{f(z_0+h) - f(z_0)}{h} &\implies \lim_{h\to 0} \frac{f(z_0+h) - f(z_0) - hf'(z_0)}{h}=0\\
-&\implies \lim_{h\to 0} \left\Vert \frac{f(z_0+h) - f(z_0) - hf'(z_0)}{h} \right\Vert = 0\\
-&\implies \lim_{h\to 0} \frac{\left\Vert f(z_0+h) - f(z_0) - hf'(z_0)\right\Vert}{\left\Vert h\right\Vert} = 0\\
-&\implies \lim_{h\to 0} \frac{\left\Vert f(z+h) - f(z_0) - (h_1 + i h_2)(a+i b)\right\Vert}{\left\Vert h\right\Vert} = 0\\
-&\implies \lim_{h\to 0} \frac{\left\Vert f(z+h) - f(z_0) - (h_1 a - h_2b) +i (h_1b + h_2a) \right\Vert}{\left\Vert h\right\Vert} = 0\\
-&\implies \lim_{h\to (0,0)} \frac{\left\Vert F((x_0,y_0) + (h_1,h_2)) - F(x,y) - \begin{bmatrix}
-a & -b\\
-b & a
-\end{bmatrix} \begin{bmatrix}
-h_1\\
-h_2
-\end{bmatrix}\right\Vert}{\Vert h\Vert} = 0
-\end{align*}
+       f'(z_0) = \lim_{h\to 0}\frac{f(z_0+h) - f(z_0)}{h} &\implies \lim_{h\to 0} \frac{f(z_0+h) - f(z_0) - hf'(z_0)}{h}=0\\
+       &\implies \lim_{h\to 0} \left\Vert \frac{f(z_0+h) - f(z_0) - hf'(z_0)}{h} \right\Vert = 0\\
+        &\implies \lim_{h\to 0} \frac{\left\Vert f(z_0+h) - f(z_0) - hf'(z_0)\right\Vert}{\left\Vert h\right\Vert} = 0\\
+        &\implies \lim_{h\to 0} \frac{\left\Vert f(z+h) - f(z_0) - (h_1 + i h_2)(a+i b)\right\Vert}{\left\Vert h\right\Vert} = 0\\
+        &\implies \lim_{h\to 0} \frac{\left\Vert f(z+h) - f(z_0) - (h_1 a - h_2b) +i (h_1b + h_2a) \right\Vert}{\left\Vert h\right\Vert} = 0\\
+        &\implies \lim_{h\to (0,0)} \frac{\left\Vert F((x_0,y_0) + (h_1,h_2)) - F(x,y) - \begin{bmatrix}
+        a & -b\\
+        b & a
+    \end{bmatrix} \begin{bmatrix}
+        h_1\\
+        h_2
+    \end{bmatrix}\right\Vert}{\Vert h\Vert} = 0
+    \end{align*}
 $$
 This implies that $F$ is differentiable at $(x_0,y_0)$ with the derivative $$DF_{(x_0,y_0)} = \begin{bmatrix}
-a & -b\\
-b & a
-\end{bmatrix}.$$
+        a & -b\\
+        b & a
+    \end{bmatrix}.$$
 
 </details>
 </div>
@@ -549,29 +549,29 @@ Let $U$ be an open set and $f:U\to \mathbb{C}$ be a function.  We can write $f$ 
 
 As $F$ satisfies the Cauchy-Reimann equations at $(x_0,y_0)$, the derivative at $(x_0,y_0)$ will be of the form 
 $$DF_{(x_0,y_0)} = \begin{bmatrix}
-a & -b\\
-b & a
-\end{bmatrix}.$$  
+        a & -b\\
+        b & a
+    \end{bmatrix}.$$  
 We will prove that $f$ is differentiable at $z_0$ and has the derivative $f'(z_0) = a+ i b$. As, $F$ is differentiable,  
 $$
 \begin{align*}
-\lim_{h\to (0,0)} \frac{\left\Vert F((x_0,y_0) + (h_1,h_2)) - F(x,y) - \begin{bmatrix}
-a & -b\\
-b & a
-\end{bmatrix} \begin{bmatrix}
-h_1\\
-h_2
-\end{bmatrix}\right\Vert}{\Vert h\Vert} = 0 
-\end{align*}
+        \lim_{h\to (0,0)} \frac{\left\Vert F((x_0,y_0) + (h_1,h_2)) - F(x,y) - \begin{bmatrix}
+        a & -b\\
+        b & a
+    \end{bmatrix} \begin{bmatrix}
+        h_1\\
+        h_2
+    \end{bmatrix}\right\Vert}{\Vert h\Vert} = 0 
+    \end{align*}
 $$
 But, this is possible iff,
 $$
 \begin{align*}
-\lim_{h\to 0} \frac{\left\Vert f(z_0 +h) - f(z_0) - (h_1 a - h_2b) +i (h_1b + h_2a) \right\Vert}{\left\Vert h\right\Vert} = 0 &\implies \lim_{h\to 0} \frac{\left\Vert f(z_0+h) - f(z_0) - h(a+i b) \right\Vert}{\left\Vert h\right\Vert} = 0\\
-&\implies \lim_{h\to 0} \left\Vert\frac{f(z_0+h) - f(z_0) - h(a+i b)}{h}\right\Vert = 0\\
-&\implies \lim_{h\to 0} \frac{f(z_0+h) - f(z_0) - h(a+i b)}{h} = 0\\
-&\implies \lim_{h\to 0} \frac{f(z_0+h) - f(z_0)}{h} = (a+i b)
-\end{align*}
+        \lim_{h\to 0} \frac{\left\Vert f(z_0 +h) - f(z_0) - (h_1 a - h_2b) +i (h_1b + h_2a) \right\Vert}{\left\Vert h\right\Vert} = 0 &\implies \lim_{h\to 0} \frac{\left\Vert f(z_0+h) - f(z_0) - h(a+i b) \right\Vert}{\left\Vert h\right\Vert} = 0\\
+        &\implies \lim_{h\to 0} \left\Vert\frac{f(z_0+h) - f(z_0) - h(a+i b)}{h}\right\Vert = 0\\
+        &\implies \lim_{h\to 0} \frac{f(z_0+h) - f(z_0) - h(a+i b)}{h} = 0\\
+        &\implies \lim_{h\to 0} \frac{f(z_0+h) - f(z_0)}{h} = (a+i b)
+    \end{align*}
 $$
 Which implies can happen only if $f$ is differentiable at $z_0$ and the derivative $f'(z_0) = a+i b$.
 
@@ -625,22 +625,22 @@ Let $F:U\to \mathbb{R}^2$ be such that the partial derivatives of $F$ exists eve
 If we write $F(x,y) = (u(x,y),v(x,y))$, then the function $F$ is differentiable on $U$ iff $u:U\to \mathbb{R}$ and $v:U\to \mathbb{R}$ are both differentiable.  We will prove that $u$ is differentiable and leave the other proof as an exercise.  The main idea in the proof is a clever use of the mean value theorem.  Also as the partial derivatives are continuous, we can choose some $\delta$ such that if $|x'| < \delta$ and $y'<\delta$ then, 
 $$
 \begin{align}
-\left\Vert \frac{\partial u}{\partial x} (x+x',y+y') - \frac{\partial u}{\partial x}(x,y) \right\Vert  < \frac{\varepsilon}{2}
-\label{bounds1}
-\end{align}
+        \left\Vert \frac{\partial u}{\partial x} (x+x',y+y') - \frac{\partial u}{\partial x}(x,y) \right\Vert  < \frac{\varepsilon}{2}
+        \label{bounds1}
+    \end{align}
 $$
 and
 $$
 \begin{align}
-\left\Vert\frac{\partial u}{\partial y} (x+x',y+y') - \frac{\partial u}{\partial y}(x,y) \right\Vert < \frac{\varepsilon}{2}.
-\label{bounds2}
-\end{align}
+        \left\Vert\frac{\partial u}{\partial y} (x+x',y+y') - \frac{\partial u}{\partial y}(x,y) \right\Vert < \frac{\varepsilon}{2}.
+        \label{bounds2}
+    \end{align}
 $$
 Choose $h_i$ such that $\vert h_i \vert < \delta$.  Then, observe that,
 $$
 \begin{align*}
-u(x+h_1, y+h_2) - u(x,y) &= u(x+h_1,y+h_2) - u(x,y+h_2) + u(x,y+h_2) - u(x,y)\\
-\end{align*}
+        u(x+h_1, y+h_2) - u(x,y) &= u(x+h_1,y+h_2) - u(x,y+h_2) + u(x,y+h_2) - u(x,y)\\
+    \end{align*}
 $$
 Applying mean value theorem to the continuously differentiable functions
 
@@ -654,9 +654,9 @@ $$u(x,y+h_2) - u(x,y) = h_2 \frac{\partial u}{\partial y} (x+h_1,y+\lambda_2 h_2
 That is, 
 $$
 \begin{align*}
-u(x+h_1, y+h_2) - u(x,y) &= u(x+h_1,y+h+2) - u(x,y+h_2) + u(x,y+h_2) - u(x,y)\\
-&= h_1\frac{\partial u}{\partial x} (x+\lambda_1h_1,y+h_2) + h_2 \frac{\partial u}{\partial y} (x+h_1,y+\lambda_2 h_2)\\
-\end{align*}
+        u(x+h_1, y+h_2) - u(x,y) &= u(x+h_1,y+h+2) - u(x,y+h_2) + u(x,y+h_2) - u(x,y)\\
+        &= h_1\frac{\partial u}{\partial x} (x+\lambda_1h_1,y+h_2) + h_2 \frac{\partial u}{\partial y} (x+h_1,y+\lambda_2 h_2)\\
+    \end{align*}
 $$
 Thus, the expression
 $$\left\Vert u(x+h_1, y+h_2) - u(x,y) - \left(\frac{\partial u}{\partial x}(x,y),\frac{\partial u}{\partial y}(x,y)\right)\cdot(h_1,h_2)\right\Vert$$
@@ -667,8 +667,8 @@ $$\left\vert h_1\right\vert \left\Vert \frac{\partial u}{\partial x} (x+\lambda_
 From Equation **2.1** and Equation **2.2**, the above value is less than or equalt to 
 $$
 \begin{align*}
-\frac{\varepsilon}{2}\vert h_1\vert + \frac{\varepsilon}{2}\vert h_2\vert &\leq \frac{\varepsilon}{2}\Vert(h_1,h_2)\Vert + \frac{\varepsilon}{2}\Vert(h_1,h_2)\Vert \leq \Vert h\Vert \varepsilon  
-\end{align*}
+        \frac{\varepsilon}{2}\vert h_1\vert + \frac{\varepsilon}{2}\vert h_2\vert &\leq \frac{\varepsilon}{2}\Vert(h_1,h_2)\Vert + \frac{\varepsilon}{2}\Vert(h_1,h_2)\Vert \leq \Vert h\Vert \varepsilon  
+    \end{align*}
 $$ 
 Thus, if $\Vert h \Vert<\delta$, then $\vert h_i\vert<\delta$ and hence
 $$\left\Vert u(x+h_1, y+h_2) - u(x,y) - \left(\frac{\partial u}{\partial x}(x,y),\frac{\partial u}{\partial y}(x,y)\right)\cdot(h_1,h_2)\right\Vert\leq \Vert h\Vert \varepsilon.$$
@@ -924,9 +924,9 @@ satisfies the Cauchy Riemann equations at $z=0$, but is not differentiable at $0
 
 - Let $f:\mathbb{R} \to \mathbb{R}$ be the function 
 $$f(x) = \begin{cases}
-\sin(\frac{1}{x}) & \text{if } x\neq 0\\
-0 & \text{otherwise}
-\end{cases}.$$
+        \sin(\frac{1}{x}) & \text{if } x\neq 0\\
+        0 & \text{otherwise}
+    \end{cases}.$$
 Show that the graph of $f$ is connected, but not path connected.  **This gives us an example of a connected space that is not path-connected.**
 
 %**Hint 1: ** To prove the graph is not path-connected use a proof by contradiction.  Assume there exists a path $\gamma:[0,1]\to Graph(f)$ where $\gamma(t) = (\gamma_1(t),\gamma_2(t))$ connecting $(0,0)$ and $(a,sin(1/a))$ for some $a>0$.  Chose an $\delta > 0$ such that $\vert \gamma_2(t) \vert < \varepsilon$ is $t < \delta$.
