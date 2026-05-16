@@ -10,10 +10,11 @@ OUTPUT_DIR = os.path.abspath('public/pdfs')
 
 # Mobile PDF settings
 MOBILE_PREAMBLE_EXTRAS = r"""
-\usepackage[paperwidth=150mm, paperheight=250mm, margin=7mm]{geometry}
+\usepackage[paperwidth=130mm, paperheight=230mm, margin=6mm]{geometry}
 \usepackage[fontsize=11pt]{scrextend}
 \pagestyle{plain}
 \usepackage{microtype}
+\usepackage{resizegather} % Automatically scale down long equations
 \sloppy
 \allowdisplaybreaks
 """
@@ -58,6 +59,14 @@ def process_course(course_path):
     # Fix paths in the main file
     original_main = fix_paths(original_main, course_path)
 
+    def optimize_math_for_mobile(content):
+        # Replace equation with gather so resizegather can scale it
+        content = content.replace(r'\begin{equation}', r'\begin{gather}')
+        content = content.replace(r'\end{equation}', r'\end{gather}')
+        content = content.replace(r'\begin{equation*}', r'\begin{gather*}')
+        content = content.replace(r'\end{equation*}', r'\end{gather*}')
+        return content
+
     # Create course output dir
     course_out = os.path.join(OUTPUT_DIR, course_name)
     os.makedirs(course_out, exist_ok=True)
@@ -78,6 +87,8 @@ def process_course(course_path):
     print(f"Generating Mobile PDF for {course_name}...")
     # Modify preamble for mobile
     mobile_main = original_main
+    # Optimize math for narrow width
+    mobile_main = optimize_math_for_mobile(mobile_main)
     # Remove existing geometry settings if any
     mobile_main = re.sub(r'\\usepackage\[[^\]]*\]\{geometry\}', '', mobile_main)
     # Inject mobile settings before \begin{document}
