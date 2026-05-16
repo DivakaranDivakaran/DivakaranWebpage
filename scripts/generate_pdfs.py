@@ -10,10 +10,12 @@ OUTPUT_DIR = os.path.abspath('public/pdfs')
 
 # Mobile PDF settings
 MOBILE_PREAMBLE_EXTRAS = r"""
-\usepackage[paperwidth=120mm, paperheight=190mm, margin=5mm]{geometry}
-\usepackage[fontsize=12pt]{scrextend}
+\usepackage[paperwidth=150mm, paperheight=250mm, margin=7mm]{geometry}
+\usepackage[fontsize=11pt]{scrextend}
 \pagestyle{plain}
 \usepackage{microtype}
+\sloppy
+\allowdisplaybreaks
 """
 
 def compile_latex(tex_content, output_name, work_dir):
