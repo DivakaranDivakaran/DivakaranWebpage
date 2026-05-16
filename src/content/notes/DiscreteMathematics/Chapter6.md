@@ -179,34 +179,34 @@ The method of proof employed here is called combinatorial proof.  It is interest
 
 The idea used above can do more than just compute the number of permutations, we can list all of them.  
 
-\begin{lstlisting}[language=Haskell]
-functions                 : [a] -> [b] -> [[(a,b)]]
-functions.[].xs           = [[]]
-functions.(x::xs).[]      = []
-functions.xs.[y]          = [[(x,y) | x <- xs]]
-functions.(x::xs).(y::ys) = map.((x,y)::).(functions.xs.(y::ys)) ++ 
-[(x,z)::as | z <- ys, as <- functions.xs.(y::ys)]
--- functions that map x to y ++ others
+```haskell
+    functions                 : [a] -> [b] -> [[(a,b)]]
+    functions.[].xs           = [[]]
+    functions.(x::xs).[]      = []
+    functions.xs.[y]          = [[(x,y) | x <- xs]]
+    functions.(x::xs).(y::ys) = map.((x,y)::).(functions.xs.(y::ys)) ++ 
+                                [(x,z)::as | z <- ys, as <- functions.xs.(y::ys)]
+                              -- functions that map x to y ++ others
+                            
+    injective                 : [(a,b)] -> Bool
+    injective.[]              = True
+    injective.((x,y)::xys)    = (y `notElem` map.snd.xys) && injective.xys
 
-injective                 : [(a,b)] -> Bool
-injective.[]              = True
-injective.((x,y)::xys)    = (y `notElem` map.snd.xys) && injective.xys
+    injectiveFunctions        : [a] -> [b] -> [[(a,b)]]
+    injectiveFunctions.xs.ys    = filter.injective.(functions.xs.ys)
 
-injectiveFunctions        : [a] -> [b] -> [[(a,b)]]
-injectiveFunctions.xs.ys    = filter.injective.(functions.xs.ys)
-
-permutations              : Int -> Int -> Int 
-permutations.k.n          = length.(injectiveFunctions.[1...k].[1...n]) 
-\end{lstlisting}
+    permutations              : Int -> Int -> Int 
+    permutations.k.n          = length.(injectiveFunctions.[1...k].[1...n]) 
+```
 
 If we didn't need the list of permutations, and were only interested in $\Perm{n}{k}$, then we can use the recurrence relation to define the function as follows.
 
-\begin{lstlisting}[language=Haskell]
-p                         : Int -> Int -> Int
-n `p` 0                   = 1
-0 `p` (k+1)               = 0
-(n+1) `p` (k+1)           = (n+1) * n `p` k
-\end{lstlisting}
+```haskell
+    p                         : Int -> Int -> Int
+    n `p` 0                   = 1
+    0 `p` (k+1)               = 0
+    (n+1) `p` (k+1)           = (n+1) * n `p` k
+```
 
 
 
@@ -227,35 +227,35 @@ $$\Comb{n}{k} = \Comb{n-1}{k-1} + \Comb{n-1}{k}.$$
 
 The idea used above can do more than just compute the number of subsets, we can use it to generate all subsets.  Given below is a gofer code to do that. 
 
-\begin{lstlisting}[language=Haskell]
-sub           : [a] -> Int -> [[a]]
-sub.xs.0      = [[]]
-sub.[].k      = []
-sub.(x::xs).k = sub.xs.k ++ map.(x::).(sub.xs.(k-1))
-\end{lstlisting}
+```haskell
+    sub           : [a] -> Int -> [[a]]
+    sub.xs.0      = [[]]
+    sub.[].k      = []
+    sub.(x::xs).k = sub.xs.k ++ map.(x::).(sub.xs.(k-1))
+```
 
 Or we could have used the same idea to list all sublists of a list and then choose those with length k.
 
-\begin{lstlisting}[language=Haskell]
-subs             : [a] -> [[a]]
-subs.[]          = [[]]
-subs.(x::xs)     = subs.xs ++ map.(x::).(subs.xs)
+```haskell
+    subs             : [a] -> [[a]]
+    subs.[]          = [[]]
+    subs.(x::xs)     = subs.xs ++ map.(x::).(subs.xs)
 
-choose:          : Int -> Int -> [[Int]]
-choose.n.k       = [ys | ys <- subs.[1...n], length.ys == k]
+    choose:          : Int -> Int -> [[Int]]
+    choose.n.k       = [ys | ys <- subs.[1...n], length.ys == k]
 
-combinations     : Int -> Int -> Int
-combinations.n.k = length.(choose.n.k)
-\end{lstlisting}
+    combinations     : Int -> Int -> Int
+    combinations.n.k = length.(choose.n.k)
+```
 
 If we didn't need the list of subsets, and were only interested in $\Comb{n}{k}$, then we can use the recurrence relation to define the function as follows.
 
-\begin{lstlisting}[language=Haskell]
-c                         : Int -> Int -> Int
-n `c` 0                   = 1
-0 `c` (k+1)               = 0
-(n+1) `c` (k+1)           = n `c` (k+1) + n `c` k
-\end{lstlisting}
+```haskell
+    c                         : Int -> Int -> Int
+    n `c` 0                   = 1
+    0 `c` (k+1)               = 0
+    (n+1) `c` (k+1)           = n `c` (k+1) + n `c` k
+```
 
 
 

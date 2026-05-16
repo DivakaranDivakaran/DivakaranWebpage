@@ -1648,7 +1648,7 @@ And I encourage you to explore the most general question in this line
 
 \end{multicols}
 
-- **(2 marks)** Find the real and imaginary parts of $\left(\frac{1}{\sqrt{2}}+i\frac{1}{\sqrt{2}}\right)^{100}$.
+- Find the real and imaginary parts of $\left(\frac{1}{\sqrt{2}}+i\frac{1}{\sqrt{2}}\right)^{100}$.
 %from lang
 
 

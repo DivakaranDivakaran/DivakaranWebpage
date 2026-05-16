@@ -44,15 +44,19 @@ Coming back from the personal example, we will study a precisely defined structu
 
 
 You have probably heard the quote
-\begin{displayquote}
-You have really understood something only if you can explain it to your grandmother
-\end{displayquote}
+
+
+> You have really understood something only if you can explain it to your grandmother
+
+
 This quote is often attributed to Einstein, but unclear if he said it.  Here, grandmother is a placeholder for someone who has not had the opportunity to learn it so far.  The word layman or the phrase ``the first person you meet on the streets" is also sometimes used.  Unfortunately, this is not very practical.  Richard Feynman is considered one of the greatest teachers, and he credits his father for sparking his interest in science.  He, too, believed that being able to explain in simple terms is a sign of true understanding.  I remember reading that he was, however, unable to explain his work to his father, which made him sad.  
 
 Thus, people began to qualify the statement further.  The person to whom you are explaining should be interested, have some prerequisites, aptitude, and be willing to work hard, etc.  With the advent of computers, these devices seem to match most of the properties of this ideal student - a computer is an always motivated individual who is not at all lazy, does not need to sleep, has infinite time, etc.  So, we may say 
-\begin{displayquote}
-You have really understood something only if you can explain it to a computer<span class="footnote-trigger" title="I heard from a friend that Thurston said this, but he couldn't find a source."><sup>[*]</sup></span>
-\end{displayquote}
+
+
+> You have really understood something only if you can explain it to a computer<span class="footnote-trigger" title="I heard from a friend that Thurston said this, but he couldn't find a source."><sup>[*]</sup></span>
+
+
 So, in other words, one of the purposes of writing something in a form that can be understood by a computer is to clarify your own thought process to yourself.  So the first reason for using computer is to ensure that you have understood things.  
 
 More importantly, a famous result known as the \href{https://en.wikipedia.org/wiki/Curry–Howard_correspondence}{Curry-Howard isomorphism} allows us to think of programs as proofs.  Although I cannot go very deep, let me talk a little about it.  Recall from your experience with Python that most objects have an associated type - integers, floats, booleans, strings, lists, etc.  A proposition is a statement that has an unambiguous truth value.  Each proposition can be thought of as a type.  The elements of this type are the proofs of this proposition.  Thus, a proposition is true iff it is non-empty.  Thus, proving a proposition is the same as producing an element of that type.  This is the idea behind modern automated theorem provers/checkers.  The most famous at the moment is \href{https://lean-lang.org}{Lean}, developed by Microsoft originally to verify programs.  But, as programs and proofs are not so different from each other, it can help us check proofs.  If you want a friendly introduction, try playing the \href{https://adam.math.hhu.de/#/g/leanprover-community/nng4}{Natural Number game}.  
@@ -105,9 +109,9 @@ Open this folder.
 
 **Step 6:** We can define the function $f$ specified by $f(x) = x + 1$, in PUGOFER by 
 
-\begin{lstlisting}[language=Haskell]
-f.x = x + 1
-\end{lstlisting}
+```haskell
+    f.x = x + 1
+```
 
 Add this definition to the file and save it.  You can also use the shortcut \verb|Ctrl+S| to save quickly. 
 
@@ -130,16 +134,16 @@ Further notice that in Figure **??**, the VSCode window has three parts: Explore
 
 
 Sharing screenshots every time is quite cumbersome, so I will provide the code as 
-\begin{lstlisting}[language=Haskell]
-f.x = x + 1
-\end{lstlisting}
+```haskell
+    f.x = x + 1
+```
 and then also provide the computations in the terminal as
-\begin{verbatim}
-? 2+4
-6 : Int
-? f.3
-4 : Int
-\end{verbatim}
+```
+    ? 2+4
+    6 : Int
+    ? f.3
+    4 : Int
+```
 
 
 
@@ -153,23 +157,23 @@ In PUGOFER, your primary job is to construct functions to solve a problem.  The 
 
 Today, we will not worry too much about it, though.  Today's task is to just play around.  However, I want you to notice that if you try to add an integer to a float or two floats, you get an error.  The error tells you that there is a mismatch of type - namely \verb|+| is defined for integers and not for floats.    
 
-\begin{verbatim}
-? 2 + 2.5
+```
+    ? 2 + 2.5
+    
+    ERROR: Type error in application
+    *** expression     : 2 + 2.5
+    *** term           : 2.5
+    *** type           : Float
+    *** does not match : Int
 
-ERROR: Type error in application
-*** expression     : 2 + 2.5
-*** term           : 2.5
-*** type           : Float
-*** does not match : Int
-
-? 2.5 + 3.5
-
-ERROR: Type error in application
-*** expression     : 2.5 + 3.5
-*** term           : 3.5
-*** type           : Float
-*** does not match : Int
-\end{verbatim}
+    ? 2.5 + 3.5
+    
+    ERROR: Type error in application
+    *** expression     : 2.5 + 3.5
+    *** term           : 3.5
+    *** type           : Float
+    *** does not match : Int
+```
 
 This problem can be partially solved if we use pug-standard instead of pug-simple. To change from pug-simple to pug-standard, click on the {} pug-simple in the bottom right corner as shown in Figure **??**.  Then search for pug-standard and select it.  
 
@@ -181,17 +185,17 @@ This problem can be partially solved if we use pug-standard instead of pug-simpl
 
 If you press the run button again, you will be using pug-standard instead of pug-simple.  Now you will be able to add floats.  You can also shift back to pug-simple in the same fashion.  If you use pug-standard, the terminal should behave as follows:
 
-\begin{verbatim}
-? 2.5 + 3.5
-6.0 : Float
-? 2.5 + 3
+```
+    ? 2.5 + 3.5
+    6.0 : Float
+    ? 2.5 + 3
 
-ERROR: Type error in application
-*** expression     : 2.5 + 3
-*** term           : 2.5
-*** type           : Float
-*** does not match : Int
-\end{verbatim}
+    ERROR: Type error in application
+    *** expression     : 2.5 + 3
+    *** term           : 2.5
+    *** type           : Float
+    *** does not match : Int
+```
 
 We can now add two Floats, but we still can't add an Int and a Float.  Play around with these two newly acquired toys (as much as you can), and then we will dive deeper in our next class.  
 

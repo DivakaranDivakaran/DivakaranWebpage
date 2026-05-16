@@ -25,6 +25,7 @@ class LatexConverter:
         self.labels = {}
         self.counters = {'chapter': 0, 'section': 0, 'subsection': 0, 'theorem': 0, 'lemma': 0, 'definition': 0, 'example': 0, 'remark': 0, 'xca': 0, 'equation': 0}
         self.current_chapter_prefix = ""
+        self.preformatted_blocks = []
 
     def reset_counters(self, chapter_num):
         for k in self.counters: self.counters[k] = 0
@@ -67,6 +68,39 @@ class LatexConverter:
         text = re.sub(r'\\\[[\s\S]*?\\\]', self.add_block, text)
         # Protect inline math - more restrictive to avoid swallowing large chunks
         text = re.sub(r'\$([^$\n]+?)\$', self.add_block, text)
+        return text
+
+    def protect_preformatted(self, text):
+        self.preformatted_blocks = []
+        
+        # Protect verbatim
+        def add_verbatim(match):
+            placeholder = f"[[[PREBLOCK{len(self.preformatted_blocks)}]]]"
+            content = match.group(1).strip('\n')
+            self.preformatted_blocks.append(f"```\n{content}\n```")
+            return placeholder
+        text = re.sub(r'\\begin\{verbatim\}([\s\S]*?)\\end\{verbatim\}', add_verbatim, text)
+        
+        # Protect lstlisting
+        def add_listing(match):
+            placeholder = f"[[[PREBLOCK{len(self.preformatted_blocks)}]]]"
+            options = match.group(1) or ""
+            content = match.group(2).strip('\n')
+            
+            lang = ""
+            lang_match = re.search(r'language=([^,\]\s]+)', options)
+            if lang_match:
+                lang = lang_match.group(1).lower()
+            
+            self.preformatted_blocks.append(f"```{lang}\n{content}\n```")
+            return placeholder
+        text = re.sub(r'\\begin\{lstlisting\}(?:\[([^\]]*)\])?([\s\S]*?)\\end\{lstlisting\}', add_listing, text)
+        
+        return text
+
+    def restore_preformatted(self, text):
+        for i in range(len(self.preformatted_blocks) - 1, -1, -1):
+            text = text.replace(f"[[[PREBLOCK{i}]]]", self.preformatted_blocks[i])
         return text
 
     def restore_math(self, text):
@@ -143,7 +177,8 @@ class LatexConverter:
         self.reset_counters(chapter_num)
         text = latex_content
 
-        # 1. Protect math
+        # 1. Protect preformatted and math
+        text = self.protect_preformatted(text)
         text = self.protect_math(text)
 
         # 2. Academic Environments
@@ -215,6 +250,13 @@ class LatexConverter:
         text = re.sub(r'\\begin\{(?:enumerate|itemize)\}', '', text)
         text = re.sub(r'\\end\{(?:enumerate|itemize)\}', '', text)
         text = re.sub(r'\\item\s+', '- ', text)
+
+        # 6.5 Handle displayquote
+        def handle_quote(m):
+            content = m.group(1).strip()
+            quoted = "\n".join([f"> {line}" for line in content.split('\n')])
+            return f"\n\n{quoted}\n\n"
+        text = re.sub(r'\\begin\{displayquote\}([\s\S]*?)\\end\{displayquote\}', handle_quote, text)
         
         # 7. Final processing
         text = self.expand_macros(text)
@@ -227,6 +269,7 @@ class LatexConverter:
         # This prevents lstrip() from mangling indentation inside math blocks
         text = '\n'.join([l.lstrip() for l in text.split('\n')]).strip()
         text = self.restore_math(text)
+        text = self.restore_preformatted(text)
         
         return text
 

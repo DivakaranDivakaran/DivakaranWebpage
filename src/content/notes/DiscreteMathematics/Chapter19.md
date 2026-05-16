@@ -8,97 +8,97 @@
 
 Checking if a particular element belongs to a list takes non-trivial effort, you need to go through all the elements.  However, if the list is sorted, we can do it a lot faster.  We can use the following algorithm and it is a lot faster.  Notice that this is analogous to how we find a word in the dictionary.
 
-\begin{lstlisting}[language=Haskell]
--- the function works only if the input is a sorted list
-binsearch.[].a  = False
-binsearch.[x].a | x == a    = True
-| otherwise = False
-binsearch.xs.a  | a < xs!!(length.xs / 2)  = binsearch.(take.(length.xs /2).xs).a
-| otherwise                = binsearch.(drop.(length.xs /2).xs).a
-\end{lstlisting}
+```haskell
+    -- the function works only if the input is a sorted list
+    binsearch.[].a  = False
+    binsearch.[x].a | x == a    = True
+                    | otherwise = False
+    binsearch.xs.a  | a < xs!!(length.xs / 2)  = binsearch.(take.(length.xs /2).xs).a
+                    | otherwise                = binsearch.(drop.(length.xs /2).xs).a
+```
 
 There are several algorithms to sort a list.  The inbuilt sorting algorithm in pustd.pre is the insertion sort.
 
-\begin{lstlisting}[language=Haskell]
--- insets x into the correct position
-insert           : Ord.a => a -> [a] -> [a]
-insert.x.[]	     = [x]
-insert.x.(y::ys)
-| x <= y	 = x::y::ys
-| otherwise = y::insert.x.ys
-
-sort             : Ord.a => [a] -> [a]
-sort 	           = foldr.insert.[] 
-\end{lstlisting}
+```haskell
+    -- insets x into the correct position
+    insert           : Ord.a => a -> [a] -> [a]
+    insert.x.[]	     = [x]
+    insert.x.(y::ys)
+                     | x <= y	 = x::y::ys
+                     | otherwise = y::insert.x.ys
+   
+    sort             : Ord.a => [a] -> [a]
+    sort 	           = foldr.insert.[] 
+```
 
 We can always store sorted lists to make retrieval easier.  We may also store it in the form of a binary tree which would make the retrieval process more evident.  Thus, we create a type
 
-\begin{lstlisting}[language=Haskell]
-ctype BSTree.a where
-ET: BSTree.a
-Nd: a -> BSTree.a -> BSTree.a -> BSTree.a 
-\end{lstlisting}
+```haskell
+    ctype BSTree.a where
+    ET: BSTree.a
+    Nd: a -> BSTree.a -> BSTree.a -> BSTree.a 
+```
 
 Further, we can write an algorithm that constructs a tree from a list as follows
-\begin{lstlisting}[language=Haskell]
-bstinsert.a.ET = Nd.a.ET.ET 
-bstinsert.a1.(Nd.a2.t1.t2) | a1 < a2   = Nd.a2.(bstinsert.a1.t1).t2 
-| a1 > a2   = Nd.a2.t1.(bstinsert.a1.t2) 
-| otherwise = Nd.a2.t1.t2
+```haskell
+    bstinsert.a.ET = Nd.a.ET.ET 
+    bstinsert.a1.(Nd.a2.t1.t2) | a1 < a2   = Nd.a2.(bstinsert.a1.t1).t2 
+                               | a1 > a2   = Nd.a2.t1.(bstinsert.a1.t2) 
+                               | otherwise = Nd.a2.t1.t2
 
-bst.[] = ET
-bst.xs = bstinsert.(last.xs).(bst.(init.xs))
-\end{lstlisting}
+    bst.[] = ET
+    bst.xs = bstinsert.(last.xs).(bst.(init.xs))
+```
 This is a faithful translation of the algorithm in Kenneth Rosen and it can be tested.
 
-\begin{verbatim}
-? bst.["Mathematics","Physics","Geography","Zoology","Meteorology","Geology",
-"Psychology","Chemistry"]
-Nd."Mathematics".
-(Nd."Geography".
-(Nd."Chemistry".ET.ET).
-(Nd."Geology".ET.ET)).
-(Nd."Physics".
-(Nd."Meteorology".ET.ET).
-(Nd."Zoology".
-(Nd."Psychology".ET.ET).
-ET)) : BSTree.[Char]
-\end{verbatim}
+```
+    ? bst.["Mathematics","Physics","Geography","Zoology","Meteorology","Geology",
+        "Psychology","Chemistry"]
+    Nd."Mathematics".
+        (Nd."Geography".
+            (Nd."Chemistry".ET.ET).
+            (Nd."Geology".ET.ET)).
+        (Nd."Physics".
+            (Nd."Meteorology".ET.ET).
+            (Nd."Zoology".
+                (Nd."Psychology".ET.ET).
+                ET)) : BSTree.[Char]
+```
 
 However, the tree and its depth depends on the order in which elements are listed in the list.  For example,
-\begin{verbatim}
-? depth.(bst.["Mathematics","Physics","Geography","Zoology","Meteorology","Geology",
-"Psychology","Chemistry"])
-4 : Int
-? depth.(bst.(sort.["Mathematics","Physics","Geography","Zoology","Meteorology","Geology",
-"Psychology","Chemistry"]))
-8 : Int
-\end{verbatim}
+```
+    ? depth.(bst.["Mathematics","Physics","Geography","Zoology","Meteorology","Geology",
+        "Psychology","Chemistry"])
+    4 : Int
+    ? depth.(bst.(sort.["Mathematics","Physics","Geography","Zoology","Meteorology","Geology",
+        "Psychology","Chemistry"]))
+    8 : Int
+```
 
 In general, the more sorted the list, the larger the depth will be.  To decrease the depth, at each level, we should choose the median element.  Thus, it might be better to use the following algorithm instead.
 
-\begin{lstlisting}[language=Haskell]
--- here we are assuming the list xs is sorted, if not sort it first
-bst.[] = ET
-bst.xs = Nd.(xs!!(length.xs /2)).(bst.(take.(length.xs /2).xs)).(bst.(drop.((length.xs /2) + 1).xs))
-\end{lstlisting}
+```haskell
+    -- here we are assuming the list xs is sorted, if not sort it first
+    bst.[] = ET
+    bst.xs = Nd.(xs!!(length.xs /2)).(bst.(take.(length.xs /2).xs)).(bst.(drop.((length.xs /2) + 1).xs))
+```
 
 Whichever way we construct our binary search tree, we can do further operations like merging two trees or deleting an element from tree as follows:
 
-\begin{lstlisting}[language=Haskell]
-split.(Nd.a.t1.t2)      | t2 == ET = (a,t1)
-| otherwise = (y, Nd.a.t1.t)
-where (y,t) = split.t2
+```haskell
+    split.(Nd.a.t1.t2)      | t2 == ET = (a,t1)
+                            | otherwise = (y, Nd.a.t1.t)
+                                where (y,t) = split.t2
 
-join.t1.t2              | t1 == ET = t2 
-| otherwise = Nd.x.t.t2
-where (x,t) = split.t1 
+    join.t1.t2              | t1 == ET = t2 
+                            | otherwise = Nd.x.t.t2
+                                where (x,t) = split.t1 
 
-delete.a.ET = ET 
-delete.a1.(Nd.a2.t1.t2) | a1 < a2 = Nd.a2.(delete.a1.t1).t2 
-| a1 > a2 = Nd.a2.t1.(delete.a1.t2)
-| otherwise = join.t1.t2
-\end{lstlisting}
+    delete.a.ET = ET 
+    delete.a1.(Nd.a2.t1.t2) | a1 < a2 = Nd.a2.(delete.a1.t1).t2 
+                            | a1 > a2 = Nd.a2.t1.(delete.a1.t2)
+                            | otherwise = join.t1.t2
+```
 
 
 
@@ -171,109 +171,109 @@ Huffman coding tree provides a way to construct a prefix code if we have the fre
 - Non-leaf nodes are marked by the combined weight of all its leaves
 
 
-\begin{lstlisting}[language=Haskell]
-ctype HTree where
-Lf: Char -> Int -> HTree
-Br: Int -> HTree -> HTree -> HTree
-\end{lstlisting}
+```haskell
+    ctype HTree where
+        Lf: Char -> Int -> HTree
+        Br: Int -> HTree -> HTree -> HTree
+```
 
 Suppose we are given a sequence of symbols and their weights, for example
-\begin{verbatim}
-wss = [(`A',11), (`E',17), (`G',8), (`R',9),(`T',13)]
-\end{verbatim}
+```
+    wss = [(`A',11), (`E',17), (`G',8), (`R',9),(`T',13)]
+```
 We first sort them using their weights.  A variation of the insertion sort can be written as follows
-\begin{lstlisting}[language=Haskell]
-insertbywt.(a,m).[]            = [(a,m)] 
-insertbywt.(a,m).((b,n)::wss)  | m <=n = (a,m) :: ((b,n)::wss)
-| m > n = (b,n) :: (insertbywt.(a,m).wss)
+```haskell
+    insertbywt.(a,m).[]            = [(a,m)] 
+    insertbywt.(a,m).((b,n)::wss)  | m <=n = (a,m) :: ((b,n)::wss)
+                                   | m > n = (b,n) :: (insertbywt.(a,m).wss)
 
-sortbywt.[(a,m)]               =  [(a,m)]
-sortbywt.((a,m)::((b,n)::wss)) | m < n = insertbywt.(a,m).(sortbywt.((b,n)::wss))
-| n < m = insertbywt.(b,n).(sortbywt.((a,m)::wss))
-\end{lstlisting}
+    sortbywt.[(a,m)]               =  [(a,m)]
+    sortbywt.((a,m)::((b,n)::wss)) | m < n = insertbywt.(a,m).(sortbywt.((b,n)::wss))
+                                   | n < m = insertbywt.(b,n).(sortbywt.((a,m)::wss))
+```
 When we sort wss, we get \verb|[(`G',8),(`R',9),(`A',11),(`T',13),(`E',17)]|.  Next we will combine \verb|(`G',8)| and $\verb|(`R',9)|$ to obtain a tree \verb|Br.17.(`G',8).(`R',9)|.  As the weight of this combined tree is greater than the weight of \verb|(`A',11)| and \verb|(`T',13)|, we want it to be placed accordingly.  This can be done as follows:
 
-\begin{lstlisting}[language=Haskell]
-wt.(Lf.x.w)              = w
-wt.(Br.w.t1.t2)          = w
+```haskell
+    wt.(Lf.x.w)              = w
+    wt.(Br.w.t1.t2)          = w
 
-winsertht.u.[]           = [u]
-winsertht.u.(p::ps)      = if wt.u <= wt.p then u::(p::ps) else p::winsertht.u.ps 
+    winsertht.u.[]           = [u]
+    winsertht.u.(p::ps)      = if wt.u <= wt.p then u::(p::ps) else p::winsertht.u.ps 
 
-combineht.(t1::(t2::ts)) = winsertht.(Br.(wt.t1 + wt.t2).t1.t2).ts
-\end{lstlisting}
+    combineht.(t1::(t2::ts)) = winsertht.(Br.(wt.t1 + wt.t2).t1.t2).ts
+```
 
 We need to now keep repeating this process until the list contains a single element
 
-\begin{lstlisting}[language=Haskell]
-single.[]                           = False
-single.(x::xs)                      = if xs == [] then True else False 
+```haskell
+    single.[]                           = False
+    single.(x::xs)                      = if xs == [] then True else False 
 
-buildht.wss = (until.single.combineht.(map (uncurry.Lf).wss))!!0
-\end{lstlisting}
+    buildht.wss = (until.single.combineht.(map (uncurry.Lf).wss))!!0
+```
 
-\begin{verbatim}
-? buildht.wss
-Br.58.(Br.24.(Lf.'A'.11).(Lf.'T'.13)).(Br.34.(Br.17.(Lf.'G'.8).(Lf.'R'.9)).(Lf.'E'.17)) : HTree
-\end{verbatim}
+```
+    ? buildht.wss
+    Br.58.(Br.24.(Lf.'A'.11).(Lf.'T'.13)).(Br.34.(Br.17.(Lf.'G'.8).(Lf.'R'.9)).(Lf.'E'.17)) : HTree
+```
 
 Actually, we do not want the weights anymore, so we can remove them to get a cleaner picture.  But, for that, we need to first create the appropriate type.
-\begin{lstlisting}[language=Haskell]
-ctype BinTree.a where
-Leaf   : a -> BinTree.a
-Branch : BinTree.a -> BinTree.a -> BinTree.a
+```haskell
+    ctype BinTree.a where
+        Leaf   : a -> BinTree.a
+        Branch : BinTree.a -> BinTree.a -> BinTree.a
+    
+    unlabel.(Lf.x.w)                    = Leaf.x
+    unlabel.(Br.w.t1.t2)                = Branch.(unlabel.t1).(unlabel.t2)
 
-unlabel.(Lf.x.w)                    = Leaf.x
-unlabel.(Br.w.t1.t2)                = Branch.(unlabel.t1).(unlabel.t2)
+    superbuild                          = buildht;unlabel  
+```
 
-superbuild                          = buildht;unlabel  
-\end{lstlisting}
-
-\begin{verbatim}
-? superbuild.wss
-Branch.(Branch.(Leaf.'A').(Leaf.'T')).(Branch.(Branch.(Leaf.'G').(Leaf.'R')).(Leaf.'E')) 
-: BinTree.Char
-\end{verbatim}
+```
+    ? superbuild.wss
+    Branch.(Branch.(Leaf.'A').(Leaf.'T')).(Branch.(Branch.(Leaf.'G').(Leaf.'R')).(Leaf.'E')) 
+    : BinTree.Char
+```
 
 Once we have constructed the binary tree, we can encode each symbol based on their path from the root to the symbol.  A left turn would be denoted by $0$ and a right turn will be denoted by $1$.
 
-\begin{lstlisting}[language=Haskell]
-ctype Step where
-Left  : Step
-Right : Step
+```haskell
+    ctype Step where
+        Left  : Step
+        Right : Step
 
-type Path = [Step]
+    type Path = [Step]
 
-member.(Leaf.a).x        = (x == a)
-member.(Branch.t1.t2).x  = (member.t1.x) || (member.t2.x)
+    member.(Leaf.a).x        = (x == a)
+    member.(Branch.t1.t2).x  = (member.t1.x) || (member.t2.x)
 
-codex.(Leaf.a).x         = if x == a then [] else undefined
-codex.(Branch.t1.t2).x   = if member.t1.x then Left::(codex.t1.x) 
-else Right::(codex.t2.x)
-\end{lstlisting}
+    codex.(Leaf.a).x         = if x == a then [] else undefined
+    codex.(Branch.t1.t2).x   = if member.t1.x then Left::(codex.t1.x) 
+                                              else Right::(codex.t2.x)
+```
 
-\begin{verbatim}
-? codex.(superbuild.wss).'G'
-[Right, Left, Left] : [Step]
-
-? codex.(superbuild.wss).'A'
-[Left, Left] : [Step]
-\end{verbatim}
+```
+    ? codex.(superbuild.wss).'G'
+    [Right, Left, Left] : [Step]
+    
+    ? codex.(superbuild.wss).'A'
+    [Left, Left] : [Step]
+```
 
 We can also decode as follows
-\begin{lstlisting}[language=Haskell]
-traces.t.(Leaf.a).[]                = [a]
-traces.t.(Leaf.a).(p::ps)           = [a] ++ traces.t.t.(p::ps) 
-traces.t.(Branch.t1.t2).(Left::ps)  = traces.t.t1.ps
-traces.t.(Branch.t1.t2).(Right::ps) = traces.t.t2.ps
+```haskell
+    traces.t.(Leaf.a).[]                = [a]
+    traces.t.(Leaf.a).(p::ps)           = [a] ++ traces.t.t.(p::ps) 
+    traces.t.(Branch.t1.t2).(Left::ps)  = traces.t.t1.ps
+    traces.t.(Branch.t1.t2).(Right::ps) = traces.t.t2.ps
 
-decodexs.t.ps                       = traces.t.t.ps
-\end{lstlisting}
+    decodexs.t.ps                       = traces.t.t.ps
+```
 
-\begin{verbatim}
-? decodexs.(superbuild.wss).[Right,Left,Left,Left,Left,Left,Right,Right,Right]
-GATE
-\end{verbatim}
+```
+    ? decodexs.(superbuild.wss).[Right,Left,Left,Left,Left,Left,Right,Right,Right]
+    GATE
+```
 
 
 

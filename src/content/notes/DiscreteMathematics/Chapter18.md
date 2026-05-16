@@ -52,13 +52,13 @@ A vertex of a rooted tree that does not have any children are called leafs.  If 
 
 
 We can define the binary tree as a ctype in PUGOFER as follows:
-\begin{lstlisting}[language=Haskell]
-ctype BinTree.a where
--- for each element of type a, we have a binary tree containing just the element
-Leaf   : a -> BinTree.a 
--- given an element of type a and two trees, we can combine them to form a new tree
-Branch : a -> BinTree.a -> BinTree.a -> BinTree.a
-\end{lstlisting}
+```haskell
+    ctype BinTree.a where
+        -- for each element of type a, we have a binary tree containing just the element
+        Leaf   : a -> BinTree.a 
+        -- given an element of type a and two trees, we can combine them to form a new tree
+        Branch : a -> BinTree.a -> BinTree.a -> BinTree.a
+```
 
 
 <div class="academic-env env-example">
@@ -66,74 +66,74 @@ Branch : a -> BinTree.a -> BinTree.a -> BinTree.a
 
 Just like the inputs of a list can be any type, we can create trees containging any type.  
 
-\begin{verbatim}
-? :t Leaf.3
-Leaf.3 : BinTree.Int
-? :t Branch.4.(Branch.3.(Leaf.2).(Leaf.3)).(Leaf.2)
-Branch.4.(Branch.3.(Leaf.2).(Leaf.3)).(Leaf.2) : BinTree.Int
+```
+        ? :t Leaf.3
+        Leaf.3 : BinTree.Int
+        ? :t Branch.4.(Branch.3.(Leaf.2).(Leaf.3)).(Leaf.2)
+        Branch.4.(Branch.3.(Leaf.2).(Leaf.3)).(Leaf.2) : BinTree.Int
 
-? :t Leaf.True
-Leaf.True : BinTree.Bool
-? :t Leaf."Hello"
-Leaf."Hello" : BinTree.[Char]
-\end{verbatim}
+        ? :t Leaf.True
+        Leaf.True : BinTree.Bool
+        ? :t Leaf."Hello"
+        Leaf."Hello" : BinTree.[Char]
+```
 
 </div>
 
 
 Very similar to how we defined Nat earlier and how lists are defined in gofer.  Lists are defined in PUGOfer as
-\begin{lstlisting}[language=Haskell]
-ctype List.a where
-emptylist : List.a
-append    : a -> List.a
-\end{lstlisting}
+```haskell
+    ctype List.a where
+        emptylist : List.a
+        append    : a -> List.a
+```
 Ofcourse, PUGOFER has introduced some *synctactic sugar*  - the empty list is denoted as \verb|[]| and append is denoted as \verb|::|.  Thus, even when we write a list \verb|[1,2,3,4]|, it is internally the same as \verb|1::(2::(3::(4::[])))| and you can check that in PUGOFER.
-\begin{verbatim}
-? 1::(2::(3::(4::[])))
-[1, 2, 3, 4] : [Int]
-\end{verbatim}
+```
+    ? 1::(2::(3::(4::[])))
+    [1, 2, 3, 4] : [Int]
+```
 
 As trees have a recursive structure, we can define functions on trees analogous to how we had defined functions on lists.  For example, we can create a function that counts the number of leaves as follows.
 
-\begin{lstlisting}[language=Haskell]
--- counts the number of leaves
-numleaves                       : BinTree.a -> Int
-numleaves.(Leaf.a)              = 1 
-numleaves.(Branch.a.t1.t2)      = numleaves.t1 + numleaves.t2
+```haskell
+    -- counts the number of leaves
+    numleaves                       : BinTree.a -> Int
+    numleaves.(Leaf.a)              = 1 
+    numleaves.(Branch.a.t1.t2)      = numleaves.t1 + numleaves.t2
 
--- counts how many generations exist in the tree.  We call it depth because we have  
--- been representing root at the top.  a more biologically accurate term would have 
--- been height.
-depth                           : BinTree.a -> Int
-depth.(Leaf.a)                  = 0
-depth.(Branch.a.t1.t2)          = 1 + maximum.[depth.t1,depth.t2]
-\end{lstlisting}
+    -- counts how many generations exist in the tree.  We call it depth because we have  
+    -- been representing root at the top.  a more biologically accurate term would have 
+    -- been height.
+    depth                           : BinTree.a -> Int
+    depth.(Leaf.a)                  = 0
+    depth.(Branch.a.t1.t2)          = 1 + maximum.[depth.t1,depth.t2]
+```
 
 Recall that a large proportion of functions we written using the extremely useful functions map and fold.  We can define analogues map and fold as follows.
 
-\begin{lstlisting}[language=Haskell]
-mapbintree                      : (a -> b) -> BinTree.a -> BinTree.b 
-mapbintree.f.(Leaf.a)           = Leaf.(f.a)
-mapbintree.f.(Branch.a.t1.t2)   = Branch.(f.a).(mapbintree.f.t1).(mapbintree.f.t2)
+```haskell
+    mapbintree                      : (a -> b) -> BinTree.a -> BinTree.b 
+    mapbintree.f.(Leaf.a)           = Leaf.(f.a)
+    mapbintree.f.(Branch.a.t1.t2)   = Branch.(f.a).(mapbintree.f.t1).(mapbintree.f.t2)
 
-foldbintree                        : (a -> a -> a) -> a -> BinTree.a -> a
-foldbintree.f.a1.(Leaf.a2)         = f.a1.a2
-foldbintree.f.a1.(Branch.a2.t1.t2) = foldbintree.f.(f(foldbintree.f.a1.t1).a2).t2
-\end{lstlisting}
+    foldbintree                        : (a -> a -> a) -> a -> BinTree.a -> a
+    foldbintree.f.a1.(Leaf.a2)         = f.a1.a2
+    foldbintree.f.a1.(Branch.a2.t1.t2) = foldbintree.f.(f(foldbintree.f.a1.t1).a2).t2
+```
 
 These functions can be then used to define other functions, like
 
-\begin{lstlisting}[language=Haskell]
-sumbintreeint                   : BinTree.Int -> Int
-sumbintreeint.t1                = foldbintree.(+).0.t1
-\end{lstlisting}
+```haskell
+    sumbintreeint                   : BinTree.Int -> Int
+    sumbintreeint.t1                = foldbintree.(+).0.t1
+```
 
 You can check that the function is behaving as expected 
 
-\begin{verbatim}
-? sumbintreeint.(Branch.4.(Branch.3.(Leaf.2).(Leaf.3)).(Leaf.2))
-14 : Int
-\end{verbatim}
+```
+    ? sumbintreeint.(Branch.4.(Branch.3.(Leaf.2).(Leaf.3)).(Leaf.2))
+    14 : Int
+```
 
 
 
@@ -144,28 +144,28 @@ You can check that the function is behaving as expected
 
 To process the data stored as a tree, we often want to extract the elements of a tree in sequence.  This process is called tree traversal.  It is natural to list the members of the left subtree before the members of the right subtree - since our language reads from left to right.  But, it is not clear whether we should list the root before the elements of the left tree, in-between the members of the left and right subtree, or after the members of the right subtree.  These three give rise to the following three functions.
 
-\begin{lstlisting}[language=Haskell]
-pretraversal                  : BinTree.a -> [a]
-pretraversal.(Leaf.a)         = [a]
-pretraversal.(Branch.a.t1.t2) = [a] ++ pretraversal.t1 ++ pretraversal.t2 
+```haskell
+    pretraversal                  : BinTree.a -> [a]
+    pretraversal.(Leaf.a)         = [a]
+    pretraversal.(Branch.a.t1.t2) = [a] ++ pretraversal.t1 ++ pretraversal.t2 
 
-intraversal                  : BinTree.a -> [a]
-intraversal.(Leaf.a)         = [a]
-intraversal.(Branch.a.t1.t2) = intraversal.t1 ++ [a] ++ intraversal.t2
+    intraversal                  : BinTree.a -> [a]
+    intraversal.(Leaf.a)         = [a]
+    intraversal.(Branch.a.t1.t2) = intraversal.t1 ++ [a] ++ intraversal.t2
 
-posttraversal                  : BinTree.a -> [a]
-posttraversal.(Leaf.a)         = [a]
-posttraversal.(Branch.a.t1.t2) = posttraversal.t1 ++ posttraversal.t2 ++ [a]
-\end{lstlisting}
+    posttraversal                  : BinTree.a -> [a]
+    posttraversal.(Leaf.a)         = [a]
+    posttraversal.(Branch.a.t1.t2) = posttraversal.t1 ++ posttraversal.t2 ++ [a]
+```
 
-\begin{verbatim}
-? pretraversal.(Branch.4.(Branch.3.(Leaf.2).(Leaf.3)).(Leaf.2))
-[4, 3, 2, 3, 2] : [Int]
-? intraversal.(Branch.4.(Branch.3.(Leaf.2).(Leaf.3)).(Leaf.2))
-[2, 3, 3, 4, 2] : [Int]
-? posttraversal.(Branch.4.(Branch.3.(Leaf.2).(Leaf.3)).(Leaf.2))
-[2, 3, 3, 2, 4] : [Int]
-\end{verbatim}
+```
+    ? pretraversal.(Branch.4.(Branch.3.(Leaf.2).(Leaf.3)).(Leaf.2))
+    [4, 3, 2, 3, 2] : [Int]
+    ? intraversal.(Branch.4.(Branch.3.(Leaf.2).(Leaf.3)).(Leaf.2))
+    [2, 3, 3, 4, 2] : [Int]
+    ? posttraversal.(Branch.4.(Branch.3.(Leaf.2).(Leaf.3)).(Leaf.2))
+    [2, 3, 3, 2, 4] : [Int]
+```
 
 
 
@@ -175,23 +175,23 @@ posttraversal.(Branch.a.t1.t2) = posttraversal.t1 ++ posttraversal.t2 ++ [a]
 
 
 Sometimes, we may want to use different labels on leaves and nodes.  In that case, we can do a small fix and define the following
-\begin{lstlisting}[language=Haskell]
-ctype LBTree.a.b where
-Lf: a -> LBTree.a.b
-Br: b -> LBTree.a.b -> LBTree.a.b -> LBTree.a.b 
-\end{lstlisting}
+```haskell
+    ctype LBTree.a.b where
+    Lf: a -> LBTree.a.b
+    Br: b -> LBTree.a.b -> LBTree.a.b -> LBTree.a.b 
+```
 Some other time, we may want labels only on leaves, then we can define the tree as follows
-\begin{lstlisting}[language=Haskell]
-ctype LeafTree.a where
-Lf: a -> LeafTree.a.b
-Br: LeafTree.a -> LeafTree.a -> LeafTree.a
-\end{lstlisting}
+```haskell
+    ctype LeafTree.a where
+    Lf: a -> LeafTree.a.b
+    Br: LeafTree.a -> LeafTree.a -> LeafTree.a
+```
 Finally, there will also be situations, where we want the labels only on the nodes, then we can define the tree as follows
-\begin{lstlisting}[language=Haskell]
-ctype NodeTree.a where
-Lf: NodeTree.a
-Br: a -> NodeTree.a -> NodeTree.a -> NodeTree.a 
-\end{lstlisting}
+```haskell
+    ctype NodeTree.a where
+    Lf: NodeTree.a
+    Br: a -> NodeTree.a -> NodeTree.a -> NodeTree.a 
+```
 
 
 
@@ -212,10 +212,11 @@ $T_{n-2}$  as its right subtree.
 
 - Prove that the number of leaves in a binary tree is always one more than the number of internal nodes (nodes that are not leaves).
 - State and prove a relationship between number of subtrees of t and size t, if subtrees of a binary tree t is defined as 
-\begin{verbatim}
-subtrees.(Leaf.z)       = [Leaf.z]
-subtrees.(Branch.t1.t2) = subtrees.t1 ++ subtrees.t2 ++ [Branch.t1.t2]
-\end{verbatim}
+```
+        subtrees.(Leaf.z)       = [Leaf.z]
+        subtrees.(Branch.t1.t2) = subtrees.t1 ++ subtrees.t2 ++ [Branch.t1.t2]
+    
+```
 - Define analogues of map and fold for the alternate versions of trees we defined.
 - Define a function labels, that lists all the labels in a \verb|LeafTree|.  
 - Define a function labels, that lists all the labels in a \verb|NodeTree|.  
