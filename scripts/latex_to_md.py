@@ -327,14 +327,14 @@ def main():
 
     print(f"\nDone. Processed {len(notes_to_sync)} chapter(s).")
     
-    # 4. Auto-push to GitHub
-    push_to_github()
+    # 4. Auto-push moved to generate_pdfs.py to ensure all assets are ready
+    # push_to_github()
 
 def push_to_github():
     print("\n--- Syncing with GitHub ---")
     try:
         # 1. Add all relevant directories
-        subprocess.run(['git', 'add', 'src/content/notes/', 'public/images/tikz/', '.github/workflows/', 'src/app/', 'scripts/'], check=True)
+        subprocess.run(['git', 'add', 'src/content/notes/', 'public/images/tikz/', 'public/pdfs/', '.github/workflows/', 'src/app/', 'scripts/'], check=True)
         
         # 2. Check if there are actually any STAGED changes
         staged = subprocess.run(['git', 'diff', '--cached', '--quiet'], capture_output=False).returncode

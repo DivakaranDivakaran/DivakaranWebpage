@@ -45,12 +45,6 @@ export default async function Teaching() {
       <section>
         <h2 className="text-3xl font-bold text-stone-800 mb-8 border-b border-stone-200 pb-2">Lecture Notes</h2>
         
-        {/* Debug Info (Temporary) */}
-        <div className="bg-stone-100 p-4 mb-8 rounded-lg text-xs font-mono text-stone-500">
-          Total Notes Found: {lectureNotes?.length || 0} | 
-          Raw Courses: {noteCourses.join(', ')}
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {noteCourses.length > 0 ? (
             noteCourses.map((courseName) => (
@@ -63,7 +57,7 @@ export default async function Teaching() {
                   <h3 className="text-2xl font-bold text-stone-800 group-hover:text-[#8c1515] transition-colors mb-2">
                     {formatCourseName(courseName)}
                   </h3>
-                  <p className="text-stone-500 font-medium uppercase text-xs tracking-widest">View Course Chapters →</p>
+                  <p className="text-stone-500 font-medium uppercase text-xs tracking-widest">Get Lecture Notes (PDF & Web) →</p>
                 </div>
                 <HiChevronRight className="text-2xl text-stone-300 group-hover:text-[#8c1515] transition-colors" />
               </Link>

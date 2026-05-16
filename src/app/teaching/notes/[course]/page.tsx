@@ -54,6 +54,29 @@ export default async function CourseNotesPage({ params }: PageProps) {
       <h1 className="text-4xl font-bold text-stone-800 mb-4">{formatCourseName(course)}</h1>
       <p className="text-stone-500 mb-12 italic">Collection of lecture notes and chapters for {formatCourseName(course)}.</p>
 
+      {/* PDF Downloads Section */}
+      <div className="mb-12 p-8 bg-[#8c1515]/5 border border-[#8c1515]/10 rounded-2xl">
+        <h2 className="text-xl font-bold text-stone-800 mb-4">Download Full Notes (PDF)</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <a 
+            href={`/pdfs/${course}/${course}_Desktop.pdf`}
+            download
+            className="flex flex-col p-4 bg-white border border-stone-200 rounded-xl hover:border-[#8c1515] transition-all hover:shadow-md group"
+          >
+            <span className="text-sm font-bold text-[#8c1515] uppercase tracking-wider mb-1">Standard Version</span>
+            <span className="text-stone-600">Best for printing and desktop reading</span>
+          </a>
+          <a 
+            href={`/pdfs/${course}/${course}_Mobile.pdf`}
+            download
+            className="flex flex-col p-4 bg-white border border-stone-200 rounded-xl hover:border-[#8c1515] transition-all hover:shadow-md group"
+          >
+            <span className="text-sm font-bold text-[#8c1515] uppercase tracking-wider mb-1">Mobile Version</span>
+            <span className="text-stone-600">Optimized for reading on smartphones</span>
+          </a>
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {sortedNotes?.map((note) => (
           <Link 
@@ -65,7 +88,7 @@ export default async function CourseNotesPage({ params }: PageProps) {
               <h3 className="font-bold text-stone-800 group-hover:text-[#8c1515] transition-colors">
                 {note.title.split(':').slice(1).join(':').trim()}
               </h3>
-              <p className="text-xs text-stone-400 uppercase tracking-widest mt-1">Read Note →</p>
+              <p className="text-xs text-stone-400 uppercase tracking-widest mt-1">Interactive View →</p>
             </div>
           </Link>
         ))}
