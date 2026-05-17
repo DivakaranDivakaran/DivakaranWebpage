@@ -1,7 +1,14 @@
 import { supabase } from '@/lib/supabase';
-import { HiDocumentDownload } from 'react-icons/hi';
+import { HiDocumentDownload, HiCode, HiExternalLink } from 'react-icons/hi';
 import fs from 'fs';
 import path from 'path';
+
+interface CourseResource {
+  name: string;
+  type: 'pdf' | 'ipynb';
+  downloadUrl: string;
+  colabUrl?: string;
+}
 
 export default async function Teaching() {
   const { data: courses } = await supabase
@@ -14,9 +21,14 @@ export default async function Teaching() {
     .select('*')
     .order('year', { ascending: false });
 
+  const formatCourseName = (name: string) => {
+    return name.replace(/([A-Z])/g, ' $1').replace(/\s+/g, ' ').trim();
+  };
+
+  const courseResources: CourseResource[] = [];
+
   // 1. Get available PDFs by scanning the public/pdfs directory
   const pdfsDir = path.join(process.cwd(), 'public', 'pdfs');
-  const noteCourses: string[] = [];
   try {
     if (fs.existsSync(pdfsDir)) {
       const folders = fs.readdirSync(pdfsDir);
@@ -25,7 +37,11 @@ export default async function Teaching() {
         if (fs.statSync(folderPath).isDirectory()) {
           const files = fs.readdirSync(folderPath);
           if (files.includes(`${folder}.pdf`)) {
-            noteCourses.push(folder);
+            courseResources.push({
+              name: formatCourseName(folder),
+              type: 'pdf',
+              downloadUrl: `/pdfs/${folder}/${folder}.pdf`
+            });
           }
         }
       }
@@ -33,9 +49,31 @@ export default async function Teaching() {
   } catch (error) {
     console.error("Error reading PDFs directory:", error);
   }
-  noteCourses.sort();
 
-  // 2. Get available theses by scanning the public/theses directory
+  // 2. Get available Notebooks by scanning the public/notebooks directory
+  const notebooksDir = path.join(process.cwd(), 'public', 'notebooks');
+  try {
+    if (fs.existsSync(notebooksDir)) {
+      const files = fs.readdirSync(notebooksDir);
+      for (const file of files) {
+        if (file.endsWith('.ipynb')) {
+          const rawName = file.replace('.ipynb', '').replace(/_/g, ' ');
+          courseResources.push({
+            name: formatCourseName(rawName),
+            type: 'ipynb',
+            downloadUrl: `/notebooks/${file}`,
+            colabUrl: `https://colab.research.google.com/github/DivakaranDivakaran/DivakaranWebpage/blob/main/public/notebooks/${file}`
+          });
+        }
+      }
+    }
+  } catch (error) {
+    console.error("Error reading notebooks directory:", error);
+  }
+
+  courseResources.sort((a, b) => a.name.localeCompare(b.name));
+
+  // 3. Get available theses by scanning the public/theses directory
   const thesesDir = path.join(process.cwd(), 'public', 'theses');
   const availableTheses: string[] = [];
   try {
@@ -47,47 +85,73 @@ export default async function Teaching() {
     console.error("Error reading theses directory:", error);
   }
 
-  const formatCourseName = (name: string) => {
-    return name.replace(/([A-Z])/g, ' $1').replace(/\s+/g, ' ').trim();
-  };
-
   return (
     <div className="space-y-16">
       <h1 className="section-title">Teaching</h1>
 
-      {/* Section 1: Lecture Notes */}
+      {/* Section 1: Lecture Notes & Notebooks */}
       <section>
-        <h2 className="text-3xl font-bold text-stone-800 mb-8 border-b border-stone-200 pb-2">Lecture Notes</h2>
+        <h2 className="text-3xl font-bold text-stone-800 mb-8 border-b border-stone-200 pb-2">Lecture Notes & Resources</h2>
         
         <div className="bg-white border border-stone-200 rounded-2xl overflow-hidden shadow-sm">
-          {noteCourses.length > 0 ? (
+          {courseResources.length > 0 ? (
             <div className="divide-y divide-stone-200">
-              {noteCourses.map((courseName) => (
-                <a 
-                  key={courseName} 
-                  href={`/pdfs/${courseName}/${courseName}.pdf`}
-                  download
-                  className="group p-6 hover:bg-[#8c1515]/5 transition-colors flex items-center justify-between"
+              {courseResources.map((resource) => (
+                <div 
+                  key={resource.name} 
+                  className="p-6 hover:bg-[#8c1515]/5 transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-4"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="p-3 bg-[#8c1515]/10 rounded-lg text-[#8c1515] group-hover:scale-105 transition-transform">
-                      <HiDocumentDownload className="text-2xl" />
+                    <div className="p-3 bg-[#8c1515]/10 rounded-lg text-[#8c1515]">
+                      {resource.type === 'pdf' ? <HiDocumentDownload className="text-2xl" /> : <HiCode className="text-2xl" />}
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-stone-800 group-hover:text-[#8c1515] transition-colors">
-                        {formatCourseName(courseName)}
+                      <h3 className="text-xl font-bold text-stone-800">
+                        {resource.name}
                       </h3>
-                      <p className="text-stone-500 text-sm">Full Lecture Notes</p>
+                      <p className="text-stone-500 text-sm">
+                        {resource.type === 'pdf' ? 'Full Lecture Notes (PDF)' : 'Interactive Jupyter Notebook'}
+                      </p>
                     </div>
                   </div>
-                  <span className="text-sm font-bold text-[#8c1515] uppercase tracking-wider group-hover:underline">
-                    Download PDF
-                  </span>
-                </a>
+                  
+                  <div className="flex items-center gap-3 self-end sm:self-center">
+                    {resource.type === 'ipynb' && resource.colabUrl ? (
+                      <>
+                        <a 
+                          href={resource.colabUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1.5 px-4 py-2 bg-[#8c1515] text-white rounded-xl text-sm font-bold hover:bg-[#8c1515]/90 shadow-sm transition-all"
+                        >
+                          <HiExternalLink className="text-lg" />
+                          <span>Run in Colab</span>
+                        </a>
+                        <a 
+                          href={resource.downloadUrl}
+                          download
+                          className="flex items-center gap-1.5 px-4 py-2 border border-stone-200 text-stone-600 rounded-xl text-sm font-bold hover:border-[#8c1515] hover:text-[#8c1515] transition-all"
+                        >
+                          <HiDocumentDownload className="text-lg" />
+                          <span>Download .ipynb</span>
+                        </a>
+                      </>
+                    ) : (
+                      <a 
+                        href={resource.downloadUrl}
+                        download
+                        className="flex items-center gap-1.5 px-4 py-2 bg-[#8c1515]/10 text-[#8c1515] rounded-xl text-sm font-bold hover:bg-[#8c1515] hover:text-white transition-all"
+                      >
+                        <HiDocumentDownload className="text-lg" />
+                        <span>Download PDF</span>
+                      </a>
+                    )}
+                  </div>
+                </div>
               ))}
             </div>
           ) : (
-            <div className="p-8 text-center text-stone-500 italic">No lecture notes available yet.</div>
+            <div className="p-8 text-center text-stone-500 italic">No course resources available yet.</div>
           )}
         </div>
       </section>
