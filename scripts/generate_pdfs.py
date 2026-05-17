@@ -9,6 +9,7 @@ NOTES_ROOT = os.path.expanduser('~/LectureNotes')
 OUTPUT_DIR = os.path.abspath('public/pdfs')
 THESES_ROOT = os.path.expanduser('~/HonoursThesis')
 THESES_OUT = os.path.abspath('public/theses')
+NOTEBOOKS_OUT = os.path.abspath('public/notebooks')
 
 def compile_latex(tex_content, output_name, work_dir):
     tex_file = os.path.join(work_dir, f"{output_name}.tex")
@@ -87,6 +88,19 @@ def sync_theses():
             shutil.copy(src, dst)
             print(f"Synced {item}")
 
+def sync_notebooks():
+    if not os.path.exists(NOTES_ROOT):
+        return
+
+    os.makedirs(NOTEBOOKS_OUT, exist_ok=True)
+    print("Syncing Jupyter notebooks...")
+    for item in os.listdir(NOTES_ROOT):
+        if item.endswith('.ipynb'):
+            src = os.path.join(NOTES_ROOT, item)
+            dst = os.path.join(NOTEBOOKS_OUT, item)
+            shutil.copy(src, dst)
+            print(f"Synced notebook {item}")
+
 def main():
     if os.path.exists(NOTES_ROOT):
         for item in sorted(os.listdir(NOTES_ROOT)):
@@ -97,6 +111,7 @@ def main():
         print(f"Directory {NOTES_ROOT} not found.")
 
     sync_theses()
+    sync_notebooks()
     
     # Auto-push to GitHub
     push_to_github()
@@ -104,8 +119,8 @@ def main():
 def push_to_github():
     print("\n--- Syncing with GitHub ---")
     try:
-        # Include public/pdfs/, public/theses/ and src/app/
-        subprocess.run(['git', 'add', 'public/pdfs/', 'public/theses/', 'src/app/', 'package.json', 'scripts/'], check=True)
+        # Include public/pdfs/, public/theses/, public/notebooks/ and src/app/
+        subprocess.run(['git', 'add', 'public/pdfs/', 'public/theses/', 'public/notebooks/', 'src/app/', 'package.json', 'scripts/'], check=True)
         
         # Check if there are actually any STAGED changes
         staged = subprocess.run(['git', 'diff', '--cached', '--quiet'], capture_output=False).returncode
@@ -114,7 +129,7 @@ def push_to_github():
             return
 
         print("Changes detected. Committing and pushing...")
-        commit_msg = f"Auto-sync notes & theses: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+        commit_msg = f"Auto-sync notes, notebooks & theses: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
         subprocess.run(['git', 'commit', '-m', commit_msg], check=True)
         subprocess.run(['git', 'push', 'origin', 'main'], check=True)
         print("Successfully pushed to GitHub! Deployment should start shortly.")
