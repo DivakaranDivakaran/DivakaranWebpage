@@ -14,7 +14,7 @@ export default async function Teaching() {
     .select('*')
     .order('year', { ascending: false });
 
-  // Get available PDFs by scanning the public/pdfs directory
+  // 1. Get available PDFs by scanning the public/pdfs directory
   const pdfsDir = path.join(process.cwd(), 'public', 'pdfs');
   const noteCourses: string[] = [];
   try {
@@ -24,7 +24,6 @@ export default async function Teaching() {
         const folderPath = path.join(pdfsDir, folder);
         if (fs.statSync(folderPath).isDirectory()) {
           const files = fs.readdirSync(folderPath);
-          // If there's a pdf with the exact name of the course
           if (files.includes(`${folder}.pdf`)) {
             noteCourses.push(folder);
           }
@@ -36,8 +35,19 @@ export default async function Teaching() {
   }
   noteCourses.sort();
 
+  // 2. Get available theses by scanning the public/theses directory
+  const thesesDir = path.join(process.cwd(), 'public', 'theses');
+  const availableTheses: string[] = [];
+  try {
+    if (fs.existsSync(thesesDir)) {
+      const files = fs.readdirSync(thesesDir);
+      availableTheses.push(...files.filter(f => f.endsWith('.pdf')));
+    }
+  } catch (error) {
+    console.error("Error reading theses directory:", error);
+  }
+
   const formatCourseName = (name: string) => {
-    // Add space before capital letters, but collapse existing spaces
     return name.replace(/([A-Z])/g, ' $1').replace(/\s+/g, ' ').trim();
   };
 
@@ -87,16 +97,38 @@ export default async function Teaching() {
         <h2 className="text-3xl font-bold text-stone-800 mb-8 border-b border-stone-200 pb-2">Honours Projects Guided</h2>
         <div className="space-y-6">
           {honoursProjects && honoursProjects.length > 0 ? (
-            honoursProjects.map((project) => (
-              <div key={project.id} className="bg-white p-6 rounded-lg border border-stone-200 shadow-sm">
-                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
-                  <h3 className="text-xl font-bold text-stone-800">{project.project_title}</h3>
-                  <span className="text-stone-500 font-medium">{project.year}</span>
+            honoursProjects.map((project) => {
+              const studentFirstName = project.student_name.split(' ')[0];
+              const thesisFilename = `${studentFirstName}.pdf`;
+              const hasThesis = availableTheses.includes(thesisFilename);
+
+              return (
+                <div key={project.id} className="bg-white p-6 rounded-xl border border-stone-200 shadow-sm hover:border-[#8c1515]/30 transition-colors">
+                  <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-3">
+                    <div>
+                      <h3 className="text-xl font-bold text-stone-800 mb-1">{project.project_title}</h3>
+                      <p className="text-[#8c1515] font-semibold">Student: {project.student_name}</p>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="px-3 py-1 bg-stone-100 text-stone-600 rounded-full text-xs font-semibold self-start md:self-auto">
+                        {project.year}
+                      </span>
+                      {hasThesis && (
+                        <a 
+                          href={`/theses/${thesisFilename}`}
+                          download
+                          className="flex items-center gap-1.5 px-3 py-1 bg-[#8c1515]/10 text-[#8c1515] rounded-full text-xs font-bold hover:bg-[#8c1515] hover:text-white transition-colors"
+                        >
+                          <HiDocumentDownload className="text-base flex-shrink-0" />
+                          <span>Thesis PDF</span>
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                  {project.description && <p className="text-stone-600 text-sm leading-relaxed">{project.description}</p>}
                 </div>
-                <p className="text-[#8c1515] font-semibold mb-2">Student: {project.student_name}</p>
-                {project.description && <p className="text-stone-600 text-sm leading-relaxed">{project.description}</p>}
-              </div>
-            ))
+              );
+            })
           ) : (
             <p className="text-stone-500 italic">No projects listed yet.</p>
           )}
