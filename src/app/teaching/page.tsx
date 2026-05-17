@@ -1,5 +1,4 @@
 import { supabase } from '@/lib/supabase';
-import Link from 'next/link';
 import { HiChevronRight } from 'react-icons/hi';
 import fs from 'fs';
 import path from 'path';
@@ -17,7 +16,7 @@ export default async function Teaching() {
 
   // Get available PDFs by scanning the public/pdfs directory
   const pdfsDir = path.join(process.cwd(), 'public', 'pdfs');
-  let noteCourses: string[] = [];
+  const noteCourses: string[] = [];
   try {
     if (fs.existsSync(pdfsDir)) {
       const folders = fs.readdirSync(pdfsDir);
