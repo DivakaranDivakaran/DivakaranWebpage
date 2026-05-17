@@ -19,7 +19,7 @@ export default async function Talks() {
     .select('*')
     .order('created_at', { ascending: false });
 
-  const outreachDir = path.join(process.cwd(), 'public', 'outreach');
+  const outreachDir = path.join(process.cwd(), 'public', 'engagement');
   const outreachItems: OutreachItem[] = [];
 
   try {
@@ -57,14 +57,14 @@ export default async function Talks() {
               date,
               rawDate,
               description,
-              pdfUrl: `/outreach/${folder}/${pdfFile}`
+              pdfUrl: `/engagement/${folder}/${pdfFile}`
             });
           }
         }
       }
     }
   } catch (err) {
-    console.error("Error reading outreach directory:", err);
+    console.error("Error reading engagement directory:", err);
   }
 
   outreachItems.sort((a, b) => b.rawDate.getTime() - a.rawDate.getTime());

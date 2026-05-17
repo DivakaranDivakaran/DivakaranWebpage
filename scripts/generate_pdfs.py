@@ -10,8 +10,8 @@ OUTPUT_DIR = os.path.abspath('public/pdfs')
 THESES_ROOT = os.path.expanduser('~/HonoursThesis')
 THESES_OUT = os.path.abspath('public/theses')
 NOTEBOOKS_OUT = os.path.abspath('public/notebooks')
-OUTREACH_ROOT = os.path.expanduser('~/PublicOutreach')
-OUTREACH_OUT = os.path.abspath('public/outreach')
+OUTREACH_ROOT = os.path.expanduser('~/PublicEngagement')
+OUTREACH_OUT = os.path.abspath('public/engagement')
 
 def compile_latex(tex_content, output_name, work_dir):
     tex_file = os.path.join(work_dir, f"{output_name}.tex")
@@ -101,12 +101,12 @@ def sync_notebooks():
             shutil.copy(src, dst)
             print(f"Synced notebook {item}")
 
-def sync_outreach():
+def sync_engagement():
     if not os.path.exists(OUTREACH_ROOT):
         return
 
     os.makedirs(OUTREACH_OUT, exist_ok=True)
-    print("Syncing public outreach materials...")
+    print("Syncing public engagement materials...")
     for item in os.listdir(OUTREACH_ROOT):
         src_path = os.path.join(OUTREACH_ROOT, item)
         if os.path.isdir(src_path):
@@ -114,7 +114,7 @@ def sync_outreach():
             if os.path.exists(dst_path):
                 shutil.rmtree(dst_path)
             shutil.copytree(src_path, dst_path)
-            print(f"Synced outreach folder {item}")
+            print(f"Synced engagement folder {item}")
 
 def main():
     if os.path.exists(NOTES_ROOT):
@@ -127,7 +127,7 @@ def main():
 
     sync_theses()
     sync_notebooks()
-    sync_outreach()
+    sync_engagement()
     
     # Auto-push to GitHub
     push_to_github()
@@ -135,8 +135,8 @@ def main():
 def push_to_github():
     print("\n--- Syncing with GitHub ---")
     try:
-        # Include public/pdfs/, public/theses/, public/notebooks/, public/outreach/ and src/app/
-        subprocess.run(['git', 'add', 'public/pdfs/', 'public/theses/', 'public/notebooks/', 'public/outreach/', 'src/app/', 'package.json', 'scripts/'], check=True)
+        # Include public/pdfs/, public/theses/, public/notebooks/, public/engagement/ and src/app/
+        subprocess.run(['git', 'add', 'public/pdfs/', 'public/theses/', 'public/notebooks/', 'public/engagement/', 'src/app/', 'package.json', 'scripts/'], check=True)
         
         # Check if there are actually any STAGED changes
         staged = subprocess.run(['git', 'diff', '--cached', '--quiet'], capture_output=False).returncode
@@ -145,7 +145,7 @@ def push_to_github():
             return
 
         print("Changes detected. Committing and pushing...")
-        commit_msg = f"Auto-sync notes, outreach & resources: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+        commit_msg = f"Auto-sync notes, engagement & resources: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
         subprocess.run(['git', 'commit', '-m', commit_msg], check=True)
         subprocess.run(['git', 'push', 'origin', 'main'], check=True)
         print("Successfully pushed to GitHub! Deployment should start shortly.")
