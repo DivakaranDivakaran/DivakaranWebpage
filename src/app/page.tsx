@@ -1,6 +1,6 @@
 import { supabase } from '@/lib/supabase';
 import Image from 'next/image';
-import { FaEnvelope, FaTwitter, FaGraduationCap, FaLinkedin, FaYoutube } from 'react-icons/fa';
+import { FaEnvelope, FaGraduationCap, FaLinkedin, FaYoutube } from 'react-icons/fa';
 
 export default async function Home() {
   const { data: profile } = await supabase.from('profiles').select('*').single();
@@ -25,7 +25,6 @@ export default async function Home() {
         </div>
         <div className="mt-6 flex justify-center space-x-6 text-xl text-stone-600">
           <a href={`mailto:${profile.email}`} className="hover:text-[#8c1515] transition-colors"><FaEnvelope /></a>
-          <a href={profile.twitter_url} target="_blank" className="hover:text-[#8c1515] transition-colors"><FaTwitter /></a>
           <a href={profile.google_scholar_url} target="_blank" className="hover:text-[#8c1515] transition-colors"><FaGraduationCap /></a>
           <a href={profile.linkedin_url} target="_blank" className="hover:text-[#8c1515] transition-colors"><FaLinkedin /></a>
           <a href="https://www.youtube.com/@divakarand" target="_blank" className="hover:text-[#8c1515] transition-colors"><FaYoutube /></a>
