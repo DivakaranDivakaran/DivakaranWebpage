@@ -1,5 +1,5 @@
 import { supabase } from '@/lib/supabase';
-import { HiChevronRight } from 'react-icons/hi';
+import { HiDocumentDownload } from 'react-icons/hi';
 import fs from 'fs';
 import path from 'path';
 
@@ -49,26 +49,35 @@ export default async function Teaching() {
       <section>
         <h2 className="text-3xl font-bold text-stone-800 mb-8 border-b border-stone-200 pb-2">Lecture Notes</h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="bg-white border border-stone-200 rounded-2xl overflow-hidden shadow-sm">
           {noteCourses.length > 0 ? (
-            noteCourses.map((courseName) => (
-              <a 
-                key={courseName} 
-                href={`/pdfs/${courseName}/${courseName}.pdf`}
-                download
-                className="group p-8 bg-white border border-stone-200 rounded-2xl hover:border-[#8c1515] transition-all hover:shadow-md flex justify-between items-center"
-              >
-                <div>
-                  <h3 className="text-2xl font-bold text-stone-800 group-hover:text-[#8c1515] transition-colors mb-2">
-                    {formatCourseName(courseName)}
-                  </h3>
-                  <p className="text-stone-500 font-medium uppercase text-xs tracking-widest">Download PDF →</p>
-                </div>
-                <HiChevronRight className="text-2xl text-stone-300 group-hover:text-[#8c1515] transition-colors" />
-              </a>
-            ))
+            <div className="divide-y divide-stone-200">
+              {noteCourses.map((courseName) => (
+                <a 
+                  key={courseName} 
+                  href={`/pdfs/${courseName}/${courseName}.pdf`}
+                  download
+                  className="group p-6 hover:bg-[#8c1515]/5 transition-colors flex items-center justify-between"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="p-3 bg-[#8c1515]/10 rounded-lg text-[#8c1515] group-hover:scale-105 transition-transform">
+                      <HiDocumentDownload className="text-2xl" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-stone-800 group-hover:text-[#8c1515] transition-colors">
+                        {formatCourseName(courseName)}
+                      </h3>
+                      <p className="text-stone-500 text-sm">Full Lecture Notes</p>
+                    </div>
+                  </div>
+                  <span className="text-sm font-bold text-[#8c1515] uppercase tracking-wider group-hover:underline">
+                    Download PDF
+                  </span>
+                </a>
+              ))}
+            </div>
           ) : (
-            <p className="text-stone-500 italic">No lecture notes available yet.</p>
+            <div className="p-8 text-center text-stone-500 italic">No lecture notes available yet.</div>
           )}
         </div>
       </section>
