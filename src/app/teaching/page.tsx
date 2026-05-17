@@ -1,14 +1,8 @@
 import { supabase } from '@/lib/supabase';
 import Link from 'next/link';
 import { HiChevronRight } from 'react-icons/hi';
-
-interface Note {
-  id: string;
-  title: string;
-  url: string;
-  description: string;
-}
-
+import fs from 'fs';
+import path from 'path';
 
 export default async function Teaching() {
   const { data: courses } = await supabase
@@ -16,21 +10,32 @@ export default async function Teaching() {
     .select('*')
     .order('year', { ascending: false });
 
-  const { data: lectureNotes } = await supabase
-    .from('lecture_notes')
-    .select('title');
-
   const { data: honoursProjects } = await supabase
     .from('honours_projects')
     .select('*')
     .order('year', { ascending: false });
 
-  // Get unique courses from notes with robust parsing
-  const noteCourses = Array.from(new Set(
-    (lectureNotes || [])
-      .map(note => note.title.split(':')[0].trim())
-      .filter(name => name.length > 0)
-  )).sort();
+  // Get available PDFs by scanning the public/pdfs directory
+  const pdfsDir = path.join(process.cwd(), 'public', 'pdfs');
+  let noteCourses: string[] = [];
+  try {
+    if (fs.existsSync(pdfsDir)) {
+      const folders = fs.readdirSync(pdfsDir);
+      for (const folder of folders) {
+        const folderPath = path.join(pdfsDir, folder);
+        if (fs.statSync(folderPath).isDirectory()) {
+          const files = fs.readdirSync(folderPath);
+          // If there's a pdf with the exact name of the course
+          if (files.includes(`${folder}.pdf`)) {
+            noteCourses.push(folder);
+          }
+        }
+      }
+    }
+  } catch (error) {
+    console.error("Error reading PDFs directory:", error);
+  }
+  noteCourses.sort();
 
   const formatCourseName = (name: string) => {
     // Add space before capital letters, but collapse existing spaces
@@ -48,19 +53,20 @@ export default async function Teaching() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {noteCourses.length > 0 ? (
             noteCourses.map((courseName) => (
-              <Link 
+              <a 
                 key={courseName} 
-                href={`/teaching/notes/${courseName}`}
+                href={`/pdfs/${courseName}/${courseName}.pdf`}
+                download
                 className="group p-8 bg-white border border-stone-200 rounded-2xl hover:border-[#8c1515] transition-all hover:shadow-md flex justify-between items-center"
               >
                 <div>
                   <h3 className="text-2xl font-bold text-stone-800 group-hover:text-[#8c1515] transition-colors mb-2">
                     {formatCourseName(courseName)}
                   </h3>
-                  <p className="text-stone-500 font-medium uppercase text-xs tracking-widest">Get Lecture Notes (PDF & Web) →</p>
+                  <p className="text-stone-500 font-medium uppercase text-xs tracking-widest">Download PDF →</p>
                 </div>
                 <HiChevronRight className="text-2xl text-stone-300 group-hover:text-[#8c1515] transition-colors" />
-              </Link>
+              </a>
             ))
           ) : (
             <p className="text-stone-500 italic">No lecture notes available yet.</p>

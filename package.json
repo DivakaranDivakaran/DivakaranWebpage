@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "npm run sync-notes && next build",
-    "sync-notes": "python3 scripts/latex_to_md.py",
+    "sync-notes": "python3 scripts/generate_pdfs.py",
     "start": "next start",
     "lint": "eslint"
   },
