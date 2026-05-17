@@ -7,6 +7,8 @@ from pathlib import Path
 
 NOTES_ROOT = os.path.expanduser('~/LectureNotes')
 OUTPUT_DIR = os.path.abspath('public/pdfs')
+THESES_ROOT = os.path.expanduser('~/HonoursThesis')
+THESES_OUT = os.path.abspath('public/theses')
 
 def compile_latex(tex_content, output_name, work_dir):
     tex_file = os.path.join(work_dir, f"{output_name}.tex")
@@ -71,15 +73,30 @@ def process_course(course_path):
         if os.path.exists(old_desktop): os.remove(old_desktop)
         if os.path.exists(old_mobile): os.remove(old_mobile)
 
-def main():
-    if not os.path.exists(NOTES_ROOT):
-        print(f"Directory {NOTES_ROOT} not found.")
+def sync_theses():
+    if not os.path.exists(THESES_ROOT):
+        print(f"Thesis directory {THESES_ROOT} not found.")
         return
 
-    for item in sorted(os.listdir(NOTES_ROOT)):
-        course_path = os.path.join(NOTES_ROOT, item)
-        if os.path.isdir(course_path):
-            process_course(course_path)
+    os.makedirs(THESES_OUT, exist_ok=True)
+    print("Syncing honours thesis PDFs...")
+    for item in os.listdir(THESES_ROOT):
+        if item.endswith('.pdf'):
+            src = os.path.join(THESES_ROOT, item)
+            dst = os.path.join(THESES_OUT, item)
+            shutil.copy(src, dst)
+            print(f"Synced {item}")
+
+def main():
+    if os.path.exists(NOTES_ROOT):
+        for item in sorted(os.listdir(NOTES_ROOT)):
+            course_path = os.path.join(NOTES_ROOT, item)
+            if os.path.isdir(course_path):
+                process_course(course_path)
+    else:
+        print(f"Directory {NOTES_ROOT} not found.")
+
+    sync_theses()
     
     # Auto-push to GitHub
     push_to_github()
@@ -87,9 +104,8 @@ def main():
 def push_to_github():
     print("\n--- Syncing with GitHub ---")
     try:
-        # Include public/pdfs/ and src/app/ since we updated it
-        # We don't need src/content/notes/ anymore
-        subprocess.run(['git', 'add', 'public/pdfs/', 'src/app/', 'package.json', 'scripts/'], check=True)
+        # Include public/pdfs/, public/theses/ and src/app/
+        subprocess.run(['git', 'add', 'public/pdfs/', 'public/theses/', 'src/app/', 'package.json', 'scripts/'], check=True)
         
         # Check if there are actually any STAGED changes
         staged = subprocess.run(['git', 'diff', '--cached', '--quiet'], capture_output=False).returncode
@@ -98,7 +114,7 @@ def push_to_github():
             return
 
         print("Changes detected. Committing and pushing...")
-        commit_msg = f"Auto-sync lecture notes (Standard PDF): {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+        commit_msg = f"Auto-sync notes & theses: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
         subprocess.run(['git', 'commit', '-m', commit_msg], check=True)
         subprocess.run(['git', 'push', 'origin', 'main'], check=True)
         print("Successfully pushed to GitHub! Deployment should start shortly.")
