@@ -1,8 +1,8 @@
-import { supabase } from '@/lib/supabase';
 import { FaYoutube } from 'react-icons/fa';
 import { HiDocumentDownload } from 'react-icons/hi';
 import fs from 'fs';
 import path from 'path';
+import talksData from '@/data/talks.json';
 
 interface OutreachItem {
   id: string;
@@ -13,11 +13,8 @@ interface OutreachItem {
   pdfUrl: string;
 }
 
-export default async function Talks() {
-  const { data: talks } = await supabase
-    .from('talks')
-    .select('*')
-    .order('created_at', { ascending: false });
+export default function Talks() {
+  const talks = talksData;
 
   const outreachDir = path.join(process.cwd(), 'public', 'engagement');
   const outreachItems: OutreachItem[] = [];

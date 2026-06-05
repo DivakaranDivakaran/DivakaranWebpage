@@ -1,0 +1,42 @@
+[
+  {
+    "id": "2db565a9-a4f5-4644-866c-4821afe78f0d",
+    "student_name": "Tanvi Chaubey",
+    "project_title": "Characterizing continuous function: using topological properties of its graph",
+    "year": "2025",
+    "description": "",
+    "created_at": "2026-05-15T00:40:38.603477+00:00"
+  },
+  {
+    "id": "6b026468-bd95-47d6-849c-d569e1978615",
+    "student_name": "Maria Joseph",
+    "project_title": "Fomalising Mathematics in Lean: Gaussian Elimination",
+    "year": "2024",
+    "description": "",
+    "created_at": "2026-05-15T00:40:38.603477+00:00"
+  },
+  {
+    "id": "af6fcb3e-9587-4265-b9bc-4cecaa8f5a4f",
+    "student_name": "Vignesh Iyer",
+    "project_title": "Integer Multiplication with time O(n log n)",
+    "year": "2023",
+    "description": "",
+    "created_at": "2026-05-15T00:40:38.603477+00:00"
+  },
+  {
+    "id": "bb9629c1-93c5-446d-9bc9-20e70695e629",
+    "student_name": "Madhuleka Iyer",
+    "project_title": "Topological Data Analysis",
+    "year": "2023",
+    "description": "",
+    "created_at": "2026-05-15T00:40:38.603477+00:00"
+  },
+  {
+    "id": "33e37d8e-176d-4260-9ec4-47d8cb1762b8",
+    "student_name": "Tanu Prasad",
+    "project_title": "Godel's First Incompleteness Theorem",
+    "year": "2023",
+    "description": "",
+    "created_at": "2026-05-15T00:40:38.603477+00:00"
+  }
+]

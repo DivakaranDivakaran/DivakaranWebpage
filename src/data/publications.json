@@ -1,0 +1,68 @@
+[
+  {
+    "id": "fe529145-6b22-4360-a68c-8b403c1a1b59",
+    "title": "Adventures of a Mathematician By Stanislaw Ulam (Review)",
+    "authors": "Divakaran Divakaran",
+    "venue": "At Right Angles",
+    "year": 2023,
+    "pdf_url": "https://publications.azimpremjiuniversity.edu.in/5270/1/21%20ADVENTURES%20OF%20A%20MATHEMATICS_REVIEW.pdf",
+    "doi_url": null,
+    "cite_bib_path": null,
+    "created_at": "2026-05-14T17:31:51.399482+00:00"
+  },
+  {
+    "id": "f6e512c6-27ac-43a7-b15c-c27941605d04",
+    "title": "Inquiry-based learning in an Indian context",
+    "authors": "Shantha Bhushan, Tulsi Srinivasan, Divakaran D",
+    "venue": "Blackboard, Issue 4, MTA (I)",
+    "year": 2022,
+    "pdf_url": "https://www.mtai.org.in/wp-content/uploads/2022/01/blackboard-issue4.pdf",
+    "doi_url": null,
+    "cite_bib_path": null,
+    "created_at": "2026-05-14T17:31:51.399482+00:00"
+  },
+  {
+    "id": "6daf476c-227c-4e22-9f92-0f3fa10e697c",
+    "title": "Jittering Samples using a kd-Tree Stratification",
+    "authors": "Alexandros Keros, Divakaran D, Kartic Subr",
+    "venue": "Arxiv",
+    "year": 2020,
+    "pdf_url": "https://arxiv.org/pdf/2002.07002.pdf",
+    "doi_url": null,
+    "cite_bib_path": null,
+    "created_at": "2026-05-14T13:37:50.356809+00:00"
+  },
+  {
+    "id": "56c43614-535a-4161-86f7-71b5bd239a27",
+    "title": "Proper holomorphic mappings onto symmetric products of a Riemann surface",
+    "authors": "Gautam Bharali, Indranil Biswas, Divakaran D, Jaikrishnan Janardhanan",
+    "venue": "Doc. Math. 23, 1291-1311",
+    "year": 2018,
+    "pdf_url": "https://arxiv.org/pdf/1802.08231.pdf",
+    "doi_url": "https://doi.org/10.25537/dm.2018v23.1291-1311",
+    "cite_bib_path": null,
+    "created_at": "2026-05-14T13:37:50.356809+00:00"
+  },
+  {
+    "id": "99ddb1de-7fa0-46e2-9ffc-cabe021b4d65",
+    "title": "Finiteness theorems for holomorphic mapping from products of hyperbolic Riemann surfaces",
+    "authors": "Divakaran D, Jaikrishnan Janardhanan",
+    "venue": "Int. J. Math. Vol. 28, No. 07",
+    "year": 2017,
+    "pdf_url": "https://arxiv.org/pdf/1701.05692.pdf",
+    "doi_url": "https://doi.org/10.1142/S0129167X17500604",
+    "cite_bib_path": null,
+    "created_at": "2026-05-14T13:37:50.356809+00:00"
+  },
+  {
+    "id": "d34c08c4-3797-473f-9ed1-ff4792f937f9",
+    "title": "Compactness theorems for the spaces of distance measure spaces and Riemann surface laminations",
+    "authors": "Divakaran D, Siddhartha Gadgil",
+    "venue": "Arxiv",
+    "year": 2015,
+    "pdf_url": "https://arxiv.org/pdf/1510.05777.pdf",
+    "doi_url": null,
+    "cite_bib_path": null,
+    "created_at": "2026-05-14T13:37:50.356809+00:00"
+  }
+]

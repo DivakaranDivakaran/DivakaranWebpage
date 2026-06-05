@@ -1,13 +1,11 @@
-import { supabase } from '@/lib/supabase';
 import Image from 'next/image';
 import { FaEnvelope, FaGraduationCap, FaLinkedin, FaYoutube } from 'react-icons/fa';
+import profilesData from '@/data/profiles.json';
+import experienceData from '@/data/experience.json';
 
-export default async function Home() {
-  const { data: profile } = await supabase.from('profiles').select('*').single();
-  const { data: experience } = await supabase
-    .from('experience')
-    .select('*')
-    .order('sort_order', { ascending: true });
+export default function Home() {
+  const profile = profilesData[0];
+  const experience = experienceData;
 
   if (!profile) return <div>Loading profile...</div>;
 

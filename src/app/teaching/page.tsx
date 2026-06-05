@@ -1,7 +1,8 @@
-import { supabase } from '@/lib/supabase';
 import { HiDocumentDownload, HiCode, HiExternalLink } from 'react-icons/hi';
 import fs from 'fs';
 import path from 'path';
+import coursesData from '@/data/courses.json';
+import honoursProjectsData from '@/data/honours_projects.json';
 
 interface CourseResource {
   name: string;
@@ -10,16 +11,9 @@ interface CourseResource {
   colabUrl?: string;
 }
 
-export default async function Teaching() {
-  const { data: courses } = await supabase
-    .from('courses')
-    .select('*')
-    .order('year', { ascending: false });
-
-  const { data: honoursProjects } = await supabase
-    .from('honours_projects')
-    .select('*')
-    .order('year', { ascending: false });
+export default function Teaching() {
+  const courses = coursesData;
+  const honoursProjects = honoursProjectsData;
 
   const formatCourseName = (name: string) => {
     return name.replace(/([A-Z])/g, ' $1').replace(/\s+/g, ' ').trim();

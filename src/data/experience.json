@@ -1,0 +1,79 @@
+[
+  {
+    "id": "bf1cc006-3f25-4b94-8890-60c1968ce31e",
+    "role": "Assistant Professor",
+    "organization": "Azim Premji University",
+    "start_date": "2019",
+    "end_date": "Present",
+    "location": "Bangalore",
+    "is_current": false,
+    "sort_order": 1,
+    "created_at": "2026-05-14T13:37:50.238843+00:00"
+  },
+  {
+    "id": "94cc6cba-3000-465d-bf09-28105f60afca",
+    "role": "Research Associate",
+    "organization": "University of Edinburgh",
+    "start_date": "2018",
+    "end_date": "2019",
+    "location": "Edinburgh",
+    "is_current": false,
+    "sort_order": 2,
+    "created_at": "2026-05-14T13:37:50.238843+00:00"
+  },
+  {
+    "id": "7b45c050-4beb-4468-9178-802c2438ff66",
+    "role": "Post-doctoral Fellow",
+    "organization": "IISER Bhopal",
+    "start_date": "2017",
+    "end_date": "2018",
+    "location": "Bhopal",
+    "is_current": false,
+    "sort_order": 3,
+    "created_at": "2026-05-14T13:37:50.238843+00:00"
+  },
+  {
+    "id": "2129504f-0ac9-4141-a1eb-ef73ae7f5d9b",
+    "role": "Post-doctoral Fellow",
+    "organization": "IMSc Chennai",
+    "start_date": "2015",
+    "end_date": "2017",
+    "location": "Chennai",
+    "is_current": false,
+    "sort_order": 4,
+    "created_at": "2026-05-14T13:37:50.238843+00:00"
+  },
+  {
+    "id": "75943d2e-9376-4ff5-b4cb-058ab53edca1",
+    "role": "Research Associate",
+    "organization": "IISc Bangalore",
+    "start_date": "2014",
+    "end_date": "2015",
+    "location": "Bangalore",
+    "is_current": false,
+    "sort_order": 5,
+    "created_at": "2026-05-14T13:37:50.238843+00:00"
+  },
+  {
+    "id": "76c6d837-ac30-4566-a51d-ec98ed9310de",
+    "role": "PhD in Mathematics",
+    "organization": "Indian Institute of Science (IISc)",
+    "start_date": "2008",
+    "end_date": "2014",
+    "location": "Bangalore",
+    "is_current": false,
+    "sort_order": 10,
+    "created_at": "2026-05-14T14:10:03.694746+00:00"
+  },
+  {
+    "id": "21d0b073-e1ea-4db2-a42a-f3b79423bac1",
+    "role": "BSc in Mathematics",
+    "organization": "Fergusson College",
+    "start_date": "2004",
+    "end_date": "2007",
+    "location": "Pune",
+    "is_current": false,
+    "sort_order": 11,
+    "created_at": "2026-05-14T14:10:03.694746+00:00"
+  }
+]

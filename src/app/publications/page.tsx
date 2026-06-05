@@ -1,10 +1,7 @@
-import { supabase } from '@/lib/supabase';
+import publicationsData from '@/data/publications.json';
 
-export default async function Publications() {
-  const { data: publications } = await supabase
-    .from('publications')
-    .select('*')
-    .order('year', { ascending: false });
+export default function Publications() {
+  const publications = publicationsData;
 
   return (
     <div>
