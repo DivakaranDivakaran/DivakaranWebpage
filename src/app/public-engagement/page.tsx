@@ -42,9 +42,9 @@ export default function Talks() {
             // Parse date for sorting (format DD/MM/YYYY)
             let rawDate = new Date(0);
             if (date) {
-              const parts = date.split('/');
-              if (parts.length === 3) {
-                rawDate = new Date(parseInt(parts[2]), parseInt(parts[1]) - 1, parseInt(parts[0]));
+              const match = date.match(/(\d{2})\/(\d{2})\/(\d{4})/);
+              if (match) {
+                rawDate = new Date(parseInt(match[3], 10), parseInt(match[2], 10) - 1, parseInt(match[1], 10));
               }
             }
 
